@@ -2,12 +2,22 @@ import Ember from 'ember';
 import config from './config/environment';
 
 var Router = Ember.Router.extend({
-  location: config.locationType
+    location: config.locationType
 });
 
 Router.map(function() {
-  this.route("login");
-  this.route("protected");
+    this.modal('login-modal', {
+        withParams: ['login'],
+        otherParams: {
+            identification: "identification",
+            password: "password"
+        },
+        actions: {
+            authenticate: 'authenticate'
+        }
+    });
+    this.route("login");
+    this.route("protected");
 });
 
 export default Router;
