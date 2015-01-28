@@ -7,8 +7,9 @@
 
 {{#if session.isAuthenticated}}
     <a {{action 'invalidateSession'}}>Logout</a>
+    {{session.currentUser.email}}
 {{else}}
     {{#link-to (query-params login=true)}}Login{{/link-to}}
 {{/if}}
 
-{{outlet}}
+{{liquid-outlet}}

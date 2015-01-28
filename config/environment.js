@@ -28,7 +28,8 @@ module.exports = function(environment) {
         ENV['simple-auth'] = {
             authorizer: 'simple-auth-authorizer:oauth2-bearer',
             store: 'simple-auth-session-store:local-storage',
-            crossOriginWhitelist: ['http://127.0.0.1:8000']
+            crossOriginWhitelist: ['http://127.0.0.1:8000'],
+            session: 'session:withCurrentUser'
         };
         ENV['simple-auth-oauth2'] = {
             serverTokenEndpoint: 'http://127.0.0.1:8000/oauth2/access_token/',

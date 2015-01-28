@@ -6,7 +6,7 @@ import LoginControllerMixin from 'simple-auth/mixins/login-controller-mixin';
 
 export default Ember.Controller.extend(LoginControllerMixin, {
   //authenticator: 'simple-auth-authenticator:oauth2-password-grant'
-  authenticator: 'cds-authenticator:oauth2-password-grant',
+    authenticator: 'cds-authenticator:oauth2-password-grant',
     queryParams: ['login'],
     login: false
 });
