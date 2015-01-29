@@ -1,0 +1,302 @@
+/* Colors
+==================*/
+//$blue: rgba(2, 73, 89, 1);
+
+$purple: rgba(29, 14, 50, 1);
+$lightblue: rgba(3, 126, 140 ,1);
+$offwhite: rgba(221, 221, 220, 1);
+$orange: rgba(231, 76, 48, 1);
+$gray: rgba(54, 54, 54, 1);
+$gray-bg: #b5b5b5;
+
+
+$purple-list: create-color-list($purple, $lighten-increment:10);
+$lightblue-list: create-color-list($lightblue, $lighten-increment:10);
+$orange-list: create-color-list($orange, $lighten-increment:10);
+$gray-list: create-color-list($gray, $desaturate-val: 0, $lighten-increment: 10);
+
+
+/* Fonts
+==================*/
+
+// ENIGMATIC
+@font-face {
+    font-family: 'enigmaticregular';
+    src: url('../fonts/enigmatic_regular_macroman/Enigma__2-webfont.eot');
+    src: url('../fonts/enigmatic_regular_macroman/Enigma__2-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/enigmatic_regular_macroman/Enigma__2-webfont.woff') format('woff'),
+         url('../fonts/enigmatic_regular_macroman/Enigma__2-webfont.ttf') format('truetype'),
+         url('../fonts/enigmatic_regular_macroman/Enigma__2-webfont.svg#enigmaticregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'enigmaticbold';
+    src: url('../fonts/enigmatic_bold_macroman/EnigmaB_2-webfont.eot');
+    src: url('../fonts/enigmatic_bold_macroman/EnigmaB_2-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/enigmatic_bold_macroman/EnigmaB_2-webfont.woff') format('woff'),
+         url('../fonts/enigmatic_bold_macroman/EnigmaB_2-webfont.ttf') format('truetype'),
+         url('../fonts/enigmatic_bold_macroman/EnigmaB_2-webfont.svg#enigmaticbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'enigmaticitalic';
+    src: url('../fonts/enigmatic_italic_macroman/Enigma_2i-webfont.eot');
+    src: url('../fonts/enigmatic_italic_macroman/Enigma_2i-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/enigmatic_italic_macroman/Enigma_2i-webfont.woff') format('woff'),
+         url('../fonts/enigmatic_italic_macroman/Enigma_2i-webfont.ttf') format('truetype'),
+         url('../fonts/enigmatic_italic_macroman/Enigma_2i-webfont.svg#enigmaticitalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+//Quicksand
+
+@font-face {
+    font-family: 'quicksandregular';
+    src: url('../fonts/quicksand/quicksand-regular.eot');
+    src: url('../fonts/quicksand/quicksand-regular.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/quicksand/quicksand-regular.woff2') format('woff2'),
+         url('../fonts/quicksand/quicksand-regular.woff') format('woff'),
+         url('../fonts/quicksand/quicksand-regular.ttf') format('truetype'),
+         url('../fonts/quicksand/quicksand-regular.svg#quicksandregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'quicksandbold';
+    src: url('../fonts/quicksand/quicksand-bold.eot');
+    src: url('../fonts/quicksand/quicksand-bold.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/quicksand/quicksand-bold.woff2') format('woff2'),
+         url('../fonts/quicksand/quicksand-bold.woff') format('woff'),
+         url('../fonts/quicksand/quicksand-bold.ttf') format('truetype'),
+         url('../fonts/quicksand/quicksand-bold.svg#quicksandbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'quicksanditalic';
+    src: url('../fonts/quicksand/quicksand-italic.eot');
+    src: url('../fonts/quicksand/quicksand-italic.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/quicksand/quicksand-italic.woff2') format('woff2'),
+         url('../fonts/quicksand/quicksand-italic.woff') format('woff'),
+         url('../fonts/quicksand/quicksand-italic.ttf') format('truetype'),
+         url('../fonts/quicksand/quicksand-italic.svg#quicksanditalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'quicksandbold_italic';
+    src: url('../fonts/quicksand/quicksand-bolditalic.eot');
+    src: url('../fonts/quicksand/quicksand-bolditalic.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/quicksand/quicksand-bolditalic.woff2') format('woff2'),
+         url('../fonts/quicksand/quicksand-bolditalic.woff') format('woff'),
+         url('../fonts/quicksand/quicksand-bolditalic.ttf') format('truetype'),
+         url('../fonts/quicksand/quicksand-bolditalic.svg#quicksandbold_italic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+// Headline Variables
+$headline: 'enigmaticregular';
+$headline-bold: 'enigmaticbold';
+$headline-italic: 'enigmaticitalic';
+
+// Paragraph Variables
+$paragraph: 'quicksandregular';
+$paragraph-bold: 'quicksandbold';
+$paragraph-italic: 'quicksanditalic';
+
+/* Icon Fonts
+==================*/
+@font-face {
+	font-family: 'icomoon';
+	src:url('../fonts/icomoon/fonts/icomoon.eot?-xfnthp');
+	src:url('../fonts/icomoon/fonts/icomoon.eot?#iefix-xfnthp') format('embedded-opentype'),
+		url('../fonts/icomoon/fonts/icomoon.woff?-xfnthp') format('woff'),
+		url('../fonts/icomoon/fonts/icomoon.ttf?-xfnthp') format('truetype'),
+		url('../fonts/icomoon/fonts/icomoon.svg?-xfnthp#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-side_drum:before {
+	content: "\e62d";
+}
+.icon-home:before {
+	content: "\e600";
+}
+.icon-music:before {
+	content: "\e601";
+}
+.icon-headphones:before {
+	content: "\e602";
+}
+.icon-pacman:before {
+	content: "\e603";
+}
+.icon-file:before {
+	content: "\e604";
+}
+.icon-tag:before {
+	content: "\e62e";
+}
+.icon-tags:before {
+	content: "\e62f";
+}
+.icon-cart:before {
+	content: "\e605";
+}
+.icon-coin:before {
+	content: "\e606";
+}
+.icon-credit:before {
+	content: "\e607";
+}
+.icon-envelope:before {
+	content: "\e608";
+}
+.icon-bubble:before {
+	content: "\e609";
+}
+.icon-user:before {
+	content: "\e60a";
+}
+.icon-remove:before {
+	content: "\e60b";
+}
+.icon-menu:before {
+	content: "\e619";
+}
+.icon-download:before {
+	content: "\e60c";
+}
+.icon-star:before {
+	content: "\e60d";
+}
+.icon-star2:before {
+	content: "\e60e";
+}
+.icon-heart:before {
+	content: "\e60f";
+}
+.icon-heart-broken:before {
+	content: "\e610";
+}
+.icon-cancel-circle:before {
+	content: "\e624";
+}
+.icon-checkmark:before {
+	content: "\e630";
+}
+.icon-minus:before {
+	content: "\e611";
+}
+.icon-plus:before {
+	content: "\e612";
+}
+.icon-play:before {
+	content: "\e613";
+}
+.icon-pause:before {
+	content: "\e614";
+}
+.icon-stop:before {
+	content: "\e615";
+}
+.icon-volume-high:before {
+	content: "\e616";
+}
+.icon-volume-low:before {
+	content: "\e617";
+}
+.icon-volume-mute:before {
+	content: "\e618";
+}
+.icon-loop:before {
+	content: "\e61a";
+}
+.icon-arrow-up:before {
+	content: "\e61b";
+}
+.icon-arrow-right:before {
+	content: "\e61c";
+}
+.icon-arrow-down:before {
+	content: "\e61d";
+}
+.icon-arrow-left:before {
+	content: "\e61e";
+}
+.icon-indent-increase:before {
+	content: "\e623";
+}
+.icon-facebook:before {
+	content: "\e61f";
+}
+.icon-instagram:before {
+	content: "\e620";
+}
+.icon-twitter:before {
+	content: "\e621";
+}
+.icon-youtube:before {
+	content: "\e622";
+}
+.icon-arrow-left2:before {
+	content: "\e625";
+}
+.icon-arrow-down2:before {
+	content: "\e626";
+}
+.icon-arrow-up2:before {
+	content: "\e627";
+}
+.icon-arrow-right2:before {
+	content: "\e628";
+}
+.icon-arrow-left3:before {
+	content: "\e629";
+}
+.icon-arrow-down3:before {
+	content: "\e62a";
+}
+.icon-arrow-up3:before {
+	content: "\e62b";
+}
+.icon-arrow-right3:before {
+	content: "\e62c";
+}
+
+
+
+
+
+$icon-home: "\e600";
+$icon-pencil: "\e601";
+$icon-user: "\e602";
+$icon-menu: "\e603";

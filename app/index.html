@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>CustomDrumSamples</title>
     <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
 
     {{content-for 'head'}}
 
@@ -14,12 +15,17 @@
 
     {{content-for 'head-footer'}}
   </head>
-  <body>
-    {{content-for 'body'}}
+<body class="main-container">
+{{content-for 'body'}}
+<script src="assets/vendor.js"></script>
+<script src="assets/custom-drum-samples.js"></script>
 
-    <script src="assets/vendor.js"></script>
-    <script src="assets/custom-drum-samples.js"></script>
+{{content-for 'body-footer'}}
 
-    {{content-for 'body-footer'}}
-  </body>
+<!--[if lt IE 9]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<script type="text/javascript" src="http://localhost:9090/livereload.js"></script>
+</body> <!-- End Main Container -->
+
 </html>

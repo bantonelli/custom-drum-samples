@@ -1,0 +1,17 @@
+
+#about-us-slide-1 {
+  @include slide-mixin($offwhite);
+}
+
+#about-us-slide-section-1 {
+  @include slide-section-mixin($offwhite);
+}
+
+.titles {
+  @include h1-ow-background();
+}
+
+.about-para {
+  margin: 10% 0;
+  padding: 0 10%;
+}

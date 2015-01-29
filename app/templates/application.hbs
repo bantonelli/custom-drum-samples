@@ -1,15 +1,83 @@
-<h2 id="title">Welcome to Ember.js</h2>
-
 {{liquid-modal}}
 
-{{#link-to 'index'}}Home{{/link-to}}
-{{#link-to 'protected'}}Protected Page{{/link-to}}
+<div id="st-container" class="st-container st-effect-4">
+    <!--
+        example menus
+        these menus will be on top of the push wrapper
+    -->
+    <!-- content push wrapper -->
+    <div class="st-pusher">
+        <!--
+            example menus
+            these menus will be under the push wrapper
+        -->
 
-{{#if session.isAuthenticated}}
-    <a {{action 'invalidateSession'}}>Logout</a>
-    {{session.currentUser.email}}
-{{else}}
-    {{#link-to (query-params login=true)}}Login{{/link-to}}
-{{/if}}
+        <nav class="st-menu st-effect-7" id="menu-7">
+            <ul>
+                <li><a href="/" class="" href="#">Home</a></li>
+                <li><a href="/about" class="" href="#">About Us</a></li>
+                <li><a href="/contact" class="" href="#">Contact</a></li>
+                <li><a href="/legal" class="" href="#">Legal</a></li>
+                <li><a href="/team" class="" href="#">Team Profile</a></li>
 
-{{liquid-outlet}}
+                <li class="multilink">
+                    <a><label for="menu-toggle">Community</label></a>
+                    <input type="checkbox" id="menu-toggle"/>
+                    <ul id="menu">
+                      <li><a href="#">Blog</a></li>
+                      <li><a href="#">Forum</a></li>
+                      <li><a href="#">Mail Chimp</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    <!-- Nav Button to Trigger sidebar
+                            <div id="st-trigger-effects" class="col-xs-2">
+                                <button class="nav-button icon-menu" data-effect="st-effect-7"></button>
+                            </div>
+    -->
+        <div class="st-content z-index-fix"><!-- this is the wrapper for the content -->
+            <div class="st-content-inner" ng-app="kitbuilder"><!-- extra div for emulating position:fixed of the menu -->
+                <!-- Top Navigation -->
+                <header role="banner" class="cds-navbar">
+                    <div class="container cds-nav-container">
+                        <div class="row">
+                            <div id="st-trigger-effects" class="col-xs-2">
+                                <button class="nav-button icon-menu" data-effect="st-effect-7"></button>
+                            </div>
+                            <nav class="main-nav col-xs-4 col-xs-offset-3">
+                                <ul class="row">
+                                    <!-- insert more links here -->
+                                    <li><a class="col-xs-5" href="/kit-builder">Kit Builder</a></li>
+                                    <li><a class="col-xs-7" href="/custom-quote">Custom Samples</a></li>
+                                </ul>
+                            </nav>
+                            <nav id="main-nav" class="main-nav col-xs-3">
+                                <ul class="row">
+                                    <!-- insert more links here -->
+                                    {{#if session.isAuthenticated}}
+                                        <li><a class="col-xs-6 cd-signin" {{action 'invalidateSession'}}>Log Out</a></li>
+                                        <li><a class="col-xs-6 cd-signin">{{session.currentUser.email}}</a></li>
+                                    {{else}}
+                                        <li>{{#link-to (query-params login=true) classNames="col-xs-6 cd-signin" }}Log In{{/link-to}}</li>
+                                        <li>{{#link-to (query-params login=true) classNames="col-xs-6 cd-signin" }}Register{{/link-to}}</li>
+                                    {{/if}}
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                    <div class="appnav">
+                    {% block appnav %}
+
+                    {% endblock %}
+                    </div>
+                </header>
+
+            {{liquid-outlet}}
+
+            </div><!-- /st-content-inner -->
+        </div><!-- /st-content -->
+    </div><!-- /st-pusher -->
+</div><!-- /st-container -->
+
+

@@ -1,0 +1,19 @@
+/* Color Functions
+==================*/
+
+@function create-color-list($color, $desaturate-val: 10, $lighten-increment: 20) {
+  $color-list: (desaturate(darken($color, 10), $desaturate-val), $color);
+  $lighten-val: $lighten-increment;
+  $desaturate-val: $desaturate-val;
+  @while $lighten-val <= ($lighten-increment * 4) {
+    $color-list: append($color-list, desaturate(lighten($color, $lighten-val), $desaturate-val), comma);
+    $lighten-val: $lighten-val + $lighten-increment;
+    @if $desaturate-val == 0 {
+      $desaturate-val: 0;
+    }
+    @else {
+      $desaturate-val: $desaturate-val + 10;
+    }
+  }
+  @return $color-list;
+}

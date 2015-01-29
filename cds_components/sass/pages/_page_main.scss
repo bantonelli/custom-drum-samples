@@ -1,0 +1,132 @@
+/* Base Page Styling
+======================================================== */
+.main-content {
+  width: 100%;
+  height: 110%;
+  position: relative;
+  overflow: hidden;
+  margin-top: -100px; // Can make the top nav see-through
+  background-color: $offwhite;
+}
+
+
+/* App Page Styling
+======================================================== */
+
+.slide {
+  width: 100%;
+  height: 100%;
+  padding-top: 100px; // see through nav
+  position: absolute;
+  overflow-y: scroll;
+  z-index: 200;
+  -webkit-overflow-scrolling: touch;
+  left: 0;
+  right: 0;
+  top: 0;
+  -webkit-transition: .55s all ease;
+  transition: .55s all ease;
+}
+
+.slide.ng-hide {
+  display: block !important;
+  opacity: 0;
+}
+
+.slideshow-starting-pos {
+  -webkit-transform: translateX(100%);
+  transform: translateX(100%);
+}
+
+.slide-width-container {
+  margin: 0 auto;
+  max-width: 1400px !important;
+  width: 1400px;
+}
+
+
+.ontop {
+  -webkit-transform: translateX(0%);
+  transform: translateX(0%);
+  opacity: 1;
+}
+
+.appnav {
+  width: 100%;
+  height: auto;
+  box-sizing: border-box;
+}
+
+.app-id {
+  background-color: #302243;
+  height: auto;
+  padding: 0;
+  h5 {
+    box-sizing: padding-box;
+    color: $offwhite;
+    text-shadow: 0px 0px 0px white;
+    letter-spacing: 1px;
+    width: 100%;
+    text-align: center;
+    line-height: 40px;
+    border-bottom: 2px solid nth($purple-list, 4);
+    border-top: 2px solid nth($purple-list, 4);
+    white-space: nowrap;
+    overflow: auto;
+    text-overflow: clip;
+  }
+}
+
+
+.slide-navigation {
+  height: auto;
+  box-sizing: border-box;
+  background-color: #302243;
+  border-left: 0px solid nth($purple-list, 4);
+  border-bottom: 2px solid nth($purple-list, 4);
+  border-top: 2px solid nth($purple-list, 4);
+}
+
+.item-holder {
+  list-style: none;
+  display: inline-block;
+  position: relative;
+  vertical-align: top;
+  overflow: visible;
+  height: 40px;
+  padding: 0;
+}
+
+.slide-nav-item {
+  position: absolute;
+  display: inline-block;
+  font-size: .7em;
+  font-family: quicksandbold;
+  height: 40px;
+  width: 100%;
+  line-height: 40px;
+  padding: 0;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+  cursor: pointer;
+  color: $offwhite;
+  text-shadow: none;
+  &:hover, &.active {
+    text-decoration: none;
+    background-color: nth($purple-list, 4);
+    color: $offwhite;
+  }
+}
+
+
+
+/* Static Page Styling
+======================================================== */
+
+.paragraph-text {
+  @include p-ow-background;
+}
+

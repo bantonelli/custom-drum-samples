@@ -1,0 +1,17 @@
+// Breakpoint makes header to come back to the large screen setting
+/*
+nav {
+  @include lg() {
+    height: 50px;
+  }
+}
+
+.nav-link {
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  &:hover {
+    background-color: nth($lightblue-list, 2);
+  }
+}
+*/

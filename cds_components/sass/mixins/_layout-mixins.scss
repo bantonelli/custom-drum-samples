@@ -1,0 +1,183 @@
+/* Utility Mixins
+======================================*/
+
+@mixin slide-mixin($background-color, $height: 100%) {
+  background-color: $background-color;
+  height: $height;
+}
+
+@mixin slide-section-mixin($background-color, $height: auto, $padding: 100px 0) {
+  background-color: $background-color;
+  height: $height;
+  padding: $padding;
+}
+
+@mixin border-separation-bottom() {
+  border-style: dotted;
+  border-width: 0 0 2px 0;
+  border-color: nth($purple-list, 6);
+}
+
+/* Component Mixins
+======================================*/
+@mixin sample-sound($playColor: nth($orange-list, 3), $nameColor: nth($orange-list, 2), $nameKitColor: nth($purple-list, 4), $fontSize: 18px, $height: 30px, $margin: 4px auto) {
+  .sample-sound {
+    color: $playColor;
+    //color: nth($orange-list, 3);
+    height: $height;
+    margin: $margin;
+  }
+  .sample-sound .sample-name {
+    padding: 0;
+    margin: 0;
+    color: $nameColor;
+    font-family: quicksandbold;
+    font-size: $fontSize;
+    display: inline-block;
+    line-height: $height;
+    height: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .sample-sound .sample-name-kit {
+    padding: 0;
+    margin: 0;
+    color: $nameKitColor;
+    font-family: quicksandbold;
+    font-size: $fontSize/1.5;
+    display: inline-block;
+    line-height: $height;
+    height: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-indent: 30px;
+    white-space: nowrap;
+  }
+  .sample-sound .sample-play {
+    height: $height;
+    width: $height;
+    font-size: ($height * 0.9);
+    text-align: center;
+    line-height: $height;
+    padding: 0;
+    div {
+      height: $height;
+      width: $height;
+    }
+  }
+  .select-sound {
+    font-size: ($height * 0.9);
+    text-align: center;
+    line-height: $height;
+    padding: 0;
+    > div {
+      height: $height;
+      width: $height;
+      &::before {
+        font-family: icomoon;
+        font-size: ($height * 0.9);
+        text-align: center;
+      }
+    }
+  }
+}
+
+@mixin menu-list () {
+  height: 70px;
+  width: 100%;
+  //margin-left: 0px;
+  font-family: $paragraph;
+  position: relative;
+  overflow: visible;
+  @include border-separation-bottom();
+  form {
+    margin-left: 0px;
+    margin-top: 10px;
+    .select2-container {
+      color: $offwhite;
+      font-family: $paragraph;
+      height: 50px;
+      width: 115%;
+      background-image: none;
+      background-color: nth($purple-list, 4);
+      .select2-choice, .select2-choice > .select2-chosen {
+        background-image: none;
+        background-color: nth($purple-list, 4);
+        margin-top: -1px;
+        border: none;
+        border-radius: 0px;
+        margin-top: -1px;
+        padding-right: 17px;
+        font-size: 18px;
+        font-family: $paragraph;
+        text-align: center;
+        color: $offwhite;
+      }
+    }
+  }
+  .top-menu {
+    margin: 0;
+    margin-top: 10px;
+    padding: 0;
+    overflow: hidden;
+    height: 50px;
+    .menu-item {
+      display: inline-block;
+      //background-color: nth($orange-list, 2);
+      background-color: nth($purple-list, 4);
+      list-style: none;
+      //color: white;
+      color: $offwhite;
+      height: 50px;
+      font-size: 18px;
+      font-family: $paragraph;
+      text-align: center;
+      white-space: nowrap;
+      line-height: 50px;
+      margin-right: 3px;
+      cursor: pointer;
+      &:hover, &:focus {
+        color: white;
+        background-color: nth($lightblue-list, 3);
+      }
+    }
+    .menu-item.active {
+      color: white;
+      background-color: nth($lightblue-list, 3);
+    }
+    .menu-word {
+      background-color: transparent;
+      color: nth($purple-list, 2);
+      cursor: default;
+      &:hover {
+        background-color: transparent;
+      }
+    }
+  }
+}
+
+@mixin slide-out ($translation-show, $translation-hide, $width) {
+  position: absolute;
+  padding: 1.5%;
+  top: 0px;
+  left: 0;
+  right: 0;
+  opacity: 1;
+  height: auto;
+  width: $width;
+  background-color: transparentize(nth($purple-list, 1), 0.2);
+  z-index: 2;
+  -webkit-transform: $translation-show;
+  transform: $translation-show;
+  -webkit-transition: all .25s ease;
+  transition: all .25s ease;
+
+  &.ng-hide, &.ng-hide {
+    display: block !important;
+    -webkit-transition: all .25s ease;
+    transition: all .25s ease;
+    -webkit-transform: $translation-hide;
+    transform: $translation-hide;
+  }
+}

@@ -1,0 +1,35 @@
+$main-colors: ("purple", "lightblue", "gray", "orange");
+
+body {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+div.color-scheme {
+  display: flex;
+}
+
+@each $color in $main-colors {
+  $color-list: ();
+  @if $color == "purple" {
+    $color-list: $purple-list;
+  } @else if $color == "lightblue" {
+    $color-list: $lightblue-list;
+  } @else if $color == "gray" {
+    $color-list: $gray-list;
+  } @else {
+    $color-list: $orange-list;
+  }
+  .#{$color}-colors {
+    flex-grow: 2;
+    $i: 1;
+    @while $i < 7 {
+      .#{$color}-#{$i} {
+        height: 100px;
+        width: 100%;
+        background-color: nth($color-list, $i);
+        $i: $i+1;
+      }
+    }
+  }
+}

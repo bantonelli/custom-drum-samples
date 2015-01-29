@@ -13,6 +13,10 @@
     "ember-qunit": "0.1.8",
     "ember-qunit-notifications": "0.0.4",
     "qunit": "~1.15.0",
-    "ember-simple-auth": "0.7.2"
+    "ember-simple-auth": "0.7.2",
+    "select2": "~3.5.2",
+    "jquery.finger": "~0.1.2",
+    "classie": "~1.0.1",
+    "modernizr": "~2.8.3"
   }
 }

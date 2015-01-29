@@ -1,0 +1,33 @@
+@mixin gridsys() {
+
+/* Template-specific stuff
+
+ */
+
+/* Account for fixed navbar */
+body {
+
+}
+
+/* Finesse the page header spacing */
+.page-header {
+  margin-bottom: 30px;
+}
+.page-header .lead {
+  margin-bottom: 10px;
+}
+
+
+/* Non-responsive overrides
+ *
+ * Utilitze the following CSS to disable the responsive-ness of the container,
+ * grid system, and navbar.
+ */
+
+/* Reset the container */
+.container {
+  max-width: none !important;
+  width: 970px;
+}
+
+}

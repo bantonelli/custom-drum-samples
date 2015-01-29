@@ -1,0 +1,369 @@
+/*===================
+General Slide Styles
+*/
+
+#kb-slide-1 {
+  @include slide-mixin($offwhite);
+
+  > .row {
+    height: 100%;
+    margin: 0;
+  }
+}
+
+#kb-slide-2 {
+  @include slide-mixin($offwhite);
+
+  > .row {
+    height: 100%;
+    margin: 0;
+  }
+}
+
+#kb-slide-3 {
+  @include slide-mixin($offwhite);
+
+  > .row {
+    height: 100%;
+    margin: 0;
+  }
+}
+
+.kb-slide-section-container {
+  width: 95%;
+  height: 780px;
+  overflow: hidden;
+}
+
+
+/*===================
+Slide 1 Styles
+*/
+
+#kb-slide-1-section-1 {
+  @include slide-section-mixin($offwhite, $height: 100%);
+  .filter-row {
+  }
+}
+
+#kb-slide-1-section-2 {
+  @include slide-section-mixin($offwhite, $height: 100%);
+}
+
+/* Styling for the row with the filters
+This is on both of Slide1's sections */
+
+.filter-row {
+  @include menu-list();
+
+  .icon-tags::before {
+    font-family: icomoon;
+    font-size: 30px;
+  }
+}
+
+.filter-row-pocket-effect {
+  box-shadow: 0px 4px 4px -4px rgba(0, 0, 0, 0.1);
+  z-index: 3;
+}
+
+
+
+/* Styling for the main body of kit selection
+and sound selection sections */
+.kit-row, .selection-row {
+  position: relative;
+  background-color: $offwhite;
+  width: 100%;
+  padding: 0%;
+  height: 90%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  .sound-kit, .sound-kit-selection {
+    margin-top: 2%;
+    margin-bottom: 3%;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .tag-selection, .kit-description {
+    @include slide-out(translateY(0%), translateY(-100%), 100%);
+    //@include slide-out(translateX(140%), translateX(300%), 180px);
+    padding: 2%;
+  }
+}
+
+.tag-list {
+  padding: 0;
+  margin: 0;
+  li {
+    height: 40px;
+    margin-left: -20px;
+  }
+  .tag-name {
+    font-family: $paragraph;
+    font-size: 16px;
+    color: $offwhite;
+    margin-top: 10px;
+    text-align: center;
+    white-space: nowrap;
+  }
+}
+
+.kit-description {
+  p {
+    font-family: $paragraph;
+    font-size: 20px;
+    text-indent: 50px;
+    color: $offwhite;
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+
+
+
+/* Sound Selection styles
+Broken down into two subsections (Left and Right)
+*/
+.selection-row {
+  overflow: hidden;
+/* Styles for Left and Right */
+  .selected-kit-media, .selected-kit-sounds {
+    height: 100%;
+    overflow-y: scroll;
+    > div.row {
+      margin: 0;
+    }
+    h4 {
+      @include h1-g-background;
+    }
+  }
+/* Styles for Left Part of Section */
+  .selected-kit-media {
+    .sound-kit-soundcloud {
+      .image, .artwork_image, img {
+        display: none;
+      }
+    }
+  }
+/* Styles for Right Part of Section */
+  .selected-kit-sounds {
+    .sample-list {
+        @include sample-sound(/*fontcolor, playcolor, ft-size, ht, margin*/);
+    }
+  }
+}
+
+.sample-list {
+  padding: 0;
+}
+
+#kitmix .mix {
+  display: none;
+}
+
+
+/**
+ * Fail message styles
+ */
+
+#kitmix {
+  height: 100%;
+}
+
+#kitmix .fail-message{
+  font-family: $paragraph;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  text-align: center;
+  opacity: 0;
+  color: nth($purple-list, 3);
+  pointer-events: none;
+  z-index: 1;
+  -webkit-transition: 150ms;
+  -moz-transition: 150ms;
+  transition: 150ms;
+}
+
+#kitmix .fail-message:before{
+  content: '';
+  display: inline-block;
+  vertical-align: middle;
+  height: 100%;
+}
+
+#kitmix .fail-message span{
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+#kitmix.fail .fail-message{
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.sample-filters {
+  margin-left: 3px;
+}
+
+
+
+
+
+
+/*===================
+Slide 2 Styles
+*/
+
+.kit-details, .kit-details > * {
+  @include h3-ow-background();
+  padding: 0;
+}
+
+.kit-details {
+  margin-bottom: 40px;
+
+  .sample-name-total {
+    color: nth($orange-list, 3);
+  }
+
+  form {
+    padding: 0 30px 0 10px;
+    input {
+      transition: .04s all linear;
+    }
+    input:focus {
+      &::-webkit-input-placeholder {
+        color: transparent;
+      }
+      &::-moz-placeholder {
+        color: transparent;
+      }
+      &:-ms-input-placeholder {
+        color: transparent;
+      }
+      outline-style: none;
+      border: none;
+      color: lighten(nth($lightblue-list, 6), 20);
+      background-color: transparentize(nth($lightblue-list, 3), 0);
+      box-shadow: inset 0px 1px 1px rgba(0,0,0,0.3), 0px 1px 0px rgba(255,255,255,.3), 0px 0px 3px 2px transparentize(nth($lightblue-list, 3), .8);
+    }
+    .name-your-kit {
+      font-family: $headline;
+      font-size: 1.75em;
+      height: 53px;
+      width: 100%;
+      line-height: 53px;
+      padding-left: 10px;
+      color: nth($purple-list, 4);
+      &::-webkit-input-placeholder {
+        color: nth($purple-list, 4);
+        //color: #ffffff;
+        opacity: 1;
+      }
+      &::-moz-placeholder {
+        color: nth($purple-list, 4);
+        //color: #ffffff;
+        opacity: 1;
+      }
+      &:-ms-input-placeholder {
+        color: nth($purple-list, 4);
+        //color: #ffffff;
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.kit-choices, .discounts {
+  width: 100%;
+  height: 780px;
+  padding: 0;
+  margin-top: 100px;
+}
+
+.kb-slide-2-section {
+  overflow-y: auto;
+  @include slide-section-mixin($offwhite, $height: 500px, $padding: 0);
+}
+
+.section-pocket-effect {
+  box-sizing: padding-box;
+  border-style: solid;
+  border-color: nth($purple-list, 6);
+  border-width: 2px 0 2px 0;
+  border-style: dotted;
+//  box-shadow: inset 0px 4px 4px -4px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0px 15px 30px -20px rgba(0, 0, 0, 0.1);
+  z-index: 3;
+  padding: 30px 0;
+}
+
+.sample-choices {
+  margin-bottom: 30px;
+  h4 {
+    @include h3-ow-background();
+    padding: 0;
+  }
+
+  .instrument-choice {
+    margin: 0;
+    > span {
+      font-family: quicksandbold;
+      font-size: 20px;
+      display: inline-block;
+      margin-top: 8px;
+      padding: 0;
+      @include h3-ow-background();
+    }
+  }
+
+  .sample-list {
+    /*fontcolor, playcolor, ft-size, ht, margin*/
+    @include sample-sound($fontSize: 20px, $height: 40px, $margin: 5px 0 15px 3px);
+    .sample-info {
+      height: 40px;
+      padding: 0;
+      .sample-name {
+        height: 25px;
+        line-height: 25px;
+        display: block;
+        margin-bottom: -3px;
+        width: 100%;
+      }
+      .sample-name-kit {
+        height: 15px;
+        line-height: 15px;
+        display: inline-block;
+      }
+    }
+    .select-sound {
+      cursor: pointer;
+      > div::before {
+        color: nth($lightblue-list, 3);
+      }
+    }
+  }
+}
+
+.discount-section {
+  margin-top: 93px;
+  padding: 10px;
+  height: 504px;
+//  background-color: transparentize(nth($purple-list, 5), 0.8);
+  background-color: nth($purple-list, 4);
+  color: $offwhite;
+}
+
+
+/* Styling for the row with the filters
+This is on both of Slide1's sections */
+
+

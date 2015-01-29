@@ -6,4 +6,4 @@ export default function () {
         this.toRoute('protected'),
         this.use('toLeft')
     );
-};
+}

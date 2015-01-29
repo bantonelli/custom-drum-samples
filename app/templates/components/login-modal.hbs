@@ -1,9 +1,85 @@
-<h3>Login</h3>
+                <div class="container" style="width: 1000px;"> <!-- this is the entire modal form, including the background -->
+                    <div class="row"> <!-- this is the container wrapper -->
+                        <div id="" class="col-xs-6"> <!-- log in form -->
+                            <form class="cd-form" {{action 'login' on='submit'}}>
+                                <p class="fieldset">
+                                    <label class="image-replace cd-email" for="signin-email">User Name</label>
+                                    {{input id="signin-email" value=identification placeholder='Enter Login' class="full-width has-padding has-border"}}
+                                    <span class="cd-error-message">Error message here!</span>
+                                </p>
 
-<form {{action 'login' on='submit'}}>
-  <label for="identification">Login</label>
-  {{input value=identification placeholder='Enter Login'}}
-  <label for="password">Password</label>
-  {{input value=password placeholder='Enter Password' type='password'}}
-  <button type="submit">Login</button>
-</form>
+                                <p class="fieldset">
+                                    <label class="image-replace cd-password" for="signin-password">Password</label>
+                                    {{input class="full-width has-padding has-border" id="signin-password" value=password placeholder='Enter Password' type='password'}}
+                                    <a href="#0" class="hide-password">Hide</a>
+                                    <span class="cd-error-message">Error message here!</span>
+                                </p>
+
+                                <p class="fieldset">
+                                    <input type="checkbox" id="remember-me" checked>
+                                    <label for="remember-me">Remember me</label>
+                                </p>
+
+                                <p class="fieldset">
+                                    <input class="full-width" type="submit" value="Login">
+                                </p>
+                            </form>
+
+                            <p class="cd-form-bottom-message"><a href="#0">Forgot your password?</a></p>
+                            <!-- <a href="#0" class="cd-close-form">Close</a> -->
+                        </div> <!-- cd-login -->
+
+                        <div id="" class="col-xs-6"> <!-- sign up form -->
+                            <form class="cd-form">
+                                <p class="fieldset">
+                                    <label class="image-replace cd-username" for="signup-username">Username</label>
+                                    <input class="full-width has-padding has-border" id="signup-username" type="text" placeholder="Username">
+                                    <span class="cd-error-message">Error message here!</span>
+                                </p>
+
+                                <p class="fieldset">
+                                    <label class="image-replace cd-email" for="signup-email">E-mail</label>
+                                    <input class="full-width has-padding has-border" id="signup-email" type="email" placeholder="E-mail">
+                                    <span class="cd-error-message">Error message here!</span>
+                                </p>
+
+                                <p class="fieldset">
+                                    <label class="image-replace cd-password" for="signup-password">Password</label>
+                                    <input class="full-width has-padding has-border" id="signup-password" type="text"  placeholder="Password">
+                                    <a href="#0" class="hide-password">Hide</a>
+                                    <span class="cd-error-message">Error message here!</span>
+                                </p>
+
+                                <p class="fieldset">
+                                    <input type="checkbox" id="accept-terms">
+                                    <label for="accept-terms">I agree to the <a href="#0">Terms</a></label>
+                                </p>
+
+                                <p class="fieldset">
+                                    <input class="full-width has-padding" type="submit" value="Create account">
+                                </p>
+                            </form>
+
+                            <!-- <a href="#0" class="cd-close-form">Close</a> -->
+                        </div> <!-- cd-signup -->
+
+                        <div id="cd-reset-password"> <!-- reset password form -->
+                            <p class="cd-form-message">Lost your password? Please enter your email address. You will receive a link to create a new password.</p>
+
+                            <form class="cd-form">
+                                <p class="fieldset">
+                                    <label class="image-replace cd-email" for="reset-email">E-mail</label>
+                                    <input class="full-width has-padding has-border" id="reset-email" type="email" placeholder="E-mail">
+                                    <span class="cd-error-message">Error message here!</span>
+                                </p>
+
+                                <p class="fieldset">
+                                    <input class="full-width has-padding" type="submit" value="Reset password">
+                                </p>
+                            </form>
+
+                            <p class="cd-form-bottom-message"><a href="#0">Back to log-in</a></p>
+                        </div> <!-- cd-reset-password -->
+                        <a href="#0" class="cd-close-form">Close</a>
+                    </div> <!-- cd-user-modal-container -->
+                </div> <!-- cd-user-modal -->

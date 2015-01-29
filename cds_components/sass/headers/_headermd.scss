@@ -1,0 +1,47 @@
+/*
+nav {
+  @include md() {
+    &::before {
+      font-family: icomoon;
+      content: "\e600";
+      position: absolute;
+      z-index: 5000;
+      width: 100%;
+      text-align: center;
+      height: 50px;
+      line-height: 50px;
+    }
+    position: relative;
+    div.nav-wrapper {
+      background-color: nth($gray-list, 5);
+      vertical-align: top;
+      display: inline-block;
+      width: 100%;
+      position: absolute;
+      top: 50px;
+      -webkit-transition: .3s all ease-in;
+      -moz-transition: .3s all ease-in;
+      -ms-transition: .3s all ease-in;
+      -o-transition: .3s all ease-in;
+      transition: .3s all ease-in;
+      height: 0;
+      overflow: hidden;
+    }
+    &:hover {
+      div.nav-wrapper {
+        height: 200px;
+      }
+    }
+  }
+}
+
+.nav-link {
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  &:hover {
+    background-color: nth($lightblue-list, 2);
+  }
+}
+*/
+
