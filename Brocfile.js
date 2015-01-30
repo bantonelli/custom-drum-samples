@@ -3,6 +3,7 @@
 var EmberApp = require('ember-cli/lib/broccoli/ember-app');
 var mergeTrees = require('broccoli-merge-trees');
 var pickFiles = require('broccoli-static-compiler');
+var compileSass = require('broccoli-sass');
 
 var app = new EmberApp();
 
@@ -80,6 +81,11 @@ var images = pickFiles('vendor/images', {
     destDir: '/images'
 });
 
+
+// Sass/CSS
+var styles = compileSass(['app/styles'], 'app.scss', '/assets/custom-drum-samples.css');
+
+
 module.exports = mergeTrees(
     [
         app.toTree(),
@@ -89,8 +95,9 @@ module.exports = mergeTrees(
         icomoonFont,
         quicksandFont,
         images,
-        vendorJS
-    ]
+        vendorJS,
+        styles
+    ], {overwrite: true}
 );
 
 /*
