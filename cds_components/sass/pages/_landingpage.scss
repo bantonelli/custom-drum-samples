@@ -20,7 +20,7 @@
   }
   .logo {
     height: 120px;
-    background-image: url("/assets/images/New-Logo.png");
+    background-image: url("/images/New-Logo.png");
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
@@ -168,16 +168,16 @@
   }
 
   #step-1 {
-  background-image: url("/assets/images/Step-1.png");
+  background-image: url("/images/Step-1.png");
   }
   #step-2 {
-    background-image: url("/assets/images/Step-2.png");
+    background-image: url("/images/Step-2.png");
     h3 {
       margin-left: 15%;
     }
   }
   #step-3 {
-    background-image: url("/assets/images/Step-3.png");
+    background-image: url("/images/Step-3.png");
   }
 }
 
@@ -190,7 +190,7 @@
       @include h1-g-background;
     }
     .logo {
-      background-image: url("/assets/images/Step-3.png");
+      background-image: url("/images/Step-3.png");
     }
   }
 
@@ -216,16 +216,16 @@
 
   // Second Section pics
   #step-1-b {
-    background-image: url("/assets/images/Step-1b.png");
+    background-image: url("/images/Step-1b.png");
   }
   #step-2-b {
-    background-image: url("/assets/images/Step-2b.png");
+    background-image: url("/images/Step-2b.png");
     h3 {
       margin-left: 15%;
     }
   }
   #step-3-b {
-    background-image: url("/assets/images/Step-3b.png");
+    background-image: url("/images/Step-3b.png");
   }
 
 }

@@ -1850,6 +1850,14 @@ button {
   font-family: "enigmaticregular";
 }
 
+div.app-view {
+  height: 100%;
+}
+
+.lm-container {
+  z-index: 10000;
+}
+
 /* GRID SYSTEM
 ==================*/
 /* Template-specific stuff
@@ -3100,7 +3108,7 @@ div.color-scheme {
 }
 .title-tagline-logo .logo {
   height: 120px;
-  background-image: url("/assets/images/New-Logo.png");
+  background-image: url("/images/New-Logo.png");
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
@@ -3229,16 +3237,16 @@ div.color-scheme {
   text-shadow: 0px 0px 1px #c4bccf;
 }
 #lp-slide-section-1 #step-1 {
-  background-image: url("/assets/images/Step-1.png");
+  background-image: url("/images/Step-1.png");
 }
 #lp-slide-section-1 #step-2 {
-  background-image: url("/assets/images/Step-2.png");
+  background-image: url("/images/Step-2.png");
 }
 #lp-slide-section-1 #step-2 h3 {
   margin-left: 15%;
 }
 #lp-slide-section-1 #step-3 {
-  background-image: url("/assets/images/Step-3.png");
+  background-image: url("/images/Step-3.png");
 }
 
 #lp-slide-section-2 .title-tagline-logo .title-tagline {
@@ -3246,7 +3254,7 @@ div.color-scheme {
   text-shadow: 1px 1px 1px rgba(221, 221, 220, 0.9);
 }
 #lp-slide-section-2 .title-tagline-logo .logo {
-  background-image: url("/assets/images/Step-3.png");
+  background-image: url("/images/Step-3.png");
 }
 #lp-slide-section-2 .sales-pitch {
   color: #1d0e32;
@@ -3269,16 +3277,16 @@ div.color-scheme {
   text-shadow: 0px 0px 1px #aa9fba;
 }
 #lp-slide-section-2 #step-1-b {
-  background-image: url("/assets/images/Step-1b.png");
+  background-image: url("/images/Step-1b.png");
 }
 #lp-slide-section-2 #step-2-b {
-  background-image: url("/assets/images/Step-2b.png");
+  background-image: url("/images/Step-2b.png");
 }
 #lp-slide-section-2 #step-2-b h3 {
   margin-left: 15%;
 }
 #lp-slide-section-2 #step-3-b {
-  background-image: url("/assets/images/Step-3b.png");
+  background-image: url("/images/Step-3b.png");
 }
 
 #about-us-slide-1 {

@@ -1,6 +1,8 @@
 /* global require, module */
 
 var EmberApp = require('ember-cli/lib/broccoli/ember-app');
+var mergeTrees = require('broccoli-merge-trees');
+var pickFiles = require('broccoli-static-compiler');
 
 var app = new EmberApp();
 
@@ -26,112 +28,70 @@ app.import('bower_components/select2/select2.min.js');
 
 
 // JS FILES VENDOR
-app.import('vendor/js/detectmobilebrowser.js');
-app.import('vendor/js/landing-page.js');
-app.import('vendor/js/modal-login-nav.js');
-app.import('vendor/js/sidebarEffects.js');
-app.import('vendor/js/sitewide-effects.js');
+var vendorJS = pickFiles('vendor/js', {
+    srcDir: '/',
+    files: ['*.js'],
+    destDir: '/js'
+});
 
 // Enigmatic Bold
-app.import('vendor/fonts/enigmatic_bold_macroman/EnigmaB_2-webfont.eot', {
-    destDir: 'fonts/enigmatic_bold_macroman'
-});
-app.import('vendor/fonts/enigmatic_bold_macroman/EnigmaB_2-webfont.svg', {
-    destDir: 'fonts/enigmatic_bold_macroman'
-});
-app.import('vendor/fonts/enigmatic_bold_macroman/EnigmaB_2-webfont.ttf', {
-    destDir: 'fonts/enigmatic_bold_macroman'
-});
-app.import('vendor/fonts/enigmatic_bold_macroman/EnigmaB_2-webfont.woff', {
-    destDir: 'fonts/enigmatic_bold_macroman'
+var enigmaticBoldFont = pickFiles('vendor/fonts/enigmatic_bold_macroman', {
+    srcDir: '/',
+    files: ['*.eot', '*.svg', '*.ttf', '*.woff'],
+    destDir: '/fonts/enigmatic_bold_macroman'
 });
 
 
 // Enigmatic Italic
-app.import('vendor/fonts/enigmatic_italic_macroman/Enigma_2i-webfont.eot', {
-    destDir: 'fonts/enigmatic_italic_macroman'
-});
-app.import('vendor/fonts/enigmatic_italic_macroman/Enigma_2i-webfont.svg', {
-    destDir: 'fonts/enigmatic_italic_macroman'
-});
-app.import('vendor/fonts/enigmatic_italic_macroman/Enigma_2i-webfont.ttf', {
-    destDir: 'fonts/enigmatic_italic_macroman'
-});
-app.import('vendor/fonts/enigmatic_italic_macroman/Enigma_2i-webfont.woff', {
-    destDir: 'fonts/enigmatic_italic_macroman'
+var enigmaticItalicFont = pickFiles('vendor/fonts/enigmatic_italic_macroman', {
+    srcDir: '/',
+    files: ['*.eot', '*.svg', '*.ttf', '*.woff'],
+    destDir: '/fonts/enigmatic_italic_macroman'
 });
 
 
 // Enigmatic Regular
-app.import('vendor/fonts/enigmatic_regular_macroman/Enigma__2-webfont.eot', {
-    destDir: 'fonts/enigmatic_regular_macroman'
-});
-app.import('vendor/fonts/enigmatic_regular_macroman/Enigma__2-webfont.svg', {
-    destDir: 'fonts/enigmatic_regular_macroman'
-});
-app.import('vendor/fonts/enigmatic_regular_macroman/Enigma__2-webfont.ttf', {
-    destDir: 'fonts/enigmatic_regular_macroman'
-});
-app.import('vendor/fonts/enigmatic_regular_macroman/Enigma__2-webfont.woff', {
-    destDir: 'fonts/enigmatic_regular_macroman'
+var enigmaticRegularFont = pickFiles('vendor/fonts/enigmatic_regular_macroman', {
+    srcDir: '/',
+    files: ['*.eot', '*.svg', '*.ttf', '*.woff'],
+    destDir: '/fonts/enigmatic_regular_macroman'
 });
 
 
 // Icomoon
-app.import('vendor/fonts/icomoon/fonts/icomoon.eot', {
-    destDir: 'fonts/icomoon/fonts'
+var icomoonFont = pickFiles('vendor/fonts/icomoon/fonts', {
+    srcDir: '/',
+    files: ['*.eot', '*.svg', '*.ttf', '*.woff'],
+    destDir: '/fonts/icomoon/fonts'
 });
-app.import('vendor/fonts/icomoon/fonts/icomoon.svg', {
-    destDir: 'fonts/icomoon/fonts'
-});
-app.import('vendor/fonts/icomoon/fonts/icomoon.ttf', {
-    destDir: 'fonts/icomoon/fonts'
-});
-app.import('vendor/fonts/icomoon/fonts/icomoon.woff', {
-    destDir: 'fonts/icomoon/fonts'
+
+// Quicksand
+var quicksandFont = pickFiles('vendor/fonts/quicksand', {
+    srcDir: '/',
+    files: ['*.eot', '*.svg', '*.ttf', '*.woff', '*.woff2'],
+    destDir: '/fonts/quicksand'
 });
 
 
-// Quicksand Regular
-app.import('vendor/fonts/quicksand/quicksand-regular.eot', {
-    destDir: 'fonts/quicksand'
-});
-app.import('vendor/fonts/quicksand/quicksand-regular.svg', {
-    destDir: 'fonts/quicksand'
-});
-app.import('vendor/fonts/quicksand/quicksand-regular.ttf', {
-    destDir: 'fonts/quicksand'
-});
-app.import('vendor/fonts/quicksand/quicksand-regular.woff', {
-    destDir: 'fonts/quicksand'
-});
-app.import('vendor/fonts/quicksand/quicksand-regular.woff2', {
-    destDir: 'fonts/quicksand'
+// Images
+var images = pickFiles('vendor/images', {
+    srcDir: '/',
+    files: ['*.png', '**/*.png'],
+    destDir: '/images'
 });
 
-
-// Quicksand Bold
-app.import('vendor/fonts/quicksand/quicksand-bold.eot', {
-    destDir: 'fonts/quicksand'
-});
-app.import('vendor/fonts/quicksand/quicksand-bold.svg', {
-    destDir: 'fonts/quicksand'
-});
-app.import('vendor/fonts/quicksand/quicksand-bold.ttf', {
-    destDir: 'fonts/quicksand'
-});
-app.import('vendor/fonts/quicksand/quicksand-bold.woff', {
-    destDir: 'fonts/quicksand'
-});
-app.import('vendor/fonts/quicksand/quicksand-bold.woff2', {
-    destDir: 'fonts/quicksand'
-});
-
-
-
-
-
-module.exports = app.toTree();
+module.exports = mergeTrees(
+    [
+        app.toTree(),
+        enigmaticBoldFont,
+        enigmaticItalicFont,
+        enigmaticRegularFont,
+        icomoonFont,
+        quicksandFont,
+        images,
+        vendorJS
+    ]
+);
 
 /*
                         'bower_components/modernizr/modernizr.js',

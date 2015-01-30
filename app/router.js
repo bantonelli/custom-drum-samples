@@ -6,18 +6,18 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-    this.modal('login-modal', {
-        withParams: ['login'],
-        otherParams: {
-            identification: "identification",
-            password: "password"
-        },
-        actions: {
-            authenticate: 'authenticate'
-        }
-    });
-    this.route("login");
-    this.route("protected");
+  this.modal('login-modal', {
+      withParams: ['login'],
+      otherParams: {
+          identification: "identification",
+          password: "password"
+      },
+      actions: {
+          authenticate: 'authenticate'
+      }
+  });
+  this.route("login");
+  this.route("protected");
 });
 
 export default Router;

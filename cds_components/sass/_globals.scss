@@ -151,6 +151,13 @@ button {
   font-family: $headline;
 }
 
+div.app-view {
+  height: 100%;
+}
+
+.lm-container {
+  z-index: 10000;
+}
 
 
 /* GRID SYSTEM

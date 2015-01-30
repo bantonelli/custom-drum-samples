@@ -13,6 +13,7 @@ var SessionWithCurrentUser = Session.extend({
   }.property('user_id')
 });
 
+
 export default {
   name: 'customize-session',
   initialize: function(container) {
