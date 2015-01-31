@@ -77,7 +77,7 @@ var quicksandFont = pickFiles('vendor/fonts/quicksand', {
 // Images
 var images = pickFiles('vendor/images', {
     srcDir: '/',
-    files: ['*.png', '**/*.png'],
+    files: ['*.png', '**/*.png', '*.jpg'],
     destDir: '/images'
 });
 

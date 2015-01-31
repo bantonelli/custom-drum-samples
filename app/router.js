@@ -17,8 +17,10 @@ Router.map(function() {
       }
   });
   this.route("login");
-  this.route("protected");
-  this.route("legal");
+  this.resource("protected");
+  this.resource("legal", function (){
+  });
+  this.route("about");
 });
 
 export default Router;

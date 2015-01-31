@@ -1,0 +1,13 @@
+<div class="row tab-selection">
+    <ul class="row top-menu">
+        {{#each pane in panes}}
+            {{#nav-tab paneId=pane.paneId}}{{pane.name}}{{/nav-tab}}
+        {{/each}}
+    </ul>
+</div>
+
+<div class="row tab-content">
+    {{yield}}
+</div>
+
+

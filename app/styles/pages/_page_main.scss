@@ -9,6 +9,17 @@
   background-color: $offwhite;
 }
 
+// For tab based pages (uses ember tab-view component)
+.tab-content {
+  .tab-pane {
+    display: none;
+    &.active {
+      display: block;
+    }
+  }
+}
+
+
 
 /* App Page Styling
 ======================================================== */
