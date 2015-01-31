@@ -18,6 +18,7 @@ Router.map(function() {
   });
   this.route("login");
   this.route("protected");
+  this.route("legal");
 });
 
 export default Router;
