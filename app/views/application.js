@@ -221,7 +221,7 @@ export default Ember.View.extend({
                     if (input.val() == input.attr('placeholder')) {
                         input.val('');
                     }
-                })
+                });
             });
         }
 
