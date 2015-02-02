@@ -63,15 +63,6 @@ export default Ember.View.extend({
                 init();
             });
             SidebarMenuEffects();
-
-
-            // SELECT BOX CODE
-            Ember.$("#e2").select2({
-                formatNoMatches: function (term) {
-                    return "Whoops!! <br> Instrument Not Found!";
-                }
-            });
-
             //    if (jQuery.browser.mobile == true) {
             //        // Defined in landing-page.js
             //        tapToTouch();

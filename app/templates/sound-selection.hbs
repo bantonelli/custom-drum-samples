@@ -1,0 +1,135 @@
+<div id="kb-slide-1" class="slide">
+    <div class="slide-width-container">
+        <div class="row">
+            <section id="kb-slide-1-section-1" class="col-xs-6">
+                <div id="KitFilter" class="kb-slide-section-container">
+
+                    <div class="row filter-row filter-row-pocket-effect">
+                        <div class="col-xs-3 filters reset-filters">
+                            <ul class="row top-menu">
+                                <li id="Reset" class="col-xs-12 menu-item">Reset</li>
+                            </ul>
+                        </div>
+                        <div class="col-xs-9 filters">
+                            <ul class="row top-menu">
+                                <li class="col-xs-2 menu-item menu-word">Filters:</li>
+                                <li class="col-xs-2 menu-item">New</li>
+                                <li class="col-xs-2 menu-item">A-Z</li>
+                                <li class="col-xs-3 menu-item">On Sale</li>
+                                <li class="col-xs-2 menu-item icon-tags" {{action 'showTags'}}></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="row kit-row">
+                        <div {{bind-attr class=":tag-selection tagsHidden:ng-hide"}}>
+                            <ul class="row tag-list">
+                                <!-- Loop the li for Tags-->
+
+                                <!--
+                                <li class="col-xs-3">
+                                    <div class="row">
+                                        <button id="Reset" class="col-xs-12 tag-name">All</button>
+                                    </div>
+                                </li>
+                                -->
+                                {{#each tag in tags}}
+                                <fieldset class="col-xs-4">
+                                    <li>
+                                        <div class="row">
+                                            <div class="col-xs-8 tag-name">{{tag}}</div>
+                                            <div class="col-xs-4 select-sound">
+                                                <!-- .squaredThree -->
+                                                <div class="squaredThree">
+                                                    <input type="checkbox" {{bind-attr id=tag}} name="check" {{bind-attr value=tag}}/>
+                                                    <label {{bind-attr for=tag}}></label>
+                                                </div>
+                                                <!-- end .squaredThree -->
+                                            </div>
+                                        </div>
+                                    </li>
+                                </fieldset>
+                                {{/each}}
+                            </ul>
+                        </div>
+                        <div id="kitmix" ng-click="filter.tagsVisible = false">
+                            {{#each kit in controllers.kitbuilder.kits}}
+                                <div {{bind-attr class=":col-xs-4 :sound-kit :mix kit.tags"}} data-myorder="$index" ng-click="filter.setCurrent(kit)">
+                                    <img {{bind-attr src=kit.image}} {{bind-attr alt=kit.name}}>
+                                </div>
+                            {{/each}}
+                            <div class="fail-message">
+                                        <span>No items were found matching the selected filters. <br>
+                                            Reset and Try again!</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="kb-slide-1-section-2" class="col-xs-6">
+                <div class="kb-slide-section-container">
+
+                    <div class="row filter-row filter-row-pocket-effect">
+                        <form class="col-xs-4">
+                            {{
+                                view "select"
+                                content=sampleTypes
+                                value=selectedSampleType
+                                prompt="Select Instrument"
+
+                            }}
+                        </form>
+
+                        <div class="col-xs-4 sample-filters">
+                            <ul class="row top-menu">
+                                <li class="col-xs-12 menu-item" ng-click="filter.showDescription()" ng-class="{active:filter.description}">Kit Description</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="row selection-row">
+                        <div class="kit-description" ng-show="filter.description">
+                            <p>
+                                 filter.currentKit.description 
+                            </p>
+                        </div>
+                        <div class="col-xs-6 selected-kit-media" ng-click="filter.description = false">
+                            <div class="row">
+                                <div class="col-xs-12 sound-kit-selection">
+                                    <h4> filter.currentKit.name </h4>
+                                    <img ng-src="filter.currentKit.image" alt=" filter.currentKit.name ">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12 sound-kit-soundcloud">
+                                    <iframe width="100%" height="100" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/160710007&amp;color=ff5500&amp;auto_play=false&amp;hide_related=true&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_artwork=false"></iframe>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-xs-6 selected-kit-sounds" ng-click="filter.description = false">
+                            <div class="row">
+                                <div class="col-xs-12 sound-kit-selection">
+                                    <h4>Kick Drums</h4>
+                                    <ul class="sample-list">
+                                        <li class="row sample-sound" ng-repeat="sample in filter.currentKit.samples">
+                                            <span class="col-xs-7 sample-name"> sample.name </span>
+                                            <div class="col-xs-2 sample-play icon-play"></div>
+                                            <div class="col-xs-3 select-sound">
+                                                <!-- .squaredThree -->
+                                                <div class="squaredThree">
+                                                    <input type="checkbox" value="None" id=" sample.name " name="check" />
+                                                    <label for=" sample.name "></label>
+                                                </div>
+                                                <!-- end .squaredThree -->
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,18 @@
+<div class="row">
+    <div class="col-xs-2 app-id">
+            <h5>
+                {{appId}}
+            </h5>
+    </div>
+
+    <div class="col-xs-10 slide-navigation">
+        <div class="row">
+            {{#each link in appRoutes}}
+            <div class="col-xs-4 item-holder">
+                {{#link-to link.route class="slide-nav-item"}}{{link.displayLink}}{{/link-to}}
+            </div>
+            {{/each}}
+        </div>
+    </div>
+
+</div>
