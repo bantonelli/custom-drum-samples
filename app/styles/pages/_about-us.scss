@@ -7,11 +7,48 @@
   @include slide-section-mixin($offwhite);
 }
 
-.titles {
+.about-topic, .about-first-topic {
+  padding-bottom: 40px;
+  margin-bottom: 20px;
+}
+
+.about-topic {
+  @include border-separation-bottom();
+}
+
+.about-title {
+  margin: 10px 0;
   @include h1-ow-background();
 }
 
 .about-para {
-  margin: 10% 0;
-  padding: 0 10%;
+  margin: 0% 0;
+  padding: 0 0%;
+
+  h4.row {
+    text-transform: capitalize;
+  }
+
+  h2.row, h4.row {
+    margin-top: 5px;
+    margin-bottom: 15px;
+    @include h1-ow-background();
+  }
+
+  p {
+    text-indent: 50px;
+    padding: 0;
+  }
+
+  p, dl {
+    font-size: 0.8em;
+    line-height: 1.5em;
+    @include p-ow-background;
+    //color: nth($purple-list, 1);
+  }
+
+  img {
+    margin: 40px 0 0 0;
+    padding: 0;
+  }
 }
