@@ -52,7 +52,7 @@
                             </ul>
                         </div>
                         <div id="kitmix" ng-click="filter.tagsVisible = false">
-                            {{#each kit in controllers.kitbuilder.kits}}
+                            {{#each kit in controllers.kitbuilder.model}}
                                 <div {{bind-attr class=":col-xs-4 :sound-kit :mix kit.tags"}} data-myorder="$index" ng-click="filter.setCurrent(kit)">
                                     <img {{bind-attr src=kit.image}} {{bind-attr alt=kit.name}}>
                                 </div>

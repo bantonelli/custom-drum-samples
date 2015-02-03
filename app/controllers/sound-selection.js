@@ -8,14 +8,13 @@ export default Ember.Controller.extend({
     newKits: false,
     alphabetical: false,
     onSale: false,
-    kits: function () {
-        return this.get('controllers.kitbuilder.kits');
-    }.property('controllers.kitbuilder.kits'),
+    kits: Ember.computed.alias('controllers.kitbuilder.model'),
     tags: function () {
+        var kitbuilder = this.get('controllers.kitbuilder');
+        var kits = kitbuilder.get('model.content');
         var totalTags = [];
-        var kits = this.get('kits');
         for (var kit = 0; kit < kits.length; kit++){
-            var tags = kits[kit].tags;
+            var tags = kits[kit].get('tags');
             for (var tagIndex = 0; tagIndex < tags.length; tagIndex++) {
                 if (Ember.$.inArray(tags[tagIndex], totalTags) === -1) {
                     totalTags.push(tags[tagIndex]);
