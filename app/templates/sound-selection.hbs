@@ -16,7 +16,7 @@
                                 <li class="col-xs-2 menu-item">New</li>
                                 <li class="col-xs-2 menu-item">A-Z</li>
                                 <li class="col-xs-3 menu-item">On Sale</li>
-                                <li class="col-xs-2 menu-item icon-tags" {{action 'showTags'}}></li>
+                                <li {{bind-attr class=":col-xs-2 :menu-item :icon-tags tagsHidden::active"}} {{action 'showTags'}}></li>
                             </ul>
                         </div>
                     </div>
@@ -40,8 +40,8 @@
                                             <div class="col-xs-4 select-sound">
                                                 <!-- .squaredThree -->
                                                 <div class="squaredThree">
-                                                    <input type="checkbox" {{bind-attr id=tag}} name="check" {{bind-attr value=tag}}/>
-                                                    <label {{bind-attr for=tag}}></label>
+                                                    <input type="checkbox" id="squaredThree-{{unbound tag}}" name="check" value=".{{unbound tag}}"/>
+                                                    <label for="squaredThree-{{unbound tag}}"></label>
                                                 </div>
                                                 <!-- end .squaredThree -->
                                             </div>
@@ -51,10 +51,10 @@
                                 {{/each}}
                             </ul>
                         </div>
-                        <div id="kitmix" ng-click="filter.tagsVisible = false">
+                        <div id="kitmix" {{action 'closeTags'}}>
                             {{#each kit in controllers.kitbuilder.model}}
-                                <div {{bind-attr class=":col-xs-4 :sound-kit :mix kit.tags"}} data-myorder="$index" ng-click="filter.setCurrent(kit)">
-                                    <img {{bind-attr src=kit.image}} {{bind-attr alt=kit.name}}>
+                                <div {{bind-attr class=":col-xs-4 :sound-kit :mix kit.displayedTags"}} {{bind-attr data-myorder=_view.contentIndex}} {{action 'setCurrent' kit}}>
+                                    <img src="{{unbound kit.image}}" alt="{{unbound kit.name}}">
                                 </div>
                             {{/each}}
                             <div class="fail-message">
@@ -71,6 +71,7 @@
 
                     <div class="row filter-row filter-row-pocket-effect">
                         <form class="col-xs-4">
+                            <div class="styled-select icon-arrow-down3">
                             {{
                                 view "select"
                                 content=sampleTypes
@@ -78,51 +79,53 @@
                                 prompt="Select Instrument"
 
                             }}
+                            </div>
                         </form>
 
                         <div class="col-xs-4 sample-filters">
                             <ul class="row top-menu">
-                                <li class="col-xs-12 menu-item" ng-click="filter.showDescription()" ng-class="{active:filter.description}">Kit Description</li>
+                                <li class="col-xs-12 menu-item" {{action 'showDescription'}} {{bind-attr class=":col-xs-12 :menu-item descriptionHidden::active"}}>Kit Description</li>
                             </ul>
                         </div>
                     </div>
                     <div class="row selection-row">
-                        <div class="kit-description" ng-show="filter.description">
+                        <div {{bind-attr class=":kit-description descriptionHidden:ng-hide"}}>
                             <p>
-                                 filter.currentKit.description 
+                                 {{currentKit.description}}
                             </p>
                         </div>
-                        <div class="col-xs-6 selected-kit-media" ng-click="filter.description = false">
+                        <div class="col-xs-6 selected-kit-media" {{action 'closeDescription'}}>
                             <div class="row">
                                 <div class="col-xs-12 sound-kit-selection">
-                                    <h4> filter.currentKit.name </h4>
-                                    <img ng-src="filter.currentKit.image" alt=" filter.currentKit.name ">
+                                    <h4> {{currentKit.name}} </h4>
+                                    <img ng-src="{{unbound currentKit.image}}" alt="{{unbound currentKit.name}}">
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-xs-12 sound-kit-soundcloud">
-                                    <iframe width="100%" height="100" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/160710007&amp;color=ff5500&amp;auto_play=false&amp;hide_related=true&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_artwork=false"></iframe>
+                                    <iframe width="100%" height="100" scrolling="no" frameborder="no" {{bind-attr src=currentKit.soundcloud}}></iframe>
                                 </div>
                             </div>
-
                         </div>
-                        <div class="col-xs-6 selected-kit-sounds" ng-click="filter.description = false">
+                        <div class="col-xs-6 selected-kit-sounds" {{action 'closeDescription'}}>
                             <div class="row">
                                 <div class="col-xs-12 sound-kit-selection">
-                                    <h4>Kick Drums</h4>
+                                    <h4>{{selectedSampleType}}</h4>
                                     <ul class="sample-list">
-                                        <li class="row sample-sound" ng-repeat="sample in filter.currentKit.samples">
-                                            <span class="col-xs-7 sample-name"> sample.name </span>
-                                            <div class="col-xs-2 sample-play icon-play"></div>
-                                            <div class="col-xs-3 select-sound">
-                                                <!-- .squaredThree -->
-                                                <div class="squaredThree">
-                                                    <input type="checkbox" value="None" id=" sample.name " name="check" />
-                                                    <label for=" sample.name "></label>
+                                        {{#each sample in currentKit.samples}}
+                                            <li class="row sample-sound">
+                                                <span class="col-xs-7 sample-name">{{sample.name}}</span>
+                                                <div class="col-xs-2 sample-play icon-play"></div>
+                                                <div class="col-xs-3 select-sound">
+                                                    <!-- .squaredThree -->
+                                                    <div class="squaredThree">
+                                                        <input type="checkbox" value="None" id="{{unbound sample.name}}" name="check" />
+                                                        <label for="{{unbound sample.name}}"></label>
+                                                    </div>
+                                                    <!-- end .squaredThree -->
                                                 </div>
-                                                <!-- end .squaredThree -->
-                                            </div>
-                                        </li>
+                                            </li>
+                                        {{/each}}
                                     </ul>
                                 </div>
                             </div>

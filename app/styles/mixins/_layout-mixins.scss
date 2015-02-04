@@ -94,14 +94,42 @@
   form {
     margin-left: 0px;
     margin-top: 10px;
-    .select2-container {
+    //.select2-container {
+    .styled-select {
+      position: relative;
+      overflow: hidden;
       color: $offwhite;
       font-family: $paragraph;
       height: 50px;
       width: 115%;
       background-image: none;
       background-color: nth($purple-list, 4);
-      .select2-choice, .select2-choice > .select2-chosen {
+      font-size: 18px;
+      text-align: center;
+      //.select2-choice, .select2-choice > .select2-chosen {
+      &::before {
+        font-family: icomoon;
+        position: absolute;
+        right: 0px;
+        top: 0;
+        height: 50px;
+        width: 30px;
+        font-size: 24px;
+        line-height: 49px;
+        background-color: nth($purple-list, 4);
+      }
+      select {
+        background: transparent;
+        border: none;
+        background: transparent;
+        background-image: none;
+        -webkit-appearance: none;
+        outline: none;
+      }
+      select:focus, select:-moz-focus-inner {
+        outline: none;
+      }
+      option {
         background-image: none;
         background-color: nth($purple-list, 4);
         margin-top: -1px;
@@ -111,7 +139,6 @@
         padding-right: 17px;
         font-size: 18px;
         font-family: $paragraph;
-        text-align: center;
         color: $offwhite;
       }
     }

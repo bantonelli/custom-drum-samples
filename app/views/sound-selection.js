@@ -3,7 +3,7 @@ import Ember from 'ember';
 export default Ember.View.extend({
     classNames: ['slide-view'],
     // Put jquery/DOM manipulation here
-    didInsertElement: function (){
+    parentViewDidChange: function (){
         this._super();
 
         Ember.run.scheduleOnce('afterRender', this, function(){

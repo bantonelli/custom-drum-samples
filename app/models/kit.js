@@ -6,12 +6,17 @@ var Kit = DS.Model.extend({
     on_sale: DS.attr( 'string' ),
     soundcloud: DS.attr( 'string' ),
     image: DS.attr( 'string' ),
-    tags: DS.attr( 'string' ),
+    tags: DS.attr(),
     description: DS.attr( 'string' ),
     price: DS.attr( 'number' ),
     sale: DS.attr( 'number' ),
     user_rating: DS.attr( 'string' ),
-    samples: DS.hasMany('sample', { async: true })
+    samples: DS.hasMany('sample', { async: true }),
+    displayedTags: function() {
+        var tagString;
+        tagString = this.get('tags').join(' ');
+        return tagString;
+    }.property('tags')
 });
 
 Kit.reopenClass({
@@ -49,7 +54,7 @@ Kit.reopenClass({
             "name":"Attack of the 808's",
             "new":true,
             "on_sale":false,
-            "soundcloud":"https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/160710007&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true",
+            "soundcloud":"https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/179409583&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true",
             "image":"kits/Attack_Of_The_808s/ATTACK-OF-THE-808S-3250.jpg",
             "tags":["808", "Trap", "Layered", "Urban"],
             "description":"A really Good Kit",

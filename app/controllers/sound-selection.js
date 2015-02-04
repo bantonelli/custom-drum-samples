@@ -8,10 +8,9 @@ export default Ember.Controller.extend({
     newKits: false,
     alphabetical: false,
     onSale: false,
-    kits: Ember.computed.alias('controllers.kitbuilder.model'),
+    kits: Ember.computed.alias('model'),
     tags: function () {
-        var kitbuilder = this.get('controllers.kitbuilder');
-        var kits = kitbuilder.get('model.content');
+        var kits = this.get('kits.content');
         var totalTags = [];
         for (var kit = 0; kit < kits.length; kit++){
             var tags = kits[kit].get('tags');
@@ -23,13 +22,13 @@ export default Ember.Controller.extend({
         }
         return totalTags;
     }.property('kits'),
-    description: false,
+    descriptionHidden: true,
     currentKit: function () {
         return this.get('kits')[0];
     },
     actions: {
         showDescription: function (){
-            this.set('description', !(this.get('description')));
+            this.set('descriptionHidden', !(this.get('descriptionHidden')));
         },
         setCurrent: function (kit){
             this.set('currentKit', kit);
@@ -45,6 +44,12 @@ export default Ember.Controller.extend({
         },
         showTags: function () {
             this.set('tagsHidden', !(this.get('tagsHidden')));
+        },
+        closeTags: function (){
+            this.set('tagsHidden', true);
+        },
+        closeDescription: function () {
+            this.set('descriptionHidden', true);
         }
     }
 });
