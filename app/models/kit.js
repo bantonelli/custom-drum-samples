@@ -71,7 +71,7 @@ Kit.reopenClass({
             "soundcloud":"https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/160710007&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true",
             "image":"kits/Deep_Percussion/Deep-Percussion-Art250.jpg",
             "tags":["World", "Percussion", "Sound-FX", "Urban"],
-            "description":"A really Good Kit",
+            "description":"A really BAD Kit",
             "price":1,
             "sale":1,
             "user_rating":"0.0000",

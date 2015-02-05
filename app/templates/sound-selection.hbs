@@ -58,8 +58,7 @@
                                 </div>
                             {{/each}}
                             <div class="fail-message">
-                                        <span>No items were found matching the selected filters. <br>
-                                            Reset and Try again!</span>
+                                <span>No items were found matching the selected filters. <br> Reset and Try again!</span>
                             </div>
                         </div>
                     </div>
@@ -112,7 +111,7 @@
                                 <div class="col-xs-12 sound-kit-selection">
                                     <h4>{{selectedSampleType}}</h4>
                                     <ul class="sample-list">
-                                        {{#each sample in currentKit.samples}}
+                                        {{#each sample in filteredSamples}}
                                             <li class="row sample-sound">
                                                 <span class="col-xs-7 sample-name">{{sample.name}}</span>
                                                 <div class="col-xs-2 sample-play icon-play"></div>

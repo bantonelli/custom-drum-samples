@@ -2,7 +2,6 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
     needs: ['kitbuilder'],
-    selectedSampleType: null,
     sampleTypes: ['Kick Drums', 'Snare Drums', 'Claps', 'Hi Hats', 'Percussion', 'Sound FX'],
     tagsHidden: true,
     newKits: false,
@@ -23,14 +22,24 @@ export default Ember.Controller.extend({
         return totalTags;
     }.property('kits'),
     descriptionHidden: true,
-    currentKit: function () {
-        return this.get('kits')[0];
-    },
+    filteredSamples: Ember.computed.filter('currentKit.samples', function (sample){
+        if (this.get('selectedSampleType')){
+            var selected = this.get('selectedSampleType');
+            if (selected === "Kick Drums"){
+                selected = 'KD';
+            }
+            return selected === sample._data.type;
+        }
+        else{
+            return false;
+        }
+    }).property('selectedSampleType', 'currentKit.samples'),
     actions: {
         showDescription: function (){
             this.set('descriptionHidden', !(this.get('descriptionHidden')));
         },
         setCurrent: function (kit){
+            this.set('selectedSampleType', null);
             this.set('currentKit', kit);
         },
         showNewKits: function () {
