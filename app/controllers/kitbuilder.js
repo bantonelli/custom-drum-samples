@@ -9,5 +9,7 @@ export default Ember.ArrayController.extend({
         {route: 'sound-selection', displayLink: 'Sound Selection'},
         {route: 'your-kit', displayLink: 'Your Custom Kit'},
         {route: 'kb-checkout', displayLink: 'Checkout'}
-    ]
+    ],
+    chosenSamples: [],
+    samplesChosen: Ember.computed.alias("chosenSamples")
 });

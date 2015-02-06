@@ -8,15 +8,15 @@
             <div class="row kit-choices">
                 <div class="col-xs-12 kit-details">
                     <form class="col-xs-4">
-                        <input type="text" ng-model="kitname" placeholder="Name Your Kit" class="cds-text-input name-your-kit">
+                        {{input type="text" placeholder="Name Your Kit" class="cds-text-input name-your-kit" value=customKitName}}
                     </form>
 
                     <div class="col-xs-4">
-                        <h3><span class="sample-name-total"> kitname </span></h3>
+                        <h3><span class="sample-name-total"> {{customKitName}} </span></h3>
                     </div>
 
                     <div class="col-xs-4">
-                        <h3>Total Sounds: <span class="sample-name-total">48</span></h3>
+                        <h3>Total Sounds: <span class="sample-name-total">{{controllers.kitbuilder.samplesChosen.length}}</span></h3>
                     </div>
                 </div>
                     <section class="col-xs-4 kb-slide-2-section sample-choices section-pocket-effect">
@@ -24,35 +24,20 @@
                         <div class="row instrument-choice">
                             <span class="col-xs-10 col-xs-offset-1">808's</span>
                             <ul class="sample-list col-xs-10 col-xs-offset-1">
-                                    <li class="row sample-sound">
+                                {{#each sample in controllers.kitbuilder.samplesChosen}}
+                                    <li id="{{unbound sample.name}}-chosen" class="row sample-sound">
                                         <div class="col-xs-8 sample-info">
-                                            <span class="sample-name">Sample_Name-forloop.counter</span>
-                                            <span class="sample-name-kit">-Chillstrumentals</span>
+                                            <span class="sample-name">{{sample.name}}</span>
+                                            <span class="sample-name-kit">-{{sample.kit.name}}</span>
                                         </div>
                                         <div class="col-xs-2 sample-play">
                                             <div class="icon-play"></div>
                                         </div>
-                                        <div class="col-xs-2 select-sound">
+                                        <div class="col-xs-2 select-sound" {{action 'removeSample' sample}}>
                                             <div class="icon-remove"></div>
                                         </div>
                                     </li>
-                            </ul>
-                        </div>
-                        <div class="row instrument-choice">
-                            <span class="col-xs-10 col-xs-offset-1">808's</span>
-                            <ul class="sample-list col-xs-10 col-xs-offset-1">
-                                    <li class="row sample-sound">
-                                        <div class="col-xs-8 sample-info">
-                                            <span class="sample-name">Sample_Name-forloop.counter</span>
-                                            <span class="sample-name-kit">-Chillstrumentals</span>
-                                        </div>
-                                        <div class="col-xs-2 sample-play">
-                                            <div class="icon-play"></div>
-                                        </div>
-                                        <div class="col-xs-2 select-sound">
-                                            <div class="icon-remove"></div>
-                                        </div>
-                                    </li>
+                                {{/each}}
                             </ul>
                         </div>
                     </section>

@@ -7,7 +7,7 @@
                     <div class="row filter-row filter-row-pocket-effect">
                         <div class="col-xs-3 filters reset-filters">
                             <ul class="row top-menu">
-                                <li id="Reset" class="col-xs-12 menu-item">Reset</li>
+                                <li id="Reset" class="col-xs-12 menu-item" {{action 'resetMixitup'}}>Reload</li>
                             </ul>
                         </div>
                         <div class="col-xs-9 filters">
@@ -58,7 +58,7 @@
                                 </div>
                             {{/each}}
                             <div class="fail-message">
-                                <span>No items were found matching the selected filters. <br> Reset and Try again!</span>
+                                <span>No items were found matching the selected filters. <br> Reload and Try again!</span>
                             </div>
                         </div>
                     </div>
@@ -97,7 +97,7 @@
                             <div class="row">
                                 <div class="col-xs-12 sound-kit-selection">
                                     <h4> {{currentKit.name}} </h4>
-                                    <img ng-src="{{unbound currentKit.image}}" alt="{{unbound currentKit.name}}">
+                                    <img {{bind-attr src=currentKit.image}} {{bind-attr alt=currentKit.name}}>
                                 </div>
                             </div>
                             <div class="row">
@@ -106,7 +106,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xs-6 selected-kit-sounds" {{action 'closeDescription'}}>
+                        <div class="col-xs-6 selected-kit-sounds">
                             <div class="row">
                                 <div class="col-xs-12 sound-kit-selection">
                                     <h4>{{selectedSampleType}}</h4>
@@ -117,8 +117,8 @@
                                                 <div class="col-xs-2 sample-play icon-play"></div>
                                                 <div class="col-xs-3 select-sound">
                                                     <!-- .squaredThree -->
-                                                    <div class="squaredThree">
-                                                        <input type="checkbox" value="None" id="{{unbound sample.name}}" name="check" />
+                                                    <div class="squaredThree" {{action 'checkSample' sample}}>
+                                                        <input type="checkbox" value="None" id="{{unbound sample.name}}" name="check" {{bind-attr checked=sample.is_chosen}}/>
                                                         <label for="{{unbound sample.name}}"></label>
                                                     </div>
                                                     <!-- end .squaredThree -->

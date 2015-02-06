@@ -6,7 +6,7 @@ export default Ember.View.extend({
     parentViewDidChange: function (){
         this._super();
 
-        Ember.run.scheduleOnce('afterRender', this, function(){
+        Ember.run.schedule('afterRender', this, function(){
             // perform your jQuery logic here
 
             var checkboxFilter = {
@@ -141,7 +141,7 @@ export default Ember.View.extend({
 
                     !self.outputString.length && (self.outputString = 'all');
 
-                    //console.log(self.outputString);
+                    console.log(self.outputString);
 
                     // ^ we can check the console here to take a look at the filter string that is produced
 
@@ -157,17 +157,24 @@ export default Ember.View.extend({
 
             // Instantiate MixItUp
 
-            Ember.$('#kitmix').mixItUp({
-                controls: {
-                    enable: false // we won't be needing these
-                },
-                animation: {
-                    easing: 'cubic-bezier(0.86, 0, 0.07, 1)',
-                    duration: 600
-                }
-            });
+            var $container = Ember.$('#kitmix');
+
+            if(!$container.mixItUp('isLoaded')){
+                $container.mixItUp({
+                    controls: {
+                        enable: false // we won't be needing these
+                    },
+                    animation: {
+                        easing: 'cubic-bezier(0.86, 0, 0.07, 1)',
+                        duration: 600
+                    }
+                });
+            }
 
 
+
+            //var state = Ember.$('#kitmix').mixItUp('getState');
+            //console.log(state.$show);
 
 
 // SELECT BOX CODE
