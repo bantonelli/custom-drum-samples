@@ -2,7 +2,7 @@ import DS from 'ember-data';
 
 var Kit = DS.Model.extend({
     name: DS.attr( 'string' ),
-    new: DS.attr( 'string' ),
+    is_new: DS.attr( 'boolean' ),
     on_sale: DS.attr( 'string' ),
     soundcloud: DS.attr( 'string' ),
     image: DS.attr( 'string' ),
@@ -24,7 +24,7 @@ Kit.reopenClass({
         {
             id: 1,
             "name":"Chillstrumentals",
-            "new":true,
+            "is_new":true,
             "on_sale":false,
             "soundcloud":"https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/160710007&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true",
             "image":"kits/Chillstrumentals/Chillstrumental-Drum-Kit250.jpg",
@@ -38,7 +38,7 @@ Kit.reopenClass({
         {
             id: 2,
             "name":"808 Essentials",
-            "new":true,
+            "is_new":true,
             "on_sale":false,
             "soundcloud":"https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/160710007&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true",
             "image":"kits/808_Essentials/808-Essentials-Art250.jpg",
@@ -52,7 +52,7 @@ Kit.reopenClass({
         {
             id: 3,
             "name":"Attack of the 808's",
-            "new":true,
+            "is_new":true,
             "on_sale":false,
             "soundcloud":"https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/179409583&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true",
             "image":"kits/Attack_Of_The_808s/ATTACK-OF-THE-808S-3250.jpg",
@@ -66,7 +66,7 @@ Kit.reopenClass({
         {
             id: 4,
             "name":"Deep Percussion",
-            "new":true,
+            "is_new":true,
             "on_sale":false,
             "soundcloud":"https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/160710007&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true",
             "image":"kits/Deep_Percussion/Deep-Percussion-Art250.jpg",
@@ -80,7 +80,7 @@ Kit.reopenClass({
         {
             id: 5,
             "name":"High Impact Bundle",
-            "new":true,
+            "is_new":true,
             "on_sale":false,
             "soundcloud":"https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/160710007&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true",
             "image":"kits/High_Impact_Bundle/High-Impact-1-2-3-Bundle250.jpg",
@@ -94,7 +94,7 @@ Kit.reopenClass({
         {
             id: 6,
             "name":"Patient Zero",
-            "new":true,
+            "is_new":true,
             "on_sale":false,
             "soundcloud":"https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/160710007&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true",
             "image":"kits/Patient_Zero/SHD-Patient-Zero-Cover.jpg",
