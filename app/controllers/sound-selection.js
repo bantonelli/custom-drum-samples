@@ -43,6 +43,7 @@ export default Ember.Controller.extend({
         setCurrent: function (kit){
             this.set('selectedSampleType', null);
             this.set('currentKit', kit);
+            this.set('currentKitImage', 'http://127.0.0.1:8000' + kit._data.image);
         },
         showNewKits: function () {
             this.set('newKits', !(this.get('newKits')));
