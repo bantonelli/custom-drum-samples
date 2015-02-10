@@ -34,7 +34,8 @@ module.exports = function(environment) {
         ENV['simple-auth-oauth2'] = {
             serverTokenEndpoint: 'http://127.0.0.1:8000/oauth2/access_token/',
             authorizer: 'simple-auth-authorizer:oauth2-bearer'
-        }
+        };
+        ENV.APP.API_HOST = 'http://127.0.0.1:8000';
     }
 
     if (environment === 'test') {
