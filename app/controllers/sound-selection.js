@@ -27,6 +27,8 @@ export default Ember.Controller.extend({
             var selected = this.get('selectedSampleType');
             if (selected === "Kick Drums"){
                 selected = 'KD';
+            } else if (selected === "Sound FX") {
+                selected = 'FX'
             }
             return selected === sample._data.type;
         }
@@ -67,11 +69,11 @@ export default Ember.Controller.extend({
             if ($input.prop('checked')){
                 chosenSamples.removeObject(sample);
                 sample.set('is_chosen', false);
-                sample.save();
+                //sample.save();
                 //$input.prop('checked', false);
             } else {
                 sample.set('is_chosen', true);
-                sample.save();
+                //sample.save();
                 //$input.prop('checked', true);
                 chosenSamples.pushObject(sample);
             }

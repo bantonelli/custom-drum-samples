@@ -54,7 +54,7 @@
                         <div id="kitmix" {{action 'closeTags'}}>
                             {{#each kit in controllers.kitbuilder.model}}
                                 <div {{bind-attr class=":col-xs-4 :sound-kit :mix kit.displayedTags"}} {{bind-attr data-myorder=_view.contentIndex}} {{action 'setCurrent' kit}}>
-                                    <img src="{{unbound kit.image}}" alt="{{unbound kit.name}}">
+                                    <img src="http://127.0.0.1:8000{{unbound kit.image}}" alt="{{unbound kit.name}}">
                                 </div>
                             {{/each}}
                             <div class="fail-message">
@@ -97,7 +97,7 @@
                             <div class="row">
                                 <div class="col-xs-12 sound-kit-selection">
                                     <h4> {{currentKit.name}} </h4>
-                                    <img {{bind-attr src=currentKit.image}} {{bind-attr alt=currentKit.name}}>
+                                    <img src="http://127.0.0.1:8000{{unbound currentKit.image}}" {{bind-attr alt=currentKit.name}}>
                                 </div>
                             </div>
                             <div class="row">
