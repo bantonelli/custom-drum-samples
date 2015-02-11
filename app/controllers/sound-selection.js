@@ -15,7 +15,7 @@ export default Ember.Controller.extend({
             var tags = kits[kit].get('tags');
             for (var tagIndex = 0; tagIndex < tags.length; tagIndex++) {
                 if (Ember.$.inArray(tags[tagIndex], totalTags) === -1) {
-                    totalTags.push(tags[tagIndex]);
+                    totalTags.push(tags[tagIndex].name);
                 }
             }
         }

@@ -9,6 +9,9 @@ export default Ember.Component.extend({
             return true;
         }
     }.property('chosenSamples@each'),
+    audio: function () {
+        return 'http://127.0.0.1:8000' + this.get('sample.demo');
+    }.property('sample'),
     actions: {
         checkSample: function () {
             if (this.get('isChosen')) {
@@ -22,6 +25,13 @@ export default Ember.Component.extend({
         removeSample: function () {
             this.set('isChosen', false);
             this.get('chosenSamples').removeObject(this.get('sample'));
+        },
+        playSample: function (){
+            var sample = this.get('sample');
+//            var mediaElement = Ember.$("#"+sample._data.name+"-audio");
+//            mediaElement.trigger("play");
+            var mediaElement = document.getElementById(sample._data.name+"-audio");
+            mediaElement.play();
         }
     }
 });

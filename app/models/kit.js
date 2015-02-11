@@ -14,7 +14,12 @@ var Kit = DS.Model.extend({
     samples: DS.hasMany('sample', { async: true }),
     displayedTags: function() {
         var tagString;
-        tagString = this.get('tags').join(' ');
+        var tagNames = [];
+        var tags = this.get('tags');
+        for (var i = 0; i < tags.length; i++){
+            tagNames.push(tags[i].name);
+        }
+        tagString = tagNames.join(' ');
         return tagString;
     }.property('tags')
 });
