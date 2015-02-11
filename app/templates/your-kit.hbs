@@ -24,19 +24,8 @@
                         <div class="row instrument-choice">
                             <span class="col-xs-10 col-xs-offset-1">808's</span>
                             <ul class="sample-list col-xs-10 col-xs-offset-1">
-                                {{#each sample in controllers.kitbuilder.samplesChosen itemController='sample'}}
-                                    <li id="{{unbound sample.name}}-chosen" class="row sample-sound">
-                                        <div class="col-xs-8 sample-info">
-                                            <span class="sample-name">{{sample.name}}</span>
-                                            <span class="sample-name-kit">-{{sample.kit.name}}</span>
-                                        </div>
-                                        <div class="col-xs-2 sample-play">
-                                            <div class="icon-play"></div>
-                                        </div>
-                                        <div class="col-xs-2 select-sound" {{action 'removeSample'}}>
-                                            <div class="icon-remove"></div>
-                                        </div>
-                                    </li>
+                                {{#each sample in controllers.kitbuilder.samplesChosen}}
+                                    {{sample-toggler choosing=false sample=sample chosenSamples=controllers.kitbuilder.samplesChosen}}
                                 {{/each}}
                             </ul>
                         </div>

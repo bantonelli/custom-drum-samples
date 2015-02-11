@@ -1,0 +1,27 @@
+{{#if choosing}}
+<li class="row sample-sound">
+    <span class="col-xs-7 sample-name">{{sample.name}}</span>
+    <div class="col-xs-2 sample-play icon-play"></div>
+    <div class="col-xs-3 select-sound">
+        <!-- .squaredThree -->
+        <div class="squaredThree" {{action 'checkSample'}}>
+            <input type="checkbox" value="None" id="{{unbound sample.name}}" name="check" {{bind-attr checked=isChosen}}/>
+            <label for="{{unbound sample.name}}"></label>
+        </div>
+        <!-- end .squaredThree -->
+    </div>
+</li>
+{{else}}
+<li id="{{unbound sample.name}}-chosen" class="row sample-sound">
+    <div class="col-xs-8 sample-info">
+        <span class="sample-name">{{sample.name}}</span>
+        <span class="sample-name-kit">-{{sample.kit.name}}</span>
+    </div>
+    <div class="col-xs-2 sample-play">
+        <div class="icon-play"></div>
+    </div>
+    <div class="col-xs-2 select-sound" {{action 'removeSample'}}>
+        <div class="icon-remove"></div>
+    </div>
+</li>
+{{/if}}
