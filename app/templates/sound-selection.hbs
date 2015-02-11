@@ -111,14 +111,14 @@
                                 <div class="col-xs-12 sound-kit-selection">
                                     <h4>{{selectedSampleType}}</h4>
                                     <ul class="sample-list">
-                                        {{#each sample in filteredSamples}}
+                                        {{#each sample in filteredSamples itemController='sample'}}
                                             <li class="row sample-sound">
                                                 <span class="col-xs-7 sample-name">{{sample.name}}</span>
                                                 <div class="col-xs-2 sample-play icon-play"></div>
                                                 <div class="col-xs-3 select-sound">
                                                     <!-- .squaredThree -->
-                                                    <div class="squaredThree" {{action 'checkSample' sample}}>
-                                                        <input type="checkbox" value="None" id="{{unbound sample.name}}" name="check" {{bind-attr checked=sample.is_chosen}}/>
+                                                    <div class="squaredThree" {{action 'checkSample'}}>
+                                                        <input type="checkbox" value="None" id="{{unbound sample.name}}" name="check" {{bind-attr checked=sample.isChosen}}/>
                                                         <label for="{{unbound sample.name}}"></label>
                                                     </div>
                                                     <!-- end .squaredThree -->

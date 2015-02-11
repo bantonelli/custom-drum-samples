@@ -63,22 +63,6 @@ export default Ember.Controller.extend({
         closeDescription: function () {
             this.set('descriptionHidden', true);
         },
-        checkSample: function (sample){
-            var chosenSamples = this.get('controllers.kitbuilder.samplesChosen');
-            var selector = "#"+sample._data.name;
-            var $input = Ember.$(selector);
-            if ($input.prop('checked')){
-                chosenSamples.removeObject(sample);
-                sample.set('is_chosen', false);
-                //sample.save();
-                //$input.prop('checked', false);
-            } else {
-                sample.set('is_chosen', true);
-                //sample.save();
-                //$input.prop('checked', true);
-                chosenSamples.pushObject(sample);
-            }
-        },
         resetMixitup: function (){
             Ember.$('#kitmix').mixItUp('destroy', true);
             var checkboxFilter = {
