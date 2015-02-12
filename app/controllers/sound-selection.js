@@ -2,7 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
     needs: ['kitbuilder'],
-    sampleTypes: ['Kick Drums', 'Snare Drums', 'Claps', 'Hi Hats', 'Percussion', 'Sound FX'],
+    sampleTypes: ['Kick Drums', 'Snare Drums', 'Claps', 'Loops', 'Percussion', 'Sound FX'],
     tagsHidden: true,
     newKits: false,
     alphabetical: false,
