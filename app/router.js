@@ -26,7 +26,7 @@ Router.map(function() {
       this.resource("your-kit");
       this.resource("kb-checkout", {path: '/checkout'});
   });
-  this.route("profile");
+  this.resource("account-settings");
 });
 
 export default Router;

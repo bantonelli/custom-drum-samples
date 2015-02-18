@@ -1,0 +1,23 @@
+<div class="main-content">
+    <div class="slide legal-slide">
+        <div class="container">
+            {{#tab-view}}
+                {{#tab-pane name="My Account"}}
+                    {{partial "partials/my-account"}}
+                {{/tab-pane}}
+
+                {{#tab-pane name="My Drum Kits"}}
+                    {{partial "partials/my-drum-kits"}}
+                {{/tab-pane}}
+
+                {{#tab-pane name="Email Settings"}}
+                    {{partial "partials/email-settings"}}
+                {{/tab-pane}}
+
+                {{#tab-pane name="Payment Info"}}
+                    {{partial "partials/payment-info"}}
+                {{/tab-pane}}
+            {{/tab-view}}
+        </div>
+    </div>
+</div>
