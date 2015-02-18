@@ -64,7 +64,8 @@
                                             </a>
                                             <input type="checkbox" id="usermenu-toggle"/>
                                             <ul class="user-dropdown">
-                                                <li><a class="col-xs-12">Producer Profile</a></li>
+                                                <li>{{#link-to 'profile'}}Producer Profile{{/link-to}}</li>
+                                                <!--<li><a class="col-xs-12">Producer Profile</a></li>-->
                                                 <li><a class="col-xs-12" {{action 'invalidateSession'}}>Log Out</a></li>
                                             </ul>
                                         </li>
