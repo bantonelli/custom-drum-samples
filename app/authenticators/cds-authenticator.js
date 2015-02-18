@@ -6,7 +6,7 @@ import Authenticator from 'simple-auth-oauth2/authenticators/oauth2';
 
 export default Authenticator.extend({
     makeRequest: function(url, data) {
-        data.client_id = "21bc3b3e5b430572e41a";
+        data.client_id = "0f4d3a53f1db12be80cd";
         data.grant_type = "password";
         return this._super(url, data);
     },
