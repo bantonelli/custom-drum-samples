@@ -6,7 +6,7 @@ var Sample = DS.Model.extend({
     demo: DS.attr( 'string' ),
     wav: DS.attr( 'string' ),
     kit: DS.belongsTo('kit'),
-    type: DS.attr( 'string' ),
+    type: DS.attr( 'string' )
 });
 
 //
