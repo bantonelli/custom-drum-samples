@@ -56,12 +56,16 @@
                                 <ul class="row">
                                     <!-- insert more links here -->
                                     {{#if session.isAuthenticated}}
-                                        <!--<li><a class="col-xs-6 cd-signin" {{action 'invalidateSession'}}>Log Out</a></li>-->
-                                        <li>
-                                            <a class="col-xs-12 cd-signin">{{session.currentUser.email}}</a>
-                                            <ul>
-                                                <li><a class="col-xs-12 cd-signin">{{session.currentUser.email}}</a></li>
-                                                <li><a class="col-xs-12 cd-signin">{{session.currentUser.email}}</a></li>
+                                        <li class="col-xs-8 username-display">
+                                            <a class="col-xs-12 cd-signin">
+                                                <label for="usermenu-toggle">
+                                                {{session.currentUser.username}}
+                                                </label>
+                                            </a>
+                                            <input type="checkbox" id="usermenu-toggle"/>
+                                            <ul class="user-dropdown">
+                                                <li><a class="col-xs-12">Producer Profile</a></li>
+                                                <li><a class="col-xs-12" {{action 'invalidateSession'}}>Log Out</a></li>
                                             </ul>
                                         </li>
                                     {{else}}

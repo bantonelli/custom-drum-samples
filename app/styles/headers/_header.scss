@@ -97,7 +97,7 @@ header[role=banner] {
   line-height: 58px;
   text-align: center;
   text-shadow: 0px 1px 1px rgba(25, 25, 25, .8);
-  color: nth($orange-list, 6);
+  color: $offwhite;
   text-decoration: none;
   font-size: 0.7em;
   font-family: quicksandbold;
@@ -115,6 +115,51 @@ header[role=banner] {
   }
 }
 
+.username-display {
+  position: relative;
+  text-align: center;
+  .user-dropdown {
+    display: none;
+    position: absolute;
+    background-color: transparentize(nth($purple-list, 2), 0.1);
+    top: 60px;
+    height: 70px;
+    width: 100%;
+    z-index: 2000;
+    box-shadow: 0 6px 4px -4px rgba(0,0,0,.3);
+    a {
+      text-align: left;
+      height: 35px;
+      line-height: 33px;
+      font-size: 16px;
+      &:hover {
+        background-color: nth($purple-list, 4);
+        color: $offwhite;
+      }
+    }
+  }
+}
+
+.username-display {
+  label {
+    cursor: pointer;
+    &::after {
+      line-height: 60px;
+      position: absolute;
+      width: 20px;
+      font-size: 28px;
+      font-family: icomoon;
+      // arrow down
+      content: "\e62a";
+    }
+  }
+  #usermenu-toggle {
+    display: none; /* hide the checkbox */
+  }
+  #usermenu-toggle:checked + .user-dropdown {
+    display: block;
+  }
+}
 
 /* --------------------------------
 
