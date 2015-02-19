@@ -1,30 +1,59 @@
-        <div id="kb-slide-3" class="slide">
-            <div class="slide-width-container">
-                <div class="row">
-                    <section id="kb-slide-1-section-1" class="col-xs-6">
-                        <div class="kb-slide-section-container">
+<div id="kb-slide-3" class="slide">
+    <div class="slide-width-container">
+        <div class="row">
+            <section id="kb-slide-1-section-1" class="col-xs-6">
+                <div class="kb-slide-section-container">
 
-                            <div class="row filter-row">
+                    <div class="row filter-row">
 
-                                <div class="col-xs-9 filters">
+                    </div>
+                    <div class="row kit-row">
+
+                        <div class="col-xs-12">
+                            <form action="" method="POST" id="payment-form">
+                                <span class="payment-errors"></span>
+
+                                <div class="form-row">
+                                    <label>
+                                        <span>Card Number</span>
+                                        <input type="text" size="20" data-stripe="number"/>
+                                    </label>
                                 </div>
-                            </div>
-                            <div class="row kit-row">
 
-                            </div>
-                        </div>
-                    </section>
-                    <section id="kb-slide-1-section-2" class="col-xs-6">
-                        <div class="kb-slide-section-container">
+                                <div class="form-row">
+                                    <label>
+                                        <span>CVC</span>
+                                        <input type="text" size="4" data-stripe="cvc"/>
+                                    </label>
+                                </div>
 
-                            <div class="row filter-row">
+                                <div class="form-row">
+                                    <label>
+                                        <span>Expiration (MM/YYYY)</span>
+                                        <input type="text" size="2" data-stripe="exp-month"/>
+                                    </label>
+                                    <span> / </span>
+                                    <input type="text" size="4" data-stripe="exp-year"/>
+                                </div>
 
-                            </div>
+                                <button type="submit">Submit Payment</button>
+                            </form></div>
 
-                            <div class="row selection-row">
-                            </div>
-                        </div>
-                    </section>
+
+                    </div>
                 </div>
-            </div>
+            </section>
+            <section id="kb-slide-1-section-2" class="col-xs-6">
+                <div class="kb-slide-section-container">
+
+                    <div class="row filter-row">
+
+                    </div>
+
+                    <div class="row selection-row">
+                    </div>
+                </div>
+            </section>
         </div>
+    </div>
+</div>

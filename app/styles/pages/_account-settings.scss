@@ -1,0 +1,37 @@
+.form-section {
+  h4 {
+    @include h1-ow-background();
+    font-family: $headline;
+    margin: 10px 0px;
+    &::before {
+      font-family: icomoon;
+      margin-right: 10px;
+    }
+  }
+  .cds-button {
+    margin: 10px 0px;
+  }
+}
+
+.custom-kit-list {
+  margin: 30px 0 0 0;
+  li {
+    @include border-separation-bottom();
+    @include p-ow-background();
+    font-family: $paragraph;
+    font-size: 16px;
+    position: relative;
+    padding: 0 0 5px 0;
+    &:before {
+      font-family: icomoon;
+      font-size: 32px;
+      position: absolute;
+      top: -12px;
+      right: 0;
+    }
+    &:hover {
+      color: nth($lightblue-list, 3);
+      cursor: pointer;
+    }
+  }
+}

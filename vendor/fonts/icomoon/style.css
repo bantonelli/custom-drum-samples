@@ -1,10 +1,10 @@
 @font-face {
 	font-family: 'icomoon';
-	src:url('fonts/icomoon.eot?5lvnmq');
-	src:url('fonts/icomoon.eot?#iefix5lvnmq') format('embedded-opentype'),
-		url('fonts/icomoon.woff?5lvnmq') format('woff'),
-		url('fonts/icomoon.ttf?5lvnmq') format('truetype'),
-		url('fonts/icomoon.svg?5lvnmq#icomoon') format('svg');
+	src:url('fonts/icomoon.eot?izerw1');
+	src:url('fonts/icomoon.eot?#iefixizerw1') format('embedded-opentype'),
+		url('fonts/icomoon.woff?izerw1') format('woff'),
+		url('fonts/icomoon.ttf?izerw1') format('truetype'),
+		url('fonts/icomoon.svg?izerw1#icomoon') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -37,10 +37,6 @@
 
 .icon-side_drum:before {
 	content: "\e62d";
-}
-
-.icon-home:before {
-	content: "\e600";
 }
 
 .icon-newspaper:before {
@@ -87,6 +83,10 @@
 	content: "\e607";
 }
 
+.icon-address-book:before {
+	content: "\e63f";
+}
+
 .icon-envelope:before {
 	content: "\e608";
 }
@@ -113,6 +113,10 @@
 
 .icon-lock:before {
 	content: "\e638";
+}
+
+.icon-unlocked:before {
+	content: "\e63d";
 }
 
 .icon-trophy:before {
@@ -149,6 +153,14 @@
 
 .icon-heart-broken:before {
 	content: "\e610";
+}
+
+.icon-thumbs-up:before {
+	content: "\e600";
+}
+
+.icon-thumbs-up2:before {
+	content: "\e63e";
 }
 
 .icon-cancel-circle:before {

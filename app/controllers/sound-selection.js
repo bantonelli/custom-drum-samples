@@ -1,6 +1,6 @@
 import Ember from 'ember';
 
-export default Ember.Controller.extend({
+var soundSelectionController = Ember.Controller.extend({
     needs: ['kitbuilder'],
     sampleTypes: ['Kick Drums', 'Snare Drums', 'Claps', 'Loops', 'Percussion', 'Sound FX'],
     tagsHidden: true,
@@ -230,3 +230,5 @@ export default Ember.Controller.extend({
         }
     }
 });
+
+export default soundSelectionController;

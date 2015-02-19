@@ -1,11 +1,26 @@
 <div class="row">
-    <div class="col-xs-6">
-        <h4>Account</h4>
-        <form>
-            {{input class="cds-text-input" type="text" value=firstName size="50"}}
-        </form>
-    </div>
-    <div class="col-xs-6">
-
-    </div>
+    <section class="col-xs-5 col-xs-offset-1 form-section">
+        <div class="row">
+            <h4 class="col-xs-12 icon-address-book">Username & Email</h4>
+            <form class="col-xs-12">
+                {{input class="cds-text-input" type="text" value=session.currentUser.username size="40"}}
+                {{input class="cds-text-input" type="text" value=session.currentUser.email size="40"}}
+            </form>
+            <div class="col-xs-9">
+                <a href="#" class="cds-button cds-button-aw-medium">Update Account</a>
+            </div>
+        </div>
+    </section>
+    <section class="col-xs-5 form-section">
+        <div class="row">
+            <h4 class="col-xs-12 icon-unlocked">Password Reset</h4>
+            <form class="col-xs-12">
+                {{input class="cds-text-input" type="text" value=session.currentUser.username size="40"}}
+                {{input class="cds-text-input" type="text" value=session.currentUser.email size="40"}}
+            </form>
+            <div class="col-xs-9">
+                <a href="#" class="cds-button cds-button-aw-medium">Reset Password</a>
+            </div>
+        </div>
+    </section>
 </div>
