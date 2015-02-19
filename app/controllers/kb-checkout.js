@@ -13,10 +13,10 @@ export default Ember.Controller.extend({
 
 // Example Card object to pass into createToken.
 //            {
-//            number: $('.card-number').val(),
-//            cvc: $('.card-cvc').val(),
-//            exp_month: $('.card-expiry-month').val(),
-//            exp_year: $('.card-expiry-year').val()
+//            number: 4242424242424242,
+//            cvc: 123,
+//            exp_month: 12,
+//            exp_year: 2016
 //            }
 
             // if for example you had the cc set in your controller
@@ -25,11 +25,28 @@ export default Ember.Controller.extend({
             var exp_month = this.get('expirationMonth');
             var exp_year = this.get('expirationYear')
 
+
             var card = {
                 number: number,
                 cvc: cvc,
                 exp_month: exp_month,
                 exp_year: exp_year
+            }
+
+            function getCookie(name) {
+                var cookieValue = null;
+                if (document.cookie && document.cookie !== '') {
+                    var cookies = document.cookie.split(';');
+                    for (var i = 0; i < cookies.length; i++) {
+                        var cookie = Ember.$.trim(cookies[i]);
+                        // Does this cookie string begin with the name we want?
+                        if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                            cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                            break;
+                        }
+                    }
+                }
+                return cookieValue;
             }
 
             return stripeService.createToken(card).then(function(response) {
@@ -38,8 +55,12 @@ export default Ember.Controller.extend({
 //                return user.save();
                 var data = {stripeToken: response.id, last4: response.card.last4};
                 Ember.$.ajax({
+                    beforeSend: function(xhr) {
+                        var csrftoken = getCookie('mycsrftoken');
+                        xhr.setRequestHeader("X-CSRFToken", csrftoken);
+                    },
                     type: "POST",
-                    url: "http://www.yoururl.com/",
+                    url: "http://127.0.0.1:8000/api/custom-kits/purchase/",
                     crossDomain: true,
                     data: data,
                     //'parm1=value1&param2=value2',

@@ -23,6 +23,22 @@ export default Ember.View.extend({
                     apptb.removeClass(tbs);
                 }
             });
+
+//            // Set csrftoken
+//            Ember.$.ajax({
+//                type: "GET",
+//                url: "http://127.0.0.1:8000/api/custom-kits/purchase/",
+//                crossDomain: true,
+//                //'parm1=value1&param2=value2',
+//            }).done(function (data, textStatus, xhr) {
+//                console.log(data);
+//                console.log(data[0].csrf_token);
+//                var token = data[0].csrf_token
+////                Ember.$.cookie('mycsrftoken', token);
+//                // do something with server response data
+//                var cookieToSet= xhr.getResponseHeader('Set-Cookie');
+//                console.log(cookieToSet);
+//            });
         });
     }
 });

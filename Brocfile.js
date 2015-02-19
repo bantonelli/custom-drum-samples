@@ -28,6 +28,7 @@ app.import('bower_components/classie/classie.js');
 app.import('bower_components/mixitup/build/jquery.mixitup.min.js');
 app.import('bower_components/jquery.finger/dist/jquery.finger.js');
 app.import('bower_components/select2/select2.min.js');
+app.import('bower_components/jquery-cookie/jquery.cookie.js');
 
 
 // JS FILES VENDOR
