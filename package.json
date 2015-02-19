@@ -44,5 +44,8 @@
     "grunt-contrib-uglify": "^0.7.0",
     "grunt-contrib-watch": "^0.6.1",
     "liquid-fire": "^0.16.1"
+  },
+  "dependencies": {
+    "ember-stripe-service": "^1.0.0"
   }
 }

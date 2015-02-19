@@ -36,6 +36,9 @@ module.exports = function(environment) {
             authorizer: 'simple-auth-authorizer:oauth2-bearer'
         };
         ENV.APP.API_HOST = 'http://127.0.0.1:8000';
+        ENV.stripe = {
+            publishableKey: 'pk_test_hyDepohZLg2M8UX2pYG6nhRI'
+        };
     }
 
     if (environment === 'test') {

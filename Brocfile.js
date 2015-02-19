@@ -20,6 +20,8 @@ var app = new EmberApp();
 // please specify an object with the list of modules as keys
 // along with the exports of each module as its value.
 
+
+// used bower install --save stripe.js=https://js.stripe.com/v2/stripe.js for stripe
 // JS FILES BOWER
 app.import('bower_components/modernizr/modernizr.js');
 app.import('bower_components/classie/classie.js');
