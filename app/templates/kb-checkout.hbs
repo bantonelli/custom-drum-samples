@@ -16,27 +16,31 @@
                                 <div class="form-row">
                                     <label>
                                         <span>Card Number</span>
-                                        <input type="text" size="20" data-stripe="number"/>
+                                        {{input type="text" size="20" value=cardNumber}}
+                                        <!--<input type="text" size="20" data-stripe="number"/>-->
                                     </label>
                                 </div>
 
                                 <div class="form-row">
                                     <label>
                                         <span>CVC</span>
-                                        <input type="text" size="4" data-stripe="cvc"/>
+                                        {{input type="text" size="4" value=cvc}}
+                                        <!--<input type="text" size="4" data-stripe="cvc"/>-->
                                     </label>
                                 </div>
 
                                 <div class="form-row">
                                     <label>
                                         <span>Expiration (MM/YYYY)</span>
-                                        <input type="text" size="2" data-stripe="exp-month"/>
+                                        {{input type="text" size="2" value=expirationMonth}}
+                                        <!--<input type="text" size="2" data-stripe="exp-month"/>-->
                                     </label>
                                     <span> / </span>
-                                    <input type="text" size="4" data-stripe="exp-year"/>
+                                    {{input type="text" size="4" value=expirationYear}}
+                                    <!--<input type="text" size="4" data-stripe="exp-year"/>-->
                                 </div>
 
-                                <button type="submit">Submit Payment</button>
+                                <button type="submit" {{action 'processCard'}}>Submit Payment</button>
                             </form></div>
 
 

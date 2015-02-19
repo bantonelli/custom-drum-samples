@@ -3,7 +3,7 @@ import Ember from 'ember';
 export default Ember.Controller.extend({
 
     actions: {
-        myCreditCardProcessingMethod: function() {
+        processCard: function() {
 
 
             // var user = this.get('user.profile');
@@ -20,24 +20,44 @@ export default Ember.Controller.extend({
 //            }
 
             // if for example you had the cc set in your controller
-            var card = this.get('creditCard');
+            var number = this.get('cardNumber');
+            var cvc = this.get('cvc');
+            var exp_month = this.get('expirationMonth');
+            var exp_year = this.get('expirationYear')
+
+            var card = {
+                number: number,
+                cvc: cvc,
+                exp_month: exp_month,
+                exp_year: exp_year
+            }
 
             return stripeService.createToken(card).then(function(response) {
                 // you get access to your newly created token here
-                user.set('stripe_id', response.id);
-                return user.save();
-
-                // Do another ajax call here to post to the payment view.
-            })
-                .then(function() {
-                    // do more stuff here
-                })
-                .catch(function (response){
-                    // if there was an error retrieving the token you could get it here
-                    if (response.error.type === 'card_error') {
-                        // show the error in the form or something
+//                user.set('stripe_id', response.id);
+//                return user.save();
+                var data = {stripeToken: response.id, last4: response.card.last4};
+                Ember.$.ajax({
+                    type: "POST",
+                    url: "http://www.yoururl.com/",
+                    crossDomain: true,
+                    data: data,
+                    //'parm1=value1&param2=value2',
+                    success: function (data) {
+                        console.log(data);
+                        // do something with server response data
+                    },
+                    error: function (err) {
+                        // handle your error logic here
                     }
                 });
+                // Do another ajax call here to post to the payment view.
+            }).catch(function (response){
+                // if there was an error retrieving the token you could get it here
+                if (response.error.type === 'card_error') {
+                    console.log(response.error.message);
+                }
+            });
 
 
 
