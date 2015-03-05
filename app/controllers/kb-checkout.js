@@ -1,16 +1,21 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-
+    needs: ['kitbuilder', 'your-kit'],
     actions: {
         processCard: function() {
+            var userID = this.get('session.content.user_id');
 
+            // KIT INFORMATION
+            var samplesChosen = this.get('controllers.kitbuilder.samplesChosen');
+            var samples = [];
+            for (var i = 0; i < samplesChosen.length; i++){
+                samples.push(samplesChosen[i]._data.id);
+            }
 
-            // var user = this.get('user.profile');
-
+            var kitName = this.get('controllers.your-kit.customKitName');
             // obtain access to the injected service
             var stripeService = this.get('stripeService');
-
 // Example Card object to pass into createToken.
 //            {
 //            number: 4242424242424242,
@@ -18,20 +23,16 @@ export default Ember.Controller.extend({
 //            exp_month: 12,
 //            exp_year: 2016
 //            }
-
-            // if for example you had the cc set in your controller
             var number = this.get('cardNumber');
             var cvc = this.get('cvc');
             var exp_month = this.get('expirationMonth');
-            var exp_year = this.get('expirationYear')
-
-
+            var exp_year = this.get('expirationYear');
             var card = {
                 number: number,
                 cvc: cvc,
                 exp_month: exp_month,
                 exp_year: exp_year
-            }
+            };
 
             function getCookie(name) {
                 var cookieValue = null;
@@ -53,7 +54,13 @@ export default Ember.Controller.extend({
                 // you get access to your newly created token here
 //                user.set('stripe_id', response.id);
 //                return user.save();
-                var data = {stripeToken: response.id, last4: response.card.last4};
+                var data = {
+                    stripeToken: response.id,
+                    last4: response.card.last4,
+                    samples: JSON.stringify(samples),
+                    kitName: kitName,
+                    userID: userID
+                };
                 Ember.$.ajax({
                     beforeSend: function(xhr) {
                         var csrftoken = getCookie('mycsrftoken');
