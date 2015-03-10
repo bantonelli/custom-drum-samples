@@ -47,6 +47,13 @@ export default Ember.Component.extend({
             return true;
         }
     }.property('chosenSamples@each'),
+    typeMatches: function (){
+        if (this.get('sampleType') == this.get('sample.type')) {
+            return true;
+        } else {
+            return false;
+        }
+    }.property('sampleType'),
     audio: function () {
         return config.APP.API_HOST + this.get('sample.demo');
     }.property('sample'),

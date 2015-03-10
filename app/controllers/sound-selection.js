@@ -28,7 +28,9 @@ var soundSelectionController = Ember.Controller.extend({
             if (selected === "Kick Drums"){
                 selected = 'KD';
             } else if (selected === "Sound FX") {
-                selected = 'FX'
+                selected = 'FX';
+            } else if (selected === "Loops") {
+                selected = 'LO';
             }
             return selected === sample._data.type;
         }

@@ -26,7 +26,7 @@
                             <!--<span class="col-xs-10 col-xs-offset-1">808's</span>-->
                             <ul class="sample-list col-xs-10 col-xs-offset-1">
                                 {{#each sample in controllers.kitbuilder.samplesChosen}}
-                                    {{sample-toggler choosing=false sample=sample chosenSamples=controllers.kitbuilder.samplesChosen}}
+                                    {{sample-toggler sampleType=type choosing=false sample=sample chosenSamples=controllers.kitbuilder.samplesChosen}}
                                 {{/each}}
                             </ul>
                         </div>
