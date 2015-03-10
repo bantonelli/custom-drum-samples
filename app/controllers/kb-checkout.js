@@ -1,4 +1,6 @@
 import Ember from 'ember';
+import config from '.././config/environment';
+
 
 export default Ember.Controller.extend({
     needs: ['kitbuilder', 'your-kit'],
@@ -67,7 +69,7 @@ export default Ember.Controller.extend({
                         xhr.setRequestHeader("X-CSRFToken", csrftoken);
                     },
                     type: "POST",
-                    url: "http://127.0.0.1:8000/api/custom-kits/purchase/",
+                    url: config.APP.API_HOST + "/api/custom-kits/purchase/",
                     crossDomain: true,
                     data: data,
                     //'parm1=value1&param2=value2',

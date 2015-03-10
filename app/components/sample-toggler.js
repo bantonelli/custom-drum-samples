@@ -1,4 +1,6 @@
 import Ember from 'ember';
+import config from '.././config/environment';
+
 
 export default Ember.Component.extend({
     _initializeSampleToggler: function (){
@@ -46,7 +48,7 @@ export default Ember.Component.extend({
         }
     }.property('chosenSamples@each'),
     audio: function () {
-        return 'http://127.0.0.1:8000' + this.get('sample.demo');
+        return config.APP.API_HOST + this.get('sample.demo');
     }.property('sample'),
     actions: {
         checkSample: function () {
