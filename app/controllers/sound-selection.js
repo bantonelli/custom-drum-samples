@@ -1,4 +1,5 @@
 import Ember from 'ember';
+import config from '.././config/environment';
 
 var soundSelectionController = Ember.Controller.extend({
     needs: ['kitbuilder'],
@@ -6,11 +7,11 @@ var soundSelectionController = Ember.Controller.extend({
         return this.get('kits.content')[0];
     }.property('kits'),
     currentKitImage: function () {
-        return 'http://127.0.0.1:8000' + this.get('currentKit.image');
+        return config.APP.API_HOST + this.get('currentKit.image');
     }.property('currentKit'),
     selectedSampleType: null,
     tagsHidden: true,
-    newKits: false,
+    newKitsHidden: true,
     alphabetical: false,
     onSale: false,
     kits: Ember.computed.alias('model'),
@@ -18,10 +19,11 @@ var soundSelectionController = Ember.Controller.extend({
         var kits = this.get('kits.content');
         var totalTags = [];
         for (var kit = 0; kit < kits.length; kit++){
-            var tags = kits[kit].get('tags');
-            for (var tagIndex = 0; tagIndex < tags.length; tagIndex++) {
-                if (Ember.$.inArray(tags[tagIndex], totalTags) === -1) {
-                    totalTags.push(tags[tagIndex].name);
+            var currentTags = kits[kit].get('tags');
+            for (var tagIndex = 0; tagIndex < currentTags.length; tagIndex++) {
+                if (totalTags.indexOf(currentTags[tagIndex].name) == -1) {
+                //if (Ember.$.inArray(tags[tagIndex], totalTags) === -1) {
+                    totalTags.push(currentTags[tagIndex].name);
                 }
             }
         }
@@ -48,7 +50,7 @@ var soundSelectionController = Ember.Controller.extend({
             //this.set('currentKitImage', 'http://127.0.0.1:8000' + kit._data.image);
         },
         showNewKits: function () {
-            this.set('newKits', !(this.get('newKits')));
+            this.set('newKitsHidden', !(this.get('newKitsHidden')));
         },
         showAlphabetical: function (){
             this.set('alphabetical', !(this.get('alphabetical')));
@@ -220,7 +222,7 @@ var soundSelectionController = Ember.Controller.extend({
             if(!$container.mixItUp('isLoaded')){
                 $container.mixItUp({
                     controls: {
-                        enable: false // we won't be needing these
+                        enable: true // we won't be needing these
                     },
                     animation: {
                         easing: 'cubic-bezier(0.86, 0, 0.07, 1)',

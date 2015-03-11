@@ -12,10 +12,10 @@
                         </div>
                         <div class="col-xs-9 filters">
                             <ul class="row top-menu">
-                                <li class="col-xs-2 menu-item menu-word">Filters:</li>
-                                <li class="col-xs-2 menu-item">New</li>
+                                <li class="col-xs-3 menu-item menu-word">Filters:</li>
+                                <li {{bind-attr class=":sort :col-xs-2 :menu-item newKitsHidden::active"}} {{action 'showNewKits'}} data-sort="datecreated:asc">Newer</li>
+                                <li {{bind-attr class=":sort :col-xs-2 :menu-item newKitsHidden::active"}} data-sort="datecreated:desc">Older</li>
                                 <li class="col-xs-2 menu-item">A-Z</li>
-                                <li class="col-xs-3 menu-item">On Sale</li>
                                 <li {{bind-attr class=":col-xs-2 :menu-item :icon-tags tagsHidden::active"}} {{action 'showTags'}}></li>
                             </ul>
                         </div>
@@ -53,7 +53,7 @@
                         </div>
                         <div id="kitmix" {{action 'closeTags'}}>
                             {{#each kit in controllers.kitbuilder.model}}
-                                <div {{bind-attr class=":col-xs-4 :sound-kit :mix kit.displayedTags"}} {{bind-attr data-myorder=_view.contentIndex}} {{action 'setCurrent' kit}}>
+                                <div {{bind-attr data-datecreated=kit.sortableDate}} {{bind-attr class=":col-xs-4 :sound-kit :mix kit.displayedTags"}} {{bind-attr data-myorder=_view.contentIndex}} {{action 'setCurrent' kit}}>
                                     <img src="http://127.0.0.1:8000{{unbound kit.image}}" alt="{{unbound kit.name}}">
                                 </div>
                             {{/each}}

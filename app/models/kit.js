@@ -7,7 +7,7 @@ var Kit = DS.Model.extend({
     soundcloud: DS.attr( 'string' ),
     image: DS.attr( 'string' ),
     tags: DS.attr(),
-    description: DS.attr( 'string' ),
+    description: DS.attr(),
     price: DS.attr( 'number' ),
     sale: DS.attr( 'number' ),
     user_rating: DS.attr( 'string' ),
@@ -21,7 +21,14 @@ var Kit = DS.Model.extend({
         }
         tagString = tagNames.join(' ');
         return tagString;
-    }.property('tags')
+    }.property('tags'),
+    sortableDate: function (){
+        var str = this.get('description.date_created');
+        var find = '-';
+        var re = new RegExp(find, 'g');
+        var result = str.replace(re, '');
+        return result;
+    }.property('description')
 });
 
 //Kit.reopenClass({
