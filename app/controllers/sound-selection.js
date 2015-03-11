@@ -2,7 +2,13 @@ import Ember from 'ember';
 
 var soundSelectionController = Ember.Controller.extend({
     needs: ['kitbuilder'],
-    sampleTypes: ['Kick Drums', 'Snare Drums', 'Claps', 'Loops', 'Percussion', 'Sound FX'],
+    currentKit: function (){
+        return this.get('kits.content')[0];
+    }.property('kits'),
+    currentKitImage: function () {
+        return 'http://127.0.0.1:8000' + this.get('currentKit.image');
+    }.property('currentKit'),
+    selectedSampleType: null,
     tagsHidden: true,
     newKits: false,
     alphabetical: false,
@@ -22,16 +28,10 @@ var soundSelectionController = Ember.Controller.extend({
         return totalTags;
     }.property('kits'),
     descriptionHidden: true,
+    // UPDATE TO BE DYNAMIC ALONG WITH SampleTypes
     filteredSamples: Ember.computed.filter('currentKit.samples', function (sample){
         if (this.get('selectedSampleType')){
             var selected = this.get('selectedSampleType');
-            if (selected === "Kick Drums"){
-                selected = 'KD';
-            } else if (selected === "Sound FX") {
-                selected = 'FX';
-            } else if (selected === "Loops") {
-                selected = 'LO';
-            }
             return selected === sample._data.type;
         }
         else{
@@ -45,7 +45,7 @@ var soundSelectionController = Ember.Controller.extend({
         setCurrent: function (kit){
             this.set('selectedSampleType', null);
             this.set('currentKit', kit);
-            this.set('currentKitImage', 'http://127.0.0.1:8000' + kit._data.image);
+            //this.set('currentKitImage', 'http://127.0.0.1:8000' + kit._data.image);
         },
         showNewKits: function () {
             this.set('newKits', !(this.get('newKits')));

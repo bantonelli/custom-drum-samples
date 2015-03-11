@@ -70,15 +70,7 @@
 
                     <div class="row filter-row filter-row-pocket-effect">
                         <form class="col-xs-4">
-                            <div class="styled-select icon-arrow-down3">
-                            {{
-                                view "select"
-                                content=sampleTypes
-                                value=selectedSampleType
-                                prompt="Select Instrument"
-
-                            }}
-                            </div>
+                            {{select-box selectedSampleType=selectedSampleType currentKit=currentKit}}
                         </form>
 
                         <div class="col-xs-4 sample-filters">
