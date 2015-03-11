@@ -1,7 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-    _initializeSampleToggler: function (){
+    _initializeSelectBox: function (){
         //Ember.run.sync();
         // init logic
     }.on('didInsertElement'),

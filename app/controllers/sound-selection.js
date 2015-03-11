@@ -44,11 +44,11 @@ var soundSelectionController = Ember.Controller.extend({
         showDescription: function (){
             this.set('descriptionHidden', !(this.get('descriptionHidden')));
         },
-        setCurrent: function (kit){
-            this.set('selectedSampleType', null);
-            this.set('currentKit', kit);
-            //this.set('currentKitImage', 'http://127.0.0.1:8000' + kit._data.image);
-        },
+        // setCurrent: function (kit){
+        //     this.set('selectedSampleType', null);
+        //     this.set('currentKit', kit);
+        //     //this.set('currentKitImage', 'http://127.0.0.1:8000' + kit._data.image);
+        // },
         showNewKits: function () {
             this.set('newKitsHidden', !(this.get('newKitsHidden')));
         },
@@ -219,7 +219,7 @@ var soundSelectionController = Ember.Controller.extend({
 
             var $container = Ember.$('#kitmix');
 
-            if(!$container.mixItUp('isLoaded')){
+            //if(!$container.mixItUp('isLoaded')){
                 $container.mixItUp({
                     controls: {
                         enable: true // we won't be needing these
@@ -229,8 +229,7 @@ var soundSelectionController = Ember.Controller.extend({
                         duration: 600
                     }
                 });
-            }
-
+            //}
         }
     }
 });

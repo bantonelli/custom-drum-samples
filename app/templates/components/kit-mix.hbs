@@ -1,0 +1,5 @@
+{{#each kit in kits}}
+    <div data-datecreated="{{unbound kit.sortableDate}}" class="col-xs-4 sound-kit mix {{unbound kit.displayedTags}}"  {{action 'setCurrent' kit}}>
+        <img src="http://127.0.0.1:8000{{unbound kit.image}}" alt="{{unbound kit.name}}">
+    </div>
+{{/each}}

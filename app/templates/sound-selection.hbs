@@ -3,11 +3,11 @@
         <div class="row">
             <section id="kb-slide-1-section-1" class="col-xs-6">
                 <div id="KitFilter" class="kb-slide-section-container">
-
                     <div class="row filter-row filter-row-pocket-effect">
                         <div class="col-xs-3 filters reset-filters">
                             <ul class="row top-menu">
-                                <li id="Reset" class="col-xs-12 menu-item" {{action 'resetMixitup'}}>Reload</li>
+                                <li id="Reset" class="col-xs-12 menu-item" {{action 'resetMixitup'}}>Reload
+                                </li>                      
                             </ul>
                         </div>
                         <div class="col-xs-9 filters">
@@ -52,11 +52,7 @@
                             </ul>
                         </div>
                         <div id="kitmix" {{action 'closeTags'}}>
-                            {{#each kit in controllers.kitbuilder.model}}
-                                <div {{bind-attr data-datecreated=kit.sortableDate}} {{bind-attr class=":col-xs-4 :sound-kit :mix kit.displayedTags"}} {{bind-attr data-myorder=_view.contentIndex}} {{action 'setCurrent' kit}}>
-                                    <img src="http://127.0.0.1:8000{{unbound kit.image}}" alt="{{unbound kit.name}}">
-                                </div>
-                            {{/each}}
+                            {{kit-mix kits=controllers.kitbuilder.model currentKit=currentKit}}
                             <div class="fail-message">
                                 <span>No items were found matching the selected filters. <br> Reload and Try again!</span>
                             </div>
