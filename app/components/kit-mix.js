@@ -7,8 +7,26 @@ export default Ember.Component.extend({
     //     console.log(state)
     //     this.set('filterState', state);		
     // }.observes('filter'),
+    tempFilterString: "all",
+    tempActiveFilters: [],
     _initializeKitMix: function (){
         //Ember.run.sync();
+        var activeFilters = this.get('controllers.kitbuilder.activeFilters');
+        function selectActiveFilters (activeFilters) {
+        	for (var i = 0; i < activeFilters.length; i++){
+	        	if (i == 0){
+	        		continue;
+	        	}
+	        	else {
+	        		var selector = '#squaredThree-' + activeFilters[i];
+	        		var checkbox = Ember.$(selector);
+	        		//checkbox.prop('checked', true).change();
+	        		checkbox.prop('checked', true);
+	        	}
+        	}	
+        }
+         
+
         var componentSelf = this;  
 		//Ember.run.next(this, function(){
 	        
@@ -146,7 +164,9 @@ export default Ember.Component.extend({
 
 	                !self.outputString.length && (self.outputString = 'all');
 
-	                console.log(self.outputString);	                
+	                console.log(self.outputString);
+	                componentSelf.set('tempActiveFilters', self.outputString.split("."));
+	                componentSelf.set('tempFilterString', self.outputString);	                
 
 	                // ^ we can check the console here to take a look at the filter string that is produced
 
@@ -164,6 +184,9 @@ export default Ember.Component.extend({
 	        // Instantiate MixItUp
 	        var $container = Ember.$('#kitmix');
 	        $container.mixItUp({
+	        	load: {
+	        		filter: componentSelf.get('controllers.kitbuilder.filterString')
+	        	},
 	            controls: {
 	                enable: true // we won't be needing these
 	            },
@@ -171,12 +194,17 @@ export default Ember.Component.extend({
 	                easing: 'cubic-bezier(0.86, 0, 0.07, 1)',
 	                duration: 600
 	            }
-	        });        		 
+	        });
+	        selectActiveFilters(activeFilters);        		 
 		//});
 
     }.on('didInsertElement'),
     _destroyKitMix: function () {
         Ember.$('#kitmix').mixItUp('destroy', true);
+        this.set('controllers.kitbuilder.activeFilters', this.get('tempActiveFilters'));
+        this.set('controllers.kitbuilder.filterString', this.get('tempFilterString'));
+        this.set('tempActiveFilters', []);
+        this.set('tempFilterString', "all");
     }.on('willDestroyElement'),
     actions: {
         setCurrent: function (kit){

@@ -11,5 +11,7 @@ export default Ember.ArrayController.extend({
         {route: 'kb-checkout', displayLink: 'Checkout'}
     ],
     chosenSamples: [],
-    samplesChosen: Ember.computed.alias("chosenSamples")
+    samplesChosen: Ember.computed.alias("chosenSamples"),
+    activeFilters: [],
+    filterString: "all"
 });
