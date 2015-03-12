@@ -5,10 +5,5 @@ export default Ember.Component.extend({
         //Ember.run.sync();
         // init logic
     }.on('didInsertElement'),
-    sampleTypes: Ember.computed.mapBy('currentKit.samples', 'type'),
-    actions: {
-        selectType: function (type){
-            this.set('selectedSampleType', type);
-        }
-    }
+    sampleTypes: Ember.computed.mapBy('currentKit.samples', 'type')
 });

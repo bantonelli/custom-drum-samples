@@ -1,8 +1,7 @@
 <div class="styled-select icon-arrow-down3">
-    <select>
-        <option value="" selected>Select Instrument</option>
-        {{#each type in sampleTypes}}
-            <option {{bind-attr value=type}} {{action 'selectType' type}}>{{type}}</option>
-        {{/each}}
-    </select>
+    {{view "select"
+       content=sampleTypes
+       value=selectedSampleType
+       prompt="Select Instrument"
+	}}
 </div>
