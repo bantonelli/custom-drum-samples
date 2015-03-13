@@ -29,11 +29,26 @@ export default Ember.Controller.extend({
             var cvc = this.get('cvc');
             var exp_month = this.get('expirationMonth');
             var exp_year = this.get('expirationYear');
-            var card = {
+            var name = this.get('firstName') + " " + this.get('lastName');
+            var address_line1 = this.get('addressLine1');
+            var address_line2 = this.get('addressLine2');
+            var address_city = this.get('addressCity');
+            var address_state = this.get('addressState');
+            var address_zip = this.get('addressZip');
+            var address_country = this.get('addressCountry');
+            
+            var billingInfo = {
                 number: number,
                 cvc: cvc,
                 exp_month: exp_month,
-                exp_year: exp_year
+                exp_year: exp_year,
+                name: name,
+                address_line1: address_line1,
+                address_line2: address_line2,
+                address_city: address_city,
+                address_state: address_state,
+                address_zip: address_zip,
+                address_country: address_country
             };
 
             function getCookie(name) {
@@ -52,7 +67,7 @@ export default Ember.Controller.extend({
                 return cookieValue;
             }
 
-            return stripeService.createToken(card).then(function(response) {
+            return stripeService.createToken(billingInfo).then(function(response) {
                 // you get access to your newly created token here
 //                user.set('stripe_id', response.id);
 //                return user.save();

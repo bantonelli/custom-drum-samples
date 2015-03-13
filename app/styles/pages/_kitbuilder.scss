@@ -54,6 +54,11 @@ Slide 1 Styles
 This is on both of Slide1's sections */
 
 .filter-row {
+  h4 {
+    margin: 0 0 0 40px;
+    height: 70px; 
+    line-height: 80px;
+  }
   @include menu-list();
 
   .icon-tags::before {
@@ -224,7 +229,7 @@ Slide 2 Styles
 
 .kit-details, .kit-details > * {
   @include h3-ow-background();
-  padding: 0;
+  //padding: 0;
 }
 
 .kit-details {
@@ -233,51 +238,13 @@ Slide 2 Styles
   .sample-name-total {
     color: nth($orange-list, 3);
   }
-
-  form {
-    padding: 0 30px 0 10px;
-    input {
-      transition: .04s all linear;
-    }
-    input:focus {
-      &::-webkit-input-placeholder {
-        color: transparent;
-      }
-      &::-moz-placeholder {
-        color: transparent;
-      }
-      &:-ms-input-placeholder {
-        color: transparent;
-      }
-      outline-style: none;
-      border: none;
-      color: lighten(nth($lightblue-list, 6), 20);
-      background-color: transparentize(nth($lightblue-list, 3), 0);
-      box-shadow: inset 0px 1px 1px rgba(0,0,0,0.3), 0px 1px 0px rgba(255,255,255,.3), 0px 0px 3px 2px transparentize(nth($lightblue-list, 3), .8);
-    }
+  .cds-form {
     .name-your-kit {
       font-family: $headline;
       font-size: 1.75em;
       height: 53px;
       width: 100%;
       line-height: 53px;
-      padding-left: 10px;
-      color: nth($purple-list, 4);
-      &::-webkit-input-placeholder {
-        color: nth($purple-list, 4);
-        //color: #ffffff;
-        opacity: 1;
-      }
-      &::-moz-placeholder {
-        color: nth($purple-list, 4);
-        //color: #ffffff;
-        opacity: 1;
-      }
-      &:-ms-input-placeholder {
-        color: nth($purple-list, 4);
-        //color: #ffffff;
-        opacity: 1;
-      }
     }
   }
 }
@@ -287,6 +254,17 @@ Slide 2 Styles
   height: 780px;
   padding: 0;
   margin-top: 100px;
+}
+
+.discounts {
+  .total-sounds {
+    h3 {
+      @include h1-ow-background();
+      span {
+        color: nth($orange-list, 3);
+      }
+    }
+  }
 }
 
 .kb-slide-2-section {
@@ -366,4 +344,44 @@ Slide 2 Styles
 /* Styling for the row with the filters
 This is on both of Slide1's sections */
 
+/*===================
+Slide 3 Styles
+*/
 
+#kb-slide-3-section-1 {
+  @include slide-section-mixin($offwhite, $height: 100%);
+  .filter-row {
+  }
+}
+
+#kb-slide-3-section-2 {
+  @include slide-section-mixin($offwhite, $height: 100%);
+}
+
+.payment-info {
+  .cds-form {
+    margin-top: 10px;
+    input {
+      box-sizing: border-box;
+      margin: 5px 0px 5px 0;
+    }
+    span {
+      @include p-ow-background();
+      font-family: $paragraph;      
+    }
+    .credit-card-info {
+    }
+    #first-name-billing, #last-name-billing, #state-billing, #zip-code-billing {
+      width: 49%;
+    }
+    #last-name-billing, #zip-code-billing {
+      margin-left: 6px;
+    }
+    #cvc-billing{
+      margin-left: 6px;
+    }
+    #address-1-billing, #address-2-billing, #city-billing, #country-billing {
+      width: 100%;
+    }
+  }
+}

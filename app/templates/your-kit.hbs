@@ -7,16 +7,12 @@
         <div class="col-xs-9">
             <div class="row kit-choices">
                 <div class="col-xs-12 kit-details">
-                    <form class="col-xs-4">
+                    <div class="col-xs-4 cds-form">
                         {{input type="text" placeholder="Name Your Kit" class="cds-text-input name-your-kit" value=customKitName}}
-                    </form>
-
-                    <div class="col-xs-4">
-                        <h3><span class="sample-name-total"> {{customKitName}} </span></h3>
                     </div>
 
-                    <div class="col-xs-4">
-                        <h3>Total Sounds: <span class="sample-name-total">{{controllers.kitbuilder.samplesChosen.length}}</span></h3>
+                    <div class="col-xs-8">
+                        <h3><span style="display:inline-block;"class="sample-name-total"> {{customKitName}} </span></h3>
                     </div>
                 </div>
                     {{#each type in uniqueSampleTypes}}
@@ -36,9 +32,12 @@
         </div>
         <div class="col-xs-3">
             <div class="row discounts">
-            <section class="kb-slide-2-section discount-section">
-                <h3>Discounts</h3>
-            </section>
+                <div class="total-sounds">
+                    <h3>Total Sounds: <span class="sample-name-total">{{controllers.kitbuilder.samplesChosen.length}}</span></h3>
+                </div>
+                <section class="kb-slide-2-section discount-section">
+                    <h3>Discounts</h3>
+                </section>
             </div>
 
         </div>

@@ -162,5 +162,44 @@ TEXT INPUT STYLES
   padding: 5px 10px;
   font-size: 16px;
   font-family: $paragraph;
-  margin: 5px 0px;
+  margin: 0px 0px;
+}
+
+.cds-form {
+  input {
+    transition: .04s all linear;
+    color: nth($purple-list, 4);
+    font-family: quicksandbold;
+    &::-webkit-input-placeholder {
+      color: nth($purple-list, 6);
+      //color: #ffffff;
+      opacity: 1;
+    }
+    &::-moz-placeholder {
+      color: nth($purple-list, 6);
+      //color: #ffffff;
+      opacity: 1;
+    }
+    &:-ms-input-placeholder {
+      color: nth($purple-list, 6);
+      //color: #ffffff;
+      opacity: 1;
+    }
+  }
+  input:focus {
+    &::-webkit-input-placeholder {
+      color: transparent;
+    }
+    &::-moz-placeholder {
+      color: transparent;
+    }
+    &:-ms-input-placeholder {
+      color: transparent;
+    }
+    outline-style: none;
+    border: none;
+    color: lighten(nth($lightblue-list, 6), 20);
+    background-color: transparentize(nth($lightblue-list, 3), 0);
+    box-shadow: inset 0px 1px 1px rgba(0,0,0,0.3), 0px 1px 0px rgba(255,255,255,.3), 0px 0px 3px 2px transparentize(nth($lightblue-list, 3), .8);
+  }     
 }
