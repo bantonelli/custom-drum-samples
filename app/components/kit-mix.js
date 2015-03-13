@@ -9,6 +9,7 @@ export default Ember.Component.extend({
     // }.observes('filter'),
     tempFilterString: "all",
     tempActiveFilters: [],
+    changeCalled: false,
     _initializeKitMix: function (){
         //Ember.run.sync();
         var activeFilters = this.get('controllers.kitbuilder.activeFilters');
@@ -58,6 +59,7 @@ export default Ember.Component.extend({
 	                });
 
 	                self.bindHandlers();
+	                componentSelf.set('changeCalled', false);
 	            },
 
 	            // The "bindHandlers" method will listen for whenever a form value changes.
@@ -67,12 +69,14 @@ export default Ember.Component.extend({
 
 	                self.$filters.on('change', function(){
 	                    self.parseFilters();
+	                    componentSelf.set('changeCalled', true);
 	                });
 
 	                self.$reset.on('click', function(e){
 	                    e.preventDefault();
 	                    self.resetFilters();
 	                    self.parseFilters();
+	                    componentSelf.set('changeCalled', true);
 	                });
 	            },
 
@@ -201,10 +205,10 @@ export default Ember.Component.extend({
     }.on('didInsertElement'),
     _destroyKitMix: function () {
         Ember.$('#kitmix').mixItUp('destroy', true);
-        this.set('controllers.kitbuilder.activeFilters', this.get('tempActiveFilters'));
-        this.set('controllers.kitbuilder.filterString', this.get('tempFilterString'));
-        this.set('tempActiveFilters', []);
-        this.set('tempFilterString', "all");
+        if (this.get('changeCalled') == true){
+    		this.set('controllers.kitbuilder.activeFilters', this.get('tempActiveFilters'));
+    		this.set('controllers.kitbuilder.filterString', this.get('tempFilterString'));       
+        }                
     }.on('willDestroyElement'),
     actions: {
         setCurrent: function (kit){
