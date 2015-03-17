@@ -6,6 +6,7 @@ export default DS.Model.extend({
     date: DS.attr('date'),
     samples: DS.hasMany('sample', { async: true }),
     tags: DS.attr(),
+    zip_file: DS.attr('string'),
     displayedTags: function() {
         var tagString;
         var tagNames = [];

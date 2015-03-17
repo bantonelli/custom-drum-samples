@@ -4,8 +4,12 @@ import config from '.././config/environment';
 
 export default Ember.Controller.extend({
     needs: ['kitbuilder', 'your-kit'],
+    errorMessage: null,
+    paymentSuccess: null,
+    mailSent: null,    
     actions: {
         processCard: function() {
+            var controllerSelf = this;
             var userID = this.get('session.content.user_id');
 
             // KIT INFORMATION
@@ -67,10 +71,12 @@ export default Ember.Controller.extend({
                 return cookieValue;
             }
 
+            // The createToken method sends an ajax request to stripe    
             return stripeService.createToken(billingInfo).then(function(response) {
                 // you get access to your newly created token here
-//                user.set('stripe_id', response.id);
-//                return user.save();
+                // the response object is the object with data from stripe
+
+                // Build new object with data from response object.
                 var data = {
                     stripeToken: response.id,
                     last4: response.card.last4,
@@ -78,6 +84,8 @@ export default Ember.Controller.extend({
                     kitName: kitName,
                     userID: userID
                 };
+
+                // Create new ajax request to our server that sends the data object.
                 Ember.$.ajax({
                     beforeSend: function(xhr) {
                         var csrftoken = getCookie('mycsrftoken');
@@ -90,15 +98,37 @@ export default Ember.Controller.extend({
                     //'parm1=value1&param2=value2',
                     success: function (data) {
                         console.log(data);
+
+                        if (data[0].data_error){
+                            // If there was invalid data posted to server set that as error message
+                            controllerSelf.set("errorMessage", data[0].data_error);
+                        }
+                        else {
+                            // If data posted is valid check payment success
+                            controllerSelf.set("errorMessage", null);
+                            if (data[0].payment_success){
+                                // If payment success report that. 
+                                controllerSelf.set("paymentSuccess", "Your payment has been processed");
+                                controllerSelf.set("errorMessage", null);
+                                if (data[0].mail_sent) {
+                                    // If email success report that. 
+                                    controllerSelf.set("mailSent", "Your custom kit download has been emailed to you");
+                                }
+                            } else {
+                                // If payment failed report the payment error message. 
+                                controllerSelf.set("errorMessage", data[0].payment_error);
+                            }
+                        }
                         // do something with server response data
-                    },
-                    error: function (err) {
-                        // handle your error logic here
-                    }
+                    }                
+                }).fail(function( jqXHR, textStatus ) {
+                    // Error that rises when there is a server error
+                    // Or if there is simply an HTTP error that is raised with the request
+                    alert( "Request failed: " + textStatus );
                 });
                 // Do another ajax call here to post to the payment view.
             }).catch(function (response){
-                // if there was an error retrieving the token you could get it here
+                // if there was an error retrieving the token from stripe we could get it here
                 if (response.error.type === 'card_error') {
                     console.log(response.error.message);
                 }

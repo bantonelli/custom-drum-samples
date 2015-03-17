@@ -2,7 +2,7 @@ import DS from 'ember-data';
 
 var Kit = DS.Model.extend({
     name: DS.attr( 'string' ),
-    is_new: DS.attr( 'boolean' ),
+    active: DS.attr( 'boolean' ),
     on_sale: DS.attr( 'string' ),
     soundcloud: DS.attr( 'string' ),
     image: DS.attr( 'string' ),
