@@ -6,13 +6,19 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  // modal route is on application level scope
+    // therefore it works with application controller
   this.modal('login-modal', {
+    //with params is the query parameter that triggers the modal appearing
       withParams: ['login'],
+      // other params are controller variables that are passed into modal component.
       otherParams: {
           identification: "identification",
-          password: "password"
+          password: "password",
+          errorMessage: "errorMessage"
       },
       actions: {
+        // actions that are sent to application controller
           authenticate: 'authenticate'
       }
   });
@@ -27,7 +33,10 @@ Router.map(function() {
       this.resource("kb-checkout", {path: '/checkout'});
   });
   this.resource("account-settings");
-  this.route("register");
+  this.resource("register", function (){
+      this.resource("sign-up", {path: '/'});
+      this.resource("register-thanks", {path: '/thanks/:user_id'});
+  });  
 });
 
 export default Router;

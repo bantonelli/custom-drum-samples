@@ -1,16 +1,1 @@
-<div class="main-content">
-    <div class="slide register-slide">
-        <div class="container register-container">
-    		<h3>Sign Up</h3>
-    		<form class="cds-form" action="" method="POST" id="payment-form"> 
-                <div class="register-info">
-                        {{input id="first-name-billing" placeholder="Username" class="cds-text-input" type="text" value=username}}
-                        {{input id="last-name-billing" placeholder="Email" class="cds-text-input" type="text" value=email}}
-                        {{input id="address-1-billing" placeholder="Password" class="cds-text-input" type="text" value=password}}
-                        {{input id="address-2-billing" placeholder="Confirm Password" class="cds-text-input" type="password" value=passwordConfirm}}                        
-                </div>                               
-                <button class="cds-button cds-button-orange cds-button-aw-medium register-button" type="submit" {{action 'register'}}>Submit</button>
-            </form>
-        </div>
-    </div>
-</div>
+{{outlet}}
