@@ -24,3 +24,13 @@
 	height: 100px;
 	font-size: 48px;
 }
+
+.activate-container {
+	margin-top: 50px;
+	width: 600px;
+	h2, h3 {
+		text-align: center;
+		margin: 50px 0px;
+		@include h1-ow-background();
+	}	
+}
