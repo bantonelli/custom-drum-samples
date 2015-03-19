@@ -70,7 +70,7 @@
                                         </li>
                                     {{else}}
                                         <li>{{#link-to (query-params login=true) classNames="col-xs-6 cd-signin" }}Log In{{/link-to}}</li>
-                                        <li>{{#link-to (query-params login=true) classNames="col-xs-6 cd-signin" }}Register{{/link-to}}</li>
+                                        <li>{{#link-to 'register' classNames="col-xs-6 cd-signin" }}Register{{/link-to}}</li>
                                     {{/if}}
                                 </ul>
                             </nav>
@@ -80,7 +80,7 @@
                           {{outlet appnav}}
                     </div>
                 </header>
-                {{outlet}}
+                {{liquid-outlet}}
             </div><!-- /st-content-inner -->
         </div><!-- /st-content -->
     </div><!-- /st-pusher -->

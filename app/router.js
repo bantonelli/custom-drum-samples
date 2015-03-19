@@ -27,6 +27,7 @@ Router.map(function() {
       this.resource("kb-checkout", {path: '/checkout'});
   });
   this.resource("account-settings");
+  this.route("register");
 });
 
 export default Router;

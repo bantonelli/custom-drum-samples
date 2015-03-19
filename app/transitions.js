@@ -14,4 +14,8 @@ export default function () {
         this.toRoute('kb-checkout'),
         this.use('toLeft')
     );
+    this.transition(
+        this.toRoute('register'),
+        this.use('toUp')
+    );
 }

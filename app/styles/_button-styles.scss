@@ -6,6 +6,7 @@
   color: $offwhite;
   font-family: $headline;
   font-size: 2em;
+  border: none;
   border-radius: 2px;
   text-align: center;
   line-height: 100px;
@@ -15,6 +16,14 @@
   }
   &:focus {
     text-decoration: none;
+  }
+}
+
+.cds-button-orange {
+  background-image: linear-gradient(0deg, nth($orange-list, 2), nth($orange-list, 1));
+  color: $offwhite;
+  &:hover {
+    color: nth($lightblue-list, 4);
   }
 }
 
@@ -29,8 +38,4 @@
   height: 60px;
   line-height: 60px;
   font-size: 27px;
-}
-
-.payment-button {
-  border: none;
 }

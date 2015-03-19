@@ -1,0 +1,26 @@
+.register-slide {
+	background-color: nth($purple-list, 4);
+}
+
+.register-info {
+	margin-top: 40px;
+	input {
+		height: 55px;
+		width: 400px;
+		margin: 0 0 30px 100px;
+	}
+}
+
+.register-container {
+	margin-top: 50px;
+	width: 600px;
+	h2, h3 {
+		text-align: center;
+		color: $offwhite;
+	}
+}
+
+.register-button {
+	height: 100px;
+	font-size: 48px;
+}
