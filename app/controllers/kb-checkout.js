@@ -57,12 +57,12 @@ export default Ember.Controller.extend({
 
             function getCookie(name) {
                 var cookieValue = null;
-                if (document.cookie && document.cookie !== '') {
-                    var cookies = document.cookie.split(';');
+                if (document.cookie && document.cookie != '') {
+                 var cookies = document.cookie.split(';');
                     for (var i = 0; i < cookies.length; i++) {
-                        var cookie = Ember.$.trim(cookies[i]);
-                        // Does this cookie string begin with the name we want?
-                        if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                         var cookie = jQuery.trim(cookies[i]);
+                         // Does this cookie string begin with the name we want?
+                        if (cookie.substring(0, name.length + 1) == (name + '=')) {
                             cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
                             break;
                         }
@@ -71,6 +71,9 @@ export default Ember.Controller.extend({
                 return cookieValue;
             }
 
+             // get the csrftoken cookie stored by django
+            var csrf_token = getCookie('csrftoken');
+
             // The createToken method sends an ajax request to stripe    
             return stripeService.createToken(billingInfo).then(function(response) {
                 // you get access to your newly created token here
@@ -78,6 +81,7 @@ export default Ember.Controller.extend({
 
                 // Build new object with data from response object.
                 var data = {
+                    csrfmiddlewaretoken: csrf_token,
                     stripeToken: response.id,
                     last4: response.card.last4,
                     samples: JSON.stringify(samples),
@@ -95,7 +99,11 @@ export default Ember.Controller.extend({
                     url: config.APP.API_HOST + "/api/custom-kits/purchase/",
                     crossDomain: true,
                     data: data,
-                    //'parm1=value1&param2=value2',
+                    // xhrFields withCredentials will auto set cookies and session data on the request
+                    // This is necessary for validating csrf token on server side.
+                    xhrFields: {
+                        withCredentials: true
+                    },
                     success: function (data) {
                         console.log(data);
 
