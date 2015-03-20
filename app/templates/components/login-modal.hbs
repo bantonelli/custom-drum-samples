@@ -12,7 +12,11 @@
                 <p class="fieldset">
                     <label class="image-replace cd-password" for="signin-password">Password</label>
                     {{input id="signin-password" value=password placeholder='Enter Password' type='password' class="cds-text-input full-width"}}
-                    <a href="#0" class="hide-password">Hide</a>
+                    {{#if passwordHidden}}
+                        <a href="#0" class="hide-password" {{action 'showPassword'}}>Show</a>
+                    {{else}}
+                        <a href="#0" class="hide-password" {{action 'hidePassword'}}>Hide</a>
+                    {{/if}}                    
                     <span class="cd-error-message">Error message here!</span>
                 </p>
                 <p class="fieldset">

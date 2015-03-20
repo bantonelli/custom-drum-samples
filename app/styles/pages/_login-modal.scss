@@ -142,8 +142,8 @@ xsigin/signup popup
 }
 .cd-form input {
   margin: 0;
-  padding: 0;
-  border-radius: 0.25em;
+  //padding: 0;
+  //border-radius: 0.25em;
 }
 .cd-form input.full-width {
   width: 100%;
@@ -334,11 +334,21 @@ xsigin/signup popup
 	width: 500px;
 	.modal-form-area {
 		background-color: $offwhite;
-		p.login-heading {
+		.login-heading {
 			font-size: 28px;
 			text-align: center;
 			margin-top: 40px;
 			@include p-ow-background();
 		}
 	}
+  .hide-password {
+    font-family: $paragraph;
+    @include p-ow-background();
+  }
+  .cds-button {
+    font-family: $headline;
+    font-weight: 400;
+    //color: $offwhite;
+
+  }
 }

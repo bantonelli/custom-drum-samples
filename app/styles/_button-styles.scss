@@ -10,6 +10,7 @@
   border-radius: 2px;
   text-align: center;
   line-height: 100px;
+  padding: 0;
   &:hover {
     color: nth($lightblue-list, 4);
     text-decoration: none;

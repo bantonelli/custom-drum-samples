@@ -10,23 +10,32 @@ export default Ember.Component.extend({
     	var error = this.get('targetObject.errorMessage');
     	return error;
     }.property('targetObject.errorMessage'),
+    passwordHidden: true,
     actions: {
+      showPassword: function (){
+        this.set('passwordHidden', false);
+        Ember.$('#signin-password').prop("type", "text");
+      },
+      hidePassword: function (){
+        this.set('passwordHidden', true);
+        Ember.$('#signin-password').prop("type", "password");
+      },
       login: function () {
       	var _this = this;
       	// Send the authenticate action to the application controller's authenticate action
       	// authenticate action on app controller is provided by simple auth mixin
-		this.sendAction('authenticate');
-		// use setTimeout for a slight delay after login (for UX)
-		setTimeout(function(){ 
-			// If there is an error show it
-			if (_this.get('errorMessage')){
-				console.log(_this.get('errorMessage'));
-			} 
-			// otherwise close the modal (the login was successful)
-			else {
-				_this.sendAction('dismiss');	
-			}             
-		}, 500);                         
+    		this.sendAction('authenticate');
+    		// use setTimeout for a slight delay after login (for UX)
+    		setTimeout(function(){ 
+    			// If there is an error show it
+    			if (_this.get('errorMessage')){
+    				console.log(_this.get('errorMessage'));
+    			} 
+    			// otherwise close the modal (the login was successful)
+    			else {
+    				_this.sendAction('dismiss');	
+    			}             
+    		}, 500);                         
       }
     }
 });

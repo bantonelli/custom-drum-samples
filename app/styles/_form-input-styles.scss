@@ -166,7 +166,7 @@ TEXT INPUT STYLES
 }
 
 .cds-form {
-  input {
+  input[type="text"], input[type="password"] {
     transition: .04s all linear;
     color: nth($purple-list, 4);
     font-family: quicksandbold;
@@ -186,7 +186,7 @@ TEXT INPUT STYLES
       opacity: 1;
     }
   }
-  input:focus {
+  input[type="text"]:focus, input[type="password"]:focus {
     &::-webkit-input-placeholder {
       color: transparent;
     }

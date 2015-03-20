@@ -7,15 +7,7 @@ export default Ember.Controller.extend({
 		resendActivation: function () {
             var controllerSelf = this;
             
-/*
-{{input id="first-name-billing" placeholder="Username" class="cds-text-input" type="text" value=username}}
-{{input id="last-name-billing" placeholder="Email" class="cds-text-input" type="text" value=email}}
-{{input id="address-1-billing" placeholder="Password" class="cds-text-input" type="text" value=password}}
-{{input id="address-2-billing" placeholder="Confirm Password" class="cds-text-input" type="password" value=passwordConfirm}}
-*/
-            var user_id = this.get('model.id');
-           
-            
+            var user_id = this.get('model.id');                    
 
             // Function for getting a cookie based on name 
 	         function getCookie(name) {
@@ -63,7 +55,6 @@ export default Ember.Controller.extend({
                     // Or if there is simply an HTTP error that is raised with the request
                     alert( "Request failed: " + textStatus );
                 });
-			//});
 		}
 	}
 });
