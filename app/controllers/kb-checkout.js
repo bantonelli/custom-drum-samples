@@ -91,10 +91,6 @@ export default Ember.Controller.extend({
 
                 // Create new ajax request to our server that sends the data object.
                 Ember.$.ajax({
-                    beforeSend: function(xhr) {
-                        var csrftoken = getCookie('mycsrftoken');
-                        xhr.setRequestHeader("X-CSRFToken", csrftoken);
-                    },
                     type: "POST",
                     url: config.APP.API_HOST + "/api/custom-kits/purchase/",
                     crossDomain: true,

@@ -1,4 +1,6 @@
 import Ember from 'ember';
+import config from '.././config/environment';
+
 
 export default Ember.View.extend({
     classNames: ['app-view'],
@@ -63,6 +65,42 @@ export default Ember.View.extend({
                 init();
             });
             SidebarMenuEffects();
+
+            function getCookie(name) {
+                var cookieValue = null;
+                if (document.cookie && document.cookie != '') {
+                 var cookies = document.cookie.split(';');
+                    for (var i = 0; i < cookies.length; i++) {
+                         var cookie = jQuery.trim(cookies[i]);
+                         // Does this cookie string begin with the name we want?
+                        if (cookie.substring(0, name.length + 1) == (name + '=')) {
+                            cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                            break;
+                        }
+                    }
+                }
+                return cookieValue;
+            }
+
+             // get the csrftoken cookie stored by django
+            var csrf_token = getCookie('csrftoken');
+
+            if (csrf_token) {
+                
+            } else {
+                Ember.$.ajax({
+                    type: "GET",
+                    url: config.APP.API_HOST + "/api/accounts/setup",
+                    crossDomain: true,
+                    xhrFields: { withCredentials: true },
+                    success: function(data, textStatus, jqXHR) {
+                        csrf_token = data[0].csrf_token;
+                        console.log(csrf_token);
+                    }        
+                });
+            }
+
+            
             //    if (jQuery.browser.mobile == true) {
             //        // Defined in landing-page.js
             //        tapToTouch();
