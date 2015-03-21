@@ -10,7 +10,9 @@ export default Ember.Component.extend({
     	var error = this.get('targetObject.errorMessage');
     	return error;
     }.property('targetObject.errorMessage'),
+    showError: false,
     passwordHidden: true,
+    resetFormHidden: true,
     actions: {
       showPassword: function (){
         this.set('passwordHidden', false);
@@ -19,6 +21,12 @@ export default Ember.Component.extend({
       hidePassword: function (){
         this.set('passwordHidden', true);
         Ember.$('#signin-password').prop("type", "password");
+      },
+      showResetForm: function (){
+        this.set('resetFormHidden', false);
+      },
+      hideResetForm: function (){
+        this.set('resetFormHidden', true);
       },
       login: function () {
       	var _this = this;
@@ -30,9 +38,11 @@ export default Ember.Component.extend({
     			// If there is an error show it
     			if (_this.get('errorMessage')){
     				console.log(_this.get('errorMessage'));
+            _this.set('showError', true);
     			} 
     			// otherwise close the modal (the login was successful)
     			else {
+            _this.set('showError', false);
     				_this.sendAction('dismiss');	
     			}             
     		}, 500);                         

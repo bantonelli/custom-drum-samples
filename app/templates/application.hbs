@@ -65,11 +65,11 @@
                                             <input type="checkbox" id="usermenu-toggle"/>
                                             <ul class="user-dropdown">
                                                 <li>{{#link-to 'account-settings' class="col-xs-12"}}Account Settings{{/link-to}}</li>
-                                                <li><a class="col-xs-12" {{action 'invalidateSession'}}>Log Out</a></li>
+                                                <li><a class="col-xs-12" {{action 'invalidateSession'}}>Sign Out</a></li>
                                             </ul>
                                         </li>
                                     {{else}}
-                                        <li>{{#link-to (query-params login=true) classNames="col-xs-6 cd-signin" }}Log In{{/link-to}}</li>
+                                        <li>{{#link-to (query-params login=true) classNames="col-xs-6 cd-signin" }}Sign In{{/link-to}}</li>
                                         <li>{{#link-to 'register' classNames="col-xs-6 cd-signin" }}Register{{/link-to}}</li>
                                     {{/if}}
                                 </ul>

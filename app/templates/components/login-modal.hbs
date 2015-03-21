@@ -1,50 +1,57 @@
 <div class="container modal-container" style=""> <!-- this is the entire modal form, including the background -->
-    <div class="row"> <!-- this is the container wrapper -->
+    <div class="row modal-container-inner"> <!-- this is the container wrapper -->
         <div id="" class="col-xs-12 modal-form-area"> <!-- log in form -->
-            <p class="login-heading">Login</p>
+            <p class="login-heading">Sign In</p>
             <form class="cd-form cds-form" {{action 'login' on='submit'}}>
                 <p class="fieldset">
                     <label class="image-replace cd-email" for="signin-email">User Name</label>
-                    {{input id="signin-email" value=identification placeholder='Enter Login' class="cds-text-input full-width"}}
-                    <span class="cd-error-message">Error message here!</span>
+                    {{input id="signin-email" value=identification placeholder='Email' class="cds-text-input full-width"}}
+                    <span class="cd-error-message">Client Side validation error</span>
                 </p>
 
                 <p class="fieldset">
                     <label class="image-replace cd-password" for="signin-password">Password</label>
-                    {{input id="signin-password" value=password placeholder='Enter Password' type='password' class="cds-text-input full-width"}}
+                    {{input id="signin-password" value=password placeholder='Password' type='password' class="cds-text-input full-width"}}
                     {{#if passwordHidden}}
                         <a href="#0" class="hide-password" {{action 'showPassword'}}>Show</a>
                     {{else}}
                         <a href="#0" class="hide-password" {{action 'hidePassword'}}>Hide</a>
                     {{/if}}                    
-                    <span class="cd-error-message">Error message here!</span>
+                    <span class="cd-error-message">Client Side validation error</span>
                 </p>
                 <p class="fieldset">
-                    <input class="cds-button cds-button-aw-medium" type="submit" value="Login">
+                    <input class="cds-button cds-button-aw-medium" type="submit" value="Sign In">
+                    {{#if showError}}
+                        <span id="server-error" class="cds-error-message">Error: {{errorMessage}}!</span>
+                    {{/if}}
                 </p>
             </form>
 
-            <p class="cd-form-bottom-message"><a href="#0">Forgot your password?</a></p>
+            
             <!-- <a href="#0" class="cd-close-form">Close</a> -->
         </div> <!-- cd-login -->
 
-        <div id="cd-reset-password"> <!-- reset password form -->
+        <div id="cd-reset-password" {{bind-attr class="resetFormHidden:ng-hide"}}> <!-- reset password form -->
+            <p class="login-heading">Reset Password</p>
             <p class="cd-form-message">Lost your password? Please enter your email address. You will receive a link to create a new password.</p>
 
             <form class="cd-form">
                 <p class="fieldset">
                     <label class="image-replace cd-email" for="reset-email">E-mail</label>
-                    <input class="full-width has-padding has-border" id="reset-email" type="email" placeholder="E-mail">
+                    {{input id="reset-password-email" value=email placeholder='E-mail' type='email' class="cds-text-input full-width"}}
                     <span class="cd-error-message">Error message here!</span>
                 </p>
 
                 <p class="fieldset">
-                    <input class="full-width has-padding" type="submit" value="Reset password">
+                    <input class="cds-button cds-button-aw-medium" type="submit" value="Reset password">
                 </p>
-            </form>
-
-            <p class="cd-form-bottom-message"><a href="#0">Back to log-in</a></p>
+            </form>            
         </div> <!-- cd-reset-password -->
-        <a href="#0" class="cd-close-form">Close</a>
+        
     </div> <!-- cd-user-modal-container -->
+    {{#if resetFormHidden}}
+        <p class="cd-form-bottom-message"><a href="#0" {{action 'showResetForm'}}>Forgot your password?</a></p>
+    {{else}}
+        <p class="cd-form-bottom-message"><a href="#0" {{action 'hideResetForm'}}>Go back to Sign In Form</a></p>
+    {{/if}}
 </div> <!-- cd-user-modal -->
