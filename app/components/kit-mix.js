@@ -15,7 +15,7 @@ export default Ember.Component.extend({
         var activeFilters = this.get('controllers.kitbuilder.activeFilters');
         function selectActiveFilters (activeFilters) {
         	for (var i = 0; i < activeFilters.length; i++){
-	        	if (i == 0){
+	        	if (i === 0){
 	        		continue;
 	        	}
 	        	else {
@@ -205,7 +205,7 @@ export default Ember.Component.extend({
     }.on('didInsertElement'),
     _destroyKitMix: function () {
         Ember.$('#kitmix').mixItUp('destroy', true);
-        if (this.get('changeCalled') == true){
+        if (this.get('changeCalled') === true){
     		this.set('controllers.kitbuilder.activeFilters', this.get('tempActiveFilters'));
     		this.set('controllers.kitbuilder.filterString', this.get('tempFilterString'));       
         }                

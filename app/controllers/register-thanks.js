@@ -5,19 +5,19 @@ import config from '.././config/environment';
 export default Ember.Controller.extend({
 	actions: {
 		resendActivation: function () {
-            var controllerSelf = this;
+            // var controllerSelf = this;
             
             var user_id = this.get('model.id');                    
 
             // Function for getting a cookie based on name 
 	         function getCookie(name) {
 	             var cookieValue = null;
-	             if (document.cookie && document.cookie != '') {
+	             if (document.cookie && document.cookie !== '') {
 	                 var cookies = document.cookie.split(';');
 	                 for (var i = 0; i < cookies.length; i++) {
-	                     var cookie = jQuery.trim(cookies[i]);
+	                     var cookie = Ember.$.trim(cookies[i]);
 	                     // Does this cookie string begin with the name we want?
-	                 	if (cookie.substring(0, name.length + 1) == (name + '=')) {
+	                 	if (cookie.substring(0, name.length + 1) === (name + '=')) {
 							cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
 							break;
 	                 	}

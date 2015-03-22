@@ -20,7 +20,7 @@ export default Ember.Controller.extend(LoginControllerMixin, {
 			// Call then to handle the promise
 				// the first function is if it is successful
 				// the second function is if an error is returned.
-			this.get('session').authenticate('cds-authenticator:oauth2-password-grant', credentials).then(function (reason){
+			this.get('session').authenticate('cds-authenticator:oauth2-password-grant', credentials).then(function (){
 				// setting this 'errorMessage' property to null causes the property of the
 				// login modal to also become null				
 				_this.set('errorMessage', null);

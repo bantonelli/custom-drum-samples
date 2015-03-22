@@ -1,7 +1,7 @@
 /**
  * Created by brandonantonelli on 1/22/15.
  */
-import Ember from 'ember';
+// import Ember from 'ember';
 import Authenticator from 'simple-auth-oauth2/authenticators/oauth2';
 
 export default Authenticator.extend({

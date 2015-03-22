@@ -21,7 +21,7 @@ var soundSelectionController = Ember.Controller.extend({
         for (var kit = 0; kit < kits.length; kit++){
             var currentTags = kits[kit].get('tags');
             for (var tagIndex = 0; tagIndex < currentTags.length; tagIndex++) {
-                if (totalTags.indexOf(currentTags[tagIndex].name) == -1) {
+                if (totalTags.indexOf(currentTags[tagIndex].name) === -1) {
                 //if (Ember.$.inArray(tags[tagIndex], totalTags) === -1) {
                     totalTags.push(currentTags[tagIndex].name);
                 }

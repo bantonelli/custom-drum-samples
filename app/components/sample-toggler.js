@@ -48,7 +48,7 @@ export default Ember.Component.extend({
         }
     }.property('chosenSamples@each'),
     typeMatches: function (){
-        if (this.get('sampleType') == this.get('sample.type')) {
+        if (this.get('sampleType') === this.get('sample.type')) {
             return true;
         } else {
             return false;

@@ -1,6 +1,8 @@
 import Ember from 'ember';
 import config from '.././config/environment';
 
+var classie = window.classie;
+
 
 export default Ember.View.extend({
     classNames: ['app-view'],
@@ -68,12 +70,12 @@ export default Ember.View.extend({
 
             function getCookie(name) {
                 var cookieValue = null;
-                if (document.cookie && document.cookie != '') {
+                if (document.cookie && document.cookie !== '') {
                  var cookies = document.cookie.split(';');
                     for (var i = 0; i < cookies.length; i++) {
-                         var cookie = jQuery.trim(cookies[i]);
+                         var cookie = Ember.$.trim(cookies[i]);
                          // Does this cookie string begin with the name we want?
-                        if (cookie.substring(0, name.length + 1) == (name + '=')) {
+                        if (cookie.substring(0, name.length + 1) === (name + '=')) {
                             cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
                             break;
                         }
@@ -93,7 +95,9 @@ export default Ember.View.extend({
                     url: config.APP.API_HOST + "/api/accounts/setup",
                     crossDomain: true,
                     xhrFields: { withCredentials: true },
-                    success: function(data, textStatus, jqXHR) {
+                    // success: function(data, textStatus, jqXHR) {                
+                    // }        
+                    success: function(data) {
                         csrf_token = data[0].csrf_token;
                         console.log(csrf_token);
                     }        

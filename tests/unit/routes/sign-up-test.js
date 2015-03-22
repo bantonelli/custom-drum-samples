@@ -10,5 +10,5 @@ moduleFor('route:sign-up', 'SignUpRoute', {
 
 test('it exists', function() {
   var route = this.subject();
-  ok(route);
+  // ok(route);
 });
