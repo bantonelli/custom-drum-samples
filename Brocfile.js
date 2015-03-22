@@ -5,7 +5,11 @@ var mergeTrees = require('broccoli-merge-trees');
 var pickFiles = require('broccoli-static-compiler');
 var compileSass = require('broccoli-sass');
 
-var app = new EmberApp();
+var app = new EmberApp({
+    vendorFiles: {
+        'handlebars.js': null
+    }
+});
 
 // Use `app.import` to add additional libraries to the generated
 // output files.

@@ -13,20 +13,18 @@
     <link rel="stylesheet" href="assets/vendor.css">
     <link rel="stylesheet" href="assets/custom-drum-samples.css">
 
-
     {{content-for 'head-footer'}}
   </head>
-<body class="main-container">
-{{content-for 'body'}}
-<script src="assets/vendor.js"></script>
-<script src="assets/custom-drum-samples.js"></script>
+  <body>
+    {{content-for 'body'}}
 
-{{content-for 'body-footer'}}
+    <script src="assets/vendor.js"></script>
+    <script src="assets/custom-drum-samples.js"></script>
 
-<!--[if lt IE 9]>
-<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-<![endif]-->
-<script type="text/javascript" src="http://localhost:9090/livereload.js"></script>
-</body> <!-- End Main Container -->
-
+    {{content-for 'body-footer'}}
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <script type="text/javascript" src="http://localhost:9090/livereload.js"></script>
+  </body>
 </html>
