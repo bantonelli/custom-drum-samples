@@ -18,7 +18,8 @@
     "classie": "~1.0.1",
     "modernizr": "~2.8.3",
     "jquery-cookie": "~1.4.1",
-    "mixitup": "~2.1.7"
+    "mixitup": "~2.1.7",
+    "handlebars": "~3.0.0"
   },
   "devDependencies": {}
 }

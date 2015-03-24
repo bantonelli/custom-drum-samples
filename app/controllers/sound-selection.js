@@ -14,6 +14,8 @@ var soundSelectionController = Ember.Controller.extend({
     newKitsHidden: true,
     alphabetical: false,
     onSale: false,
+    testProp1: false,
+    testProp2: false,
     kits: Ember.computed.alias('model'),
     tags: function () {
         var kits = this.get('kits.content');

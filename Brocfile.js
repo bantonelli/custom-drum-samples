@@ -4,11 +4,19 @@ var EmberApp = require('ember-cli/lib/broccoli/ember-app');
 var mergeTrees = require('broccoli-merge-trees');
 var pickFiles = require('broccoli-static-compiler');
 var compileSass = require('broccoli-sass');
+var HtmlbarsCompiler = require('ember-cli-htmlbars');
 
 var app = new EmberApp({
     vendorFiles: {
         'handlebars.js': null
     }
+});
+
+var templateTree = new HtmlbarsCompiler('app/templates', {
+  isHTMLBars: true,
+
+  // provide the templateCompiler that is paired with your Ember version
+  templateCompiler: require('./bower_components/ember/ember-template-compiler')
 });
 
 // Use `app.import` to add additional libraries to the generated
@@ -103,6 +111,7 @@ module.exports = mergeTrees(
         quicksandFont,
         images,
         vendorJS,
+        templateTree,
         styles
     ], {overwrite: true}
 );
