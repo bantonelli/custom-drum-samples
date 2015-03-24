@@ -90,7 +90,7 @@ header[role=banner] {
   }
 }
 
-.main-nav a {
+.main-nav a, .main-nav label {
   display: inline-block;
   background-color: rgba(0, 0, 0, 0);
   height: 60px;

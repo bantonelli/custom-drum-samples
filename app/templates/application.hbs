@@ -48,8 +48,8 @@
                             <nav class="main-nav col-xs-4 col-xs-offset-3">
                                 <ul class="row">
                                     <!-- insert more links here -->
-                                    <li>{{#link-to 'kitbuilder' class="col-xs-5"}}Kit Builder{{/link-to}}</li>
-                                    <li><a class="col-xs-7" href="/custom-quote">Custom Samples</a></li>
+                                    <li>{{#link-to 'kitbuilder' class="col-xs-5 col-xs-offset-7"}}Kit Builder{{/link-to}}</li>
+                                    
                                 </ul>
                             </nav>
                             <nav id="main-nav" class="main-nav col-xs-3">
@@ -57,11 +57,9 @@
                                     <!-- insert more links here -->
                                     {{#if session.isAuthenticated}}
                                         <li class="col-xs-8 username-display">
-                                            <a class="col-xs-12 cd-signin">
-                                                <label for="usermenu-toggle">
-                                                {{session.currentUser.username}}
-                                                </label>
-                                            </a>
+                                            <label class="col-xs-12 cd-signin" style="width: 100%; cursor: pointer;" for="usermenu-toggle">
+                                            {{session.currentUser.username}}
+                                            </label>
                                             <input type="checkbox" id="usermenu-toggle"/>
                                             <ul class="user-dropdown">
                                                 <li>{{#link-to 'account-settings' class="col-xs-12"}}Account Settings{{/link-to}}</li>
