@@ -4,6 +4,7 @@
             {{#tab-view}}
                 {{#tab-pane name="My Account"}}
                     {{partial "partials/my-account"}}
+                    {{outlet "update-info"}}
                 {{/tab-pane}}
 
                 {{#tab-pane name="My Drum Kits"}}
@@ -13,7 +14,7 @@
                 {{#tab-pane name="Payment Info"}}
                     {{partial "partials/payment-info"}}
                 {{/tab-pane}}
-            {{/tab-view}}
+            {{/tab-view}}            
         </div>
     </div>
 </div>

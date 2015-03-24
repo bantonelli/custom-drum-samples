@@ -6,6 +6,7 @@ export default Ember.Controller.extend({
 	email: null,
 	currentPassword: null,
 	newPassword: null,
+	profile: Ember.computed.alias("model"),
 	actions: {
 		resetPassword: function () {
 			// Dont need to send user_id

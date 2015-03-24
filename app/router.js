@@ -32,7 +32,9 @@ Router.map(function() {
       this.resource("your-kit");
       this.resource("kb-checkout", {path: '/checkout'});
   });
-  this.resource("account-settings");
+  this.resource("account-settings", function () {
+      this.resource('update-info', {path: '/update-info/:uid/:token'});
+  });
   this.resource("register", {path:'/registration'}, function (){
       this.resource("sign-up", {path: '/'});
       this.resource("register-thanks", {path: '/thanks/:user_id'});

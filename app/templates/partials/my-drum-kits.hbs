@@ -3,7 +3,9 @@
         <div class="row">
             <h4 class="col-xs-12 icon-side_drum">My Drum Kits</h4>
             <ul class="col-xs-12 custom-kit-list">
-                <li class="icon-download" {{action 'download'}}>Zeph's 808 Kit</li>
+            	{{#each kit in profile.custom_kits}}
+                	<a href="http://127.0.0.1:8000{{unbound kit.zip_file}}" class="icon-download">{{kit.name}}</a>                	
+            	{{/each}}
             </ul>
         </div>
     </section>

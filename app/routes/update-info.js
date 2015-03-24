@@ -2,6 +2,12 @@ import Ember from 'ember';
 import config from '.././config/environment';
 
 export default Ember.Route.extend({
+	renderTemplate: function() {
+    	this.render({ 
+    		into: 'account-settings',
+    		outlet: 'update-info' 
+    	});
+  	},
 	model: function(params) {
 		// params are the query parameters in the URL
 		// {uid}/{token}
@@ -27,7 +33,7 @@ export default Ember.Route.extend({
 		    //     xhr.setRequestHeader("X-CSRFToken", csrftoken);
 		    // },
 		    type: "POST",
-		    url: config.APP.API_HOST + "/api/accounts/activate",
+		    url: config.APP.API_HOST + "/api/accounts/update/confirm",
 		    crossDomain: true,
 		    data: data,
 		    success: function (data) {
