@@ -1,5 +1,6 @@
 import Ember from 'ember';
 import config from '.././config/environment';
+var swal = window.sweetAlert;
 
 
 export default Ember.Controller.extend({
@@ -105,22 +106,37 @@ export default Ember.Controller.extend({
 
                         if (data[0].data_error){
                             // If there was invalid data posted to server set that as error message
-                            controllerSelf.set("errorMessage", data[0].data_error);
+                            // controllerSelf.set("errorMessage", data[0].data_error);
+                            // ********* ALERT ******** //
+                            swal({
+                              title: "Error!",
+                              text: data[0].data_error,
+                              type: "error",
+                              confirmButtonText: "OK"
+                            });     
                         }
                         else {
                             // If data posted is valid check payment success
-                            controllerSelf.set("errorMessage", null);
+                            // controllerSelf.set("errorMessage", null);
                             if (data[0].payment_success){
                                 // If payment success report that. 
                                 controllerSelf.set("paymentSuccess", "Your payment has been processed");
-                                controllerSelf.set("errorMessage", null);
+                                // controllerSelf.set("errorMessage", null);
                                 if (data[0].mail_sent) {
                                     // If email success report that. 
                                     controllerSelf.set("mailSent", "Your custom kit download has been emailed to you");
+                                    // ********* REDIRECT TO PAYMENT RECIEVED/ THANK YOU PAGE ******** //    
                                 }
                             } else {
                                 // If payment failed report the payment error message. 
-                                controllerSelf.set("errorMessage", data[0].payment_error);
+                                // ********* ALERT ******** //
+                                swal({
+                                  title: "Error!",
+                                  text: data[0].payment_error,
+                                  type: "error",
+                                  confirmButtonText: "OK"
+                                }); 
+                                // controllerSelf.set("errorMessage", data[0].payment_error);
                             }
                         }
                         // do something with server response data
@@ -128,13 +144,25 @@ export default Ember.Controller.extend({
                 }).fail(function( jqXHR, textStatus ) {
                     // Error that rises when there is a server error
                     // Or if there is simply an HTTP error that is raised with the request
-                    alert( "Request failed: " + textStatus );
+                    // ********* ALERT ******** //
+                    swal({
+                      title: "Request Failed!",
+                      text: textStatus,
+                      type: "error",
+                      confirmButtonText: "OK"
+                    });     
                 });
                 // Do another ajax call here to post to the payment view.
             }).catch(function (response){
                 // if there was an error retrieving the token from stripe we could get it here
                 if (response.error.type === 'card_error') {
-                    console.log(response.error.message);
+                    // ********* ALERT ******** //
+                    swal({
+                      title: "Error!",
+                      text: response.error.message,
+                      type: "error",
+                      confirmButtonText: "OK"
+                    });  
                 }
             });
 
