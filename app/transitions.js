@@ -3,12 +3,20 @@
  */
 export default function () {
     this.transition(
-        this.toRoute('sound-selection'),
+        // From 1 to 2
+        this.fromRoute('sound-selection'),
+        this.toRoute('your-kit'),
         this.use('toLeft')
     );
     this.transition(
+        // From 3 to 2
+        this.fromRoute('kb-checkout'),
         this.toRoute('your-kit'),
-        this.use('toLeft')
+        this.use('toRight')
+    );
+    this.transition(
+        this.toRoute('sound-selection'),
+        this.use('toRight')
     );
     this.transition(
         this.toRoute('kb-checkout'),
@@ -16,6 +24,18 @@ export default function () {
     );
     this.transition(
         this.toRoute('register'),
-        this.use('toUp')
+        this.use('toDown', { duration: 750, easing: "easeOutQuart" })
+    );
+    this.transition(
+        this.toRoute('index'),
+        this.use('crossFade', { duration: 650, easing: "easeOutQuart" })
+    );
+    this.transition(
+        this.toRoute('legal'),
+        this.use('crossFade', { duration: 650, easing: "easeOutQuart" })
+    );
+    this.transition(
+        this.toRoute('about'),
+        this.use('crossFade', { duration: 650, easing: "easeOutQuart" })
     );
 }
