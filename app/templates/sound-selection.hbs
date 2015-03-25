@@ -1,4 +1,3 @@
-<div id="kb-slide-1" class="slide">
     <div class="slide-width-container">
         <div class="row">
             <section id="kb-slide-1-section-1" class="col-xs-6">
@@ -106,9 +105,11 @@
                                 </div>
                             </div>
                             <div class="row">
+                                {{#if loadSoundCloud}}
                                 <div class="col-xs-12 sound-kit-soundcloud">
                                     <iframe width="100%" height="100" scrolling="no" frameborder="no" {{bind-attr src=currentKit.soundcloud}}></iframe>
                                 </div>
+                                {{/if}}
                             </div>
                         </div>
                         <div class="col-xs-6 selected-kit-sounds">
@@ -128,4 +129,3 @@
             </section>
         </div>
     </div>
-</div>

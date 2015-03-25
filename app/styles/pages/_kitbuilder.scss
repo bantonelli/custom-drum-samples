@@ -5,7 +5,7 @@ General Slide Styles
 #kb-slide-1 {
   @include slide-mixin($offwhite);
 
-  > .row {
+  .slide-width-container > .row {
     height: 100%;
     margin: 0;
   }
@@ -14,7 +14,7 @@ General Slide Styles
 #kb-slide-2 {
   @include slide-mixin($offwhite);
 
-  > .row {
+  .slide-width-container > .row {
     height: 100%;
     margin: 0;
   }
@@ -23,7 +23,7 @@ General Slide Styles
 #kb-slide-3 {
   @include slide-mixin($offwhite);
 
-  > .row {
+  .slide-width-container > .row {
     height: 100%;
     margin: 0;
   }

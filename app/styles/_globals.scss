@@ -154,6 +154,9 @@ button {
 div.app-view, div.slide-view, .liquid-container, .liquid-child {
   height: 100%;
 }
+.liquid-container {
+  overflow-y: scroll;
+}
 
 .lm-container {
   z-index: 10000;

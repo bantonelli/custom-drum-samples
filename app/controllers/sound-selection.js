@@ -17,6 +17,7 @@ var soundSelectionController = Ember.Controller.extend({
     testProp1: false,
     testProp2: false,
     kits: Ember.computed.alias('model'),
+    loadSoundCloud: false,
     tags: function () {
         var kits = this.get('kits.content');
         var totalTags = [];

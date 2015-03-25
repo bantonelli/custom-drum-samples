@@ -6,21 +6,21 @@ export default function () {
         // From 1 to 2
         this.fromRoute('sound-selection'),
         this.toRoute('your-kit'),
-        this.use('toLeft')
+        this.use('toLeft', { duration: 800, easing: "easeOutQuart" })
     );
     this.transition(
         // From 3 to 2
         this.fromRoute('kb-checkout'),
         this.toRoute('your-kit'),
-        this.use('toRight')
+        this.use('toRight', { duration: 800, easing: "easeOutQuart" })
     );
     this.transition(
         this.toRoute('sound-selection'),
-        this.use('toRight')
+        this.use('toRight', { duration: 800, easing: "easeOutQuart" })
     );
     this.transition(
         this.toRoute('kb-checkout'),
-        this.use('toLeft')
+        this.use('toLeft', { duration: 800, easing: "easeOutQuart" })
     );
     this.transition(
         this.toRoute('register'),
