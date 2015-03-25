@@ -14,7 +14,7 @@ export default Ember.View.extend({
             // perform your jQuery logic here
 
             config.APP.show_loader = function() {
-                 $('.loader').fadeIn(50);
+                 $('.loader').fadeIn();
             }
 
             config.APP.hide_loader = function() {
