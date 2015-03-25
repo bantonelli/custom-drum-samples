@@ -13,7 +13,7 @@ export default Ember.Controller.extend({
 		resetPassword: function () {
 			// Dont need to send user_id
 			// The view gets user from Auth header.
-
+			var self = this;
 			var currentBlank = false;
 			var newBlank = false;
 			// If the user didn't enter an email value use their current email
@@ -61,7 +61,9 @@ export default Ember.Controller.extend({
 						  text: 'Your password has been reset!',
 						  type: "success",
 						  confirmButtonText: "OK"
-						});     						
+						});
+						self.set('newPassword', null);
+						self.set('currentPassword', null);     						
 					}
 				}).fail(function( jqXHR, textStatus ) {
 	                // Error that rises when there is a server error
