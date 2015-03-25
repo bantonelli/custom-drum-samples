@@ -28,14 +28,14 @@ export default function () {
     );
     this.transition(
         this.toRoute('index'),
-        this.use('crossFade', { duration: 650, easing: "easeOutQuart" })
+        this.use('crossFade', { duration: 550, easing: "easeOutQuart" })
     );
     this.transition(
         this.toRoute('legal'),
-        this.use('crossFade', { duration: 650, easing: "easeOutQuart" })
+        this.use('crossFade', { duration: 550, easing: "easeOutQuart" })
     );
     this.transition(
         this.toRoute('about'),
-        this.use('crossFade', { duration: 650, easing: "easeOutQuart" })
+        this.use('crossFade', { duration: 550, easing: "easeOutQuart" })
     );
 }
