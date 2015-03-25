@@ -1,5 +1,6 @@
 import Ember from 'ember';
 import config from '.././config/environment';
+var swal = window.sweetAlert;
 
 export default Ember.Controller.extend({
 	actions: {
@@ -40,30 +41,43 @@ export default Ember.Controller.extend({
                 return cookieValue;
             }
 
-            // The createToken method sends an ajax request to stripe    
-            return Ember.$.ajax({
-                    beforeSend: function(xhr) {
-                        var csrftoken = getCookie('mycsrftoken');
-                        xhr.setRequestHeader("X-CSRFToken", csrftoken);
-                    },
-                    type: "POST",
-                    url: config.APP.API_HOST + "/api/accounts/register",
-                    crossDomain: true,
-                    data: registerData,
-                    //'parm1=value1&param2=value2',
-                    success: function (data) {
-                        console.log(data);
-                        var user = data;
-                        controllerSelf.transitionToRoute('register-thanks', user.id);
-                        // do something with server response data
-                    }                
-                }).fail(function( jqXHR, textStatus ) {
-                    // Error that rises when there is a server error
-                    // Or if there is simply an HTTP error that is raised with the request
-                    alert( "Request failed: " + textStatus );
-                });
-                // Do another ajax call here to post to the payment view.
-
+            Ember.$.ajax({
+                beforeSend: function(xhr) {
+                    var csrftoken = getCookie('mycsrftoken');
+                    xhr.setRequestHeader("X-CSRFToken", csrftoken);
+                },
+                type: "POST",
+                url: config.APP.API_HOST + "/api/accounts/register",
+                crossDomain: true,
+                data: registerData,
+                success: function (data) {
+                    console.log(data);
+                    var user = data;
+                    controllerSelf.transitionToRoute('register-thanks', user.id);
+                    // do something with server response data
+                }                
+            }).fail(function( jqXHR, textStatus ) {
+                // Error that rises when there is a server error
+                // Or if there is simply an HTTP error that is raised with the request
+                var messages = jqXHR.responseJSON;
+                var message = "";
+                if (messages.username){
+                    message += "Username error: " + messages.username.join(', ');
+                }
+                if (messages.email){
+                    message += "\n" + "Email error: " + messages.email.join(', ');
+                }
+                if (messages.password){
+                    message += "\n" + "Password error: " + messages.password.join(', ');   
+                }
+                // ********* ALERT ******** //              
+                swal({
+                  title: "Error(s)!",
+                  text: message,
+                  type: "error",
+                  confirmButtonText: "OK"
+                });  
+            });
 		}
 	}
 
