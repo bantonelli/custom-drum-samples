@@ -1,6 +1,8 @@
 import Ember from 'ember';
 import config from '.././config/environment';
 
+var swal = window.sweetAlert;
+
 export default Ember.Controller.extend({
 	userName: null,
 	email: null,
@@ -31,7 +33,13 @@ export default Ember.Controller.extend({
 			}
 
 			if (currentBlank && newBlank) {
-				alert("You didn't enter any passwords!");
+				// ********* ALERT ******** //
+				swal({
+				  title: "Error!",
+				  text: "You didn't enter any passwords!",
+				  type: "error",
+				  confirmButtonText: "OK"
+				});				
 			} else {
 				var data = {				
 					current_password: current_password,
@@ -47,8 +55,13 @@ export default Ember.Controller.extend({
 						withCredentials: true
 					},
 					success: function (data){
-						alert('your password has been reset');
-
+						// ********* ALERT ******** //
+		                swal({
+						  title: "Success!",
+						  text: 'Your password has been reset!',
+						  type: "success",
+						  confirmButtonText: "OK"
+						});     						
 					}
 				}).fail(function( jqXHR, textStatus ) {
 	                // Error that rises when there is a server error
@@ -57,8 +70,14 @@ export default Ember.Controller.extend({
 	                var message = "";
 	                if (messages.current_password){
 	                	message += messages.current_password.join(', ');
-	                }                	
-	            	alert( "Request failed: " + message );
+	                }
+	                // ********* ALERT ******** //
+	                swal({
+					  title: "Error!",
+					  text: message,
+					  type: "error",
+					  confirmButtonText: "OK"
+					});                	
 	        	});
 			}
 
@@ -85,7 +104,13 @@ export default Ember.Controller.extend({
 			}
 
 			if (emailBlank && usernameBlank) {
-				alert("You didn't change your account information");
+				// ********* ALERT ******** //
+                swal({
+				  title: "Error!",
+				  text: "You didn't change your account information!",
+				  type: "error",
+				  confirmButtonText: "OK"
+				});   
 			} else {
 				var data = {
 					temp_username: temp_username,
@@ -101,7 +126,14 @@ export default Ember.Controller.extend({
 						withCredentials: true
 					},
 					success: function (data) {
-						alert('A confirmation email has been sent to: '+ data.temp_email +' \n Follow the instructions to finish updating your account');
+						// ********* ALERT ******** //
+						var message = 'A confirmation email has been sent to: '+ data.temp_email +' \n Follow the instructions to finish updating your account';
+		                swal({
+						  title: "Success!",
+						  text: message,
+						  type: "success",
+						  confirmButtonText: "OK"
+						});   
 					}
 				}).fail(function (jqXHR, textStatus) {
 				    var messages = jqXHR.responseJSON;
@@ -111,8 +143,14 @@ export default Ember.Controller.extend({
 	                }
 	                if (messages.temp_username){
 	                	message += messages.temp_username.join(', ');
-	                }                	
-	            	alert("Request failed: " + message);
+	                }
+					// ********* ALERT ******** //				
+	                swal({
+					  title: "Error!",
+					  text: message,
+					  type: "error",
+					  confirmButtonText: "OK"
+					});                 		            	 
 				});
 			}
 		}

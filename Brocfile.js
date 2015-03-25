@@ -41,6 +41,8 @@ app.import('bower_components/mixitup/build/jquery.mixitup.min.js');
 app.import('bower_components/jquery.finger/dist/jquery.finger.js');
 app.import('bower_components/select2/select2.min.js');
 app.import('bower_components/jquery-cookie/jquery.cookie.js');
+app.import('bower_components/sweetalert/lib/sweet-alert.js');
+app.import('bower_components/sweetalert/lib/sweet-alert.css');
 
 
 // JS FILES VENDOR
