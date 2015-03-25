@@ -159,6 +159,36 @@ div.app-view, div.slide-view, .liquid-container, .liquid-child {
   z-index: 10000;
 }
 
+.loader{
+  margin: 0 0 2em;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  padding: 1em;
+  margin: 0 auto 1em;
+  display: inline-block;
+  vertical-align: center;
+  position: fixed;
+  z-index: 1000000;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.0);
+}
+
+#Layer_1, #loader-1 {
+  position: absolute;
+  top: 48%;
+  left: 48%;
+}
+/*
+  Set the color of the icon
+*/
+svg path,
+svg rect{
+  fill: nth($lightblue-list, 3);
+}
 
 /* GRID SYSTEM
 ==================*/

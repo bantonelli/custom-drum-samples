@@ -13,6 +13,18 @@ export default Ember.View.extend({
         Ember.run.scheduleOnce('afterRender', this, function(){
             // perform your jQuery logic here
 
+            config.APP.show_loader = function() {
+                 $('.loader').fadeIn(50);
+            }
+
+            config.APP.hide_loader = function() {
+                 $('.loader').fadeOut(100);
+            }
+
+            config.APP.hide_loader();
+
+            $(document).bind("ajaxSend", config.APP.show_loader).bind("ajaxComplete", config.APP.hide_loader);
+
 
             var SidebarMenuEffects = (function() {
 
