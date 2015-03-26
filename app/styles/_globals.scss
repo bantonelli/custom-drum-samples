@@ -182,8 +182,18 @@ div.app-view, div.slide-view, .liquid-container, .liquid-child {
 
 #Layer_1, #loader-1 {
   position: absolute;
-  top: 48%;
-  left: 48%;
+  top: 5%;
+  left: 36%;
+}
+
+.svg-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 315px;
+  width: 478px;
+  margin-left: -256px;
+  margin-top: -166px;
 }
 /*
   Set the color of the icon

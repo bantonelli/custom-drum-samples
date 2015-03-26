@@ -14,11 +14,6 @@ html * {
   box-sizing: border-box;
 }
 
-input, textarea {
-  font-family: "PT Sans", sans-serif;
-  font-size: 16px;
-  font-size: 1rem;
-}
 input::-ms-clear, textarea::-ms-clear {
   display: none;
 }
