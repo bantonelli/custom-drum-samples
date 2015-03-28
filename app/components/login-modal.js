@@ -137,7 +137,7 @@ export default Ember.Component.extend({
             _this.set('showError', false);
     				_this.sendAction('dismiss');	
     			}             
-    		}, 500);                         
+    		}, 70);                         
       }
     }
 });
