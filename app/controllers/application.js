@@ -24,6 +24,15 @@ export default Ember.Controller.extend(LoginControllerMixin, {
 				// setting this 'errorMessage' property to null causes the property of the
 				// login modal to also become null				
 				_this.set('errorMessage', null);
+				      // Log the user in, then reattempt previous transition if it exists.
+				var previousTransition = _this.get('previousTransition');
+				if (previousTransition) {
+					_this.set('previousTransition', null);
+					previousTransition.retry();
+				} else {
+					// Default back to homepage
+					_this.transitionToRoute('application.index');
+				}
 			}, function(error) {
 				var message = error.error;
 				if (message === "invalid_client"){

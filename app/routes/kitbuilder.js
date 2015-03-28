@@ -12,5 +12,14 @@ export default Ember.Route.extend({
     },
     model: function (){
         return this.store.find('kit');
+    },
+    beforeModel: function(transition) {
+        if (this.get('session.isAuthenticated')) {
+            this.transitionTo('kitbuilder');
+        } else {
+            var loginController = this.controllerFor('application');
+            loginController.set('previousTransition', transition);
+            this.transitionTo('/?login=true');            
+        }
     }
 });

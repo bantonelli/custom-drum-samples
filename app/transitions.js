@@ -24,7 +24,7 @@ export default function () {
     );
     this.transition(
         this.toRoute('register'),
-        this.use('toDown', { duration: 750, easing: "easeOutQuart" })
+        this.use('crossFade', { duration: 750, easing: "easeOutQuart" })
     );
     this.transition(
         this.toRoute('index'),
