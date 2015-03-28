@@ -18,8 +18,11 @@ export default Ember.Route.extend({
             this.transitionTo('kitbuilder');
         } else {
             var loginController = this.controllerFor('application');
+            //var currentRoute = loginController.get('currentRoute');
+            // cRoute is the actual url string of the current route.
+            var cRoute = this.get('router.url');
             loginController.set('previousTransition', transition);
-            this.transitionTo('/?login=true');            
+            this.transitionTo( cRoute + '?login=true');            
         }
     }
 });
