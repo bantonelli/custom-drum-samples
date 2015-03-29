@@ -27,7 +27,7 @@
 .slide {
   width: 100%;
   height: 100%;
-  padding-top: 50px; // see through nav
+  padding-top: 100px; // see through nav
   position: absolute;
   overflow-y: scroll;
   z-index: 200;
@@ -37,6 +37,22 @@
   top: 0;
   -webkit-transition: .55s all ease;
   transition: .55s all ease;
+}
+@-moz-document url-prefix() { 
+  .slide {
+    width: 100%;
+    height: 100%;
+    padding-top: 50px; // see through nav
+    position: absolute;
+    overflow-y: scroll;
+    z-index: 200;
+    -webkit-overflow-scrolling: touch;
+    left: 0;
+    right: 0;
+    top: 0;
+    -webkit-transition: .55s all ease;
+    transition: .55s all ease;
+  }
 }
 
 .slide.ng-hide {

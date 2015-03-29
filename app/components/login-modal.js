@@ -3,14 +3,15 @@ import config from '.././config/environment';
 
 export default Ember.Component.extend({
     classNames: ['login-modal'],
-    errorMessage: function (){
-    	// computed property that watches for changes in the targetObject's errorMessage
-    	// The target object is the parent controller
-    		// in this case the parent controller is the application controller 
-    		// The application controller also acts as simple-auth login controller mixin.
-    	var error = this.get('targetObject.errorMessage');
-    	return error;
-    }.property('targetObject.errorMessage'),
+    // errorMessage: function (){
+    // 	// computed property that watches for changes in the targetObject's errorMessage
+    // 	// The target object is the parent controller
+    // 		// in this case the parent controller is the application controller 
+    // 		// The application controller also acts as simple-auth login controller mixin.
+    // 	var error = this.get('targetObject.errorMessage');
+    // 	return error;
+    // }.property('targetObject.errorMessage'),
+    errorMessage: null,
     showError: false,
     passwordHidden: true,
     resetPasswordHidden: true,
@@ -123,21 +124,13 @@ export default Ember.Component.extend({
       login: function () {
       	var _this = this;
       	// Send the authenticate action to the application controller's authenticate action
-      	// authenticate action on app controller is provided by simple auth mixin
-    		this.sendAction('authenticate');
-    		// use setTimeout for a slight delay after login (for UX)
-    		setTimeout(function(){ 
-    			// If there is an error show it
-    			if (_this.get('errorMessage')){
-    				console.log(_this.get('errorMessage'));
-            _this.set('showError', true);
-    			} 
-    			// otherwise close the modal (the login was successful)
-    			else {
-            _this.set('showError', false);
-    				_this.sendAction('dismiss');	
-    			}             
-    		}, 70);                         
+      	// authenticate action on app controller is provided by simple auth 
+        // Make sure to pass in the modal as an argument to the authenticate action so that
+        // we can update the error message.
+            // we do it this way because authenticate is an ajax request and we have to wait for 
+            // response from server to properly set the error message and 
+            // decide if we want to dismiss modal.
+    		this.sendAction('authenticate', _this);                       
       }
     }
 });
