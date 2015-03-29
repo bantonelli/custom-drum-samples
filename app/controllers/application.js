@@ -40,7 +40,7 @@ export default Ember.Controller.extend(LoginControllerMixin, {
 			}, function(error) {
 				var message = error.error;
 				if (message === "invalid_client"){
-					message = " The email or password you entered is incorrect"
+					message = " The email or password you entered is incorrect";
 				}
 				// set the error message string to the property.
 				// This property is made available on the login modal component

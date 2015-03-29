@@ -2,6 +2,12 @@
 	background-color: nth($purple-list, 4);
 }
 
+@-moz-document url-prefix() { 
+  .register-slide {
+    padding-top: 100px; // see through nav
+  }
+}
+
 .register-info {
 	margin-top: 40px;
 	input {
