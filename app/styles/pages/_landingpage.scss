@@ -2,6 +2,7 @@
 
 #lp-slide-1 {
   @include slide-mixin($offwhite);
+  padding-top: 100px;
 }
 
 #lp-slide-section-1 {

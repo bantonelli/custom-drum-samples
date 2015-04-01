@@ -1,47 +1,7 @@
     <div class="slide-width-container">
         <div class="row">
             <section id="kb-slide-3-section-1" class="col-xs-6">
-                <div class="kb-slide-section-container">
-
-                    <div class="row filter-row">
-                        <h4 class="">Billing Info</h4>
-                    </div>
-                    <div class="row kit-row">
-
-                        <div class="col-xs-12 payment-info">
-                            <form class="cds-form" action="" method="POST" id="payment-form"> 
-                                <div class="billing-info">
-                                        {{input id="first-name-billing" placeholder="First Name" class="cds-text-input" type="text" value=firstName}}
-                                        {{input id="last-name-billing" placeholder="Last Name" class="cds-text-input" type="text" value=lastName}}
-                                        {{input id="address-1-billing" placeholder="Address Line 1" class="cds-text-input" type="text" value=addressLine1}}
-                                        {{input id="address-2-billing" placeholder="Address Line 2" class="cds-text-input" type="text" value=addressLine2}}
-                                        {{input id="city-billing" placeholder="City" class="cds-text-input" type="text" value=addressCity}}
-                                        {{input id="state-billing" placeholder="State" class="cds-text-input" type="text" value=addressState}}
-                                        {{input id="zip-code-billing" placeholder="Zip Code" class="cds-text-input" type="text" value=addressZip}}
-                                        {{input id="country-billing" placeholder="Country" class="cds-text-input" type="text" value=addressCountry}}
-                                </div>                               
-                                <div class="credit-card-info" style="margin-top: 10px; margin-bottom: 10px;">
-                                        <span style="font-size: 16px; display: block;">Credit Card Information: </span>
-                                        {{input id="card-number-billing" placeholder="Card Number" class="cds-text-input" type="text" size="20" value=cardNumber}}
-                                        <!--<input type="text" size="20" data-stripe="number"/>-->
-                                        {{input id="cvc-billing" placeholder="CVC" class="cds-text-input" type="text" size="4" value=cvc}}
-                                        <span style="font-size: 16px; display: block;">Expiration Date: </span>
-                                        {{input placeholder="MM" class="cds-text-input" type="text" size="2" value=expirationMonth}}
-                                        <!--<input type="text" size="2" data-stripe="exp-month"/>-->
-                                        <span> / </span>
-                                        {{input placeholder="YYYY" class="cds-text-input" type="text" size="4" value=expirationYear}}
-                                </div>
-
-                                <button class="cds-button cds-button-aw-medium payment-button" type="submit" {{action 'processCard'}}>Submit Payment</button>
-                            </form>
-                        </div>
-
-
-                    </div>
-                </div>
-            </section>
-            <section id="kb-slide-3-section-2" class="col-xs-6">
-                <div class="kb-slide-section-container">
+                 <div class="kb-slide-section-container">
 
                     <div class="row filter-row">
 
@@ -49,7 +9,11 @@
 
                     <div class="row selection-row">
                     </div>
-                </div>
+                </div>               
+            </section>
+            <section id="kb-slide-3-section-2" class="col-xs-6">
+                {{liquid-outlet}}
             </section>
         </div>
     </div>
+
