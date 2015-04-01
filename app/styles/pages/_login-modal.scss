@@ -131,15 +131,15 @@ xsigin/signup popup
   background-repeat: no-repeat;
   background-position: 50% 0;
 }
-.cd-form label.cd-username {
-  background-image: url("../img/cd-icon-username.svg");
-}
-.cd-form label.cd-email {
-  background-image: url("../img/cd-icon-email.svg");
-}
-.cd-form label.cd-password {
-  background-image: url("../img/cd-icon-password.svg");
-}
+// .cd-form label.cd-username {
+//   background-image: url("../img/cd-icon-username.svg");
+// }
+// .cd-form label.cd-email {
+//   background-image: url("../img/cd-icon-email.svg");
+// }
+// .cd-form label.cd-password {
+//   background-image: url("../img/cd-icon-password.svg");
+// }
 .cd-form input {
   margin: 0;
   //padding: 0;
@@ -328,6 +328,10 @@ xsigin/signup popup
 .lf-dialog {
 	border:none;
 	background: none;
+}
+
+.lm-container {
+  
 }
 
 .modal-container {

@@ -65,3 +65,10 @@ export default function modalPopup(oldView, insertNewView) {
     return revealModal(insertNewView);
   });
 }
+
+// export default function modalPopup() {
+//   return Promise.all([
+//     hideModal(this.oldElement),
+//     revealModal(this.newElement)    
+//   ]);
+// }

@@ -40,13 +40,14 @@ module.exports = function(environment) {
             publishableKey: 'pk_test_hyDepohZLg2M8UX2pYG6nhRI'
         };
         ENV.contentSecurityPolicy = {
-          'default-src': "'none'",
-          'script-src': "'self' http://localhost:9090/livereload.js", // Allow scripts from https://cdn.mxpnl.com
-          'font-src': "'self' http://fonts.gstatic.com", // Allow fonts to be loaded from http://fonts.gstatic.com
-          'connect-src': "'self' https://api.mixpanel.com ws://127.0.0.1:35729/livereload http://127.0.0.1:8000 https://js.stripe.com/", // Allow data (ajax/websocket) from api.mixpanel.com and custom-api.local
-          'img-src': "'self'",
-          'style-src': "'self' 'unsafe-inline' http://fonts.googleapis.com", // Allow inline styles and loaded CSS from http://fonts.googleapis.com 
-          'media-src': "'self' http://127.0.0.1:8000"
+          'default-src': "'self' https://js.stripe.com",
+          'script-src': "'self' 'unsafe-eval' https://js.stripe.com http://127.0.0.1:35729", // Allow scripts from https://cdn.mxpnl.com
+          'font-src': "'self'", // Allow fonts to be loaded from http://fonts.gstatic.com
+          'connect-src': "'self' ws://127.0.0.1:35729/livereload https://*.soundcloud.com https://*.stripe.com http://127.0.0.1:8000", // Allow data (ajax/websocket) from api.mixpanel.com and custom-api.local
+          'img-src': "'self' http://127.0.0.1:8000",
+          'style-src': "'self' 'unsafe-inline'", // Allow inline styles and loaded CSS from http://fonts.googleapis.com 
+          'media-src': "'self' localhost:8000",
+          'child-src': "'self' https://w.soundcloud.com https://js.stripe.com"
         };
     }
 

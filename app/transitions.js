@@ -3,6 +3,22 @@
  */
 export default function () {
     this.transition(
+        this.inHelper('liquid-modal'),
+        this.use('explode', {
+            pick: '.lf-overlay',
+            use: ['fade', { maxOpacity: 0.5, duration: 520}]
+        }, {
+            pick: '.lm-container',
+            use: ['toDown', {duration: 520}]
+        }, {
+            pick: '.login-modal',
+            use: ['crossFade', {duration: 50}]
+        }, {
+            pick: '.modal-form-area',
+            use: ['crossFade', {duration: 50}]
+        })
+    );
+    this.transition(
         // From 1 to 2
         this.fromRoute('sound-selection'),
         this.toRoute('your-kit'),

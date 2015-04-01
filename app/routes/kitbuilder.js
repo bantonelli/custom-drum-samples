@@ -25,7 +25,7 @@ export default Ember.Route.extend({
             // cRoute is the actual url string of the current route.
             var cRoute = _this.get('router.url');
             loginController.set('previousTransition', transition);
-            loginController.transitionTo( cRoute + '?login=true');            
+            loginController.transitionToRoute( cRoute + '?login=true');            
         }
     }
 });
