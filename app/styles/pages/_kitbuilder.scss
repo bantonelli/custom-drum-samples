@@ -81,7 +81,7 @@ and sound selection sections */
   background-color: $offwhite;
   width: 100%;
   padding: 0%;
-  height: 90%;
+  height: 600px;
   overflow-y: auto;
   overflow-x: hidden;
   .sound-kit, .sound-kit-selection {
@@ -136,7 +136,6 @@ Broken down into two subsections (Left and Right)
   overflow: hidden;
 /* Styles for Left and Right */
   .selected-kit-media, .selected-kit-sounds {
-    height: 100%;
     overflow-y: scroll;
     > div.row {
       margin: 0;
@@ -147,7 +146,9 @@ Broken down into two subsections (Left and Right)
   }
 /* Styles for Left Part of Section */
   .selected-kit-media {
+    height: 150px;
     .sound-kit-soundcloud {
+      margin-top: 2%;
       .image, .artwork_image, img {
         display: none;
       }
@@ -155,7 +156,10 @@ Broken down into two subsections (Left and Right)
   }
 /* Styles for Right Part of Section */
   .selected-kit-sounds {
+    height: 240px;
     .sample-list {
+        width: 50%;
+        margin: 0;
         @include sample-sound(/*fontcolor, playcolor, ft-size, ht, margin*/);
     }
   }
