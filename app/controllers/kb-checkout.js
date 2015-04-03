@@ -9,15 +9,13 @@ export default Ember.Controller.extend({
     purchasedKitID: null,   
     chosenSampleKits: function () {
         return this.get('controllers.kitbuilder.samplesChosen').mapBy('kit');
-    }.property('controllers.kitbuilder.samplesChosen.@each'),
-    uniqueSampleKits: Ember.computed.uniq('chosenSampleKits'),
-    kitsChosen: Ember.computed('uniqueSampleKits', 'controllers.kitbuilder.samplesChosen.@each', function (key, value){
+    }.property('controllers.kitbuilder.samplesChosen.@each'),    
+    kitsChosen: Ember.computed('chosenSampleKits', 'controllers.kitbuilder.samplesChosen.@each', function (key, value){
     	var result = [];
-    	var uniqueSampleKits = this.get('uniqueSampleKits');
+    	var uniqueSampleKits = this.get('chosenSampleKits').uniq();
     	var samplesChosen = this.get('controllers.kitbuilder.samplesChosen');
     	for (var kitIndex = 0; kitIndex < uniqueSampleKits.length; kitIndex++){
     		var kitName = uniqueSampleKits[kitIndex]._data.name;
-    		var kitID = uniqueSampleKits[kitIndex]._data.id;
     		var kitObject = {name: kitName, numberOfSamples: 0};
     		var filtered = samplesChosen.filterBy('kit.name', kitName);
     		kitObject.numberOfSamples += filtered.length;
