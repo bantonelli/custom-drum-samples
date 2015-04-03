@@ -2,6 +2,7 @@
  * Created by brandonantonelli on 1/28/15.
  */
 export default function () {
+    // MODAL
     this.transition(
         this.inHelper('liquid-modal'),
         this.use('explode', {
@@ -18,6 +19,7 @@ export default function () {
             use: ['crossFade', {duration: 50}]
         })
     );
+    // KITBUILDER ROUTES
     this.transition(
         // From 1 to 2
         this.fromRoute('sound-selection'),
@@ -38,6 +40,20 @@ export default function () {
         this.toRoute('kb-checkout'),
         this.use('toLeft', { duration: 800, easing: "easeOutQuart" })
     );
+    // CHECKOUT SUBROUTES
+    this.transition(
+        this.toRoute('kb-payment-method'),
+        this.use('toRight', { duration: 500, easing: "easeOutQuart" })
+    );
+    this.transition(
+        this.toRoute('kb-billing'),
+        this.use('toLeft', { duration: 500, easing: "easeOutQuart" })
+    );    
+    this.transition(
+        this.toRoute('kb-thank-you'),
+        this.use('toLeft', { duration: 500, easing: "easeOutQuart" })
+    );
+    // STATIC PAGES
     this.transition(
         this.toRoute('register'),
         this.use('crossFade', { duration: 750, easing: "easeOutQuart" })

@@ -1,11 +1,12 @@
-                <div class="kb-slide-section-container">
+                <div class="kb-slide-section-container kb-checkout-subroute">
 
                     <div class="row filter-row">
-                        <h4 class="">Billing Info</h4>
+                        <h4 class="kb-checkout-headline col-xs-6">Enter Your Billing Info</h4>
+                        {{#link-to 'kb-payment-method' class="icon-arrow-left3"}}Back to payment methods{{/link-to}}
                     </div>
                     <div class="row kit-row">
 
-                        <div class="col-xs-12 payment-info">
+                        <div class="col-xs-12 kb-checkout-section-container payment-info">                            
                             <form class="cds-form" action="" method="POST" id="payment-form"> 
                                 <div class="billing-info">
                                         {{input id="first-name-billing" placeholder="First Name" class="cds-text-input" type="text" value=firstName}}

@@ -4,8 +4,8 @@ var swal = window.sweetAlert;
 
 
 export default Ember.Controller.extend({
-    needs: ['kitbuilder', 'your-kit'],  
-    purchasedKitID: null,   
+    needs: ['kitbuilder', 'your-kit', 'kb-checkout'],
+    purchasedKit: Ember.computed.alias("model"),  
     actions: {        
     }
 });

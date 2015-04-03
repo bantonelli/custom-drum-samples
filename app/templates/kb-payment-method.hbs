@@ -1,18 +1,13 @@
-<div class="kb-slide-section-container">
+<div class="kb-slide-section-container kb-checkout-subroute kb-thank-you">
 
     <div class="row filter-row">
-        <h4 class="">Payment Method</h4>
+        <h4 class="kb-checkout-headline">Choose A Payment Method</h4>
     </div>
 
-    <div class="row selection-row">
-    	<h3 class="col-xs-12">Congratz on Your Custom Kit</h3>
-    	<div class="col-xs-12">
-    		<p>Order No/Kit ID/Receipt#: <span>YOUR RECEIPT NUMBER</span></p>
-    		<p>We've sent an email to EMAIL_HERE that includes a download link!</p>
-    		<p>All of your custom kits are ready for download from Your Account</p>
-    		<p>Questions? Suggestions? <a>@BeatParadigm on Twitter</a></p>
-    		<a class="cds-button cds-button-aw-medium payment-button" type="submit" {{action 'resetKitBuilder'}}>Make Another</a>
-    		{{#link-to 'account-settings' class="cds-button cds-button-aw-medium payment-button"}}Your Account{{/link-to}}    		
-    	</div>
+    <div class="row selection-row">        
+        <div class="col-xs-12 kb-checkout-section-container">
+            <a class="cds-button cds-button-paypal cds-button-aw-medium payment-button" type="submit">Paypal Checkout (Coming Soon!)</a>
+            {{#link-to 'kb-billing' class="cds-button cds-button-aw-medium payment-button"}}Secure Checkout With Stripe{{/link-to}}          
+        </div>
     </div>
 </div>      

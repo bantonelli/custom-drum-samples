@@ -146,7 +146,7 @@ Broken down into two subsections (Left and Right)
   }
 /* Styles for Left Part of Section */
   .selected-kit-media {
-    height: 150px;
+    height: 160px;
     .sound-kit-soundcloud {
       margin-top: 2%;
       .image, .artwork_image, img {
@@ -362,9 +362,16 @@ Slide 3 Styles
   @include slide-section-mixin($offwhite, $height: 100%);
 }
 
+.kb-checkout-section-container {
+  margin-top: 20px;
+}
+
+.kb-checkout-headline{
+  @include h1-ow-background();
+}
+
 .payment-info {
   .cds-form {
-    margin-top: 10px;
     input {
       box-sizing: border-box;
       margin: 5px 0px 5px 0;
@@ -386,6 +393,42 @@ Slide 3 Styles
     }
     #address-1-billing, #address-2-billing, #city-billing, #country-billing {
       width: 100%;
+    }
+  }
+}
+
+
+.kb-checkout-subroute {
+  h3 {
+    text-indent: 2px;    
+    text-shadow: none;
+  }
+  h3#choose-payment{
+    @include h1-ow-background();
+  }
+  h3#congrats-on-kit{
+    color: nth($orange-list, 2);
+  }
+  p {
+    font-size: 18px;
+    @include p-ow-background();
+    font-family: $paragraph;
+    margin: 20px 0;
+  }
+  a.cds-button {
+    margin-bottom: 20px;
+  }
+  a.email-link, a.icon-arrow-left3 {
+    @include link-ow-background();    
+  }
+  a.icon-arrow-left3 {
+    display: inline-block;
+    height: 100%;
+    line-height: 77px;
+    font-size: 18px;
+    white-space: nowrap;
+    &::before {
+      font-family: icomoon;
     }
   }
 }

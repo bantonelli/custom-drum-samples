@@ -4,7 +4,7 @@ var swal = window.sweetAlert;
 
 
 export default Ember.Controller.extend({
-    needs: ['kitbuilder', 'your-kit'],
+    needs: ['kitbuilder', 'your-kit', 'kb-checkout'],
     errorMessage: null,
     paymentSuccess: null,
     mailSent: null,    
@@ -123,9 +123,17 @@ export default Ember.Controller.extend({
                                 controllerSelf.set("paymentSuccess", "Your payment has been processed");
                                 // controllerSelf.set("errorMessage", null);
                                 if (data[0].mail_sent) {
+                                    var orderNumber = data[0].order_number;
+                                    var purchasedKitID = data[0].purchased_kit_id;
                                     // If email success report that. 
                                     controllerSelf.set("mailSent", "Your custom kit download has been emailed to you");
-                                    // ********* REDIRECT TO PAYMENT RECIEVED/ THANK YOU PAGE ******** //    
+                                    // ********* CLEAR KITBUILDER ******** // 
+                                    controllerSelf.set('controllers.kitbuilder.chosenSamples', []);
+                                    controllerSelf.set('controllers.your-kit.customKitName', null);
+                                    controllerSelf.set('controllers.kb-checkout.orderNumber', orderNumber);
+                                    controllerSelf.set('controllers.kb-checkout.purchasedKitID', purchasedKitID);                                    
+                                    // ********* REDIRECT TO PAYMENT RECIEVED/ THANK YOU PAGE ******** // 
+                                    controllerSelf.transitionToRoute('kb-thank-you');   
                                 }
                             } else {
                                 // If payment failed report the payment error message. 
