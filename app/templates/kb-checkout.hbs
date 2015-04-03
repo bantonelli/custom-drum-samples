@@ -4,10 +4,79 @@
                  <div class="kb-slide-section-container">
 
                     <div class="row filter-row">
-
+                        {{#if controllers.your-kit.customKitName}}
+                            <h4 class="kb-checkout-headline">{{controllers.your-kit.customKitName}} Invoice</h4>            
+                        {{else}}
+                            <h4 class="kb-checkout-headline">Kit Invoice</h4>
+                        {{/if}}
                     </div>
 
                     <div class="row selection-row">
+                        <div id="kb-checkout-invoice" class="col-xs-12 kb-checkout-section-container">
+                            <div id="kb-checkout-invoice-table-wrapper" class="row">
+                                <table>
+                                  <tr>
+                                    <th><h4>Drums</h4></th>
+                                    <th><h4>Price</h4></th>
+                                    <th><h4>Subtotal</h4></th>
+                                  </tr>
+                                  <!-- Each Loop -->
+                                  {{#each kit in kitsChosen}}
+                                  <tr>
+                                    <td class="kb-checkout-invoice-cell">
+                                        <li id="" class="sample-sound">
+                                            <div class="col-xs-8 sample-info">
+                                                <span class="sample-name">{{kit.name}}</span>
+                                                <span class="sample-name-kit">Samples: {{kit.numberOfSamples}}</span>
+                                            </div>
+                                        </li>
+                                    </td>
+                                    <td class="kb-checkout-invoice-cell">
+                                        <li id="" class="sample-sound">
+                                            <div class="col-xs-8 sample-info">
+                                                <span class="sample-name">$0.50</span>
+                                            </div>
+                                        </li>
+                                    </td>
+                                    <td class="kb-checkout-invoice-cell">
+                                        <li id="" class="sample-sound">
+                                            <div class="col-xs-8 sample-info">
+                                                <span class="sample-name">{{kit.subTotalFormatted}}</span>
+                                            </div>
+                                        </li>
+                                    </td>
+                                  </tr>  
+                                  {{/each}}                                
+                                  <!-- END Each Loop -->
+                                  <tr>                                
+                                    <th colspan="3"><h4>Totals</h4></th>
+                                  </tr>
+                                  <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                  </tr>
+                                  <tr>
+                                    <th colspan="3"><h4>Discounts</h4></th>
+                                  </tr>
+                                  <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                  </tr>
+                                  <tr>
+                                    <th colspan="3">
+                                        <p>
+                                            More Discounts at 50, 100, and 200+ Samples!
+                                        </p>
+                                    </th>
+                                  </tr>                              
+                                </table>
+                            </div>
+                            <div id="kb-checkout-total" class="row">
+                                <h3 class="col-xs-12">Total: <span>{{totalPrice}}</span></h3>
+                            </div>
+                        </div>
                     </div>
                 </div>               
             </section>

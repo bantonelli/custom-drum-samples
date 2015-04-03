@@ -55,7 +55,11 @@
                         <div id="kitmix" {{action 'closeTags'}}>                            
                             {{kit-mix controllers=controllers kits=controllers.kitbuilder.model currentKit=currentKit}}
                             <div class="fail-message">
-                                <span>No items were found matching the selected filters. <br> Reload and Try again!</span>
+                                <span>No items were found matching the selected filters! 
+                                    <br>
+                                    <br> 
+                                    Remove some tags or click "Reset" and try again.
+                                </span>
                             </div>
                         </div>
                     </div>

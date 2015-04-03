@@ -18,6 +18,12 @@
   border-color: nth($purple-list, 6);
 }
 
+@mixin border-separation-top() {
+  border-style: dotted;
+  border-width: 2px 0 0px 0;
+  border-color: nth($purple-list, 6);
+}
+
 /* Component Mixins
 ======================================*/
 @mixin sample-sound($playColor: nth($orange-list, 3), $nameColor: nth($orange-list, 2), $nameKitColor: nth($purple-list, 4), $fontSize: 18px, $height: 30px, $margin: 4px auto) {

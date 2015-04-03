@@ -432,3 +432,67 @@ Slide 3 Styles
     }
   }
 }
+
+#kb-checkout-invoice {
+  background-color: lighten(nth($gray-list, 6), 20);
+  height: 600px;
+  th > h4, th > h3, th > p, #kb-checkout-total h3 {
+    @include h1-ow-background();
+    text-indent: 20px;
+    margin-top: 20px;
+  }
+  #kb-checkout-total span {
+    // font-family: quicksandbold;
+    color: nth($lightblue-list, 3);
+  }
+  #kb-checkout-total h3 {
+    @include border-separation-top();
+    padding-top: 5px;
+    
+  }
+}
+
+#kb-checkout-invoice-table-wrapper {
+  height: 500px;
+  padding: 0 20px;
+  overflow-y: auto;
+}
+
+.kb-checkout-invoice-cell {
+  text-align: left;
+  vertical-align: top;
+  .sample-sound {
+    color: nth($orange-list, 3);
+    //color: nth($orange-list, 3);
+    height: 30px;
+    margin: 4px auto;
+  }
+  .sample-sound .sample-name {
+    padding: 0;
+    margin: 0;
+    color: nth($orange-list, 2);
+    font-family: quicksandbold;
+    font-size: 18px;
+    display: inline-block;
+    line-height: 30px;
+    height: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .sample-sound .sample-name-kit {
+    padding: 0;
+    margin: 0;
+    color: nth($purple-list, 4);
+    font-family: quicksandbold;
+    font-size: 12px;
+    display: inline-block;
+    line-height: 30px;
+    height: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-indent: 30px;
+    white-space: nowrap;
+  }
+}
+
