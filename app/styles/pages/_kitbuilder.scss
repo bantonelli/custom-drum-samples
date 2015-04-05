@@ -160,7 +160,8 @@ Broken down into two subsections (Left and Right)
     .sample-list {
         width: 50%;
         margin: 0;
-        @include sample-sound(/*fontcolor, playcolor, ft-size, ht, margin*/);
+        /* sample-sound(fontcolor, playcolor, ft-size, ht, margin)*/
+        @include sample-sound();
     }
   }
 }
