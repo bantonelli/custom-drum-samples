@@ -3,10 +3,17 @@
  */
 // import Ember from 'ember';
 import Authenticator from 'simple-auth-oauth2/authenticators/oauth2';
+import config from '.././config/environment';
+
 
 export default Authenticator.extend({
     makeRequest: function(url, data) {
-        data.client_id = "0f4d3a53f1db12be80cd";
+    	if (config.environment === 'production'){
+    		// Production client ID
+    		data.client_id = "c27e9f843faa5c0618e6";	
+    	} else {
+    		data.client_id = "0f4d3a53f1db12be80cd";
+    	}        
         data.grant_type = "password";
         return this._super(url, data);
     },

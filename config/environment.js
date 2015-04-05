@@ -64,7 +64,30 @@ module.exports = function(environment) {
     }
 
     if (environment === 'production') {
-
+        ENV['simple-auth'] = {
+            authorizer: 'simple-auth-authorizer:oauth2-bearer',
+            store: 'simple-auth-session-store:local-storage',
+            crossOriginWhitelist: ['https://cryptic-harbor-4037.herokuapp.com'],
+            session: 'session:withCurrentUser'
+        };
+        ENV['simple-auth-oauth2'] = {
+            serverTokenEndpoint: 'https://cryptic-harbor-4037.herokuapp.com/oauth2/access_token/',
+            authorizer: 'simple-auth-authorizer:oauth2-bearer'
+        };
+        ENV.APP.API_HOST = 'https://cryptic-harbor-4037.herokuapp.com';
+        ENV.stripe = {
+            publishableKey: 'pk_test_hyDepohZLg2M8UX2pYG6nhRI'
+        };
+        ENV.contentSecurityPolicy = {
+          'default-src': "'self' https://js.stripe.com",
+          'script-src': "'self' 'unsafe-eval' https://js.stripe.com http://127.0.0.1:35729", // Allow scripts from https://cdn.mxpnl.com
+          'font-src': "'self'", // Allow fonts to be loaded from http://fonts.gstatic.com
+          'connect-src': "'self' ws://127.0.0.1:35729/livereload https://*.soundcloud.com https://*.stripe.com https://cryptic-harbor-4037.herokuapp.com", // Allow data (ajax/websocket) from api.mixpanel.com and custom-api.local
+          'img-src': "'self' https://cryptic-harbor-4037.herokuapp.com",
+          'style-src': "'self' 'unsafe-inline'", // Allow inline styles and loaded CSS from http://fonts.googleapis.com 
+          'media-src': "'self' https://cryptic-harbor-4037.herokuapp.com",
+          'child-src': "'self' https://w.soundcloud.com https://js.stripe.com"
+        };
     }
 
     return ENV;
