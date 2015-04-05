@@ -1,4 +1,4 @@
-/* global require, module */
+// global require, module */
 
 var EmberApp = require('ember-cli/lib/broccoli/ember-app');
 var mergeTrees = require('broccoli-merge-trees');
@@ -46,11 +46,11 @@ app.import('bower_components/sweetalert/lib/sweet-alert.css');
 
 
 // JS FILES VENDOR
-var vendorJS = pickFiles('vendor/js', {
-    srcDir: '/',
-    files: ['*.js'],
-    destDir: '/js'
-});
+// var vendorJS = pickFiles('vendor/js', {
+//     srcDir: '/',
+//     files: ['*.js'],
+//     destDir: '/js'
+// });
 
 // Enigmatic Bold
 var enigmaticBoldFont = pickFiles('vendor/fonts/enigmatic_bold_macroman', {
@@ -98,6 +98,12 @@ var images = pickFiles('vendor/images', {
     destDir: '/images'
 });
 
+// Video
+var video = pickFiles('vendor/video', {
+    srcDir: '/',
+    files: ['*.mp4', '*.ogg', '*.webm'],
+    destDir: '/video'
+});
 
 // Sass/CSS
 var styles = compileSass(['app/styles'], 'app.scss', '/assets/custom-drum-samples.css');
@@ -112,17 +118,10 @@ module.exports = mergeTrees(
         icomoonFont,
         quicksandFont,
         images,
-        vendorJS,
+        video,
         templateTree,
         styles
     ], {overwrite: true}
 );
 
-/*
-                        'bower_components/modernizr/modernizr.js',
-                        'bower_components/classie/classie.js',
-
-                        'bower_components/mixitup/build/jquery.mixitup.min.js',
-                        'bower_components/jquery.finger/dist/jquery.finger.js',
-                        'bower_components/select2/select2.min.js',
- */
+ 
