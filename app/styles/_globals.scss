@@ -157,7 +157,12 @@ div.app-view, div.slide-view, .liquid-container, .liquid-child {
 .liquid-container {
   overflow-y: scroll;
 }
-
+.liquid-child {
+  overflow: auto;
+}
+.liquid-child.velocity-animating {
+  overflow: hidden;
+}
 .lm-container {
   z-index: 10000;
 }
@@ -202,6 +207,8 @@ svg path,
 svg rect{
   fill: nth($lightblue-list, 3);
 }
+
+
 
 /* GRID SYSTEM
 ==================*/
