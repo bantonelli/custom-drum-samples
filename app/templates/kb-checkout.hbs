@@ -14,9 +14,10 @@
                     <div class="row selection-row">
                         <div id="kb-checkout-invoice" class="col-xs-12 kb-checkout-section-container">
                             <div id="kb-checkout-invoice-table-wrapper" class="row">
+                              {{#if controllers.kitbuilder.samplesChosen}}
                                 <table>
                                   <tr>
-                                    <th><h4>Drums</h4></th>
+                                    <th><h4>Samples</h4></th>
                                     <th><h4>Price</h4></th>
                                     <th><h4>Subtotal</h4></th>
                                   </tr>
@@ -64,14 +65,9 @@
                                     <td></td>
                                     <td></td>
                                   </tr>
-                                  <tr>
-                                    <th colspan="3">
-                                        <p>
-                                            More Discounts at 50, 100, and 200+ Samples!
-                                        </p>
-                                    </th>
-                                  </tr>                              
+                                      
                                 </table>
+                              {{/if}}
                             </div>
                             <div id="kb-checkout-total" class="row">
                                 <h3 class="col-xs-12">Total: <span>{{totalPrice}}</span></h3>
