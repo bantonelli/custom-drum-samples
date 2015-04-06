@@ -179,24 +179,42 @@
 
 .lp-three-choices {
   .lp-choice {
-    margin: 2% 0;
+    margin: 0% 0 12% 0;
+    height: 212px;
     .lp-choice-genre {
       width: 100%;
-      height: 250px;
+      height: 212px;
       margin: 0 auto;
+      background-size: cover;
     }
   }
+  label {
+    margin: 20px 0;
+  }
   #lp-choice-genre-1 {
-    width: 250px;
-    height: 250px;
-    margin: 0 auto;
-    background-image: url("/images/Step-1.png");
+    background-image: url("/images/HipHop-cropped.jpg");
   }
   #lp-choice-genre-2 {
-    background-image: url("/images/Step-2.png");
+    background-image: url("/images/Electronic-cropped.jpg");
   }
   #lp-choice-genre-3 {
-    background-image: url("/images/Step-3.png");
+    background-image: url("/images/Experimental-cropped.jpg");
   } 
+  #lp-choice-equal {
+    background-image: url("/images/equals-sign.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 42%;
+    height: 50px;
+    width: 50px;
+  }
+  #lp-choice-result {
+    background-image: url("/images/Experimentalhiphop-cropped.jpg");
+    height: 130px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-top: 40px;
+  }
 }
 
