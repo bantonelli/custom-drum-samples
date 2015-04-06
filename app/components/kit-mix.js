@@ -1,4 +1,5 @@
 import Ember from 'ember';
+import config from '.././config/environment';
 
 export default Ember.Component.extend({
     // filterState: null,
@@ -10,6 +11,7 @@ export default Ember.Component.extend({
     tempFilterString: "all",
     tempActiveFilters: [],
     changeCalled: false,
+    apiURL: config.APP.API_HOST,
     _initializeKitMix: function (){
         //Ember.run.sync();
         var activeFilters = this.get('controllers.kitbuilder.activeFilters');
