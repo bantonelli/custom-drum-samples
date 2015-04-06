@@ -24,7 +24,7 @@ Main components
 
 -------------------------------- */
 header[role=banner] {
-  position: relative;
+  //position: relative;
   height: 60px;
 //  z-index: 70; can make the top nav see-through
 //  background: #343642;
@@ -47,8 +47,10 @@ header[role=banner] {
 //    color: nth($orange-list, 6);
 //    text-shadow: 0px 1px 1px black;
 //  }
+  position: fixed;
+  width: 100%;
   z-index: 1000;
-  background-image: linear-gradient(0deg, transparentize(nth($purple-list, 1), 0.1) 15%, transparentize(nth($purple-list, 1), 0.1) 85%);
+  background-image: linear-gradient(0deg, transparentize(nth($purple-list, 2), 0.1) 15%, transparentize(nth($purple-list, 1), 0.1) 85%);
   color: $offwhite;
   text-shadow: 0px 1px 1px black;
   transition: box-shadow 0.2s;

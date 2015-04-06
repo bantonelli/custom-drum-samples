@@ -9,7 +9,8 @@ var HtmlbarsCompiler = require('ember-cli-htmlbars');
 var app = new EmberApp({
     vendorFiles: {
         'handlebars.js': null
-    }
+    },
+    minifyJS:  {enabled:false}
 });
 
 var templateTree = new HtmlbarsCompiler('app/templates', {

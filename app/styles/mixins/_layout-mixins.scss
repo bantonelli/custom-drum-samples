@@ -6,7 +6,7 @@
   height: $height;
 }
 
-@mixin slide-section-mixin($background-color, $height: auto, $padding: 100px 0) {
+@mixin slide-section-mixin($background-color, $height: auto, $padding: 50px 0) {
   background-color: $background-color;
   height: $height;
   padding: $padding;

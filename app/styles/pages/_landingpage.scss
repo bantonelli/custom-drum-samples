@@ -2,15 +2,11 @@
 
 #lp-slide-1 {
   @include slide-mixin($offwhite);
-  padding-top: 0px;
+  padding: 0;
 }
 
 #lp-slide-section-1 {
-  @include slide-section-mixin($offwhite);
-}
-
-#lp-slide-section-2 {
-  @include slide-section-mixin($gray-bg);
+  @include slide-section-mixin($offwhite, $padding: 60px 0);
 }
 
 // General Section Styles
