@@ -2,7 +2,7 @@
 
 #lp-slide-1 {
   @include slide-mixin($offwhite);
-  padding: 0;
+  padding: 0;  
 }
 
 #lp-slide-section-1 {
@@ -11,11 +11,14 @@
 
 // General Section Styles
 
-.title-tagline-logo {
-  .title-tagline {
+.lp-title-tagline-logo {
+  .lp-title-tagline {
     white-space: nowrap;
+    h1, h3, h2 {
+      text-align: center;
+    }
   }
-  .logo {
+  .lp-logo {
     height: 120px;
     background-image: url("/images/New-Logo.png");
     background-size: contain;
@@ -25,234 +28,175 @@
 }
 
 
-.sales-pitch {
-  margin: 5% 0;
+.lp-sales-pitch {
+  margin: 8% 0 5% 0;
+  white-space: nowrap;
 }
 
-.three-steps {
-  .step-container {
-    position: relative;
-  }
-  .step {
-    height: 300px;
-    background-repeat: no-repeat;
-    background-size: contain;
-    h3 {
-      position: absolute;
-      text-align: center;
-      white-space: nowrap;
-      bottom: -28px;
-    }
-    p {
-      margin-top: 30%;
-      text-align: center;
-    }
-  }
-}
+// .three-steps {
+//   .step-container {
+//     position: relative;
+//   }
+//   .step {
+//     height: 300px;
+//     background-repeat: no-repeat;
+//     background-size: contain;
+//     h3 {
+//       position: absolute;
+//       text-align: center;
+//       white-space: nowrap;
+//       bottom: -28px;
+//     }
+//     p {
+//       margin-top: 30%;
+//       text-align: center;
+//     }
+//   }
+// }
 
-.try-it {
-  margin: 10% 0;
-  color: $offwhite;
-}
 
-.frontpage-arrow {
-  text-align: center;
-  a {
-      display: inline-block;
-      height: 100px;
-      width: 100px;
-      &::before {
-        height: 100px;
-        line-height: 100px;
-        font-family: icomoon;
-        font-size: 2.3em;
-      }
-  }
-}
+// // Flip Effect General Styles
+// .step-container {
+//   /* entire container, keeps perspective */
+// 	perspective: 800;
+//     height: 300px;
+//     .flipper {
+//       transition: 0.6s;
+//       transform-style: preserve-3d;
+//       position: relative;
+//     }
 
-// Flip Effect General Styles
-.step-container {
-  /* entire container, keeps perspective */
-	perspective: 800;
-    height: 300px;
-    .flipper {
-      transition: 0.6s;
-      transform-style: preserve-3d;
-      position: relative;
-    }
+//     &:hover, .flipper:hover, .flipper.hover {
+//       .front {
+//         -webkit-transform: perspective(800px) rotateY(-179.9deg);
+//         -moz-transform: perspective(800px) rotateY(-179.9deg);
+//         transform: perspective(800px) rotateY(-179.9deg);
+//       }
+//       .back {
+//         -moz-transform: perspective(800px) rotateY(0);
+//         -webkit-transform: perspective(800px) rotateY(0);
+//         transform: perspective(800px) rotateY(0);
+//       }
+//     }
 
-    &:hover, .flipper:hover, .flipper.hover {
-      .front {
-        -webkit-transform: perspective(800px) rotateY(-179.9deg);
-        -moz-transform: perspective(800px) rotateY(-179.9deg);
-        transform: perspective(800px) rotateY(-179.9deg);
-      }
-      .back {
-        -moz-transform: perspective(800px) rotateY(0);
-        -webkit-transform: perspective(800px) rotateY(0);
-        transform: perspective(800px) rotateY(0);
-      }
-    }
+//     .front, .back {
+//       /* hide back of pane during swap */
+//       position:absolute;
 
-    .front, .back {
-      /* hide back of pane during swap */
-      position:absolute;
+//       -webkit-transition: 0.7s ease-in-out;
+//       -moz-transition: 0.7s ease-in-out;
+//       -ms-transition: 0.7s ease-in-out;
+//       -o-transition: 0.7s ease-in-out;
+//       transition: 0.7s ease-in-out;
 
-      -webkit-transition: 0.7s ease-in-out;
-      -moz-transition: 0.7s ease-in-out;
-      -ms-transition: 0.7s ease-in-out;
-      -o-transition: 0.7s ease-in-out;
-      transition: 0.7s ease-in-out;
+//       top: 0;
+//       left: 0;
+//       width: 100%;
+//       height: 300px;
+//     }
 
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 300px;
-    }
-
-    /* front pane, placed above back */
-    .front {
-        z-index: 2;
-        /* for firefox 31 */
-        transform: rotateY(0deg);
-        -moz-backface-visibility: hidden;
-        -webkit-backface-visibility: hidden;
-        backface-visibility: hidden;
-        -moz-transform: perspective(800px) rotateY(0deg);
-        -webkit-transform: perspective(800px) rotateY(0deg);
-        transform: perspective(800px) rotateY(0deg);
-    }
-    /* back, initially hidden pane */
-    .back {
-        -moz-backface-visibility: hidden;
-        -webkit-backface-visibility: hidden;
-        backface-visibility: hidden;
-        -moz-transform: perspective(800px) rotateY(180deg);
-        -webkit-transform: perspective(800px) rotateY(180deg);
-        transform: perspective(800px) rotateY(180deg);
-    }
-}
+//     /* front pane, placed above back */
+//     .front {
+//         z-index: 2;
+//         /* for firefox 31 */
+//         transform: rotateY(0deg);
+//         -moz-backface-visibility: hidden;
+//         -webkit-backface-visibility: hidden;
+//         backface-visibility: hidden;
+//         -moz-transform: perspective(800px) rotateY(0deg);
+//         -webkit-transform: perspective(800px) rotateY(0deg);
+//         transform: perspective(800px) rotateY(0deg);
+//     }
+//     /* back, initially hidden pane */
+//     .back {
+//         -moz-backface-visibility: hidden;
+//         -webkit-backface-visibility: hidden;
+//         backface-visibility: hidden;
+//         -moz-transform: perspective(800px) rotateY(180deg);
+//         -webkit-transform: perspective(800px) rotateY(180deg);
+//         transform: perspective(800px) rotateY(180deg);
+//     }
+// }
 
 // First section Styles
 #lp-slide-section-1 {
 
-  .title-tagline-logo {
+  .lp-title-tagline-logo {
+    h1, h2, h3, h4 {
+      @include h1-ow-background;
+    }
     .title-tagline {
       @include h1-ow-background;
     }
-    .logo {
+    .lp-logo {
     }
   }
 
-  .sales-pitch {
+  .lp-sales-pitch {
     @include p-ow-background;
 
     a {
       @include link-ow-background;
     }
   }
-
-  .three-steps {
-
-    .step {
-      h3 {
-        @include h3-ow-background;
-      }
-      p {
-        @include p-ow-background;
-      }
-    }
-  }
-
-  #step-1 {
-  background-image: url("/images/Step-1.png");
-  }
-  #step-2 {
-    background-image: url("/images/Step-2.png");
-    h3 {
-      margin-left: 15%;
-    }
-  }
-  #step-3 {
-    background-image: url("/images/Step-3.png");
-  }
-}
-
-
-// Second Section Styles (Gray Background)
-#lp-slide-section-2 {
-
-  .title-tagline-logo {
-    .title-tagline {
-      @include h1-g-background;
-    }
-    .logo {
-      background-image: url("/images/Step-3.png");
-    }
-  }
-
-  .sales-pitch {
-    @include p-g-background;
-
-    a {
-      @include link-g-background;
-    }
-
-  }
-
-  .three-steps {
-    .step {
-      h3 {
-        @include h3-g-background;
-      }
-      p {
-        @include p-g-background;
-      }
-    }
-  }
-
-  // Second Section pics
-  #step-1-b {
-    background-image: url("/images/Step-1b.png");
-  }
-  #step-2-b {
-    background-image: url("/images/Step-2b.png");
-    h3 {
-      margin-left: 15%;
-    }
-  }
-  #step-3-b {
-    background-image: url("/images/Step-3b.png");
-  }
-
 }
 
 // LANDING PAGE VIDEO
 
 .lp-video-wrapper {
-  height: 500px;
+  height: 600px;
   overflow: hidden;
-  position: relative;
+  margin-top: -60px;
   video {
     width: 100%;
-    margin-top: -300px;
+    margin-top: -200px;
+    position: relative;
   }
   #lp-video-overlay{
     @include slide-out (translateY(0%), translateY(-100%), 100%);
-    height: 500px;
-    width: 970px;
-    h2 {
+    position: absolute;
+    height: inherit;
+    top: 60px;
+    width: 970px;    
+    h1, h2, h3 {
       color: $offwhite;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      text-align: center;
     }
     p {
+      margin-top: 8%;
+      margin-bottom: 7%;
       color: $offwhite;
     }
   }
 }
 
 .lp-container {
-  margin-top: 50px;
+  margin-top: 100px;
 }
 
-
+.lp-three-choices {
+  .lp-choice {
+    margin: 2% 0;
+    .lp-choice-genre {
+      width: 100%;
+      height: 250px;
+      margin: 0 auto;
+    }
+  }
+  #lp-choice-genre-1 {
+    width: 250px;
+    height: 250px;
+    margin: 0 auto;
+    background-image: url("/images/Step-1.png");
+  }
+  #lp-choice-genre-2 {
+    background-image: url("/images/Step-2.png");
+  }
+  #lp-choice-genre-3 {
+    background-image: url("/images/Step-3.png");
+  } 
+}
 

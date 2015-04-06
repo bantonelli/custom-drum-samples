@@ -29,7 +29,7 @@
   height: 100%;
   padding-top: 100px; // see through nav
   position: absolute;
-  overflow-y: scroll;
+  overflow: scroll;
   z-index: 200;
   -webkit-overflow-scrolling: touch;
   left: 0;

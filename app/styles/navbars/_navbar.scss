@@ -36,7 +36,7 @@ header[role=banner] {
 
 @media screen and (min-width:767px) {
   .cds-nav-container {
-    width: 87%;
+    width: 90%;
     margin: 0 auto;
   }
 }
@@ -158,6 +158,12 @@ header[role=banner] {
   }
 }
 
+.cd-signin {
+  text-align: center;
+  cursor: pointer;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 
 
 

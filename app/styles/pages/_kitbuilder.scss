@@ -497,3 +497,11 @@ Slide 3 Styles
   }
 }
 
+.kb-main-content {
+  .liquid-child {
+    overflow: auto;
+  }
+  .liquid-child.velocity-animating {
+    overflow: hidden;
+  }
+}

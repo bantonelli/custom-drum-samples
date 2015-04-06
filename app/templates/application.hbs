@@ -66,10 +66,10 @@
                             <div id="st-trigger-effects" class="col-xs-2">
                                 <button class="nav-button icon-menu" data-effect="st-effect-7"></button>
                             </div>
-                            <nav class="main-nav col-xs-4 col-xs-offset-3">
+                            <nav class="main-nav col-xs-3 col-xs-offset-4">
                                 <ul class="row">
                                     <!-- insert more links here -->
-                                    <li>{{#link-to 'kitbuilder' class="col-xs-5 col-xs-offset-7"}}Kit Builder{{/link-to}}</li>
+                                    <li>{{#link-to 'kitbuilder' class="col-xs-6 col-xs-offset-6"}}Kit Builder{{/link-to}}</li>
                                     
                                 </ul>
                             </nav>
@@ -78,7 +78,7 @@
                                     <!-- insert more links here -->
                                     {{#if session.isAuthenticated}}
                                         <li class="col-xs-8 username-display">
-                                            <label class="col-xs-12 cd-signin" style="width: 100%; cursor: pointer;" for="usermenu-toggle">
+                                            <label class="col-xs-12 cd-signin" style="width: 100%; cursor: pointer; text-align:center; overflow: visible; white-space: nowrap;" for="usermenu-toggle">
                                             {{session.currentUser.username}}
                                             </label>
                                             <input type="checkbox" id="usermenu-toggle"/>

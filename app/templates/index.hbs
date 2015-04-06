@@ -1,80 +1,69 @@
 <div class="main-content">
-
-
-<div id="lp-slide-1" class="slide on-top">
-    <section id="lp-slide-section-1">
-        <div class="lp-video-wrapper">
-            <video src="/video/Stock_Footage_CDS.mp4" type="video/mp4" autoplay loop>
-                <p>Your browser does not support the <code>audio</code> element </p>
-            </video>
-            <div id="lp-video-overlay">
-                <h2>The Best Way to Discover Drum Samples</h2>
-                <p>
-                    Beat Paradigm offers Music Producers the first way to build custom drum kits with Kit Builder.
-                    Find any sound you need and build the sample kit you want.
-                </p>
-            </div>
-        </div>
-        <div class="container lp-container">
-            <div class="row">
-                <div class="col-xs-12">
-                    <div class="row title-tagline-logo">
-                        <div class="col-xs-5 col-xs-offset-3 title-tagline">
-                            <h1>KIT BUILDER</h1>
-                            <h3>The Perfect Drum Kit</h3>
-                        </div>
-                        <div class="col-xs-2">
-                            <div class="logo"></div>
-                        </div>
-                    </div>
-                    <div class="row sales-pitch">
-                        <p>
-                            Hand pick the <a class="">drum samples</a> you need! Mix and match from any <a class="">genre</a>.
-                            <br>
-                            Listen to drum samples live, add to cart, and <a class="">download</a>!
+    <div id="lp-slide-1" class="slide on-top">
+        <section id="lp-slide-section-1">
+            <div class="lp-video-wrapper">
+                <video src="/video/Stock_Footage_CDS.mp4" type="video/mp4" loop autoplay>
+                    <p>Your browser does not support the <code>audio</code> element </p>
+                </video>
+                <div id="lp-video-overlay">
+                    <div class="row lp-video-overlay-wrapper">
+                        <h1 class="col-xs-12">KIT BUILDER</h1>
+                        <h3 class="col-xs-12">The Best Way to Discover Drum Samples</h3>
+                        <p class="col-xs-10 col-xs-offset-1">
+                            Beat Paradigm offers Music Producers the first way to build custom drum kits with Kit Builder.
+                            Find any sound you need and build the sample kit you want.
                         </p>
-                    </div>
-                    <div class="row three-steps">
-                        <div class="col-xs-4 step-container">
-                            <div class="flipper">
-                                <div id="step-1" class="step front">
-                                    <h3>Browse Samples</h3>
-                                </div>
-                                <div class="step back">
-                                    <p>Over 5000 studio quality samples to choose from!</p>
-                                </div>
+                        <div class="col-xs-6 col-xs-offset-3">
+                            {{#link-to 'sign-up' class="cds-button cds-button-orange cds-button-aw-large"}}Get Started{{/link-to}}
+                        </div>                
+                    </div>                
+                </div>
+            </div>
+            <div class="container lp-container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="row lp-title-tagline-logo">
+                            <div class="col-xs-12 lp-title-tagline">
+                                <h3>Build Your Own Custom Drum Kits</h3>
                             </div>
                         </div>
-                        <div class="col-xs-4 step-container">
-                            <div class="flipper">
-                                <div id="step-2" class="step front">
-                                    <h3>Mix & Match</h3>
-                                </div>
-                                <div class="step back">
-                                    <p>10 Genres of loops and samples available!</p>
-                                </div>
+                        <div class="row lp-sales-pitch">
+                            <p>
+                               Browse drum kits, play all sounds on the spot, &amp; choose only what you need.
+                            </p>
+                        </div>
+                        <div class="row lp-three-choices">
+                            <div class="col-xs-3 lp-choice">
+                                <div id="lp-choice-genre-1" class="lp-choice-genre"></div>
+                                <div class="squaredThree">
+                                    <input type="checkbox" id="squaredThree-{bindvalue-1}" name="check" value="{bindvalue-1}"/>
+                                    <label for="squaredThree-{bindvalue-1}"></label>
+                                </div>                                
+                            </div>
+                            <div class="col-xs-3 lp-choice">
+                                <div id="lp-choice-genre-2" class="lp-choice-genre"></div>
+                                <div class="squaredThree">
+                                    <input type="checkbox" id="squaredThree-{bindvalue-2}" name="check" value="{bindvalue-2}"/>
+                                    <label for="squaredThree-{bindvalue-2}"></label>
+                                </div>                                
+                            </div>
+                            <div class="col-xs-3 lp-choice">
+                                <div id="lp-choice-genre-3" class="lp-choice-genre"></div>
+                                <div class="squaredThree">
+                                    <input type="checkbox" id="squaredThree-{bindvalue-3}" name="check" value="{bindvalue-3}"/>
+                                    <label for="squaredThree-{bindvalue-3}"></label>
+                                </div>                                
                             </div>
                         </div>
-                        <div class="col-xs-4 step-container">
-                            <div class="flipper">
-                                <div id="step-3" class="step front">
-                                    <h3>Exclusive Drum Kit</h3>
-                                </div>
-                                <div class="step back">
-                                    <p>Customize your drum kit how you need it. Download it today!</p>
-                                </div>
+                        <div class="row">
+                            <div class="col-xs-8 col-xs-offset-2">
+                                {{#link-to 'kb-learn-more' class="cds-button cds-button-orange cds-button-aw-large"}}Learn More{{/link-to}}
                             </div>
-                        </div>
-                    </div>
-                    <div class="row try-it">
-                        <div class="col-xs-4 col-xs-offset-4">
-                            <a href="#" class="cds-button">Try It</a>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-</div>
+        </section>
+    </div>
 </div>
 
