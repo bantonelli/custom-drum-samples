@@ -9,6 +9,7 @@ General Slide Styles
     height: 100%;
     margin: 0;
   }
+  overflow: hidden;
 }
 
 #kb-slide-2 {
@@ -387,13 +388,13 @@ Slide 3 Styles
       width: 49%;
     }
     #last-name-billing, #zip-code-billing {
-      margin-left: 6px;
+      margin-left: 4px;
     }
     #cvc-billing{
-      margin-left: 6px;
+      margin-left: 4px;
     }
     #address-1-billing, #address-2-billing, #city-billing, #country-billing {
-      width: 100%;
+      width: 99.7%;
     }
   }
 }

@@ -7,6 +7,9 @@
   overflow: hidden;
   margin-top: 0px; // Can make the top nav see-through
   background-color: $offwhite;
+  .container {
+    margin-bottom: 200px;
+  }
 }
 
 // For tab based pages (uses ember tab-view component)
