@@ -81,7 +81,11 @@
   margin-left: -15px;
   margin-right: -15px;
   @include border-separation-bottom();
-  padding-bottom: 50px;
+  padding-bottom: 50px;  
+  width: 100%;
+  background-image: url("/images/Privacy-Banner-5.jpg");
+  background-size: cover;
+  height: 160px;
 }
 
 .topic-container.topic-no-border {

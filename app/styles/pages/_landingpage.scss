@@ -147,17 +147,42 @@
   height: 600px;
   overflow: hidden;
   margin-top: -60px;
+  width: 100%;
+  min-width: 970px;
   video {
-    width: 100%;
-    margin-top: -200px;
-    position: relative;
+    display:none;
+    @media screen and (min-width: 1280px){
+      display: block;
+      width: 100%;
+      margin-top: -200px;
+      position: relative;
+    }
   }
   #lp-video-overlay{
-    @include slide-out (translateY(0%), translateY(-100%), 100%);
+    height: inherit;    
     position: absolute;
-    height: inherit;
     top: 60px;
-    width: 970px;    
+    width: 100%;
+    min-width: 970px;
+    background-image: url("/images/LP-BG.jpg");
+    background-size: cover;
+    .lp-video-overlay-wrapper {
+      background-color: transparentize(nth($purple-list, 1), 0.2);
+      padding-top: 25px;
+      height: inherit;
+    }
+    @media screen and (min-width: 1280px){
+      .lp-video-overlay-wrapper {
+        background: none;
+        padding-top: 0;
+      }
+      height: inherit;
+      background: none;
+      @include slide-out (translateY(0%), translateY(-100%), 100%);  
+      top: 85px;
+      width: 970px;
+      border-radius: 10px;
+    }    
     h1, h2, h3 {
       color: $offwhite;
       white-space: nowrap;
@@ -166,9 +191,11 @@
       text-align: center;
     }
     p {
-      margin-top: 8%;
-      margin-bottom: 7%;
+      margin-top: 7%;
+      margin-bottom: 5%;
       color: $offwhite;
+      text-align: center;
+      line-height: 1.5em;
     }
   }
 }
@@ -211,7 +238,7 @@
   }
   #lp-choice-result {
     background-image: url("/images/Experimentalhiphop-cropped.jpg");
-    height: 130px;
+    height: 132px;
     background-size: contain;
     background-repeat: no-repeat;
     margin-top: 40px;

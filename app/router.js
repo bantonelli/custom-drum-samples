@@ -28,9 +28,9 @@ Router.map(function() {
   });
   this.resource("about");
   this.resource("kitbuilder", function (){
-      this.resource("sound-selection", {path: '/sounds'});
+      this.resource("sound-selection", {path: '/'});
       this.resource("your-kit");
-      this.resource("kb-checkout", {path: '/'}, function (){
+      this.resource("kb-checkout", {path: '/checkout'}, function (){
           this.resource('kb-payment-method', {path:'/'});
           this.resource('kb-billing', {path:'/billing'});
           this.resource('kb-thank-you', {path:'/thanks'});

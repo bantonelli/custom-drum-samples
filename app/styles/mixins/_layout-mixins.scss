@@ -110,9 +110,17 @@
       height: 50px;
       width: 115%;
       background-image: none;
-      background-color: nth($purple-list, 4);
+      //background-color: nth($purple-list, 4);
+      background-image:-moz-linear-gradient(50% 0% -90deg,rgb(83,65,124) 0%,rgb(70,53,111) 100%); 
+      background-image:-webkit-gradient(linear,50% 0%,50% 100%,color-stop(0, rgb(83,65,124)),color-stop(1, rgb(70,53,111)));
+      background-image:-webkit-linear-gradient(-90deg,rgb(83,65,124) 0%,rgb(70,53,111) 100%);
+      background-image:-ms-linear-gradient(-90deg,rgb(83,65,124) 0%,rgb(70,53,111) 100%);
+      background-image:linear-gradient(180deg,rgb(83,65,124) 0%,rgb(70,53,111) 100%);
+      -ms-filter:"progid:DXImageTransform.Microsoft.gradient(startColorstr=#ff53417c,endColorstr=#ff46356f,GradientType=0)";
+      filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#ff53417c,endColorstr=#ff46356f,GradientType=0);
       font-size: 18px;
       text-align: center;
+      cursor: pointer;
       //.select2-choice, .select2-choice > .select2-chosen {
       &::before {
         font-family: icomoon;
@@ -123,18 +131,36 @@
         width: 30px;
         font-size: 24px;
         line-height: 49px;
-        background-color: nth($purple-list, 4);
+        //background-color: nth($purple-list, 4);
+        background-image:-moz-linear-gradient(50% 0% -90deg,rgb(83,65,124) 0%,rgb(70,53,111) 100%); 
+        background-image:-webkit-gradient(linear,50% 0%,50% 100%,color-stop(0, rgb(83,65,124)),color-stop(1, rgb(70,53,111)));
+        background-image:-webkit-linear-gradient(-90deg,rgb(83,65,124) 0%,rgb(70,53,111) 100%);
+        background-image:-ms-linear-gradient(-90deg,rgb(83,65,124) 0%,rgb(70,53,111) 100%);
+        background-image:linear-gradient(180deg,rgb(83,65,124) 0%,rgb(70,53,111) 100%);
+        -ms-filter:"progid:DXImageTransform.Microsoft.gradient(startColorstr=#ff53417c,endColorstr=#ff46356f,GradientType=0)";
+        filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#ff53417c,endColorstr=#ff46356f,GradientType=0);
       }
-      select {
+      select, .ember-select:focus, &::before:focus {
         background: transparent;
         border: none;
         background: transparent;
         background-image: none;
         -webkit-appearance: none;
-        outline: none;
+        outline-style: none;
+        border-color: transparent;
+        box-shadow: none;
+        cursor: pointer;    
       }
-      select:focus, select:-moz-focus-inner {
-        outline: none;
+      select:focus {
+        outline: 0;
+        outline-style: none;
+        border-color: transparent;
+        box-shadow: none;
+        border: 0;
+      }
+      select:-moz-focusring  {
+        border-color: transparent; 
+        outline: 0;
       }
       option {
         background-image: none;
@@ -159,7 +185,14 @@
     .menu-item {
       display: inline-block;
       //background-color: nth($orange-list, 2);
-      background-color: nth($purple-list, 4);
+      // background-color: nth($purple-list, 4);
+      background-image:-moz-linear-gradient(50% 0% -90deg,rgb(83,65,124) 0%,rgb(70,53,111) 100%); 
+      background-image:-webkit-gradient(linear,50% 0%,50% 100%,color-stop(0, rgb(83,65,124)),color-stop(1, rgb(70,53,111)));
+      background-image:-webkit-linear-gradient(-90deg,rgb(83,65,124) 0%,rgb(70,53,111) 100%);
+      background-image:-ms-linear-gradient(-90deg,rgb(83,65,124) 0%,rgb(70,53,111) 100%);
+      background-image:linear-gradient(180deg,rgb(83,65,124) 0%,rgb(70,53,111) 100%);
+      -ms-filter:"progid:DXImageTransform.Microsoft.gradient(startColorstr=#ff53417c,endColorstr=#ff46356f,GradientType=0)";
+      filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#ff53417c,endColorstr=#ff46356f,GradientType=0);
       list-style: none;
       //color: white;
       color: $offwhite;
@@ -171,9 +204,18 @@
       line-height: 50px;
       margin-right: 3px;
       cursor: pointer;
+      padding: 0;
       &:hover, &:focus {
         color: white;
-        background-color: nth($lightblue-list, 3);
+        //background-color: nth($lightblue-list, 3);
+        background: rgba(27,167,185,1);
+        background: -moz-linear-gradient(top, rgba(27,167,185,1) 0%, rgba(13,154,172,1) 100%);
+        background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(27,167,185,1)), color-stop(100%, rgba(13,154,172,1)));
+        background: -webkit-linear-gradient(top, rgba(27,167,185,1) 0%, rgba(13,154,172,1) 100%);
+        background: -o-linear-gradient(top, rgba(27,167,185,1) 0%, rgba(13,154,172,1) 100%);
+        background: -ms-linear-gradient(top, rgba(27,167,185,1) 0%, rgba(13,154,172,1) 100%);
+        background: linear-gradient(to bottom, rgba(27,167,185,1) 0%, rgba(13,154,172,1) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1ba7b9', endColorstr='#0d9aac', GradientType=0 );
       }
     }
     .menu-item.active {
@@ -182,10 +224,13 @@
     }
     .menu-word {
       background-color: transparent;
+      background-image: none;
       color: nth($purple-list, 2);
       cursor: default;
       &:hover {
+        color: nth($purple-list, 2);
         background-color: transparent;
+        background-image: none;
       }
     }
   }

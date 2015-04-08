@@ -400,3 +400,36 @@ $paragraph-italic: 'quicksanditalic';
 	content: "\e62c";
 }
 
+
+// Menu Icon
+
+@font-face {
+	font-family: 'menu-font';
+	src:url('../fonts/menu-font/fonts/menu-font.eot?dog85m');
+	src:url('../fonts/menu-font/fonts/menu-font.eot?#iefixdog85m') format('embedded-opentype'),
+		url('../fonts/menu-font/fonts/menu-font.woff?dog85m') format('woff'),
+		url('../fonts/menu-font/fonts/menu-font.ttf?dog85m') format('truetype'),
+		url('../fonts/menu-font/fonts/menu-font.svg?dog85m#menu-font') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+// [class^="icon-"], [class*=" icon-"] {
+// 	font-family: 'menu-font';
+// 	speak: none;
+// 	font-style: normal;
+// 	font-weight: normal;
+// 	font-variant: normal;
+// 	text-transform: none;
+// 	line-height: 1;
+
+// 	/* Better Font Rendering =========== */
+// 	-webkit-font-smoothing: antialiased;
+// 	-moz-osx-font-smoothing: grayscale;
+// }
+
+.icon-menu_icon_2:before {
+	content: "\e600";
+}
+
+

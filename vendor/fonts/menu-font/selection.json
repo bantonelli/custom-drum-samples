@@ -1,0 +1,71 @@
+{
+	"IcoMoonType": "selection",
+	"icons": [
+		{
+			"icon": {
+				"paths": [
+					"M15.515 43.442v99.297c0 24.824 18.618 43.442 43.442 43.442h968.145c24.824 0 43.442-18.618 43.442-43.442v-99.297c0-24.824-18.618-43.442-43.442-43.442h-968.145c-24.824 0-43.442 18.618-43.442 43.442zM15.515 322.715v99.297c0 24.824 18.618 43.442 43.442 43.442h968.145c24.824 0 43.442-18.618 43.442-43.442v-99.297c0-24.824-18.618-43.442-43.442-43.442h-968.145c-24.824 0-43.442 18.618-43.442 43.442zM15.515 601.988v99.297c0 24.824 18.618 43.442 43.442 43.442h968.145c24.824 0 43.442-18.618 43.442-43.442v-99.297c0-24.824-18.618-43.442-43.442-43.442h-968.145c-24.824 0-43.442 18.618-43.442 43.442zM15.515 881.261v99.297c0 24.824 18.618 43.442 43.442 43.442h968.145c24.824 0 43.442-18.618 43.442-43.442v-99.297c0-24.824-18.618-43.442-43.442-43.442h-968.145c-24.824 0-43.442 18.618-43.442 43.442zM1163.636 465.455h341.333l-170.667-279.273-170.667 279.273zM1504.97 558.545h-341.333l170.667 279.273 170.667-279.273z"
+				],
+				"attrs": [
+					{}
+				],
+				"isMulticolor": false,
+				"width": 1520,
+				"grid": 0,
+				"tags": [
+					"menu_icon_2"
+				]
+			},
+			"attrs": [
+				{}
+			],
+			"properties": {
+				"order": 6,
+				"id": 1,
+				"prevSize": 33,
+				"code": 58880,
+				"name": "menu_icon_2"
+			},
+			"setIdx": 0,
+			"setId": 2,
+			"iconIdx": 0
+		}
+	],
+	"height": 1024,
+	"metadata": {
+		"name": "menu-font"
+	},
+	"preferences": {
+		"showGlyphs": true,
+		"showQuickUse": true,
+		"showQuickUse2": true,
+		"showSVGs": true,
+		"fontPref": {
+			"prefix": "icon-",
+			"metadata": {
+				"fontFamily": "menu-font",
+				"majorVersion": 1,
+				"minorVersion": 0
+			},
+			"metrics": {
+				"emSize": 1024,
+				"baseline": 6.25,
+				"whitespace": 50
+			},
+			"showMetadata": false,
+			"includeMetadata": true,
+			"resetPoint": 58880
+		},
+		"imagePref": {
+			"prefix": "icon-",
+			"png": true,
+			"useClassSelector": true,
+			"color": 4473924,
+			"bgColor": 16777215,
+			"classSelector": ".icon"
+		},
+		"historySize": 100,
+		"showCodes": true,
+		"showLiga": true
+	}
+}

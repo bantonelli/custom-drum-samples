@@ -47,8 +47,12 @@
     //color: nth($purple-list, 1);
   }
 
-  img {
+  .about-us-banner {
     margin: 40px 0 0 0;
     padding: 0;
+    width: 100%;
+    background-image: url("/images/About-us-Banner.jpg");
+    background-size: cover;
+    height: 160px;
   }
 }

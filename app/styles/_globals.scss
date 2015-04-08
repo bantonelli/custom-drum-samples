@@ -160,7 +160,6 @@ div.app-view, div.slide-view, .liquid-container, .liquid-child {
 .lm-container {
   z-index: 10000;
 }
-
 .loader{
   margin: 0 0 2em;
   height: 100%;
@@ -202,6 +201,9 @@ svg rect{
   fill: nth($lightblue-list, 3);
 }
 
+img {
+  vertical-align: middle;
+}
 
 
 /* GRID SYSTEM

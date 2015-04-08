@@ -2,9 +2,12 @@
     <div id="lp-slide-1" class="slide on-top">
         <section id="lp-slide-section-1">
             <div class="lp-video-wrapper">
-                <video src="/video/Stock_Footage_CDS.mp4" type="video/mp4" loop autoplay>
-                    <p>Your browser does not support the <code>audio</code> element </p>
-                </video>
+                <video loop autoplay poster="/images/LP-BG.jpg">                    
+                    <source src="/video/Stock_Footage_CDS.mp4" type='video/mp4'/>
+                    <source src="/video/Stock_Footage_CDS.webm" type='video/webm' />
+                    <source src="/video/Stock_Footage_CDS.ogg" type='video/ogg' />
+                    <img src="/images/LP-BG.jpg" title="Your browser does not support the <video> tag">                
+                </video>            
                 <div id="lp-video-overlay">
                     <div class="row lp-video-overlay-wrapper">
                         <h1 class="col-xs-12">KIT BUILDER</h1>
@@ -34,21 +37,21 @@
                         </div>
                         <div class="row lp-three-choices">
                             <div class="col-xs-3 lp-choice">
-                                <div id="lp-choice-genre-1" class="lp-choice-genre"></div>
+                                <div id="lp-choice-genre-1" class="lp-choice-genre cds-background-image"></div>
                                 <div class="squaredThree">
                                     <input type="checkbox" id="squaredThree-{bindvalue-1}" name="check" value="{bindvalue-1}"/>
                                     <label for="squaredThree-{bindvalue-1}"></label>
                                 </div>                                
                             </div>
                             <div class="col-xs-3 lp-choice">
-                                <div id="lp-choice-genre-2" class="lp-choice-genre"></div>
+                                <div id="lp-choice-genre-2" class="lp-choice-genre cds-background-image"></div>
                                 <div class="squaredThree">
                                     <input type="checkbox" id="squaredThree-{bindvalue-2}" name="check" value="{bindvalue-2}"/>
                                     <label for="squaredThree-{bindvalue-2}"></label>
                                 </div>                                
                             </div>
                             <div class="col-xs-3 lp-choice">
-                                <div id="lp-choice-genre-3" class="lp-choice-genre"></div>
+                                <div id="lp-choice-genre-3" class="lp-choice-genre cds-background-image"></div>
                                 <div class="squaredThree">
                                     <input type="checkbox" id="squaredThree-{bindvalue-3}" name="check" value="{bindvalue-3}"/>
                                     <label for="squaredThree-{bindvalue-3}"></label>
@@ -58,7 +61,7 @@
                                 <div id="lp-choice-equal" class=""></div>                                
                             </div>
                             <div class="col-xs-2 lp-choice">
-                                <div id="lp-choice-result" class="lp-choice-genre"></div>
+                                <div id="lp-choice-result" class="lp-choice-genre cds-background-image"></div>                                
                             </div>
                         </div>
                         <div class="row">

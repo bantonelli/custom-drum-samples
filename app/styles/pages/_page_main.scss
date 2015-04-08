@@ -89,7 +89,14 @@
 }
 
 .app-id {
-  background-color: #302243;
+  //background-color: #302243;
+  background-image:-moz-linear-gradient(50% 0% -90deg,rgb(59,47,79) 0%,rgb(45,34,65) 100%); 
+  background-image:-webkit-gradient(linear,50% 0%,50% 100%,color-stop(0, rgb(59,47,79)),color-stop(1, rgb(45,34,65)));
+  background-image:-webkit-linear-gradient(-90deg,rgb(59,47,79) 0%,rgb(45,34,65) 100%);
+  background-image:-ms-linear-gradient(-90deg,rgb(59,47,79) 0%,rgb(45,34,65) 100%);
+  background-image:linear-gradient(180deg,rgb(59,47,79) 0%,rgb(45,34,65) 100%);
+  -ms-filter:"progid:DXImageTransform.Microsoft.gradient(startColorstr=#ff3b2f4f,endColorstr=#ff2d2241,GradientType=0)";
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#ff3b2f4f,endColorstr=#ff2d2241,GradientType=0);
   height: auto;
   padding: 0;
   h5 {
@@ -100,8 +107,9 @@
     width: 100%;
     text-align: center;
     line-height: 40px;
-    border-bottom: 2px solid nth($purple-list, 4);
-    border-top: 2px solid nth($purple-list, 4);
+    // border-bottom: 1px solid rgba(0, 0, 0, 0.71);
+    border-bottom: 1px solid rgba(30, 30, 30, 0.71);
+    border-top: 1px solid desaturate(lighten(nth($purple-list, 4), 10%), 10%);
     white-space: nowrap;
     overflow: auto;
     text-overflow: clip;
@@ -112,10 +120,17 @@
 .slide-navigation {
   height: auto;
   box-sizing: border-box;
-  background-color: #302243;
+  //background-color: #302243;
+  background-image:-moz-linear-gradient(50% 0% -90deg,rgb(59,47,79) 0%,rgb(45,34,65) 100%); 
+  background-image:-webkit-gradient(linear,50% 0%,50% 100%,color-stop(0, rgb(59,47,79)),color-stop(1, rgb(45,34,65)));
+  background-image:-webkit-linear-gradient(-90deg,rgb(59,47,79) 0%,rgb(45,34,65) 100%);
+  background-image:-ms-linear-gradient(-90deg,rgb(59,47,79) 0%,rgb(45,34,65) 100%);
+  background-image:linear-gradient(180deg,rgb(59,47,79) 0%,rgb(45,34,65) 100%);
+  -ms-filter:"progid:DXImageTransform.Microsoft.gradient(startColorstr=#ff3b2f4f,endColorstr=#ff2d2241,GradientType=0)";
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#ff3b2f4f,endColorstr=#ff2d2241,GradientType=0);
   border-left: 0px solid nth($purple-list, 4);
-  border-bottom: 2px solid nth($purple-list, 4);
-  border-top: 2px solid nth($purple-list, 4);
+  border-bottom: 1px solid rgba(30, 30, 30, 0.71);
+  border-top: 1px solid desaturate(lighten(nth($purple-list, 4), 10%), 10%);
 }
 
 .item-holder {
@@ -147,8 +162,18 @@
   text-shadow: none;
   &:hover, &.active {
     text-decoration: none;
-    background-color: nth($purple-list, 4);
+    // background-color: nth($purple-list, 4);
+    background-image:-moz-linear-gradient(50% 0% -90deg,rgb(86,66,123) 0%,rgb(73,52,109) 100%); 
+    background-image:-webkit-gradient(linear,50% 0%,50% 100%,color-stop(0, rgb(86,66,123)),color-stop(1, rgb(73,52,109)));
+    background-image:-webkit-linear-gradient(-90deg,rgb(86,66,123) 0%,rgb(73,52,109) 100%);
+    background-image:-ms-linear-gradient(-90deg,rgb(86,66,123) 0%,rgb(73,52,109) 100%);
+    background-image:linear-gradient(180deg,rgb(86,66,123) 0%,rgb(73,52,109) 100%);
+    -ms-filter:"progid:DXImageTransform.Microsoft.gradient(startColorstr=#ff56427b,endColorstr=#ff49346d,GradientType=0)";
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#ff56427b,endColorstr=#ff49346d,GradientType=0);
     color: $offwhite;
+  }
+  &:-moz-focusring, &:focus {
+    outline: 0;
   }
 }
 

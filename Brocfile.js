@@ -84,6 +84,13 @@ var icomoonFont = pickFiles('vendor/fonts/icomoon/fonts', {
     destDir: '/fonts/icomoon/fonts'
 });
 
+// Menu Font
+var menuFont = pickFiles('vendor/fonts/menu-font/fonts', {
+    srcDir: '/',
+    files: ['*.eot', '*.svg', '*.ttf', '*.woff'],
+    destDir: '/fonts/menu-font/fonts'
+});
+
 // Quicksand
 var quicksandFont = pickFiles('vendor/fonts/quicksand', {
     srcDir: '/',
@@ -117,6 +124,7 @@ module.exports = mergeTrees(
         enigmaticItalicFont,
         enigmaticRegularFont,
         icomoonFont,
+        menuFont,
         quicksandFont,
         images,
         video,
