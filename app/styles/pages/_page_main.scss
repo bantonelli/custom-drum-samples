@@ -109,7 +109,7 @@
     line-height: 40px;
     // border-bottom: 1px solid rgba(0, 0, 0, 0.71);
     border-bottom: 1px solid rgba(30, 30, 30, 0.71);
-    border-top: 1px solid desaturate(lighten(nth($purple-list, 4), 10%), 10%);
+    border-top: 1px solid desaturate(lighten(nth($purple-list, 4), 20%), 10%);
     white-space: nowrap;
     overflow: auto;
     text-overflow: clip;
@@ -130,7 +130,7 @@
   filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#ff3b2f4f,endColorstr=#ff2d2241,GradientType=0);
   border-left: 0px solid nth($purple-list, 4);
   border-bottom: 1px solid rgba(30, 30, 30, 0.71);
-  border-top: 1px solid desaturate(lighten(nth($purple-list, 4), 10%), 10%);
+  border-top: 1px solid desaturate(lighten(nth($purple-list, 4), 20%), 10%);
 }
 
 .item-holder {

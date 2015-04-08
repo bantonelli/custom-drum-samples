@@ -45,7 +45,7 @@ Router.map(function() {
       this.resource("register-thanks", {path: '/thanks/:user_id'});
       this.resource("activate", {path: '/activate/:uid/:token'});
   });
-  this.route('kb-learn-more');
+  this.resource('kb-learn-more', {path: '/learn-more'});
 });
 
 export default Router;

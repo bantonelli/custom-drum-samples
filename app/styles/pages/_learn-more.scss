@@ -1,0 +1,75 @@
+.lm-section {
+	margin-bottom: 50px;
+	.lm-picture {
+		height: 330px;
+		width: 100%;
+		background-size: cover;
+	}
+	h5 {
+		@include h1-ow-background();
+		margin-top: 100px;
+		margin-bottom: 5px;
+	}
+	p {
+		font-size: 18px;
+		@include p-ow-background();
+	}
+}
+.lm-first-section {
+	margin-top: 25px;
+	h2 {
+		margin-left: 18%;
+		margin-top: 50px;
+		letter-spacing: 1px;
+		text-align: left;
+		span {
+			color: nth($lightblue-list, 3);
+		}
+		.lm-beta {
+			display: inline-block;
+			color: nth($orange-list, 2);
+			vertical-align: middle;
+			height: 34px;
+		}
+		.lm-catch-phrase {
+			display: block;
+			@include p-ow-background();
+			height: auto;
+			margin-top: -10px;
+			text-align: left;			
+		}
+	}
+	.lm-first-section-text {
+		width: 100%;
+		margin: 20px 0; 
+	}
+}
+.lm-tab {
+	h4 {
+		color: nth($orange-list, 2);
+	}
+	p {
+		line-height: 1.3em;
+	}
+}
+#lm-header-pic {
+	background-image: url("/images/learn-more-header.jpg");
+}
+#lm-video {
+	width: 100%;
+	height: 550px;
+	background-size: cover;
+	background-image: url("/images/learn-more-youtube.jpg");
+}
+#lm-picture-1 {
+	background-image: url("/images/learn-more-1stpic.jpg");
+}
+#lm-picture-2 {
+	background-image: url("/images/learn-more-2ndpic.jpg");
+}
+#lm-picture-3 {
+	background-image: url("/images/learn-more-3rdpic.jpg");
+}
+#lm-picture-4 {
+	background-image: url("/images/learn-more-4thpic.jpg");
+}
