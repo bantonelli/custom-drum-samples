@@ -46,10 +46,10 @@
     "grunt-contrib-sass": "^0.8.1",
     "grunt-contrib-uglify": "^0.7.0",
     "grunt-contrib-watch": "^0.6.1",
-    "liquid-fire": "git://github.com/ef4/liquid-fire"
+    "liquid-fire": "^0.19.2"
   },
   "dependencies": {
     "ember-stripe-service": "^1.0.0",
-    "rimraf":"2.2.8"
+    "rimraf": "2.2.8"
   }
 }
