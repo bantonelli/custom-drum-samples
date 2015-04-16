@@ -38,6 +38,16 @@ Make use of the many generators for code, try `ember help generate` for more det
 
 * `ember build` (development)
 * `ember build --environment production` (production)
+### Building on Windows
+
+* Be sure to install ember cli windows
+* 'npm install ember-cli-windows -g'
+* 'ember-cli-windows'
+* If you get PS security exception run the following commands inside of WindowsPowerShell
+* 'Set-ExecutionPolicy Unrestricted -scope Process'
+* 'ember-cli-windows'
+* Note, you may have to run the ember server inside of the WindowsPowerShell while working on the project
+* Run 'ember serve --environment production' in the WindowsPowerShell
 
 ### Deploying
 
