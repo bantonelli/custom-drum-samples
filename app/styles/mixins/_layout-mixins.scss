@@ -250,7 +250,7 @@
   -webkit-transform: $translation-show;
   transform: $translation-show;
   -webkit-transition: all .25s ease;
-  transition: all .25s ease;
+  transition: all .50s ease;
 
   &.ng-hide, &.ng-hide {
     display: block !important;

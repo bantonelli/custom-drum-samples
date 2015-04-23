@@ -1,0 +1,64 @@
+
+#about-us-slide-1 {
+  @include slide-mixin($offwhite);
+}
+
+#about-us-slide-section-1 {
+  @include slide-section-mixin($offwhite);
+}
+
+.about-topic, .about-first-topic {
+  padding-bottom: 40px;
+  margin-bottom: 20px;
+}
+
+.about-topic {
+  @include border-separation-bottom();
+}
+
+.about-title {
+  margin: 10px 0;
+  @include h1-ow-background();
+}
+
+.about-para {
+  margin: 0% 0;
+  padding: 0 0%;
+
+  h4.row {
+    text-transform: capitalize;
+  }
+
+  h2.row, h4.row {
+    margin-top: 5px;
+    margin-bottom: 15px;
+    @include h1-ow-background();
+  }
+
+  p {
+    text-indent: 50px;
+    padding: 0;
+  }
+
+  p, dl {
+    font-size: 0.8em;
+    line-height: 1.5em;
+    @include p-ow-background;
+    //color: nth($purple-list, 1);
+  }
+
+  .about-us-banner {
+    margin: 40px 0 0 0;
+    padding: 0;
+    width: 100%;
+    background-image: url("/images/About-us-Banner.jpg");
+    background-size: cover;
+    height: 160px;
+  }
+}
+
+.contact-twitter {
+  @include link-ow-background ();
+  font-size: 40px;
+
+}

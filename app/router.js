@@ -47,6 +47,7 @@ Router.map(function() {
   });
   this.resource('kb-learn-more', {path: '/learn-more'});
   this.route('team-members');
+  this.route('contact');
 });
 
 export default Router;
