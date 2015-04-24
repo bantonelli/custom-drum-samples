@@ -228,20 +228,21 @@
     background-image: url("/images/Experimental-cropped.jpg");
   } 
   #lp-choice-equal {
-    background-image: url("/images/equals-sign.png");
+    background-image: url("/images/kit-divider7.png");
     background-size: contain;
     background-repeat: no-repeat;
     position: absolute;
-    top: 42%;
-    height: 50px;
+    top: 0;
+    height: 212px;
     width: 50px;
   }
   #lp-choice-result {
-    background-image: url("/images/Experimentalhiphop-cropped.jpg");
-    height: 132px;
-    background-size: contain;
+    background-image: url("/images/Experimentalhiphop-cropped2.jpg");
+    height: 212px;
+    width: 212px
+;    background-size: contain;
     background-repeat: no-repeat;
-    margin-top: 40px;
+   
   }
 }
 

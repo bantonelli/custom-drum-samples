@@ -1,19 +1,31 @@
 .team-members-slide {
-  padding-top: 150px;
+  padding-top: 100px;
 }
 
 #team-members-slide-section-1 {
   @include slide-section-mixin($offwhite);
 }
 
+.tm-title {
+  margin: 10px 0;
+  @include h3-g-background ();
+}
+
 #tm-description {
    @include p-ow-background();
+   font-size: 0.8em;
+   text-indent: 50px;
    margin-top: 50px;
    margin-bottom: 50px;
+   line-height: 1.5em;
 }
 
 #tm-picture-1 {
 	background-image: url('/images/zeph.jpg');
+}
+
+#tm-picture-2 {
+	background-image: url('/images/teammember.jpg');
 }
 
 .tm-picture {
@@ -25,8 +37,8 @@
 
 .tm-description-box {
     display: block !important;
-    -webkit-transition: all .25s ease;
-    transition: all .25s ease;
+    -webkit-transition: all 1s ease;
+    transition: all 1.5s ease;
     -webkit-transform: translateY(100%);
     transform: translateY(100%);
     height: 335px;
@@ -40,9 +52,9 @@
 	position: relative;
 	height: 100px;
 	width: 100%;
-	margin-top: 10px;
+	margin-top: 30px;
 	&:hover .tm-description-box {
-		@include slide-out(translateY(-345px), translateY(100%), 100%);
+		@include slide-out(translateY(-365px), translateY(100%), 100%);
 		height: 335px;
 	}
 }
@@ -50,10 +62,33 @@
 .tm-button {
 	position: absolute;
 	z-index: 3;
+	font-size: 36px;
+  border-radius: 0;
+
 }
+
 
 .tm-member-container {
 	position: relative;
-	height: 445px;
 	overflow: hidden;
 }
+
+.icon-spacing {
+  display: inline-block;
+  margin: 16px 6px;
+
+}
+
+.tm-main-info {
+  padding: 10px 15px;
+  text-align: justify;
+}
+
+.tm-justify {
+  text-align: justify;
+}
+
+.icon-sizing {
+  font-size: 2em;
+}
+
