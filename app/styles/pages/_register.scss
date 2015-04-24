@@ -40,3 +40,25 @@
 		@include h1-ow-background();
 	}	
 }
+
+.ty4-register-points {
+	font-family: quicksandbold;
+	font-size: .9em;
+	line-height: 1.5em;
+	text-align: center;
+	color: $offwhite;
+}
+
+.ty4-register-spacing {
+	margin: 30px 10px;
+}
+
+.sa-icon {
+	color:rgb(200,20,30);
+	border-color: rgb(230,230,230);
+}
+
+.sa-error {
+	color:rgb(200,20,30);
+	border-color: rgb(230,230,230);
+}

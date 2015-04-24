@@ -2,10 +2,15 @@
     <div class="slide register-slide">
         <div class="container register-container">
     		<h3>Thanks for Registering</h3>
-    		<ul>
-    			<li>Please check your email to activate your account!</li>
-    			<li style="text-decoration: underline; cursor: pointer;" {{action 'resendActivation'}}>Click here to Resend Activation email</li>
-			</ul>
+	    		<ul class="ty4-register-spacing">
+	    			<li class="ty4-register-points">Check your email to <span style="color:rgb(31,195,218);text-decoration:underline">activate your account.</span></li>
+	    			<br>
+	    			<li class="ty4-register-points">Once activated you can start making your own Kit Templates and Custom Kits <span style="display:inline-block;margin-left:5px" class="icon-side_drum"></span>.</li>
+	    			<br>
+	    			<li class="ty4-register-points">Didn't get your email? Resend it.</li>
+				</ul>
+
+			<div class="cds-button-orange cds-button cds-button-aw-large" {{action 'resendActivation'}}>Resend Activation Email<span style="display:inline-block;margin-left:10px" class="icon-envelope"></span></div>
         </div>
     </div>
 </div>
