@@ -98,6 +98,13 @@ var quicksandFont = pickFiles('vendor/fonts/quicksand', {
     destDir: '/fonts/quicksand'
 });
 
+// Gotham
+var gothamFont = pickFiles('vendor/fonts/gotham', {
+    srcDir: '/',
+    files: ['*.eot', '*.svg', '*.ttf', '*.woff'],
+    destDir: '/fonts/gotham'
+});
+
 
 // Images
 var images = pickFiles('vendor/images', {
@@ -126,6 +133,7 @@ module.exports = mergeTrees(
         icomoonFont,
         menuFont,
         quicksandFont,
+        gothamFont,
         images,
         video,
         templateTree,

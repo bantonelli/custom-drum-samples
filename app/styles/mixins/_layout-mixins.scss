@@ -41,7 +41,7 @@
     font-family: quicksandbold;
     font-size: $fontSize;
     display: inline-block;
-    line-height: $height;
+    line-height: $height - 4px;
     height: 100%;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -54,7 +54,7 @@
     font-family: quicksandbold;
     font-size: $fontSize/1.5;
     display: inline-block;
-    line-height: $height;
+    line-height: $height - 4px;
     height: 100%;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -66,7 +66,7 @@
     width: $height;
     font-size: ($height * 0.9);
     text-align: center;
-    line-height: $height;
+    line-height: $height - 4px;
     padding: 0;
     div {
       height: $height;
@@ -76,7 +76,7 @@
   .select-sound {
     font-size: ($height * 0.9);
     text-align: center;
-    line-height: $height;
+    line-height: $height - 4px;
     padding: 0;
     > div {
       height: $height;
@@ -101,6 +101,8 @@
   form {
     margin-left: 0px;
     margin-top: 10px;
+    cursor: pointer; 
+    overflow: hidden;   
     //.select2-container {
     .styled-select {
       position: relative;
@@ -108,7 +110,7 @@
       color: $offwhite;
       font-family: $paragraph;
       height: 50px;
-      width: 115%;
+      width: 100%;
       background-image: none;
       //background-color: nth($purple-list, 4);
       background-image:-moz-linear-gradient(50% 0% -90deg,rgb(83,65,124) 0%,rgb(70,53,111) 100%); 
@@ -125,12 +127,12 @@
       &::before {
         font-family: icomoon;
         position: absolute;
-        right: 0px;
+        right: -2px;
         top: 0;
         height: 50px;
-        width: 30px;
+        width: 20px;
         font-size: 24px;
-        line-height: 49px;
+        line-height: 56px;
         //background-color: nth($purple-list, 4);
         background-image:-moz-linear-gradient(50% 0% -90deg,rgb(83,65,124) 0%,rgb(70,53,111) 100%); 
         background-image:-webkit-gradient(linear,50% 0%,50% 100%,color-stop(0, rgb(83,65,124)),color-stop(1, rgb(70,53,111)));
@@ -139,6 +141,31 @@
         background-image:linear-gradient(180deg,rgb(83,65,124) 0%,rgb(70,53,111) 100%);
         -ms-filter:"progid:DXImageTransform.Microsoft.gradient(startColorstr=#ff53417c,endColorstr=#ff46356f,GradientType=0)";
         filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#ff53417c,endColorstr=#ff46356f,GradientType=0);
+      }
+      select, .ember-select {
+        cursor: pointer;
+        position: absolute;
+        height: 57px;
+        left: -25px;
+        width: 115%;
+        box-sizing: content-box;
+        text-indent: 9px;
+        top: -12px;
+        padding: 6px 10px 5px 25px;
+        text-align: center;
+      }
+      @-moz-document url-prefix() { 
+        select, .ember-select {
+          cursor: pointer;
+          position: absolute;
+          height: 57px;
+          left: -31px;
+          width: 115%;
+          box-sizing: content-box;
+          text-indent: -4px;
+          top: -12px;
+          padding: 6px 10px 5px 25px;
+        }
       }
       select, .ember-select:focus, &::before:focus {
         background: transparent;
@@ -149,31 +176,57 @@
         outline-style: none;
         border-color: transparent;
         box-shadow: none;
-        cursor: pointer;    
+        cursor: pointer;  
+        border-image: none;
+        border-image-width: 0px;
+        option {
+          color: $offwhite;
+        }      
       }
-      select:focus {
+      select:focus, .ember-select:focus {
         outline: 0;
         outline-style: none;
         border-color: transparent;
+        border-image: none;
+        border-image-width: 0px;
         box-shadow: none;
         border: 0;
+        option {
+          color: $offwhite;
+        }
       }
-      select:-moz-focusring  {
+      select:-moz-focusring, .ember-select:-moz-focusring  {
+        border-image: none;
+        border-image-width: 0px;
         border-color: transparent; 
         outline: 0;
+        // color: transparent;
+        // text-shadow: 0 0 0 #000;
+        // option:-moz-focusring, option {
+        //   color: $offwhite;
+        // }
       }
       option {
+        height: 30px;
+        width: 100%;
+        margin-top: -1px;
+        padding: 0px 20px;
         background-image: none;
         background-color: nth($purple-list, 4);
         margin-top: -1px;
         border: none;
         border-radius: 0px;
         margin-top: -1px;
-        padding-right: 17px;
         font-size: 18px;
         font-family: $paragraph;
         color: $offwhite;
       }
+    }
+    &:-moz-focusring, &:focus {
+      border-color: transparent; 
+      outline: 0;
+      color: transparent;
+      text-shadow: 0 0 0 #000;
     }
   }
   .top-menu {
@@ -201,7 +254,7 @@
       font-family: $paragraph;
       text-align: center;
       white-space: nowrap;
-      line-height: 50px;
+      line-height: 42px;
       margin-right: 3px;
       cursor: pointer;
       padding: 0;
