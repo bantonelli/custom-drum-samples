@@ -71,6 +71,10 @@ TEXT INPUT STYLES
 
 .cds-text-input {
   height: 45px;
+  line-height: 45px;
+  // @-moz-document url-prefix() { 
+  //   line-height: 40px;
+  // } 
   background-color: lighten(nth($gray-list, 6), 20);
 //  box-shadow: inset 0px 1px 1px rgba(0,0,0,0.7), 0px 1px 0px rgba(255,255,255,.9);
   box-shadow: inset 0px 1px 1px rgba(0,0,0,0.3), 0px 1px 0px rgba(255,255,255,.3);
