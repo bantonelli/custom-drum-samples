@@ -1,15 +1,14 @@
 <?xml version="1.0" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" >
-<svg>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
 <metadata>
-Created by FontForge 20110222 at Wed May  6 03:48:52 2015
- By www-data
-Copyright (C) 2006, 2011 Hoefler &#38; Frere-Jones. http://www.typography.com
+Created by FontForge 20141024 at Wed May  6 05:31:00 2015
+ By System Administrator
 </metadata>
 <defs>
-<font id="GothamRndSSm-Light" horiz-adv-x="530" >
+<font id="BPRnd-Light" horiz-adv-x="530" >
   <font-face 
-    font-family="Gotham Rnd SSm Light"
+    font-family="BP Rnd SSm Light"
     font-weight="300"
     font-stretch="normal"
     units-per-em="1000"

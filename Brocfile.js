@@ -101,7 +101,7 @@ var quicksandFont = pickFiles('vendor/fonts/quicksand', {
 // Gotham
 var gothamFont = pickFiles('vendor/fonts/gotham', {
     srcDir: '/',
-    files: ['*.eot', '*.svg', '*.ttf', '*.woff'],
+    files: ['*.eot', '*.svg', '*.ttf', '*.woff', '*.woff2'],
     destDir: '/fonts/gotham'
 });
 
