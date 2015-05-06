@@ -41,7 +41,10 @@
     font-family: quicksandbold;
     font-size: $fontSize;
     display: inline-block;
-    line-height: $height - 4px;
+    line-height: $height;
+    @-moz-document url-prefix() { 
+     line-height: $height - 4px;
+    } 
     height: 100%;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -54,7 +57,10 @@
     font-family: quicksandbold;
     font-size: $fontSize/1.5;
     display: inline-block;
-    line-height: $height - 4px;
+    line-height: $height;
+    @-moz-document url-prefix() { 
+      line-height: $height - 4px;
+    } 
     height: 100%;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -66,7 +72,10 @@
     width: $height;
     font-size: ($height * 0.9);
     text-align: center;
-    line-height: $height - 4px;
+    line-height: $height;
+    @-moz-document url-prefix() { 
+      line-height: $height - 4px;
+    } 
     padding: 0;
     div {
       height: $height;
@@ -76,7 +85,10 @@
   .select-sound {
     font-size: ($height * 0.9);
     text-align: center;
-    line-height: $height - 4px;
+    line-height: $height;
+    @-moz-document url-prefix() { 
+      line-height: $height - 4px;
+    } 
     padding: 0;
     > div {
       height: $height;
@@ -254,7 +266,10 @@
       font-family: $paragraph;
       text-align: center;
       white-space: nowrap;
-      line-height: 42px;
+      line-height: 50px;
+      @-moz-document url-prefix() { 
+        line-height: 42px;
+      } 
       margin-right: 3px;
       cursor: pointer;
       padding: 0;
