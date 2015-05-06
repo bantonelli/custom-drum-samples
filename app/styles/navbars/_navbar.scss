@@ -100,7 +100,10 @@ header[role=banner] {
   display: inline-block;
   background-color: rgba(0, 0, 0, 0);
   height: 60px;
-  line-height: 50px;
+  line-height: 60px;
+  @-moz-document url-prefix() { 
+    line-height: 50px;
+  }  
   text-align: center;
   text-shadow: 0px 1px 1px rgba(25, 25, 25, .8);
   color: $offwhite;
@@ -136,7 +139,10 @@ header[role=banner] {
     a {
       text-align: left;
       height: 35px;
-      line-height: 30px;
+      line-height: 35px;
+      @-moz-document url-prefix() { 
+        line-height: 30px;
+      }      
       font-size: 16px;
       &:hover {
         background-color: nth($purple-list, 4);
