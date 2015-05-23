@@ -11,9 +11,9 @@ export default BaseAdapter.extend({
 		var baseUrl = config.APP.API_HOST + '/' + config.APP.API_NAMESPACE + '/';
 		var url;
 		if (!id || Ember.isArray(id)) { 
-			url = baseUrl + 'profiles/'; 
+			url = baseUrl + 'kitbuilder/template-follows/'; 
 		} else if (id) {
-			url = baseUrl + 'profiles/' +  id;
+			url = baseUrl + 'kitbuilder/template-follows/' +  id;
 		}
 		return url;
 	},
