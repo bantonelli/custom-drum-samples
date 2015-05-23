@@ -3,15 +3,15 @@ import DS from 'ember-data';
 export default DS.Model.extend({
 	name: DS.attr('string'),
 	last_updated: DS.attr('date'),
-	users_following: DS.hasMany('user-profile'),
-	follows: DS.hasMany('follower'),
+	users_following: DS.hasMany('user-profile', {async: true}),
+	follows: DS.hasMany('follower', {async: true}),
 	description: DS.attr('string'),
 	featured: DS.attr('boolean'),
 	public: DS.attr('boolean'),
 	image: DS.attr('string'),
 	user: DS.attr('string'),
-	samples: DS.hasMany('sample'),
-	tags: DS.hasMany('tags'),
+	samples: DS.hasMany('sample', {async: true}),
+	tags: DS.hasMany('tags', {async: true}),
     displayedTags: function() {
         var tagString;
         var tagNames = [];
