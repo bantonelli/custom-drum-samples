@@ -35,7 +35,8 @@ module.exports = function(environment) {
             serverTokenEndpoint: 'http://127.0.0.1:5000/oauth2/access_token/',
             authorizer: 'simple-auth-authorizer:oauth2-bearer'
         };
-        ENV.APP.API_HOST = 'http://127.0.0.1:5000';
+        ENV.APP.API_HOST = 'http://127.0.0.1:5000';        
+        ENV.APP.API_NAMESPACE = 'api/v1';
         ENV.stripe = {
             publishableKey: 'pk_test_hyDepohZLg2M8UX2pYG6nhRI'
         };
@@ -75,6 +76,7 @@ module.exports = function(environment) {
             authorizer: 'simple-auth-authorizer:oauth2-bearer'
         };
         ENV.APP.API_HOST = 'https://cryptic-harbor-4037.herokuapp.com';
+        ENV.APP.API_NAMESPACE = 'api/v1';
         ENV.stripe = {
             publishableKey: 'pk_test_hyDepohZLg2M8UX2pYG6nhRI'
         };
