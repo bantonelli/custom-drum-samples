@@ -10,7 +10,7 @@ export default DS.Model.extend({
     date_created: DS.attr('date'),
     sample_count: DS.attr('number'),
     commission_rate: DS.attr('string'),
-    vendor: DS.belongsTo('vendor'),
+    vendor: DS.belongsTo('vendor', { async: true }),
     tags: DS.attr(),
     price: DS.attr(),
     sale: DS.attr(),

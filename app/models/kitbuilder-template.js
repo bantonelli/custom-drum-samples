@@ -4,12 +4,11 @@ export default DS.Model.extend({
 	name: DS.attr('string'),
 	last_updated: DS.attr('date'),
 	users_following: DS.hasMany('user-profile', {async: true}),
-	follows: DS.hasMany('follower', {async: true}),
 	description: DS.attr('string'),
 	featured: DS.attr('boolean'),
 	public: DS.attr('boolean'),
 	image: DS.attr('string'),
-	user: DS.attr('string'),
+	user: DS.belongsTo('user-profile', {async: true}),
 	samples: DS.hasMany('sample', {async: true}),
 	tags: DS.hasMany('tags', {async: true}),
     displayedTags: function() {

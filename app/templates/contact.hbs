@@ -4,6 +4,38 @@
             <div class="container">
                 <div class="about-first-topic">
                     <div class="row about-title">
+                        <h3>USERS <span class="icon-twitter" style="font-size: 1.1em;"></span></h3>
+                    </div>
+
+                    <div class="row about-para paragraph-text">
+                        {{#each profile in model}}
+                            <p>{{profile.username}}</p>
+                            <hr>
+                            <p>Member of Beat Paradigm since:</p>                           
+                            {{profile.created_at}}
+                            <hr>
+                            <p>Public Templates:
+                               {{!--  {{#each template in profile.public_kitbuilder_templates.content._data}}
+                                    {{template.name}}
+                                {{/each}} --}}
+{{!--                                 {{profile.public_templates}}
+ --}}                               
+                                {{#each template in profile.public_kitbuilder_templates}}
+                                    {{template.name}}
+                                {{/each}}
+                            </p>                           
+                            <hr>
+                            <p> Following Templates: 
+                                {{#each template in profile.templates_followed}}
+                                    {{template.name}}
+                                {{/each}}
+                            </p>
+                            <hr>
+                        {{/each}}
+                    </div>
+                </div>
+                <div class="about-first-topic">
+                    <div class="row about-title">
                         <h3>Contact <span class="icon-twitter" style="font-size: 1.1em;"></span></h3>
                     </div>
 

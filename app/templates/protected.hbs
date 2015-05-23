@@ -1,3 +1,9 @@
 <h3>You see Protected</h3>
 
-{{outlet}}
+{{#each template in model}}
+	<p>{{template.user.username}}</p>
+	{{#each user in template.users_following}}
+	<li>{{user.username}}</li>
+	{{/each}}
+
+{{/each}}
