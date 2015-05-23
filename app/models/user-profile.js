@@ -6,10 +6,11 @@ export default DS.Model.extend({
     last_4_digits: DS.attr( 'string' ),
     created_at: DS.attr('date'),
     updated_at: DS.attr('date'),
+    public_kitbuilder_templates: DS.hasMany('kitbuilder-template', {async: true}),
     kitbuilder_purchases: DS.hasMany('kitbuilder-purchase', {async: true}),
-    kitbuilder_templates: DS.hasMany('kitbuilder-template', {async: true}),
+    kitbuilder_templates: DS.attr(),
     samples_purchased: DS.attr(),
-    followers: DS.hasMany('follower', {async: true}),
+    template_follows: DS.hasMany('template-follow', {async: true}),
     templates_followed: DS.hasMany('kitbuilder-template', {async: true})   	
 });
 
