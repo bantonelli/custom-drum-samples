@@ -41,7 +41,7 @@ module.exports = function(environment) {
             publishableKey: 'pk_test_hyDepohZLg2M8UX2pYG6nhRI'
         };
         ENV.contentSecurityPolicy = {
-          'default-src': "'self' https://js.stripe.com https://*.soundcloud.com",
+          'default-src': "'self' https://js.stripe.com",
           'script-src': "'self' 'unsafe-eval' https://js.stripe.com http://127.0.0.1:35729", // Allow scripts from https://cdn.mxpnl.com
           'font-src': "'self'", // Allow fonts to be loaded from http://fonts.gstatic.com
           'connect-src': "'self' ws://127.0.0.1:35729/livereload https://*.soundcloud.com https://*.stripe.com http://127.0.0.1:5000", // Allow data (ajax/websocket) from api.mixpanel.com and custom-api.local
@@ -81,7 +81,7 @@ module.exports = function(environment) {
             publishableKey: 'pk_test_hyDepohZLg2M8UX2pYG6nhRI'
         };
         ENV.contentSecurityPolicy = {
-          'default-src': "'self' https://js.stripe.com https://*.soundcloud.com",
+          'default-src': "'self' https://js.stripe.com",
           'script-src': "'self' 'unsafe-eval' https://js.stripe.com http://127.0.0.1:35729 https://*.soundcloud.com", // Allow scripts from https://cdn.mxpnl.com
           'font-src': "'self'", // Allow fonts to be loaded from http://fonts.gstatic.com
           'connect-src': "'self' ws://127.0.0.1:35729/livereload https://*.soundcloud.com https://*.stripe.com https://cryptic-harbor-4037.herokuapp.com", // Allow data (ajax/websocket) from api.mixpanel.com and custom-api.local
