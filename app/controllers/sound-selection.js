@@ -18,7 +18,7 @@ var soundSelectionController = Ember.Controller.extend({
     testProp2: false,
     vendorKits: Ember.computed.alias('controllers.kitbuilder.model'),
     loadSoundCloud: false,
-    tags: function () {
+    tags: Ember.computed('vendorKits', function () {
         var kits = this.get('vendorKits.content');
         var totalTags = [];
         for (var kit = 0; kit < kits.length; kit++){
@@ -31,7 +31,7 @@ var soundSelectionController = Ember.Controller.extend({
             }
         }
         return totalTags;
-    }.property('vendorKits'),
+    }),
     descriptionHidden: true,
     // UPDATE TO BE DYNAMIC ALONG WITH SampleTypes
     filteredSamples: Ember.computed.filter('currentKit.samples', function (sample){
