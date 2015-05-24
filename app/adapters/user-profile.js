@@ -13,7 +13,7 @@ export default BaseAdapter.extend({
 		if (!id || Ember.isArray(id)) { 
 			url = baseUrl + 'profiles/'; 
 		} else if (id) {
-			url = baseUrl + 'profiles/' +  id;
+			url = baseUrl + 'profiles/' +  id + '/';
 		}
 		return url;
 	},

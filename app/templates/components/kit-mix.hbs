@@ -1,6 +1,6 @@
 {{#each kit in kits}}
-    <div data-datecreated="{{unbound kit.sortableDate}}" class="col-xs-4 sound-kit mix {{unbound kit.displayedTags}}"  {{action 'setCurrent' kit}}>
-        <img class="" src="{{apiURL}}{{unbound kit.image}}" alt="{{unbound kit.name}}">
+    <div data-datecreated="{{unbound kit.date_created}}" class="col-xs-4 sound-kit mix {{unbound kit.displayedTags}}"  {{action 'setCurrent' kit}}>
+        <img class="" src="{{unbound kit.image}}" alt="{{unbound kit.name}}">
         <div class="cds-image-div-wrapper"><div class="cds-image-div"></div></div>
     </div>
 {{/each}}

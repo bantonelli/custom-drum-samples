@@ -41,13 +41,13 @@ module.exports = function(environment) {
             publishableKey: 'pk_test_hyDepohZLg2M8UX2pYG6nhRI'
         };
         ENV.contentSecurityPolicy = {
-          'default-src': "'self' https://js.stripe.com",
+          'default-src': "'self' https://js.stripe.com https://*.soundcloud.com",
           'script-src': "'self' 'unsafe-eval' https://js.stripe.com http://127.0.0.1:35729", // Allow scripts from https://cdn.mxpnl.com
           'font-src': "'self'", // Allow fonts to be loaded from http://fonts.gstatic.com
           'connect-src': "'self' ws://127.0.0.1:35729/livereload https://*.soundcloud.com https://*.stripe.com http://127.0.0.1:5000", // Allow data (ajax/websocket) from api.mixpanel.com and custom-api.local
           'img-src': "'self' http://127.0.0.1:5000",
           'style-src': "'self' 'unsafe-inline'", // Allow inline styles and loaded CSS from http://fonts.googleapis.com 
-          'media-src': "'self' http://127.0.0.1:5000",
+          'media-src': "'self' http://127.0.0.1:5000 https://beat-paradigm.s3.amazonaws.com",
           'child-src': "'self' https://w.soundcloud.com https://js.stripe.com"
         };
     }
@@ -81,13 +81,13 @@ module.exports = function(environment) {
             publishableKey: 'pk_test_hyDepohZLg2M8UX2pYG6nhRI'
         };
         ENV.contentSecurityPolicy = {
-          'default-src': "'self' https://js.stripe.com",
-          'script-src': "'self' 'unsafe-eval' https://js.stripe.com http://127.0.0.1:35729", // Allow scripts from https://cdn.mxpnl.com
+          'default-src': "'self' https://js.stripe.com https://*.soundcloud.com",
+          'script-src': "'self' 'unsafe-eval' https://js.stripe.com http://127.0.0.1:35729 https://*.soundcloud.com", // Allow scripts from https://cdn.mxpnl.com
           'font-src': "'self'", // Allow fonts to be loaded from http://fonts.gstatic.com
           'connect-src': "'self' ws://127.0.0.1:35729/livereload https://*.soundcloud.com https://*.stripe.com https://cryptic-harbor-4037.herokuapp.com", // Allow data (ajax/websocket) from api.mixpanel.com and custom-api.local
-          'img-src': "'self' https://cryptic-harbor-4037.herokuapp.com",
+          'img-src': "'self' https://beat-paradigm.s3.amazonaws.com",
           'style-src': "'self' 'unsafe-inline'", // Allow inline styles and loaded CSS from http://fonts.googleapis.com 
-          'media-src': "'self' https://cryptic-harbor-4037.herokuapp.com",
+          'media-src': "'self' https://beat-paradigm.s3.amazonaws.com",
           'child-src': "'self' https://w.soundcloud.com https://js.stripe.com"
         };
     }

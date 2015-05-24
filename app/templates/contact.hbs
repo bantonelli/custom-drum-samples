@@ -9,10 +9,9 @@
 
                     <div class="row about-para paragraph-text">
                         {{#each profile in model}}
-                            <p>{{profile.username}}</p>
+                            <h4>{{profile.username}}</h4>
                             <hr>
-                            <p>Member of Beat Paradigm since:</p>                           
-                            {{profile.created_at}}
+                            <p>Member of Beat Paradigm since:{{profile.created_at}}</p>                                                       
                             <hr>
                             <p>Public Templates:
                                {{!--  {{#each template in profile.public_kitbuilder_templates.content._data}}

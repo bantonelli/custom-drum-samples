@@ -55,7 +55,7 @@ export default Ember.Component.extend({
         }
     }.property('sampleType'),
     audio: function () {
-        return config.APP.API_HOST + this.get('sample.demo');
+        return this.get('sample.preview');
     }.property('sample'),
     actions: {
         checkSample: function () {

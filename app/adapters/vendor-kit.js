@@ -13,7 +13,7 @@ export default BaseAdapter.extend({
 		if (!id || Ember.isArray(id)) { 
 			url = baseUrl + 'kitbuilder/vendor-kits/'; 
 		} else if (id) {
-			url = baseUrl + 'kitbuilder/vendor-kits/' +  id;
+			url = baseUrl + 'kitbuilder/vendor-kits/' +  id + '/';
 		}
 		return url;
 	},

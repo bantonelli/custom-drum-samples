@@ -5,5 +5,9 @@ export default Ember.Component.extend({
         //Ember.run.sync();
         // init logic
     }.on('didInsertElement'),
-    sampleTypes: Ember.computed.mapBy('currentKit.samples', 'type')
+    sampleTypes: Ember.computed.mapBy('currentKit.samples', 'type'),
+    uniqueSampleTypes: Ember.computed.uniq('sampleTypes'),
+    renderedSampleTypes: Ember.computed.map('uniqueSampleTypes', function(type, index) {
+    	return type + 's';
+  	})
 });

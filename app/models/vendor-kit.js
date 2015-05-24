@@ -24,15 +24,16 @@ export default DS.Model.extend({
         }
         tagString = tagNames.join(' ');
         return tagString;
-    }.property('tags'),
-    sortableDate: function (){
-        var str = this.get('date_created');
-        var find = '-';
-        var re = new RegExp(find, 'g');
-        var result = str.replace(re, '');
-        return result;
-    }.property('date_created')  
+    }.property('tags')
 });
 
+
+    // sortableDate: function (){
+    //     var str = this.get('date_created');
+    //     var find = '-';
+    //     var re = new RegExp(find, 'g');
+    //     var result = str.replace(re, '');
+    //     return result;
+    // }.property('date_created')  
 
 // Use DS.attr() for embedded objects. 

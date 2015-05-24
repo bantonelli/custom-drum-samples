@@ -13,7 +13,7 @@ export default BaseAdapter.extend({
 		if (!id || Ember.isArray(id)) { 
 			url = baseUrl + 'kitbuilder/template-follows/'; 
 		} else if (id) {
-			url = baseUrl + 'kitbuilder/template-follows/' +  id;
+			url = baseUrl + 'kitbuilder/template-follows/' +  id + '/';
 		}
 		return url;
 	},

@@ -4,10 +4,10 @@ import config from '.././config/environment';
 var soundSelectionController = Ember.Controller.extend({
     needs: ['kitbuilder'],
     currentKit: function (){
-        return this.get('kits.content')[0];
-    }.property('kits'),
+        return this.get('vendorKits').content[0];
+    }.property('vendorKits'),
     currentKitImage: function () {
-        return config.APP.API_HOST + this.get('currentKit.image');
+        return this.get('currentKit.image');
     }.property('currentKit'),
     selectedSampleType: null,
     tagsHidden: true,
@@ -16,10 +16,10 @@ var soundSelectionController = Ember.Controller.extend({
     onSale: false,
     testProp1: false,
     testProp2: false,
-    kits: Ember.computed.alias('model'),
+    vendorKits: Ember.computed.alias('controllers.kitbuilder.model'),
     loadSoundCloud: false,
     tags: function () {
-        var kits = this.get('kits.content');
+        var kits = this.get('vendorKits.content');
         var totalTags = [];
         for (var kit = 0; kit < kits.length; kit++){
             var currentTags = kits[kit].get('tags');
@@ -31,12 +31,13 @@ var soundSelectionController = Ember.Controller.extend({
             }
         }
         return totalTags;
-    }.property('kits'),
+    }.property('vendorKits'),
     descriptionHidden: true,
     // UPDATE TO BE DYNAMIC ALONG WITH SampleTypes
     filteredSamples: Ember.computed.filter('currentKit.samples', function (sample){
         if (this.get('selectedSampleType')){
             var selected = this.get('selectedSampleType');
+            selected = selected.slice(0, -1);
             return selected === sample._data.type;
         }
         else{
