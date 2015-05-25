@@ -3,5 +3,5 @@ import DS from 'ember-data';
 export default DS.Model.extend({
     email: DS.attr('string'),
     username: DS.attr('string'),
-    profile: DS.belongsTo('user-profile')
+    profile: DS.belongsTo('user-profile', {async: true})
 });

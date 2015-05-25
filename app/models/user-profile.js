@@ -7,8 +7,8 @@ export default DS.Model.extend({
     last_4_digits: DS.attr( 'string' ),
     created_at: DS.attr('date'),
     updated_at: DS.attr('date'),
-    public_kitbuilder_templates: DS.hasMany('kitbuilder-template', { async: true }),
-    kitbuilder_purchases: DS.hasMany('kitbuilder-purchase', { async: true }),
+    public_kitbuilder_templates: DS.hasMany('kitbuilder-template', { async: true, inverse: 'user'}),
+    kitbuilder_purchases: DS.attr(),
     kitbuilder_templates: DS.attr(),
     samples_purchased: DS.attr(),
     templates_followed: DS.hasMany('kitbuilder-template', { async: true })	
@@ -21,3 +21,5 @@ export default DS.Model.extend({
 
 // Samples purchased: just a list object of ID's
 	// instead of being a related field.
+
+// When you get factory is undefined error - there is something wrong with the JSON format/serializer

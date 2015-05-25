@@ -22,7 +22,7 @@ Router.map(function() {
           authenticate: 'authenticate'
       }
   });
-  this.route("login");
+  this.resource("login");
   this.resource("protected");
   this.resource("legal", function (){
   });
@@ -36,7 +36,7 @@ Router.map(function() {
           this.resource('kb-thank-you', {path:'/thanks'});
       });
   });
-  this.resource("account-settings", function () {
+  this.resource("account-settings", {path: '/account'}, function () {
       this.resource('update-info', {path: '/update-info/:uid/:token'});
   });
   this.resource('password-reset', {path: '/password-reset/:uid/:token'});
@@ -48,6 +48,7 @@ Router.map(function() {
   this.resource('kb-learn-more', {path: '/learn-more'});
   this.resource('team-members');
   this.resource('contact');
+  this.resource('user-profile', {path: '/profile'});
 });
 
 export default Router;

@@ -8,7 +8,7 @@ export default DS.Model.extend({
 	featured: DS.attr('boolean'),
 	public: DS.attr('boolean'),
 	image: DS.attr('string'),
-	user: DS.belongsTo('user-profile', {async: true}),
+	user: DS.belongsTo('user-profile', {async: true, inverse: 'public_kitbuilder_templates'}),
 	samples: DS.hasMany('sample', {async: true}),
 	tags: DS.hasMany('tags', {async: true}),
     displayedTags: function() {

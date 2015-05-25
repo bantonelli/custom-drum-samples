@@ -1,38 +1,7 @@
 <div class="main-content">
     <div id="about-us-slide-1" class="slide on-top">
         <section id="about-us-slide-section-1">
-            <div class="container">
-                <div class="about-first-topic">
-                    <div class="row about-title">
-                        <h3>USERS <span class="icon-twitter" style="font-size: 1.1em;"></span></h3>
-                    </div>
-
-                    <div class="row about-para paragraph-text">
-                        {{#each profile in model}}
-                            <h4>{{profile.username}}</h4>
-                            <hr>
-                            <p>Member of Beat Paradigm since:{{profile.created_at}}</p>                                                       
-                            <hr>
-                            <p>Public Templates:
-                               {{!--  {{#each template in profile.public_kitbuilder_templates.content._data}}
-                                    {{template.name}}
-                                {{/each}} --}}
-{{!--                                 {{profile.public_templates}}
- --}}                               
-                                {{#each template in profile.public_kitbuilder_templates}}
-                                    {{template.name}}
-                                {{/each}}
-                            </p>                           
-                            <hr>
-                            <p> Following Templates: 
-                                {{#each template in profile.templates_followed}}
-                                    {{template.name}}
-                                {{/each}}
-                            </p>
-                            <hr>
-                        {{/each}}
-                    </div>
-                </div>
+            <div class="container">                
                 <div class="about-first-topic">
                     <div class="row about-title">
                         <h3>Contact <span class="icon-twitter" style="font-size: 1.1em;"></span></h3>
