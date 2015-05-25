@@ -20,6 +20,7 @@ export default Ember.ArrayController.extend({
     }),
     activeFilters: [],
     filterString: "all",
+    startSave: false,
     kitName: null,
     currentTemplate: null,
     isTemplateOwner: Ember.computed('kitName', 'currentTemplate', function (){
@@ -38,6 +39,12 @@ export default Ember.ArrayController.extend({
       return isOwner;
     }),
     actions: {
+      openSaveDialog: function () {
+        this.set('startSave', true);
+      },
+      closeSaveDialog: function (){
+        this.set('startSave', false);
+      },
       saveAsTemplate: function (){
         var self = this;
         if (self.get('kitName')){
