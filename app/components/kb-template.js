@@ -10,13 +10,10 @@ export default Ember.Component.extend({
 		saveTemplate: function (){
 	  		this.set('isEditing', false);
 		},
-		deleteTemplate: function (){
+		delete: function (){
+			var template = this.get('template');
 			if(confirm('Are you sure?')){
-				var store = this.get('controllers.kitbuilder.store');
-				var template = this.get('template');
-				store.find('kitbuilder-template', template.id).then(function (record) {
-					record.destroyRecord(); // => DELETE to /templates/id
-				});
+				this.sendAction('deleteTemplate', template);
 			}
 		},
 		loadTemplate: function (){
@@ -25,8 +22,10 @@ export default Ember.Component.extend({
 			kitbuilderController.store.find('kitbuilder-template', template.id).then(function (template){
 				kitbuilderController.set('currentTemplate', template);
 				kitbuilderController.set('kitName', template.get('name'));
-				kitbuilderController.set('chosenSamples', template.get('samples'));				
-				kitbuilderController.transitionToRoute('your-kit');
+				template.get('samples').then(function (samples) {
+					kitbuilderController.set('chosenSamples', samples);
+					kitbuilderController.transitionToRoute('your-kit');
+				});								
 			});			
 		}
 	}

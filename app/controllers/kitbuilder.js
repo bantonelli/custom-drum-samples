@@ -12,7 +12,14 @@ export default Ember.ArrayController.extend({
         {route: 'kb-checkout', displayLink: 'Checkout'}
     ],
     chosenSamples: [],
-    samplesChosen: Ember.computed.alias('chosenSamples'),
+    samplesChosen: Ember.computed('chosenSamples', 'currentTemplate', function (){
+      if (this.get('currentTemplate')){
+        return this.get('currentTemplate.samples');
+      } else {
+        return this.get('chosenSamples');
+      }
+    }),
+    samplesChosenIds: Ember.computed.mapBy('chosenSamples', 'id'),
     activeFilters: [],
     filterString: "all",
     isDirty: false,
@@ -50,11 +57,22 @@ export default Ember.ArrayController.extend({
       closeSaveDialog: function (){
         this.set('startSave', false);
       },
-      saveTemplate: function () { 
+      saveTemplate: function () {
+        var templateSaved = false; 
+        var onSuccess = function() {
+          console.log('Template saved successfully');
+          templateSaved = true;          
+        };
+        var onFail = function(template) {
+          console.log('Template not saved!');
+        };
         if (this.get('isTemplateOwner')){
           var templateToSave = this.get('currentTemplate');
-          templateToSave.set('samples', currentSamples);
+          // templateToSave.set('samples', this.get('samplesChosen'));
           templateToSave.save().then(onSuccess, onFail);
+          if (templateSaved) {
+            self.set('isDirty', false);
+          }
         } else {
           swal({
             title: "Error!",
@@ -91,7 +109,7 @@ export default Ember.ArrayController.extend({
 
         /* END PROMISE FUNCTIONS */  
         if (self.get('kitName')) {
-          var samplesIDArray = self.get('chosenSamples');
+          var samplesIDArray = self.get('samplesChosenIds');
           var kitName = self.get('kitName');
           var baseUrl = config.APP.API_HOST + '/' + config.APP.API_NAMESPACE + '/';
           var url = baseUrl + 'kitbuilder/templates/';         
@@ -104,7 +122,9 @@ export default Ember.ArrayController.extend({
             type: "POST",
             url: url,
             crossDomain: true,
-            data: templateToSave
+            data: JSON.stringify(templateToSave),
+            contentType: "application/json",
+            dataType: "json"
           }).then(setCurrentTemplate, onFail);              
           if (templateSaved) {
             self.set('isDirty', false);

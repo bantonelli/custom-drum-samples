@@ -17,5 +17,19 @@ export default BaseAdapter.extend({
 		}
 		return url;
 	},
+    updateRecord: function(store, type, snapshot) {
+    	// Had to override updateRecord to remove 'image' from PUT request
+    		// API will reject a PUT with image: null or anything other than a file upload.
+    		// Have to handle the file upload separately.
+        var data = {};
+        var serializer = store.serializerFor(type.typeKey);
+
+        serializer.serializeIntoHash(data, type, snapshot);
+
+        var id = snapshot.id;
+        var prop = "image";
+		delete data[prop];        
+        return this.ajax(this.buildURL(type.typeKey, id, snapshot), "PUT", { data: data });
+    },
 	coalesceFindRequests: true
 });

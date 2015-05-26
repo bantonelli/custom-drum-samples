@@ -14,7 +14,7 @@
 	</div>
 	<div class="row up-templates">
 		{{#each template in model.kitbuilder_templates}}
-			{{kb-template template=template controllers=controllers}}
+			{{kb-template template=template controllers=controllers deleteTemplate="deleteTemplate"}}
 		{{/each}}
 	</div>
 </div>	

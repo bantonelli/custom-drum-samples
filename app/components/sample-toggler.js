@@ -59,17 +59,19 @@ export default Ember.Component.extend({
     }.property('sample'),
     actions: {
         checkSample: function () {
+            var sample = this.get('sample');
             if (this.get('isChosen')) {
-                this.get('chosenSamples').removeObject(this.get('sample'));
+                this.get('chosenSamples').removeObject(sample);
                 this.set('isChosen', false);
             } else {
                 this.set('isChosen', true);
-                this.get('chosenSamples').pushObject(this.get('sample'));
+                this.get('chosenSamples').pushObject(sample);
             }
         },
         removeSample: function () {
+            var sample = this.get('sample');
             this.set('isChosen', false);
-            this.get('chosenSamples').removeObject(this.get('sample'));
+            this.get('chosenSamples').removeObject(sample);
         },
         playSample: function () {
             var sample = this.get('sample');

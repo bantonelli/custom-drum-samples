@@ -20,12 +20,14 @@ export default DS.Model.extend({
         }
         tagString = tagNames.join(' ');
         return tagString;
-    }.property('tags'),
-    sortableDate: function (){
-        var str = this.get('last_updated');
-        var find = '-';
-        var re = new RegExp(find, 'g');
-        var result = str.replace(re, '');
-        return result;
-    }.property('last_updated')  
+    }.property('tags')
 });
+
+
+    // sortableDate: function (){
+    //     var str = this.get('last_updated');
+    //     var find = '-';
+    //     var re = new RegExp(find, 'g');
+    //     var result = str.replace(re, '');
+    //     return result;
+    // }.property('last_updated')  
