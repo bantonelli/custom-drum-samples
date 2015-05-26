@@ -6,7 +6,11 @@
     		{{#if startSave}}
                 <div class="cds-form kb-template-save-form">
 	                    {{input type="text" placeholder="Name Your Kit" class="col-xs-12 cds-text-input name-your-kit" value=kitName}}
-	                    <button class="col-xs-6" {{action "saveAsTemplate"}}>Save As Template</button>
+	                    {{#if nameChange}}
+	                    	<button class="col-xs-6" {{action "saveTemplateAs"}}>Save Template As</button>
+                    	{{else}}
+                			<button class="col-xs-6" {{action "saveTemplate"}}>SaveTemplate</button>
+                    	{{/if}}
 	                    <button class="col-xs-6" {{action "closeSaveDialog"}}>Done</button>
                 </div>
     		{{/if}}

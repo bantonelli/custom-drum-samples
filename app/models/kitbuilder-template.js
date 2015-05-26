@@ -2,7 +2,7 @@ import DS from 'ember-data';
 
 export default DS.Model.extend({
 	name: DS.attr('string'),
-	last_updated: DS.attr('date'),
+	last_updated: DS.attr('date', {defaultValue: false}),
 	users_following: DS.hasMany('user-profile', {async: true}),
 	description: DS.attr('string'),
 	featured: DS.attr('boolean'),

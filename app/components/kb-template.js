@@ -20,10 +20,14 @@ export default Ember.Component.extend({
 			}
 		},
 		loadTemplate: function (){
-			var template = this.get('template')
+			var template = this.get('template');
 			var kitbuilderController = this.get('controllers.kitbuilder');
-			kitbuilderController.set('currentTemplate', template);
-			kitbuilderController.transitionToRoute('your-kit');
+			kitbuilderController.store.find('kitbuilder-template', template.id).then(function (template){
+				kitbuilderController.set('currentTemplate', template);
+				kitbuilderController.set('kitName', template.get('name'));
+				kitbuilderController.set('chosenSamples', template.get('samples'));				
+				kitbuilderController.transitionToRoute('your-kit');
+			});			
 		}
 	}
 });

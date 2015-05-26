@@ -2,6 +2,7 @@
  * Created by brandonantonelli on 2/2/15.
  */
 import Ember from 'ember';
+import config from '.././config/environment';
 
 export default Ember.ArrayController.extend({
     appId: 'Kit Builder',
@@ -11,30 +12,34 @@ export default Ember.ArrayController.extend({
         {route: 'kb-checkout', displayLink: 'Checkout'}
     ],
     chosenSamples: [],
-    samplesChosen: Ember.computed('chosenSamples', function(key, value) {
-        // if (this.get('purchased')){
-        //     return [];
-        // } else {
-            return this.get('chosenSamples');
-        // }        
-    }),
+    samplesChosen: Ember.computed.alias('chosenSamples'),
     activeFilters: [],
     filterString: "all",
+    isDirty: false,
     startSave: false,
     kitName: null,
     currentTemplate: null,
-    isTemplateOwner: Ember.computed('kitName', 'currentTemplate', function (){
-      isOwner = true;
-      var currentTemplate = this.get('currentTemplate');
-      var currentUser = this.get('session.content.user_id');
+    currentTemplateOwner: Ember.computed('currentTemplate', function (){
+      return this.get('currentTemplate.user.id');
+    }),
+    nameChange: Ember.computed('currentTemplate', 'kitName', function (){
+      if ((this.get('currentTemplate') == null) || (!this.get('kitName'))) {
+        // When there is no template loaded - show the save As function
+        // Also, when there is no name input - show the save As function
+        return true;
+
+      }
+      // Otherwise if the kitName is different from the loaded template's name - show the save As function
+      return this.get('currentTemplate.name') !== this.get('kitName');
+    }),
+    isTemplateOwner: Ember.computed('kitName', 'currentTemplate', 'session.content.user_id', function (){
+      var isOwner = true;
+      var self = this;
+      var currentTemplateOwner = this.get('currentTemplateOwner');
+      var currentUser = self.get('session.content.user_id');        
       var currentName = this.get('kitName');
-      if (currentTemplate){
-        var currentTemplateOwner = currentTemplate.get('user.id');
-        if ((currentTemplateOwner === currentUser) || (currentName !== currentTemplate.get('name'))){
-          isOwner = true;
-        } else {
-          isOwner = false;
-        }
+      if (currentTemplateOwner && currentName){
+        
       }
       return isOwner;
     }),
@@ -45,67 +50,72 @@ export default Ember.ArrayController.extend({
       closeSaveDialog: function (){
         this.set('startSave', false);
       },
-      saveAsTemplate: function (){
+      saveTemplate: function () { 
+        if (this.get('isTemplateOwner')){
+          var templateToSave = this.get('currentTemplate');
+          templateToSave.set('samples', currentSamples);
+          templateToSave.save().then(onSuccess, onFail);
+        } else {
+          swal({
+            title: "Error!",
+            text: "You do not own this template. However, you can change the name and then save it as your own.",
+            type: "error",
+            confirmButtonText: "OK"
+          });    
+        }       
+      },
+      saveTemplateAs: function (){
         var self = this;
-        if (self.get('kitName')){
-          if (self.get('isTemplateOwner')){
-            var templateSaved = false;
-            var userID = self.get('session.content.user_id');
-            var currentTemplate = self.get('currentTemplate');
-            var onSuccess = function(template) {
-              console.log('Template saved successfully');
-              templateSaved = true;
+        var templateSaved = false;
+        var userID = self.get('session.content.user_id');
+        var currentTemplate = self.get('currentTemplate');
+        
+        /* PROMISE FUNCTIONS (to be used later) */
+        var onSuccess = function(template) {
+          console.log('Template saved successfully');
+          templateSaved = true;
+          self.set('currentTemplate', template);
+        };
+        var onFail = function(template) {
+          console.log('Template not saved!');
+        };
+        var setCurrentTemplate = function (template) {
+            // This function is run after the ajax call returns a successful transaction
+            // It takes the returned object uses the store to find that object
+              // and then takes the store's model object and sets it as the current template.
+            self.store.find('kitbuilder-template', template.id).then(function (template){
               self.set('currentTemplate', template);
-            };
-            var onFail = function(template) {
-              console.log('Template not saved!');
-            };
-            if (currentTemplate == null) {
-              var templateToSave = {
-                name: self.get('kitName'),
-                user: userID,
-                samples: self.get('samplesChosen')
-              };
-              var newTemplate = self.store.createRecord('kitbuilder-template', templateToSave);
-              newTemplate.save().then(onSuccess, onFail);
-              
-            } else {
-              var templateToSave = self.get('currentTemplate');
-              var currentName = self.get('kitName');
-              var currentSamples = self.get('samplesChosen');
-              if (currentName !== templateToSave.get('name')) {
-                templateToSave = {
-                  name: self.get('kitName'),
-                  user: userID,
-                  samples: self.get('samplesChosen')
-                };
-                var newTemplate = self.store.createRecord('kitbuilder-template', templateToSave);
-                newTemplate.save().then(onSuccess, onFail);
-              } else {
-                templateToSave.set('name', currentName); 
-                templateToSave.set('samples', currentSamples);
-                templateToSave.save().then(onSuccess, onFail);
-              }
-              // templateToSave.save().then(transitionToPost).catch(failure);
-            }
-            if (templateSaved) {
-              self.set('isDirty', false);
-            }
-          } else {
-            swal({
-              title: "Error!",
-              text: "You have to change the name of a followed template to save it as your own!",
-              type: "error",
-              confirmButtonText: "OK"
-            });     
+              templateSaved = true;
+            });                
+        };
+
+        /* END PROMISE FUNCTIONS */  
+        if (self.get('kitName')) {
+          var samplesIDArray = self.get('chosenSamples');
+          var kitName = self.get('kitName');
+          var baseUrl = config.APP.API_HOST + '/' + config.APP.API_NAMESPACE + '/';
+          var url = baseUrl + 'kitbuilder/templates/';         
+          var templateToSave = {
+            name: kitName,
+            user: userID,
+            samples: samplesIDArray            
+          };              
+          Ember.$.ajax({
+            type: "POST",
+            url: url,
+            crossDomain: true,
+            data: templateToSave
+          }).then(setCurrentTemplate, onFail);              
+          if (templateSaved) {
+            self.set('isDirty', false);
           }
         } else {
-             swal({
-              title: "Error!",
-              text: "You have to enter a name for your template!",
-              type: "error",
-              confirmButtonText: "OK"
-            });    
+          swal({
+            title: "Error!",
+            text: "You have to enter a name for your template!",
+            type: "error",
+            confirmButtonText: "OK"
+          });    
         }
       }
     }
