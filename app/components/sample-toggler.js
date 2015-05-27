@@ -70,13 +70,13 @@ export default Ember.Component.extend({
                 this.set('isChosen', true);
                 this.get('chosenSamples').pushObject(sample);
             }
-            this.set('isDirty', true);
+            this.set('kitbuilderController.isDirty', true);
         },
         removeSample: function () {
             var sample = this.get('sample');
             this.set('isChosen', false);
-            this.get('chosenSamples').removeObject(sample);
-            this.set('isDirty', true);
+            this.set('kitbuilderController.isDirty', true);
+            this.get('chosenSamples').removeObject(sample);            
         },
         playSample: function () {
             var sample = this.get('sample');
