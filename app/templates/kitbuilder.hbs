@@ -1,18 +1,23 @@
 <div class="main-content kb-main-content">
 	<div id="kb-slide-1" class="slide">
     	{{liquid-outlet}}
-    	<div class="kb-save-container">
-    		<div class="kb-save icon-download" {{action "toggleSaveDialog"}}></div>
-    		{{#if startSave}}
-                <div class="cds-form kb-template-save-form">
-	                    {{input type="text" placeholder="Name Your Kit" class="col-xs-12 cds-text-input name-your-kit" value=kitName}}
-	                    {{#if nameChange}}
-	                    	<button class="col-xs-6 cds-button cds-button-aw-medium" {{action "saveTemplateAs"}}>Save Template As</button>
-                    	{{else}}
-                			<button class="col-xs-6 cds-button cds-button-aw-medium" {{action "saveTemplate"}}>SaveTemplate</button>
-                    	{{/if}}
-                </div>
-    		{{/if}}
+    	<div class="kb-save-container {{if startSave 'start-save' ''}}">
+            <div class="kb-save {{if startSave 'icon-cancel-circle' 'icon-disk'}} {{if isDirty 'dirty' 'clean'}}" {{action "toggleSaveDialog"}}></div>
+            {{input id="kb-template-save-input" type="text" placeholder="Name Your Kit" class="col-xs-12 cds-text-input name-your-kit" value=kitName}}                          
+            {{#if nameChange}}
+                <button id="kb-template-save-button" class="col-xs-6 cds-button cds-button-aw-medium" {{action "saveTemplateAs"}}>Save Template As</button>
+            {{else}}
+                <button id="kb-template-save-button" class="col-xs-6 cds-button cds-button-aw-medium" {{action "saveTemplate"}}>SaveTemplate</button>
+            {{/if}}                        
+    		{{!-- <div class="kb-save icon-download" {{action "toggleSaveDialog"}}></div>
+            {{#liquid-if startSave class="cds-form kb-template-save-form"}}
+                
+                {{#if nameChange}}
+                    <button class="col-xs-6 cds-button cds-button-aw-medium" {{action "saveTemplateAs"}}>Save Template As</button>
+                {{else}}
+                    <button class="col-xs-6 cds-button cds-button-aw-medium" {{action "saveTemplate"}}>SaveTemplate</button>
+                {{/if}}            
+            {{/liquid-if}} --}}
     	</div>
 	</div>
 </div>

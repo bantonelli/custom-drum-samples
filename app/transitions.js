@@ -2,6 +2,18 @@
  * Created by brandonantonelli on 1/28/15.
  */
 export default function () {
+    // this.transition(
+    //     this.hasClass('kb-template-save-form'),
+
+    //     // this makes our rule apply when the liquid-if transitions to the
+    //     // true state.
+    //     this.toValue(true),
+    //     this.use('toLeft', {duration: 220})
+
+    //     // which means we can also apply a reverse rule for transitions to
+    //     // the false state.
+    //     // this.reverse(, {duration})
+    // );
     // MODAL
     this.transition(
         this.inHelper('liquid-modal'),

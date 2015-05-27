@@ -264,7 +264,7 @@ Slide 2 Styles
 
 .kit-details {
   margin-bottom: 40px;
-
+  margin-top: 60px;
   .sample-name-total {
     color: nth($orange-list, 3);
   }
@@ -281,9 +281,7 @@ Slide 2 Styles
 
 .kit-choices, .discounts {
   width: 100%;
-  height: 780px;
-  padding: 0;
-  margin-top: 50px;
+  padding: 0;  
 }
 
 .discounts {
@@ -534,31 +532,49 @@ Slide 3 Styles
 .kb-save-container {
   display: inline-block;
   width: 75px;
-  height: 40px;
+  height: 60px;  
   position: fixed;
-  bottom: 0px;
+  bottom: 50px;
   right: 0%;
+  transition: .3s all ease;
   // left: 0%;
   .kb-save {
-    background-color: nth($orange-list, 3);
-    margin-left: -85px;
+    color: $offwhite;    
+    // margin-left: -85px;
     display: inline-block;
     height: 100%;
     width: 100%;
     font-size: 35px;
-    line-height: 40px;
+    line-height: 58px;
     text-align: center;
+    cursor: pointer;
+    &.dirty {
+      background-color: nth($orange-list, 2);
+    }
+    &.clean {
+      background-color: nth($lightblue-list, 2);
+    }    
   }
   .kb-template-save-form {
+    display: inline-block;
     float: left;
     position: relative;
-    width: 200px;
-    position: absolute;
-    transform: translate(-151px, -141%); 
-    button {
-      font-size: 18px;
-
-    }
+    width: 300px;
+  }
+  #kb-template-save-input {
+    transform: translate(75px, -60px);
+    width: 150px;
+    height: 60px;
+  }
+  #kb-template-save-button {
+    width: 150px;
+    transform: translate(225px, -120px);
+    font-size: 18px;
+    border-radius: 0px;
+  }
+  &.start-save {
+    transform: translate(-320px, 0%);
+    overflow: visible;  
   }
 }
 
