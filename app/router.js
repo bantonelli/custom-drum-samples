@@ -49,6 +49,7 @@ Router.map(function() {
   this.resource('team-members');
   this.resource('contact');
   this.resource('user-profile', {path: '/profile'});
+  this.route('browse-templates');
 });
 
 export default Router;
