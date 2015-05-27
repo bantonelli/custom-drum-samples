@@ -314,6 +314,7 @@ Slide 2 Styles
 
 .sample-choices {
   margin-bottom: 30px;
+  max-height: 400px;
   h4 {
     @include h3-ow-background();
     padding: 0;
