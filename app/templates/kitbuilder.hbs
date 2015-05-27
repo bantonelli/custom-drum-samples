@@ -1,5 +1,18 @@
 <div class="main-content kb-main-content">
 	<div id="kb-slide-1" class="slide">
     	{{liquid-outlet}}
+    	<div class="kb-save-container">
+    		<div class="kb-save icon-download" {{action "toggleSaveDialog"}}></div>
+    		{{#if startSave}}
+                <div class="cds-form kb-template-save-form">
+	                    {{input type="text" placeholder="Name Your Kit" class="col-xs-12 cds-text-input name-your-kit" value=kitName}}
+	                    {{#if nameChange}}
+	                    	<button class="col-xs-6 cds-button cds-button-aw-medium" {{action "saveTemplateAs"}}>Save Template As</button>
+                    	{{else}}
+                			<button class="col-xs-6 cds-button cds-button-aw-medium" {{action "saveTemplate"}}>SaveTemplate</button>
+                    	{{/if}}
+                </div>
+    		{{/if}}
+    	</div>
 	</div>
 </div>

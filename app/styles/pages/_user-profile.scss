@@ -1,0 +1,18 @@
+.filter-row {
+  // h4 {
+  //   margin: 0 0 0 40px;
+  //   height: 70px; 
+  //   line-height: 80px;
+  // }
+  h3, h4 {
+    height: 60px; 
+    line-height: 60px; 
+    margin-top: 5px;
+  }
+  @include menu-list();
+
+  .icon-tags::before {
+    font-family: icomoon;
+    font-size: 30px;
+  }
+}

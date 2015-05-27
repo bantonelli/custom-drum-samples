@@ -3,6 +3,7 @@ import config from '.././config/environment';
 var swal = window.sweetAlert;
 
 export default Ember.Controller.extend({
+	needs: ['kitbuilder'],
 	userName: null,
 	email: null,
 	currentPassword: null,
@@ -81,7 +82,6 @@ export default Ember.Controller.extend({
 					});                	
 	        	});
 			}
-
 		},
 		updateAccount: function () {
 			var emailBlank = false;
@@ -154,6 +154,11 @@ export default Ember.Controller.extend({
 					});                 		            	 
 				});
 			}
+		},	
+		loadTemplate: function (template){
+			var kitbuilderController = this.get('controllers.kitbuilder');
+			kitbuilderController.set('currentTemplate', template);
+			this.transitionToRoute('your-kit');
 		}
 	}
 });

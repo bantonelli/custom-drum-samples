@@ -151,9 +151,9 @@
   height: 40px;
   width: 100%;
   line-height: 40px;
-  @-moz-document url-prefix() { 
-    line-height: 33px;
-  } 
+  // @-moz-document url-prefix() { 
+  //   line-height: 33px;
+  // } 
   padding: 0;
   -moz-box-sizing: border-box;
   box-sizing: border-box;

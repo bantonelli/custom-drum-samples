@@ -530,3 +530,38 @@ Slide 3 Styles
     overflow: hidden;
   }
 }
+
+.kb-save-container {
+  display: inline-block;
+  width: 75px;
+  height: 40px;
+  position: fixed;
+  bottom: 0px;
+  right: 0%;
+  // left: 0%;
+  .kb-save {
+    background-color: nth($orange-list, 3);
+    margin-left: -85px;
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    font-size: 35px;
+    line-height: 40px;
+    text-align: center;
+  }
+  .kb-template-save-form {
+    float: left;
+    position: relative;
+    width: 200px;
+    position: absolute;
+    transform: translate(-151px, -141%); 
+    button {
+      font-size: 18px;
+
+    }
+  }
+}
+
+// .kb-template-save-form button {
+
+// }

@@ -11,7 +11,7 @@ export default Ember.Route.extend({
         });
     },
     model: function (){
-        return this.store.find('kit');
+        return this.store.findAll('vendor-kit');
     },
     beforeModel: function(transition) {
         var _this = this;

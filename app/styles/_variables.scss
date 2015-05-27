@@ -58,53 +58,53 @@ $gray-list: create-color-list($gray, $desaturate-val: 0, $lighten-increment: 10)
 
 //Quicksand
 
-// @font-face {
-//     font-family: 'quicksandregular';
-//     src: url('../fonts/quicksand/quicksand-regular.eot');
-//     src: url('../fonts/quicksand/quicksand-regular.eot?#iefix') format('embedded-opentype'),
-//          url('../fonts/quicksand/quicksand-regular.woff2') format('woff2'),
-//          url('../fonts/quicksand/quicksand-regular.woff') format('woff'),
-//          url('../fonts/quicksand/quicksand-regular.ttf') format('truetype'),
-//          url('../fonts/quicksand/quicksand-regular.svg#quicksandregular') format('svg');
-//     font-weight: normal;
-//     font-style: normal;
-// }
-
-// @font-face {
-//     font-family: 'quicksandbold';
-//     src: url('../fonts/quicksand/quicksand-bold.eot');
-//     src: url('../fonts/quicksand/quicksand-bold.eot?#iefix') format('embedded-opentype'),
-//          url('../fonts/quicksand/quicksand-bold.woff2') format('woff2'),
-//          url('../fonts/quicksand/quicksand-bold.woff') format('woff'),
-//          url('../fonts/quicksand/quicksand-bold.ttf') format('truetype'),
-//          url('../fonts/quicksand/quicksand-bold.svg#quicksandbold') format('svg');
-//     font-weight: normal;
-//     font-style: normal;
-// }
-
 @font-face {
     font-family: 'quicksandregular';
-    src: url('../fonts/gotham/GothamRndSSm-Light.eot');
-    src: url('../fonts/gotham/GothamRndSSm-Light.eot') format('embedded-opentype'),
-         url('../fonts/gotham/GothamRndSSm-Light.woff2') format('woff2'),
-         url('../fonts/gotham/GothamRndSSm-Light.woff') format('woff'),
-         url('../fonts/gotham/GothamRndSSm-Light.ttf') format('truetype'),
-         url('../fonts/gotham/GothamRndSSm-Light.svg') format('svg');
+    src: url('../fonts/quicksand/quicksand-regular.eot');
+    src: url('../fonts/quicksand/quicksand-regular.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/quicksand/quicksand-regular.woff2') format('woff2'),
+         url('../fonts/quicksand/quicksand-regular.woff') format('woff'),
+         url('../fonts/quicksand/quicksand-regular.ttf') format('truetype'),
+         url('../fonts/quicksand/quicksand-regular.svg#quicksandregular') format('svg');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'quicksandbold';
-    src: url('../fonts/gotham/GothamRndSSm-Medium.eot');
-    src: url('../fonts/gotham/GothamRndSSm-Medium.eot') format('embedded-opentype'),
-         url('../fonts/gotham/GothamRndSSm-Medium.woff2') format('woff2'),
-         url('../fonts/gotham/GothamRndSSm-Medium.woff') format('woff'),
-         url('../fonts/gotham/GothamRndSSm-Medium.ttf') format('truetype'),
-         url('../fonts/gotham/GothamRndSSm-Medium.svg') format('svg');
+    src: url('../fonts/quicksand/quicksand-bold.eot');
+    src: url('../fonts/quicksand/quicksand-bold.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/quicksand/quicksand-bold.woff2') format('woff2'),
+         url('../fonts/quicksand/quicksand-bold.woff') format('woff'),
+         url('../fonts/quicksand/quicksand-bold.ttf') format('truetype'),
+         url('../fonts/quicksand/quicksand-bold.svg#quicksandbold') format('svg');
     font-weight: normal;
     font-style: normal;
 }
+// GOTHAM
+// @font-face {
+//     font-family: 'quicksandregular';
+//     src: url('../fonts/gotham/BPRnd-Light.eot');
+//     src: url('../fonts/gotham/BPRnd-Light.eot') format('embedded-opentype'),
+// 		 url('../fonts/gotham/BPRnd-Light.woff2') format('woff2'),
+//          url('../fonts/gotham/BPRnd-Light.woff') format('woff'),
+//          url('../fonts/gotham/BPRnd-Light.ttf') format('truetype'),
+//          url('../fonts/gotham/BPRnd-Light.svg') format('svg');
+//     font-weight: normal;
+//     font-style: normal;
+// }
+
+// @font-face {
+//     font-family: 'quicksandbold';
+//     src: url('../fonts/gotham/BPRndSSm-Medium.eot');
+//     src: url('../fonts/gotham/BPRndSSm-Medium.eot') format('embedded-opentype'),
+//     	 url('../fonts/gotham/BPRndSSm-Medium.woff2') format('woff2'),
+//          url('../fonts/gotham/BPRndSSm-Medium.woff') format('woff'),
+//          url('../fonts/gotham/BPRndSSm-Medium.ttf') format('truetype'),
+//          url('../fonts/gotham/BPRndSSm-Medium.svg') format('svg');
+//     font-weight: normal;
+//     font-style: normal;
+// }
 
 @font-face {
     font-family: 'quicksanditalic';

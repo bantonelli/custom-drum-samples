@@ -3,9 +3,9 @@ import DS from 'ember-data';
 
 var Sample = DS.Model.extend({
     name: DS.attr( 'string' ),
-    demo: DS.attr( 'string' ),
+    preview: DS.attr( 'string' ),
     wav: DS.attr( 'string' ),
-    kit: DS.belongsTo('kit'),
+    kit: DS.belongsTo('vendor-kit'),
     type: DS.attr( 'string' )
 });
 

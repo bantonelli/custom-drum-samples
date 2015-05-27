@@ -5,7 +5,7 @@ import config from '.././config/environment';
 export default Ember.Route.extend({
 	model: function() {
 		var user_id = this.get('session.content.user_id');
-		return this.store.find('user-profile', user_id);
+		return this.store.fetchById('user-profile', user_id);
 	},
 	setupController: function(controller, model) {
 		// This function is called when the route loads

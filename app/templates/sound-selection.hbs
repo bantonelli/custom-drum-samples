@@ -53,7 +53,7 @@
                             </ul>
                         </div>
                         <div id="kitmix" {{action 'closeTags'}}>                            
-                            {{kit-mix controllers=controllers kits=controllers.kitbuilder.model currentKit=currentKit}}
+                            {{kit-mix controllers=controllers kits=controllers.kitbuilder.model currentKit=currentKit selectedSampleType=selectedSampleType}}
                             <div class="fail-message">
                                 <span>No items were found matching the selected filters! 
                                     <br>
@@ -82,24 +82,7 @@
                     </div>
                     <div class="row selection-row">
                         <div {{bind-attr class=":kit-description descriptionHidden:ng-hide"}}>
-                            <h4>{{currentKit.description.selling_point1_title}}</h4>
-                            <p>
-                                 {{currentKit.description.selling_point1}}
-                            </p>
-                            <h4>{{currentKit.description.selling_point2_title}}</h4>
-                            <p>
-                                 {{currentKit.description.selling_point2}}
-                            </p>
-                            <h4>{{currentKit.description.selling_point3_title}}</h4>
-                            <p>
-                                 {{currentKit.description.selling_point3}}
-                            </p>
-                            <p>
-                                 {{currentKit.description.author}}
-                            </p>
-                            <p>
-                                 {{currentKit.description.date_created}}
-                            </p>
+                            {{{currentKit.description}}}                            
                         </div>
                         <div class="col-xs-12 selected-kit-media" {{action 'closeDescription'}}>
                             <div class="row">
@@ -121,7 +104,7 @@
                                     <h4>{{selectedSampleType}}</h4>
                                     <ul class="sample-list">
                                         {{#each sample in filteredSamples}}
-                                            {{sample-toggler sampleType=false choosing=true sample=sample chosenSamples=controllers.kitbuilder.chosenSamples}}
+                                            {{sample-toggler index=_view.contentIndex sampleType=false choosing=true sample=sample chosenSamples=controllers.kitbuilder.samplesChosen}}
                                         {{/each}}
                                     </ul>
                                 </div>

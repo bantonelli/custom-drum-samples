@@ -1,0 +1,27 @@
+<div class="container">
+	<div class="row">
+		<div class="col-xs-12">
+	        <div class="row">
+	            <h3>PRODUCER PROFILE <span class="icon-twitter" style="font-size: 1.1em;"></span></h3>
+	        </div>
+
+	        <div class="row about-para paragraph-text">
+	            <h4>{{model.username}}</h4>
+	            <hr>
+	            <p>Member of Beat Paradigm since:{{model.created_at}}</p>                                                       
+	            <hr>
+{{!-- 	            <p>Public Templates:
+	                {{#each template in model.public_kitbuilder_templates}}
+	                    {{template.name}}
+	                {{/each}}
+	            </p>                           
+	            <hr>
+	            <p> Following Templates: 
+	                {{#each template in model.templates_followed}}
+	                    {{template.name}}
+	                {{/each}}
+	            </p> --}}
+	        </div>
+	    </div>
+	</div>
+</div>

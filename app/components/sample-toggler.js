@@ -39,6 +39,9 @@ export default Ember.Component.extend({
             });
         }
     }.on('didInsertElement'),
+    computedIndex: Ember.computed('index', function () {
+        return this.get('index') + 1;
+    }),
     isChosen: function () {
         var chosenSamples = this.get('chosenSamples');
         if (chosenSamples.indexOf(this.get('sample')) === -1){
@@ -55,21 +58,23 @@ export default Ember.Component.extend({
         }
     }.property('sampleType'),
     audio: function () {
-        return config.APP.API_HOST + this.get('sample.demo');
+        return this.get('sample.preview');
     }.property('sample'),
     actions: {
         checkSample: function () {
+            var sample = this.get('sample');
             if (this.get('isChosen')) {
-                this.get('chosenSamples').removeObject(this.get('sample'));
+                this.get('chosenSamples').removeObject(sample);
                 this.set('isChosen', false);
             } else {
                 this.set('isChosen', true);
-                this.get('chosenSamples').pushObject(this.get('sample'));
+                this.get('chosenSamples').pushObject(sample);
             }
         },
         removeSample: function () {
+            var sample = this.get('sample');
             this.set('isChosen', false);
-            this.get('chosenSamples').removeObject(this.get('sample'));
+            this.get('chosenSamples').removeObject(sample);
         },
         playSample: function () {
             var sample = this.get('sample');

@@ -34,6 +34,16 @@
     height: $height;
     margin: $margin;
   }
+
+  .sample-sound:focus {
+    background-color: rgb(207, 207, 207);
+    outline: 2px 5px solid rgb(14,163,180);
+    .sample-name {
+      text-indent: 10px;
+    }    
+  }
+// .sample-sound:focus::before
+
   .sample-sound .sample-name {
     padding: 0;
     margin: 0;
@@ -42,9 +52,9 @@
     font-size: $fontSize;
     display: inline-block;
     line-height: $height;
-    @-moz-document url-prefix() { 
-     line-height: $height - 4px;
-    } 
+    // @-moz-document url-prefix() { 
+    //  line-height: $height - 4px;
+    // } 
     height: 100%;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -58,9 +68,9 @@
     font-size: $fontSize/1.5;
     display: inline-block;
     line-height: $height;
-    @-moz-document url-prefix() { 
-      line-height: $height - 4px;
-    } 
+    // @-moz-document url-prefix() { 
+    //   line-height: $height - 4px;
+    // } 
     height: 100%;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -73,9 +83,9 @@
     font-size: ($height * 0.9);
     text-align: center;
     line-height: $height;
-    @-moz-document url-prefix() { 
-      line-height: $height - 4px;
-    } 
+    // @-moz-document url-prefix() { 
+    //   line-height: $height - 4px;
+    // } 
     padding: 0;
     div {
       height: $height;
@@ -86,9 +96,9 @@
     font-size: ($height * 0.9);
     text-align: center;
     line-height: $height;
-    @-moz-document url-prefix() { 
-      line-height: $height - 4px;
-    } 
+    // @-moz-document url-prefix() { 
+    //   line-height: $height - 4px;
+    // } 
     padding: 0;
     > div {
       height: $height;
@@ -163,7 +173,7 @@
         box-sizing: content-box;
         text-indent: 9px;
         top: -12px;
-        padding: 6px 10px 5px 25px;
+        padding: 8px 10px 5px 25px;
         text-align: center;
       }
       @-moz-document url-prefix() { 
@@ -176,7 +186,7 @@
           box-sizing: content-box;
           text-indent: -4px;
           top: -12px;
-          padding: 6px 10px 5px 25px;
+          padding: 8px 10px 5px 25px;
         }
       }
       select, .ember-select:focus, &::before:focus {
@@ -222,7 +232,7 @@
         height: 30px;
         width: 100%;
         margin-top: -1px;
-        padding: 0px 20px;
+        padding: 4px 20px;
         background-image: none;
         background-color: nth($purple-list, 4);
         margin-top: -1px;
@@ -267,9 +277,9 @@
       text-align: center;
       white-space: nowrap;
       line-height: 50px;
-      @-moz-document url-prefix() { 
-        line-height: 42px;
-      } 
+      // @-moz-document url-prefix() { 
+      //   line-height: 42px;
+      // } 
       margin-right: 3px;
       cursor: pointer;
       padding: 0;
