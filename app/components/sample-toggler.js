@@ -39,6 +39,9 @@ export default Ember.Component.extend({
             });
         }
     }.on('didInsertElement'),
+    computedIndex: Ember.computed('index', function () {
+        return this.get('index') + 1;
+    }),
     isChosen: function () {
         var chosenSamples = this.get('chosenSamples');
         if (chosenSamples.indexOf(this.get('sample')) === -1){

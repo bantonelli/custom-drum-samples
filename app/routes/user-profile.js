@@ -16,8 +16,8 @@ export default Ember.Route.extend({
 		deleteTemplate: function(template) {
 			var self = this;			
 			var user_id = this.get('session.content.user_id');						
-			self.store.find('kitbuilder-template', template.id).then(function (record) {
-				record.destroyRecord().then(function (){
+			self.store.find('kitbuilder-template', template.id).then(function (template) {
+				template.destroyRecord().then(function (){
 					self.get('currentModel.kitbuilder_templates').removeObject(template);
 				}); // => DELETE to /templates/id
 			});
