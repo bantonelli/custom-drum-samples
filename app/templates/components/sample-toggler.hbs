@@ -1,5 +1,5 @@
 {{#if choosing}}
-<li tabindex="{{computedIndex}}" class="row sample-sound">
+<li tabindex="{{computedIndex}}" class="row sample-sound" {{action 'playSampleImmediate' on="focusIn"}}>
     <span class="col-xs-7 sample-name">{{sample.name}}</span>
     <div id="{{unbound sample.name}}-play" class="col-xs-2 sample-play icon-play" {{action 'playSample'}}>
         <audio id="{{unbound sample.name}}-audio" {{bind-attr src=audio}} style="visibility:hidden;"></audio>
@@ -15,7 +15,7 @@
 </li>
 {{else}}
     {{#if typeMatches}}
-    <li tabindex="{{computedIndex}}" id="{{unbound sample.name}}-chosen" class="row sample-sound">
+    <li tabindex="{{computedIndex}}" id="{{unbound sample.name}}-chosen" class="row sample-sound" {{action 'playSampleImmediate' on="focusIn"}}>
         <div class="col-xs-8 sample-info">
             <span class="sample-name">{{sample.name}}</span>
             <span class="sample-name-kit">-{{sample.kit.name}}</span>

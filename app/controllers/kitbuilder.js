@@ -32,12 +32,18 @@ export default Ember.ArrayController.extend({
     nameChange: Ember.computed('currentTemplate', 'kitName', function (){
       if ((this.get('currentTemplate') == null) || (!this.get('kitName'))) {
         // When there is no template loaded - show the save As function
-        // Also, when there is no name input - show the save As function
+        // Also, when there is no name input - show the save As function        
         return true;
 
       }
       // Otherwise if the kitName is different from the loaded template's name - show the save As function
-      return this.get('currentTemplate.name') !== this.get('kitName');
+      if (this.get('currentTemplate.name') == this.get('kitName')) {
+        this.set('isDirty', false);
+        return false;
+      } else {
+        this.set('isDirty', true);
+        return true;
+      }     
     }),
     isTemplateOwner: Ember.computed('kitName', 'currentTemplate', 'session.content.user_id', function (){
       var isOwner = true;

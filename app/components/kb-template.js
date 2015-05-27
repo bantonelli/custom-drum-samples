@@ -19,10 +19,11 @@ export default Ember.Component.extend({
 		loadTemplate: function (){
 			var template = this.get('template');
 			var kitbuilderController = this.get('controllers.kitbuilder');
-			kitbuilderController.store.find('kitbuilder-template', template.id).then(function (template){
+			kitbuilderController.store.fetchById('kitbuilder-template', template.id).then(function (template){
 				kitbuilderController.set('currentTemplate', template);
 				kitbuilderController.set('kitName', template.get('name'));
 				template.get('samples').then(function (samples) {
+					kitbuilderController.set('isDirty', false);
 					kitbuilderController.set('chosenSamples', samples);
 					kitbuilderController.transitionToRoute('your-kit');
 				});								

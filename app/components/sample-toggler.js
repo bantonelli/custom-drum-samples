@@ -70,11 +70,13 @@ export default Ember.Component.extend({
                 this.set('isChosen', true);
                 this.get('chosenSamples').pushObject(sample);
             }
+            this.set('kitbuilderController.isDirty', true);
         },
         removeSample: function () {
             var sample = this.get('sample');
             this.set('isChosen', false);
-            this.get('chosenSamples').removeObject(sample);
+            this.set('kitbuilderController.isDirty', true);
+            this.get('chosenSamples').removeObject(sample);            
         },
         playSample: function () {
             var sample = this.get('sample');
@@ -95,6 +97,18 @@ export default Ember.Component.extend({
             else {
                 mediaElement.play();
             }
+        },
+        playSampleImmediate: function (){
+            var sample = this.get('sample');
+//            var mediaElement = Ember.$("#"+sample._data.name+"-audio");
+//            mediaElement.trigger("play");
+
+            var mediaElement = document.getElementById(sample._data.name + "-audio");
+            if (!mediaElement) {
+                mediaElement = document.getElementById(sample._data.name + "-audio-2");
+            }
+            mediaElement.currentTime = 0;
+            mediaElement.play();
         }
     }
 });
