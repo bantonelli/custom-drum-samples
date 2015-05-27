@@ -97,6 +97,18 @@ export default Ember.Component.extend({
             else {
                 mediaElement.play();
             }
+        },
+        playSampleImmediate: function (){
+            var sample = this.get('sample');
+//            var mediaElement = Ember.$("#"+sample._data.name+"-audio");
+//            mediaElement.trigger("play");
+
+            var mediaElement = document.getElementById(sample._data.name + "-audio");
+            if (!mediaElement) {
+                mediaElement = document.getElementById(sample._data.name + "-audio-2");
+            }
+            mediaElement.currentTime = 0;
+            mediaElement.play();
         }
     }
 });
