@@ -536,12 +536,12 @@ Slide 3 Styles
   width: 75px;
   height: 40px;
   position: fixed;
-  bottom: 50px;
+  bottom: 0px;
   right: 0%;
-  left: 0%;
+  // left: 0%;
   .kb-save {
     background-color: nth($orange-list, 3);
-    margin-left: -70px;
+    margin-left: -85px;
     display: inline-block;
     height: 100%;
     width: 100%;
@@ -554,6 +554,14 @@ Slide 3 Styles
     position: relative;
     width: 200px;
     position: absolute;
-    transform: translate(20%, -50%);
+    transform: translate(-151px, -141%); 
+    button {
+      font-size: 18px;
+
+    }
   }
 }
+
+// .kb-template-save-form button {
+
+// }

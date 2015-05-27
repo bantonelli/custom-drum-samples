@@ -15,7 +15,7 @@
 </li>
 {{else}}
     {{#if typeMatches}}
-    <li tabindex="{{index}}" id="{{unbound sample.name}}-chosen" class="row sample-sound">
+    <li tabindex="{{computedIndex}}" id="{{unbound sample.name}}-chosen" class="row sample-sound">
         <div class="col-xs-8 sample-info">
             <span class="sample-name">{{sample.name}}</span>
             <span class="sample-name-kit">-{{sample.kit.name}}</span>

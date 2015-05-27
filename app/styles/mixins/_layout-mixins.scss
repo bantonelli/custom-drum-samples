@@ -37,9 +37,12 @@
 
   .sample-sound:focus {
     background-color: rgb(207, 207, 207);
-    outline: 2px solid rgb(14,163,180);
-    text-indent: 10px;
+    outline: 2px 5px solid rgb(14,163,180);
+    .sample-name {
+      text-indent: 10px;
+    }    
   }
+// .sample-sound:focus::before
 
   .sample-sound .sample-name {
     padding: 0;

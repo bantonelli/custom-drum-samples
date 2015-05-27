@@ -45,23 +45,33 @@ export default Ember.ArrayController.extend({
       var currentTemplateOwner = this.get('currentTemplateOwner');
       var currentUser = self.get('session.content.user_id');        
       var currentName = this.get('kitName');
-      if (currentTemplateOwner && currentName){
-        
+      if (currentTemplateOwner && currentName) {
+        // At this point currentTemplateOwner is a string that is an integer.
+        // use parseInt to convert it to a number.
+        if (parseInt(currentTemplateOwner) === currentUser) {
+          isOwner = true;
+        } else {
+          isOwner = false;
+        }        
       }
       return isOwner;
     }),
     actions: {
-      openSaveDialog: function () {
-        this.set('startSave', true);
-      },
-      closeSaveDialog: function (){
-        this.set('startSave', false);
+      toggleSaveDialog: function () {
+        this.set('startSave', !(this.get('startSave')));
       },
       saveTemplate: function () {
+        var self = this;
         var templateSaved = false; 
         var onSuccess = function() {
           console.log('Template saved successfully');
-          templateSaved = true;          
+          templateSaved = true;
+          if (templateSaved) {
+            // At this point if the template is saved successfully 
+              // set dirty to false and close save dialog 
+            self.set('isDirty', false);
+            self.set('startSave', false);
+          }          
         };
         var onFail = function(template) {
           console.log('Template not saved!');
@@ -70,9 +80,6 @@ export default Ember.ArrayController.extend({
           var templateToSave = this.get('currentTemplate');
           // templateToSave.set('samples', this.get('samplesChosen'));
           templateToSave.save().then(onSuccess, onFail);
-          if (templateSaved) {
-            self.set('isDirty', false);
-          }
         } else {
           swal({
             title: "Error!",
@@ -89,11 +96,6 @@ export default Ember.ArrayController.extend({
         var currentTemplate = self.get('currentTemplate');
         
         /* PROMISE FUNCTIONS (to be used later) */
-        var onSuccess = function(template) {
-          console.log('Template saved successfully');
-          templateSaved = true;
-          self.set('currentTemplate', template);
-        };
         var onFail = function(template) {
           console.log('Template not saved!');
         };
@@ -103,7 +105,14 @@ export default Ember.ArrayController.extend({
               // and then takes the store's model object and sets it as the current template.
             self.store.find('kitbuilder-template', template.id).then(function (template){
               self.set('currentTemplate', template);
+              console.log('Template saved successfully');
               templateSaved = true;
+              if (templateSaved) {
+                // At this point if the template is saved successfully 
+                  // set dirty to false and close save dialog 
+                self.set('isDirty', false);
+                self.set('startSave', false);
+              }
             });                
         };
 
@@ -127,7 +136,10 @@ export default Ember.ArrayController.extend({
             dataType: "json"
           }).then(setCurrentTemplate, onFail);              
           if (templateSaved) {
+            // At this point if the template is saved successfully 
+              // set dirty to false and close save dialog 
             self.set('isDirty', false);
+            self.set('startSave', false);
           }
         } else {
           swal({
