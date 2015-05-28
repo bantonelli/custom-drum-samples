@@ -1,1 +1,17 @@
-FEATURED!!!!
+<div class="slide-width-container">
+    <div class="row">
+        <section class="tb-slide-section col-xs-6">
+        	<ul>
+			{{#each template in featuredTemplates}}
+				<li>{{template.name}}</li>
+			{{else}}
+				Sorry, no templates.
+			{{/each}}
+			</ul>
+        </section>
+
+        <section class="tb-slide-section col-xs-6">
+            SECTION 2
+        </section>
+    </div>
+</div>
