@@ -82,4 +82,24 @@ export default function () {
         this.toRoute('about'),
         this.use('crossFade', { duration: 550, easing: "easeOutQuart" })
     );
+    // BROWSE TEMPLATE ROUTES
+    this.transition(
+        // From 1 to 2
+        this.fromRoute('tb-featured'),
+        this.toRoute('tb-most-followed'),
+        this.use('toLeft', { duration: 800, easing: "easeOutQuart" })
+    );
+    this.transition(
+        this.fromRoute('tb-recent'),
+        this.toRoute('tb-most-followed'),
+        this.use('toRight', { duration: 800, easing: "easeOutQuart" })
+    );
+    this.transition(
+        this.toRoute('tb-featured'),
+        this.use('toRight', { duration: 800, easing: "easeOutQuart" })
+    );
+    this.transition(
+        this.toRoute('tb-recent'),
+        this.use('toLeft', { duration: 800, easing: "easeOutQuart" })
+    );
 }

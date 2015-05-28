@@ -9,5 +9,8 @@ export default Ember.Route.extend({
             outlet: 'appnav', // using the outlet named `appnav`
             controller: 'browse-templates' // the controller to use for this template, referenced by name
         });
+    },
+    model: function (){
+        return this.store.findAll('kitbuilder-template');
     }
 });
