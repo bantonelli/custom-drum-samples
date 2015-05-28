@@ -597,134 +597,149 @@ Slide 3 Styles
   cursor: default;
 }
 
-.discount-bar {
-  background: rgba(201,98,79,1);
-/* Old Browsers */background: -moz-linear-gradient(left, rgba(201,98,79,1) 0%, rgba(201,98,79,1) 27%, rgba(111,57,75,1) 27%, rgba(111,57,75,1) 47%, rgba(87,56,102,1) 47%, rgba(87,56,102,1) 72%, rgba(26,108,117,1) 72%, rgba(26,108,117,1) 100%);
- /* FF3.6+ */background: -webkit-gradient(left top, right top, color-stop(0%, rgba(201,98,79,1)), color-stop(27%, rgba(201,98,79,1)), color-stop(27%, rgba(111,57,75,1)), color-stop(47%, rgba(111,57,75,1)), color-stop(47%, rgba(87,56,102,1)), color-stop(72%, rgba(87,56,102,1)), color-stop(72%, rgba(26,108,117,1)), color-stop(100%, rgba(26,108,117,1)));
-/* Chrome, Safari4+ */background: -webkit-linear-gradient(left, rgba(201,98,79,1) 0%, rgba(201,98,79,1) 27%, rgba(111,57,75,1) 27%, rgba(111,57,75,1) 47%, rgba(87,56,102,1) 47%, rgba(87,56,102,1) 72%, rgba(26,108,117,1) 72%, rgba(26,108,117,1) 100%);
- /* Chrome10+,Safari5.1+ */background: -o-linear-gradient(left, rgba(201,98,79,1) 0%, rgba(201,98,79,1) 27%, rgba(111,57,75,1) 27%, rgba(111,57,75,1) 47%, rgba(87,56,102,1) 47%, rgba(87,56,102,1) 72%, rgba(26,108,117,1) 72%, rgba(26,108,117,1) 100%);
- /* Opera 11.10+ */background: -ms-linear-gradient(left, rgba(201,98,79,1) 0%, rgba(201,98,79,1) 27%, rgba(111,57,75,1) 27%, rgba(111,57,75,1) 47%, rgba(87,56,102,1) 47%, rgba(87,56,102,1) 72%, rgba(26,108,117,1) 72%, rgba(26,108,117,1) 100%);
- /* IE 10+ */background: linear-gradient(to right, rgba(201,98,79,1) 0%, rgba(201,98,79,1) 27%, rgba(111,57,75,1) 27%, rgba(111,57,75,1) 47%, rgba(87,56,102,1) 47%, rgba(87,56,102,1) 72%, rgba(26,108,117,1) 72%, rgba(26,108,117,1) 100%);
-/* W3C */filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c9624f', endColorstr='#1a6c75', GradientType=1 );
-/* IE6-9 */
+// .large-kit-text,
+// .medium-kit-text,
+// .small-kit-text {
+//   float: left;
+//   width: 100%;
+//   margin-top: 11px;
+//   text-align: center;
+//   color: rgb(255, 255, 255);
+// }
+
+// .large-kit {
+//   position: relative;
+//   float: left;
+//   z-index: 6;
+//   width: 100px;
+//   height: 100px;
+//   margin: 10px 10px -10px 0px;
+//   font-size: 14px;
+//   text-align: center;
+//   line-height: 2.18em;
+//   border-radius: 3px;
+//   background-color: #037e8c;
+//   box-shadow: 0 1px 1px rgba(255, 255, 255, 0.5), 0 2px 3px rgba(0, 0, 0, 0.31) inset;
+// }
+
+// .medium-kit {
+//   position: relative;
+//   float: left;
+//   z-index: 4;
+//   width: 100px;
+//   height: 100px;
+//   margin: 10px 10px -10px 0px;
+//   font-size: 14px;
+//   font-family: quicksandbold;
+//   text-align: center;
+//   line-height: 2.18em;
+//   border-radius: 3px;
+//   background-color: #5a2d9c;
+//   box-shadow: 0 1px 1px rgba(255, 255, 255, 0.5), 0 2px 3px rgba(0, 0, 0, 0.31) inset;
+// }
+
+// .small-kit {
+//   position: relative;
+//   float: left;
+//   clear: both;
+//   z-index: 2;
+//   width: 100px;
+//   height: 100px;
+//   margin: 10px 10px -10px 0px;
+//   font-size: 14px;
+//   text-align: center;
+//   line-height: 2.18em;
+//   border-radius: 3px;
+//   background-color: #e74c30;
+//   box-shadow: 0 1px 1px rgba(255, 255, 255, 0.5), 0 2px 3px rgba(0, 0, 0, 0.31) inset;
+// }
+
+// Start Codepen Simple Progress Bars Styling
+
+.box {
+  width: 100px;
+  height: 100px;
+  margin: 5px;
+  display: inline-block;
+  background: #717171;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  overflow: hidden;
+  padding: 5px;
+  box-shadow: 0 1px 1px rgba(255, 255, 255, 0.3), 0 2px 3px rgba(0, 0, 0, 0.2) inset;
+  font-family: quicksand;
+  font-size: 14px;
+  color: white;
+  text-align: center;
+  line-height: 2.13em;
 }
 
-// range slider styles
+#div1 {
+  background-color: #e74c30;
+}
+#div2 {
+  background-color: #717171;
+}
+#div3 {
+  background-color: #717171;
+}
+#div4 {
+  background-color: #e74c30;
+}
 
-// #slider {
-//   width: 400px;
-//   height: 17px;
-//   // position: relative;
-//   position: absolute;
-//   // margin: 100px auto;
-//   background: #10171D;
-  
-//   -webkit-border-radius: 40px;
-//   -moz-border-radius: 40px;
-//   border-radius: 40px;
-  
-//   -webkit-box-shadow: inset 0px 0px 1px 1px rgba(0, 0, 0, 0.9), 0px 1px 1px 0px rgba(255, 255, 255, 0.13);
-//   -moz-box-shadow: inset 0px 0px 1px 1px rgba(0, 0, 0, 0.9), 0px 1px 1px 0px rgba(255, 255, 255, 0.13);
-//   box-shadow: inset 0px 0px 1px 1px rgba(0, 0, 0, 0.9), 0px 1px 1px 0px rgba(255, 255, 255, 0.13);
-// }
-
-// #slider .bar {
-//   width: 388px;
-//   height: 5px;
-//   background: #333;
-//   position: relative;
-//   top: -4px;
-//   left: 4px;  
-  
-//   background: #1d2e38;
-//   background: -moz-linear-gradient(left, #1d2e38 0%, #2b4254 50%, #2b4254 100%);
-//   background: -webkit-gradient(linear, left top, right top, color-stop(0%,#1d2e38), color-stop(50%,#2b4254), color-stop(100%,#2b4254));
-//   background: -webkit-linear-gradient(left, #1d2e38 0%,#2b4254 50%,#2b4254 100%);
-//   background: -o-linear-gradient(left, #1d2e38 0%,#2b4254 50%,#2b4254 100%);
-//   background: -ms-linear-gradient(left, #1d2e38 0%,#2b4254 50%,#2b4254 100%);
-//   background: linear-gradient(left, #1d2e38 0%,#2b4254 50%,#2b4254 100%);
-//   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1d2e38', endColorstr='#2b4254',GradientType=1 );  
-  
-//   -webkit-border-radius: 40px;
-//   -moz-border-radius: 40px;
-//   border-radius: 40px;
-// }
-
-// #slider .highlight {
-//   height: 2px;
-//   position: absolute;
-//   width: 388px;
-//   top: 6px;
-//   left: 6px;
-    
-//   -webkit-border-radius: 40px;
-//   -moz-border-radius: 40px;
-//   border-radius: 40px;
-  
-//   background: rgba(255, 255, 255, 0.25);
-// }
-
-// input[type="range"] {
-//   -webkit-appearance: none;
-//   background-color: black;
-//   height: 2px;
-// }
-
-// input[type="range"]::-webkit-slider-thumb {
-//   -webkit-appearance: none;
-//   position: relative;
-//   top: 0px;
-//   z-index: 1;
-//   width: 11px;
-//   height: 11px;
-//   cursor: pointer;
-//   -webkit-box-shadow: 0px 6px 5px 0px rgba(0,0,0,0.6);
-//   -moz-box-shadow: 0px 6px 5px 0px rgba(0,0,0,0.6);
-//   box-shadow: 0px 6px 5px 0px rgba(0,0,0,0.6);
-//   -webkit-border-radius: 40px;
-//   -moz-border-radius: 40px;
-//   border-radius: 40px;
-//   background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ebf1f6), color-stop(50%,#abd3ee), color-stop(51%,#89c3eb), color-stop(100%,#d5ebfb));
-// }
-
-// input[type="range"]:hover ~ #rangevalue,input[type="range"]:active ~ #rangevalue {
-//   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
-//   filter: alpha(opacity=100);
-//   opacity: 1;
-//   top: -75px;
-// }
-
-// /* Tool Tip */
-// #rangevalue {
-//   color: white;
-//   font-size: 10px;
-//   text-align: center;
-//   font-family:  Arial, sans-serif;
-//   display: block;
-//   color: #fff;
-//   margin: 20px 0;
-//   position: relative;
-//   left: 44.5%;
-//   padding: 6px 12px;
-//   border: 1px solid black;
-
-//   -webkit-box-shadow: inset 0px 1px 1px 0px rgba(255, 255, 255, 0.2), 0px 2px 4px 0px rgba(0,0,0,0.4);
-//   -moz-box-shadow: inset 0px 1px 1px 0px rgba(255, 255, 255, 0.2), 0px 2px 4px 0px rgba(0,0,0,0.4);
-//   box-shadow: inset 0px 1px 1px 0px rgba(255, 255, 255, 0.2), 0px 2px 4px 0px rgba(0,0,0,0.4);
-//   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#222931), color-stop(100%,#181D21));
-
-//   -webkit-border-radius: 20px;
-//   -moz-border-radius: 20px;
-//   border-radius: 20px;
-//   width: 18px;
-//   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-//   filter: alpha(opacity=0);
-//   opacity: 0;
-
-//   -webkit-transition: all 0.5s ease;
-//   -moz-transition: all 0.5s ease;
-//   -o-transition: all 0.5s ease;
-//   -ms-transition: all 0.5s ease;
-//   transition: all 0.5s ease;
-//   top: -95px;
-// }
+.box#div4,
+.box#div5,
+.box#div6 {
+  height: 20px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+}
+.box#div4 .progress-text,
+.box#div5 .progress-text,
+.box#div6 .progress-text {
+  display: none;
+}
+.box#div5 .progress-visual {
+  background: #f80;
+}
+.box#div6 .progress-visual {
+  background: #c00;
+}
+.progress-box {
+  background: #fff;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  line-height: 100%;
+  -webkit-transition: opacity 0.5s ease-out;
+  -moz-transition: opacity 0.5s ease-out;
+  -o-transition: opacity 0.5s ease-out;
+  -ms-transition: opacity 0.5s ease-out;
+  transition: opacity 0.5s ease-out;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+}
+.progress-box .progress-visual {
+  height: 100%;
+  background: #314e72;
+}
+.progress-box .progress-text {
+  text-align: center;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  font-family: tahoma, sans-serif;
+  font-weight: bold;
+  color: #000;
+  -webkit-text-fill-color: #fff;
+  -webkit-text-stroke: 1px #000;
+}
+.progress-box.done {
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+}
