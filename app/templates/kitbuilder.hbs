@@ -2,7 +2,7 @@
 	<div id="kb-slide-1" class="slide">
     	{{liquid-outlet}}
     	<div class="kb-save-container {{if startSave 'start-save' ''}}">
-            <div class="kb-save-text">Save for later, and share your template</div>
+            <p class="kb-info-text">Save for later and share your template</p>
             <div class="kb-save {{if startSave 'icon-cancel-circle' 'icon-disk'}} {{if isDirty 'dirty' 'clean'}}" {{action "toggleSaveDialog"}}></div>
             {{input id="kb-template-save-input" type="text" placeholder="Name Your Kit" class="col-xs-12 cds-text-input name-your-kit" value=kitName}}                          
             {{#if nameChange}}
