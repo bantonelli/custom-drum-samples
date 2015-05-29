@@ -1,21 +1,27 @@
-  <div class="row kb-template">
-    <p class="col-xs-7">{{template.name}}</p>
-    <div class="col-xs-5">
-      <div class="col-xs-4 icon-play" {{action 'loadTemplate'}}></div>
-      <div class="col-xs-4 icon-edit-icon" {{action 'editTemplate'}}></div>
-      <div class="col-xs-4 icon-remove" {{action 'delete'}}></div>
+  <div class="row">
+    <div class="col-xs-12 templatebox">
+      <p class="template-name">{{template.name}}</p>
+
+
+      <div class="icon-container">
+        <div class="icon-holder-remove icon-remove" {{action 'delete'}}></div>
+        <div class="icon-holder-edit icon-edit-icon" {{action 'editTemplate'}}></div>
+        <div class="icon-holder-load icon-folder-open" {{action 'loadTemplate'}}></div>
+      </div>
+
+      {{#if isEditing}}
+        <form>
+            <div class="form-group">
+                <label for="title">Title</label>
+                {{input type="text" id="title" class="form-control" value=model.title}}
+            </div>
+            <div>
+                <label for="body">Body</label>
+                {{textarea id="body" class="form-control" rows="15" value=model.body}}
+            </div>
+            <button class="btn btn-primary" {{action 'saveTemplate'}}>Save</button>
+        </form>
+      {{/if}} 
+
     </div>
-  {{#if isEditing}}
-      <form>
-          <div class="form-group">
-              <label for="title">Title</label>
-              {{input type="text" id="title" class="form-control" value=model.title}}
-          </div>
-          <div>
-              <label for="body">Body</label>
-              {{textarea id="body" class="form-control" rows="15" value=model.body}}
-          </div>
-          <button class="btn btn-primary" {{action 'saveTemplate'}}>Save</button>
-      </form>
-  {{/if}}
   </div>
