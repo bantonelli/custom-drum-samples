@@ -4,7 +4,7 @@ var swal = window.sweetAlert;
 
 
 export default Ember.Controller.extend({
-    needs: ['kitbuilder', 'your-kit', 'kb-checkout'],
+    needs: ['kitbuilder', 'kb-checkout'],
     errorMessage: null,
     paymentSuccess: null,
     mailSent: null,    
@@ -14,13 +14,14 @@ export default Ember.Controller.extend({
             var userID = this.get('session.content.user_id');
 
             // KIT INFORMATION
-            var samplesChosen = this.get('controllers.kitbuilder.samplesChosen');
-            var samples = [];
-            for (var i = 0; i < samplesChosen.length; i++){
-                samples.push(samplesChosen[i]._data.id);
-            }
+            // var samplesChosen = this.get('controllers.kitbuilder.samplesChosen');
+            // var samples = [];
+            // for (var i = 0; i < samplesChosen.length; i++){
+            //     samples.push(samplesChosen[i]._data.id);
+            // }
+            var samples = this.get('controllers.kitbuilder.samplesChosenIds');
 
-            var kitName = this.get('controllers.your-kit.customKitName');
+            var kitName = this.get('controllers.kitbuilder.kitName');
             // obtain access to the injected service
             var stripeService = this.get('stripeService');
 // Example Card object to pass into createToken.
@@ -128,8 +129,10 @@ export default Ember.Controller.extend({
                                     // If email success report that. 
                                     controllerSelf.set("mailSent", "Your custom kit download has been emailed to you");
                                     // ********* CLEAR KITBUILDER ******** // 
+                                    controllerSelf.set('controllers.kitbuilder.currentTemplate', null);
                                     controllerSelf.set('controllers.kitbuilder.chosenSamples', []);
-                                    controllerSelf.set('controllers.your-kit.customKitName', null);
+                                    controllerSelf.set('controllers.kitbuilder.kitName', null);
+                                    controllerSelf.set('controllers.kitbuilder.isDirty', false);
                                     controllerSelf.set('controllers.kb-checkout.orderNumber', orderNumber);
                                     controllerSelf.set('controllers.kb-checkout.purchasedKitID', purchasedKitID);                                    
                                     // ********* REDIRECT TO PAYMENT RECIEVED/ THANK YOU PAGE ******** // 

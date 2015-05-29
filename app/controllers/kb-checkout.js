@@ -5,7 +5,7 @@ var swal = window.sweetAlert;
 
 
 export default Ember.Controller.extend({
-    needs: ['kitbuilder', 'your-kit'],  
+    needs: ['kitbuilder'],  
     purchasedKitID: null,   
     chosenSampleKits: function () {
         return this.get('controllers.kitbuilder.samplesChosen').mapBy('kit');
