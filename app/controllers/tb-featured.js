@@ -8,15 +8,30 @@ export default Ember.Controller.extend({
 	// 	browse-templates: 
 	// }
 	publicTemplates: Ember.computed.alias('controllers.browse-templates.model'),
-	featuredTemplates: Ember.computed('publicTemplates', function() {
+	featuredTemplates: Ember.computed('publicTemplates', 'templateList.@each', function() {
 		// Come up with algorithm to grab templates with 'featured: true' and store them in a array. return that array.
-    	return this.get('publicTemplates').filterBy('featured',true);
+		//Working Scripts 
+	    	// var templates = this.get('publicTemplates').addObject({name: 'test object', featured: true});
+	    	// return templates.filterBy('featured', true);    	
+	    	// return this.get('publicTemplates').filterBy('featured', true);
+    	var result = Ember.A();
+    	var pubTemplates = this.get('publicTemplates');
+    	// for (var i = 0; i < pubTemplates.length; i++) {
+    	// 	result.pushObject(pubTemplates.objectAt(i));
+    	// }
+    	result.pushObjects(pubTemplates.objectsAt([0, 1, 2]));
+    	return result;
+    	// return pubTemplates.objectsAt([0, 1, 2]);
+    	// result.pushObject(pubTemplates.objectAt(0));
+    	// result.pushObject(pubTemplates.objectAt(1));
+    	// return result;
   	})
 });
 
 
 
-
+// if you create a property that is an array on the controller or route, it will wray in an 
+// Ember Array prototype (Ember.A([]);)
 // var ToDoList = Ember.Object.extend({
 //   // using standard ascending sort
 //   todosSorting: ['name'],
