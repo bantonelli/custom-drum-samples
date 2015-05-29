@@ -594,13 +594,13 @@ Slide 3 Styles
 
 .kb-info-text {
   color: #1D0E32;
-  font-family: quicksand;
   font-size: 14px;
   transform: translate(75px, -5px);
   display: inline-block;
   width: 280px;
   height: 15px;
   cursor: default;
+  @include p-ow-background();
 }
 
 // .large-kit-text,

@@ -15,7 +15,7 @@ export default Ember.Route.extend({
 		// This function is called when the route loads
 		// The ajax call sends the uid and token in the URL to the server to
 			// complete the account activation process
-        alert('called setupController method');
+        // alert('called setupController method');
         var data = {
         	uid: model.uid,
         	token: model.token
