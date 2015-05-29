@@ -146,6 +146,18 @@
       text-align: center;
       cursor: pointer;
       //.select2-choice, .select2-choice > .select2-chosen {
+      &:hover, &:focus {
+        color: white;
+        //background-color: nth($lightblue-list, 3);
+        background: rgba(27,167,185,1);
+        background: -moz-linear-gradient(top, rgba(27,167,185,1) 0%, rgba(13,154,172,1) 100%);
+        background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(27,167,185,1)), color-stop(100%, rgba(13,154,172,1)));
+        background: -webkit-linear-gradient(top, rgba(27,167,185,1) 0%, rgba(13,154,172,1) 100%);
+        background: -o-linear-gradient(top, rgba(27,167,185,1) 0%, rgba(13,154,172,1) 100%);
+        background: -ms-linear-gradient(top, rgba(27,167,185,1) 0%, rgba(13,154,172,1) 100%);
+        background: linear-gradient(to bottom, rgba(27,167,185,1) 0%, rgba(13,154,172,1) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1ba7b9', endColorstr='#0d9aac', GradientType=0 );
+      }
       &::before {
         font-family: icomoon;
         position: absolute;
@@ -242,6 +254,18 @@
         font-size: 18px;
         font-family: $paragraph;
         color: $offwhite;
+        &:hover, &:focus, &:active, &:checked {
+          color: white;
+          //background-color: nth($lightblue-list, 3);
+          background: rgba(27,167,185,1);
+          background: -moz-linear-gradient(top, rgba(27,167,185,1) 0%, rgba(13,154,172,1) 100%);
+          background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(27,167,185,1)), color-stop(100%, rgba(13,154,172,1)));
+          background: -webkit-linear-gradient(top, rgba(27,167,185,1) 0%, rgba(13,154,172,1) 100%);
+          background: -o-linear-gradient(top, rgba(27,167,185,1) 0%, rgba(13,154,172,1) 100%);
+          background: -ms-linear-gradient(top, rgba(27,167,185,1) 0%, rgba(13,154,172,1) 100%);
+          background: linear-gradient(to bottom, rgba(27,167,185,1) 0%, rgba(13,154,172,1) 100%);
+          filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1ba7b9', endColorstr='#0d9aac', GradientType=0 );
+        }
       }
     }
     &:-moz-focusring, &:focus {
