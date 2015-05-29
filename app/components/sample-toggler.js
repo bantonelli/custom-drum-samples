@@ -5,6 +5,9 @@ import config from '.././config/environment';
 export default Ember.Component.extend({
     _initializeSampleToggler: function (){
         var sample = this.get('sample');
+        var computedIndex = this.get('computedIndex');
+        var indexElement = Ember.$("[tabindex=" + computedIndex + "]");
+
         //var clickElement = Ember.$("#"+sample._data.name + "-play");
         var clickElement = document.getElementById(sample._data.name + "-play");
         var mediaElement = document.getElementById(sample._data.name + "-audio");
@@ -21,6 +24,17 @@ export default Ember.Component.extend({
                 clickElement.classList.remove('icon-play');
                 //console.log('playing');
             });
+            // console.log(indexElement);
+            if (indexElement){
+                indexElement.focusin(function (){                    
+                    clickElement.classList.remove("no-click-sample");
+                    clickElement.classList.add("click-sample");
+                });
+                indexElement.focusout(function (){
+                    clickElement.classList.add("no-click-sample");
+                    clickElement.classList.remove("click-sample");
+                });
+            }            
         }
         var clickElement2 = document.getElementById(sample._data.name + "-play-2");
         var mediaElement2 = document.getElementById(sample._data.name + "-audio-2");
@@ -37,6 +51,17 @@ export default Ember.Component.extend({
                 clickElement2.classList.remove('icon-play');
                 //console.log('playing');
             });
+            // console.log(indexElement);
+            if (indexElement){
+                indexElement.focusin(function (){                    
+                    clickElement.classList.remove("no-click-sample");
+                    clickElement.classList.add("click-sample");
+                });
+                indexElement.focusout(function (){
+                    clickElement.classList.add("no-click-sample");
+                    clickElement.classList.remove("click-sample");
+                });
+            }
         }
     }.on('didInsertElement'),
     computedIndex: Ember.computed('index', function () {
@@ -79,6 +104,7 @@ export default Ember.Component.extend({
             this.get('chosenSamples').removeObject(sample);            
         },
         playSample: function () {
+
             var sample = this.get('sample');
 //            var mediaElement = Ember.$("#"+sample._data.name+"-audio");
 //            mediaElement.trigger("play");
@@ -109,6 +135,14 @@ export default Ember.Component.extend({
             }
             mediaElement.currentTime = 0;
             mediaElement.play();
+            // set pointer events default.
+            var clickElement = document.getElementById(sample._data.name + "-play");
+            if (!clickElement) {
+                clickElement = document.getElementById(sample._data.name + "-play-2");
+            }
+            clickElement.classList.add('click-sample');
+            clickElement.classList.remove('no-click-sample');
+            // set pointer events to none;
         }
     }
 });

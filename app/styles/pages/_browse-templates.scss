@@ -1,0 +1,28 @@
+.bt-main-content {
+  .liquid-child {
+    overflow: auto;
+  }
+  .liquid-child.velocity-animating {
+    overflow: hidden;
+  }
+}
+
+#bt-slide {
+  @include slide-mixin($offwhite);
+  .slide-width-container {
+    padding-top: 100px;
+  }
+
+  .slide-width-container > .row {
+    height: 100%;
+    margin: 0;
+  }
+  overflow: hidden;
+  padding-top: 60px;
+}
+
+.bt-slide-section {
+  @include slide-section-mixin($offwhite, $height: 100%);
+  .filter-row {
+  }
+}

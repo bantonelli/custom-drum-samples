@@ -186,6 +186,12 @@ Broken down into two subsections (Left and Right)
         /* sample-sound(fontcolor, playcolor, ft-size, ht, margin)*/
         @include sample-sound();
     }
+    .no-click-sample {
+      pointer-events: none;
+    }
+    .click-sample {
+      pointer-events: auto;
+    }
   }
 }
 
