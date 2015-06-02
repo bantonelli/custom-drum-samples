@@ -19,7 +19,7 @@ export default Ember.ArrayController.extend({
         return this.get('chosenSamples');
       }
     }),
-    samplesChosenIds: Ember.computed.mapBy('chosenSamples', 'id'),
+    samplesChosenIds: Ember.computed.mapBy('samplesChosen', 'id'),
     activeFilters: [],
     filterString: "all",
     isDirty: false,

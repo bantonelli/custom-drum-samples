@@ -11,10 +11,22 @@ export default Ember.Component.extend({
 	  		this.set('isEditing', false);
 		},
 		delete: function (){
+			var self = this;
 			var template = this.get('template');
-			if(confirm('Are you sure?')){
-				this.sendAction('deleteTemplate', template);
-			}
+			swal(
+				{
+				  title: "Are you sure?",
+				  text: "You will not be able to recover this imaginary file!",
+				  type: "warning",
+				  showCancelButton: true,
+				  confirmButtonColor: "#DD6B55",
+				  confirmButtonText: "Yes, delete it!",
+				  closeOnConfirm: true
+				}, function () {
+					// swal("Deleted!", "Your template has been deleted.", "success");					
+					self.sendAction('deleteTemplate', template);				  					  
+				}
+			);
 		},
 		loadTemplate: function (){
 			var template = this.get('template');
