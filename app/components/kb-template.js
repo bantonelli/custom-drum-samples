@@ -1,7 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-	classNames: ['col-xs-12'],
+	classNames: ['col-xs-12', 'up-template-component'],
 	isEditing: false,
 	actions: {
 		editTemplate: function (){
@@ -16,7 +16,7 @@ export default Ember.Component.extend({
 			swal(
 				{
 				  title: "Are you sure?",
-				  text: "You will not be able to recover this imaginary file!",
+				  text: "You cannot recover a template once deleted!",
 				  type: "warning",
 				  showCancelButton: true,
 				  confirmButtonColor: "#DD6B55",
