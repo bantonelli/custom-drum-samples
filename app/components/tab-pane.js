@@ -4,7 +4,7 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-    classNames: ['tab-pane'],
+    classNames: ['row', 'tab-pane'],
 
     classNameBindings: ['isActive:active'],
 

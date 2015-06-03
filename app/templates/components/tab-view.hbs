@@ -1,4 +1,4 @@
-<div class="row tab-selection">
+<div class="tab-selection">
     <ul class="row top-menu">
         {{#each pane in panes}}
             {{#nav-tab paneId=pane.paneId}}{{pane.name}}{{/nav-tab}}
@@ -6,7 +6,7 @@
     </ul>
 </div>
 
-<div class="row tab-content">
+<div class="col-xs-12 tab-content">
     {{yield}}
 </div>
 
