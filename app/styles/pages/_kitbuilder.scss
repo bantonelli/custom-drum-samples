@@ -162,9 +162,14 @@ Broken down into two subsections (Left and Right)
     // height: 160px;
     .sound-kit-soundcloud {
       margin-top: 2%;
+      height: 90px;
       .image, .artwork_image, img {
         display: none;
       }
+    }
+    iframe {
+      margin-top: 5px;
+      height: 42px;
     }
   }
 /* Styles for Right Part of Section */
