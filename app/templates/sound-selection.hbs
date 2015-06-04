@@ -99,18 +99,21 @@
                                 <p class="kb-info-text" style="transform: translate(20px, -5px);width:400px;"><span style="color:rgb(231,76,48)">Tab/Shift+Tab</span> to <span style="color:rgb(231,76,48)">cycle down/up</span> through sounds.</p>
                             </div>
                         </div>
-                        <div class="col-xs-12 selected-kit-sounds">
-                            <div class="row">
-                                <div class="col-xs-12 sound-kit-selection">
-                                    
-                                    <h4>{{selectedSampleType}}</h4>
-                                    <ul class="sample-list">
-                                        {{#each sample in filteredSamples}}
-                                            {{sample-toggler kitbuilderController=controllers.kitbuilder index=_view.contentIndex sampleType=false choosing=true sample=sample chosenSamples=controllers.kitbuilder.samplesChosen}}
-                                        {{/each}}
-                                    </ul>
-                                </div>
+                        <div id="selected-kit-sounds-wrapper">
+                            <div class="col-xs-12 selected-kit-sounds">
+                                <div class="row">
+                                    <div class="col-xs-12 sound-kit-selection">
+                                        <h4>{{selectedSampleType}}</h4>
+                                        <ul class="sample-list">
+                                            {{#each sample in filteredSamples}}
+                                                {{sample-toggler kitbuilderController=controllers.kitbuilder index=_view.contentIndex sampleType=false choosing=true sample=sample chosenSamples=controllers.kitbuilder.samplesChosen}}
+                                            {{/each}}
+                                        </ul>
+                                    </div>
+                                </div>     
                             </div>
+                            <div id="sample-browse-gradient"></div>
+                            &nbsp;
                         </div>
                     </div>
                 </div>
