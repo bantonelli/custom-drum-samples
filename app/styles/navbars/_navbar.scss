@@ -175,5 +175,20 @@ header[role=banner] {
   text-overflow: ellipsis;
 }
 
+#main-nav-image {
+  width:55px;
+  height:38px;
+  margin-top:12px;
+  background-image:url('/images/main_nav.png');
+  cursor:pointer;
+}
+
+#main-nav-image:hover {
+  opacity:.85;
+}
+
+#main-nav-image:active {
+  opacity:.55;
+}
 
 
