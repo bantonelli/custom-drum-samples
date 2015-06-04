@@ -34,7 +34,7 @@ export default Ember.Controller.extend(LoginControllerMixin, {
 						previousTransition.retry();
 					} else {
 						// Default back to homepage
-						_this.transitionToRoute('application.index');
+						_this.transitionToRoute('kitbuilder');
 					}
 		      	}, 600);
 			}, function(error) {
