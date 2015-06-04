@@ -168,14 +168,14 @@ Broken down into two subsections (Left and Right)
       }
     }
     iframe {
-      margin-top: 5px;
+      margin-top: 7px;
       height: 42px;
     }
   }
 /* Styles for Right Part of Section */
   .selected-kit-sounds {
 
-    height: 240px;
+    height: 350px;
     .sample-list {
         width: 50%;
         margin: 0;
@@ -595,6 +595,8 @@ Slide 3 Styles
   display: inline-block;
   width: 280px;
   height: 15px;
+  margin-bottom: 9px;
+  margin-top: 13px;
   cursor: default;
   @include p-ow-background();
 }
