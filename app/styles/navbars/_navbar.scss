@@ -51,13 +51,7 @@ header[role=banner] {
   width: 100%;
   z-index: 1000;
 //  background-image: linear-gradient(0deg, transparentize(nth($purple-list, 2), 0.1) 15%, transparentize(nth($purple-list, 1), 0.1) 85%);
-  background-image:-moz-linear-gradient(50% 0% -90deg,rgba(26,21,34,0.95) 0%,rgba(35,29,49,0.95) 28%,rgba(41,34,59,0.95) 46%,rgba(40,33,58,0.95) 70%,rgba(36,29,51,0.95) 100%);
-  background-image:-webkit-gradient(linear,50% 0%,50% 100%,color-stop(0, rgba(26,21,34,0.95)),color-stop(0.28, rgba(35,29,49,0.95)),color-stop(0.46, rgba(41,34,59,0.95)),color-stop(0.7, rgba(40,33,58,0.95)),color-stop(1, rgba(36,29,51,0.95)));
-  background-image:-webkit-linear-gradient(-90deg,rgba(26,21,34,0.95) 0%,rgba(35,29,49,0.95) 28%,rgba(41,34,59,0.95) 46%,rgba(40,33,58,0.95) 70%,rgba(36,29,51,0.95) 100%);
-  background-image:-ms-linear-gradient(-90deg,rgba(26,21,34,0.95) 0%,rgba(35,29,49,0.95) 28%,rgba(41,34,59,0.95) 46%,rgba(40,33,58,0.95) 70%,rgba(36,29,51,0.95) 100%);
-  background-image:linear-gradient(180deg,rgba(26,21,34,0.95) 0%,rgba(35,29,49,0.95) 28%,rgba(41,34,59,0.95) 46%,rgba(40,33,58,0.95) 70%,rgba(36,29,51,0.95) 100%);
-  -ms-filter:"progid:DXImageTransform.Microsoft.gradient(startColorstr=#f21a1522,endColorstr=#f2241d33,GradientType=0)";
-  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#f21a1522,endColorstr=#f2241d33,GradientType=0);
+  background-image: -webkit-linear-gradient(270deg, #322E40 0%, #332D46 50%, #2E283E 100%);background-image: linear-gradient(-180deg, #322E40 0%, #332D46 50%, #2E283E 100%);
   color: $offwhite;
   text-shadow: 0px 1px 1px black;
   transition: box-shadow 0.2s;
@@ -108,7 +102,7 @@ header[role=banner] {
   text-shadow: 0px 1px 1px rgba(25, 25, 25, .8);
   color: $offwhite;
   text-decoration: none;
-  font-size: 0.7em;
+  font-size: 0.66em;
   font-family: quicksandbold;
   //text-transform: uppercase;
   font-weight: 400;
@@ -122,6 +116,7 @@ header[role=banner] {
   &:focus {
     text-decoration: none;
   }
+  text-transform: uppercase;
 }
 
 .username-display {
@@ -180,5 +175,20 @@ header[role=banner] {
   text-overflow: ellipsis;
 }
 
+#main-nav-image {
+  width:55px;
+  height:38px;
+  margin-top:12px;
+  background-image:url('/images/main_nav.png');
+  cursor:pointer;
+}
+
+#main-nav-image:hover {
+  opacity:.85;
+}
+
+#main-nav-image:active {
+  opacity:.55;
+}
 
 
