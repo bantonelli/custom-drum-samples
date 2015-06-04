@@ -108,7 +108,7 @@ header[role=banner] {
   text-shadow: 0px 1px 1px rgba(25, 25, 25, .8);
   color: $offwhite;
   text-decoration: none;
-  font-size: 0.7em;
+  font-size: 0.66em;
   font-family: quicksandbold;
   //text-transform: uppercase;
   font-weight: 400;
@@ -122,6 +122,7 @@ header[role=banner] {
   &:focus {
     text-decoration: none;
   }
+  text-transform: uppercase;
 }
 
 .username-display {
