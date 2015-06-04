@@ -214,7 +214,12 @@ export default Ember.Component.extend({
     }.on('willDestroyElement'),
     actions: {
         setCurrent: function (kit){
-            this.set('selectedSampleType', null);
+        	var self = this;
+        	// kit.get('samples').then(function(samples){
+        	// 	// console.log(samples.objectAt(0).get('type'));
+        	// 	self.set('selectedSampleType', samples.objectAt(0).get('type') + 's');
+        	// });
+        	this.set('selectedSampleType', null);            
             this.set('currentKit', kit);
             //this.set('currentKitImage', 'http://127.0.0.1:8000' + kit._data.image);
         }    
