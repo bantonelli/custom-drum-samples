@@ -76,12 +76,15 @@
 
 // Start Zeph Styles
 
-
-.element {
-  position: absolute;
-  width: 157px;
-  height: 50px;
+.lrn-container {
+  position: relative;
+  float: left;
+  z-index: 34;
+  width: 1000px;
+  margin: 164px 0 0 10.9375%;
+  background-color: rgb(221, 221, 220);
 }
+
 
 .kb-intro {
   position: absolute;
@@ -109,7 +112,7 @@
   text-shadow: none;
 }
 
-.lm-container {
+.lrn-container {
   position: relative;
   float: left;
   z-index: 34;
@@ -118,7 +121,7 @@
   background-color: rgb(221, 221, 220);
 }
 
-.lm-point1 {
+.lrn-point1 {
   position: relative;
   float: left;
   width: 100%;
@@ -138,7 +141,7 @@
   background-attachment: scroll, scroll;
 }
 
-.lm-point1 .kb-intro {
+.lrn-point1 .kb-intro {
   top: 85px;
   left: 510px;
   z-index: 29;
@@ -148,7 +151,7 @@
   color: rgb(255, 255, 255);
 }
 
-.lm-point1 .kb-sub-tagline {
+.lrn-point1 .kb-sub-tagline {
   top: 177px;
   left: 75px;
   z-index: 32;
@@ -158,7 +161,7 @@
   color: rgb(255, 255, 255);
 }
 
-.lm-point1 .kb-tagline {
+.lrn-point1 .kb-tagline {
   top: 130px;
   left: 75px;
   z-index: 31;
@@ -168,7 +171,7 @@
   color: #19a5b7;
 }
 
-.lm-point2 {
+.lrn-point2 {
   position: relative;
   float: left;
   clear: both;
@@ -182,7 +185,7 @@
   background:         linear-gradient(180deg, #dddddc 11.428571428571429%, rgba(78, 157, 183, 0.44) 51.90476190476191%, rgb(25, 165, 183) 100%) rgb(222, 222, 222);
 }
 
-.lm-point2 .kb-sub-tagline {
+.lrn-point2 .kb-sub-tagline {
   top: 158px;
   left: 75px;
   z-index: 20;
@@ -192,7 +195,7 @@
   line-height: 1.7;
 }
 
-.lm-point2 .kb-tagline {
+.lrn-point2 .kb-tagline {
   top: 48px;
   left: 75px;
   z-index: 19;
@@ -202,7 +205,7 @@
   color: #44286a;
 }
 
-.lm-point3 {
+.lrn-point3 {
   position: relative;
   float: left;
   clear: both;
@@ -220,7 +223,7 @@
   background-attachment: scroll, scroll, scroll;
 }
 
-.lm-point3 .kb-intro {
+.lrn-point3 .kb-intro {
   top: 0;
   bottom: 0;
   left: 510px;
@@ -236,7 +239,7 @@
   line-height: 1.7;
 }
 
-.lm-point3 .kb-sub-tagline {
+.lrn-point3 .kb-sub-tagline {
   top: 183px;
   left: 75px;
   z-index: 15;
@@ -246,7 +249,7 @@
   color: rgb(255, 255, 255);
 }
 
-.lm-point3 .kb-tagline {
+.lrn-point3 .kb-tagline {
   top: 137px;
   left: 75px;
   z-index: 14;
@@ -256,7 +259,7 @@
   color: #ffffff;
 }
 
-.lm-point4 {
+.lrn-point4 {
   position: relative;
   float: left;
   clear: both;
@@ -274,7 +277,7 @@
   background-attachment: scroll, scroll, scroll;
 }
 
-.lm-point4 .kb-intro {
+.lrn-point4 .kb-intro {
   top: 0;
   bottom: 0;
   left: 510px;
@@ -288,7 +291,7 @@
   line-height: 1.7;
 }
 
-.lm-point4 .kb-sub-tagline {
+.lrn-point4 .kb-sub-tagline {
   top: 185px;
   left: 75px;
   z-index: 11;
@@ -298,7 +301,7 @@
   color: rgb(255, 255, 255);
 }
 
-.lm-point4 .kb-tagline {
+.lrn-point4 .kb-tagline {
   top: 136px;
   left: 75px;
   z-index: 10;
@@ -308,7 +311,7 @@
   color: #ffffff;
 }
 
-.lm-point5 {
+.lrn-point5 {
   position: relative;
   float: left;
   clear: both;
@@ -326,7 +329,7 @@
   background-attachment: scroll, scroll, scroll;
 }
 
-.lm-point5 .kb-intro {
+.lrn-point5 .kb-intro {
   top: 0;
   bottom: 0;
   left: 510px;
@@ -340,7 +343,7 @@
   line-height: 1.7;
 }
 
-.lm-point5 .kb-sub-tagline {
+.lrn-point5 .kb-sub-tagline {
   top: 158px;
   left: 75px;
   z-index: 7;
@@ -350,7 +353,7 @@
   color: rgb(255, 255, 255);
 }
 
-.lm-point5 .kb-tagline {
+.lrn-point5 .kb-tagline {
   top: 107px;
   left: 75px;
   z-index: 6;
@@ -360,7 +363,7 @@
   color: #ffffff;
 }
 
-.lm-point6 {
+.lrn-point6 {
   position: relative;
   float: left;
   clear: both;
@@ -369,12 +372,12 @@
   background-color: #dddddc;
 }
 
-.lm-point6 .kb-sub-tagline {
+.lrn-point6 .kb-sub-tagline {
   line-height: 1.7;
   color: rgb(36, 13, 82);
 }
 
-.lm-point6 .kb-tagline {
+.lrn-point6 .kb-tagline {
   top: 107px;
   left: 75px;
   width: 29.5%;
@@ -395,12 +398,13 @@
   height: 60px;
   border-radius: 3px;
   background-color: rgb(222, 222, 222);
-  font: 1.333em/1.38 'Enigmatic Regular';
   text-align: center;
   color: rgb(255, 255, 255);
+  font-size: 36px;
+  line-height: 60px;
 }
 
-.lm-point1 ._button {
+.lrn-point1 ._button {
   top: 188px;
   left: 514px;
   z-index: 30;
@@ -411,7 +415,7 @@
   background-image:         linear-gradient(360deg, rgb(19, 103, 113) 0%, #229faf 100%);
 }
 
-.lm-point2 ._button {
+.lrn-point2 ._button {
   top: 308px;
   left: 75px;
   z-index: 18;
@@ -422,7 +426,7 @@
   background-image:         linear-gradient(360deg, #251e3d 0%, #482c6e 100%);
 }
 
-.lm-point6 ._button {
+.lrn-point6 ._button {
   top: 176px;
   left: 489px;
   z-index: 2;
