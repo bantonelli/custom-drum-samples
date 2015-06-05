@@ -99,22 +99,32 @@ export default Ember.View.extend({
              // get the csrftoken cookie stored by django
             var csrf_token = getCookie('csrftoken');
 
-            if (csrf_token) {
-                
-            } else {
-                Ember.$.ajax({
-                    type: "GET",
-                    url: config.APP.API_HOST + "/api/accounts/setup",
-                    crossDomain: true,
-                    xhrFields: { withCredentials: true },
-                    // success: function(data, textStatus, jqXHR) {                
-                    // }        
-                    success: function(data) {
-                        csrf_token = data[0].csrf_token;
-                        console.log(csrf_token);
-                    }        
-                });
+            function set_cookie(name, value) {
+              document.cookie = name +'='+ value +'; Path=/;';
             }
+            function delete_cookie(name) {
+              document.cookie = name +'=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+            }
+            // If you don't specify path browser sets cookie relative to page you are currently on, 
+                // so if you delete cookie while on different page previous cookie continues its existence.
+
+            delete_cookie('csrftoken');
+
+            Ember.$.ajax({
+                type: "GET",
+                url: config.APP.API_HOST + "/api/accounts/setup",
+                crossDomain: true,
+                xhrFields: { withCredentials: true }
+                // success: function(data, textStatus, jqXHR) {                
+                // }        
+                // success: function(data) {
+                //     csrf_token = data[0].csrf_token;
+                //     console.log(csrf_token);
+                // }        
+            }).done(function( data, textStatus, jqXHR ) {   
+                console.log(jqXHR.responseText);
+                console.log(jqXHR.getResponseHeader('Set-Cookie'));
+            });
 
             
             //    if (jQuery.browser.mobile == true) {

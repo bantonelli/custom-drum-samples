@@ -33,7 +33,7 @@ export default Ember.Controller.extend(LoginControllerMixin, {
 						_this.set('previousTransition', null);
 						previousTransition.retry();
 					} else {
-						// Default back to homepage
+						// Default back to kitbuilder
 						_this.transitionToRoute('kitbuilder');
 					}
 		      	}, 600);

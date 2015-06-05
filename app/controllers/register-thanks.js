@@ -1,6 +1,6 @@
 import Ember from 'ember';
 import config from '.././config/environment';
-
+var swal = window.sweetAlert;
 
 export default Ember.Controller.extend({
 	actions: {
@@ -47,7 +47,17 @@ export default Ember.Controller.extend({
     					withCredentials: true
 					},
                     success: function (data) {
-                        console.log(data);                       
+                        console.log(data);
+                        if (data[0].mail_sent){
+                        	swal({
+							  title: "Success!",
+							  text: 'The activation email for your account has been resent.',
+							  type: "success",
+							  confirmButtonText: "OK"
+							});
+                        } else {
+
+                        }                      
                         // do something with server response data
                     }                
                 }).fail(function( jqXHR, textStatus ) {

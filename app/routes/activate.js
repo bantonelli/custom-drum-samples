@@ -16,6 +16,8 @@ export default Ember.Route.extend({
 		// The ajax call sends the uid and token in the URL to the server to
 			// complete the account activation process
         // alert('called setupController method');
+        var self = this;
+
         var data = {
         	uid: model.uid,
         	token: model.token
@@ -31,7 +33,16 @@ export default Ember.Route.extend({
 		    crossDomain: true,
 		    data: data,
 		    success: function (data) {
-		        console.log(data);
+		        // console.log(data);
+		        swal({
+				  title: "Your Account is Now Active!",
+				  text: 'Click OK and then sign in to get started.',
+				  type: "success",
+				  confirmButtonText: "OK"
+				}, function () {
+					// swal("Deleted!", "Your template has been deleted.", "success");					
+    				self.transitionTo('application');
+				});
 		    }                
 		}).fail(function( jqXHR, textStatus ) {
 		    // Error that rises when there is a server error
