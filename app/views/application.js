@@ -112,18 +112,20 @@ export default Ember.View.extend({
 
             Ember.$.ajax({
                 type: "GET",
-                url: config.APP.API_HOST + "/api/accounts/setup",
-                crossDomain: true,
-                xhrFields: { withCredentials: true }
+                url: config.APP.API_HOST + "/api/v1/accounts/setup",                
+                xhrFields: { withCredentials: true },
+                contentType: 'application/json',
+                crossDomain: true
                 // success: function(data, textStatus, jqXHR) {                
                 // }        
                 // success: function(data) {
                 //     csrf_token = data[0].csrf_token;
                 //     console.log(csrf_token);
                 // }        
-            }).done(function( data, textStatus, jqXHR ) {   
-                console.log(jqXHR.responseText);
-                console.log(jqXHR.getResponseHeader('Set-Cookie'));
+            }).done(function( data, textStatus, xhr ) {
+                set_cookie('csrftoken', data.csrftoken)   
+                // console.log(xhr.getResponseHeader('Set-Cookie'));
+                // console.log( data.csrftoken );
             });
 
             
