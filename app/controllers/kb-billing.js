@@ -94,7 +94,7 @@ export default Ember.Controller.extend({
                 // Create new ajax request to our server that sends the data object.
                 Ember.$.ajax({
                     type: "POST",
-                    url: config.APP.API_HOST + "/" config.APP.API_NAMESPACE + "/kitbuilder/purchase/",
+                    url: config.APP.API_HOST + "/" + config.APP.API_NAMESPACE + "/kitbuilder/purchase/",
                     crossDomain: true,
                     data: data,
                     // xhrFields withCredentials will auto set cookies and session data on the request
