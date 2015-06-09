@@ -81,8 +81,10 @@
                         </div>
                     </div>
                     <div class="row selection-row">
-                        <div {{bind-attr class=":kit-description descriptionHidden:ng-hide"}}>
-                            {{{currentKit.description}}}                            
+                        <div {{bind-attr class=":col-xs-12 :kit-description descriptionHidden:ng-hide"}}>
+                            <div class="text-wrapper">
+                                {{{currentKit.description}}}
+                            </div>                            
                         </div>
                         <div class="col-xs-12 selected-kit-media filter-row-pocket-effect" {{action 'closeDescription'}}>
                             <div class="row">
