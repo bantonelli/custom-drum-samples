@@ -7,7 +7,7 @@ export default Ember.Route.extend({
 		// Use that ID number to set the model for the Thank you route.
 		var kitID = kbCheckout.get('purchasedKitID')
 		// The model will be a custom-kit object.
-		return this.store.find('custom-kit', kitID);
+		return this.store.find('kitbuilder-purchase', kitID);
 	},
 	setupController: function(controller, model) {
 		// This function is called when the route loads
