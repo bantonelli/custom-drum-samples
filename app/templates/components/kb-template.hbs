@@ -4,9 +4,10 @@
 
 
       <div class="icon-container">
-        <div class="icon-holder-remove icon-remove" {{action 'delete'}}></div>
-        <div class="icon-holder-edit icon-edit-icon" {{action 'editTemplate'}}></div>
-        <div class="icon-holder-load icon-folder-open" {{action 'loadTemplate'}}></div>
+        {{!-- <div class="icon-holder-load icon-folder-open" {{action 'loadTemplate'}}></div> --}}
+        {{!-- <div class="icon-holder-edit icon-edit-icon" {{action 'editTemplate'}}></div> --}}
+        <div class="icon-holder-edit icon-folder-open" {{action 'loadTemplate'}}></div>        
+        <div class="icon-holder-remove icon-remove" {{action 'delete'}}></div>        
       </div>
 
       {{#if isEditing}}
