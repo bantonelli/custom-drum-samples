@@ -204,8 +204,8 @@ Broken down into two subsections (Left and Right)
   .selected-kit-media {
     // height: 160px;
     .sound-kit-soundcloud {
-      margin-top: 2%;
-      height: 90px;
+      padding-left: 0;
+      margin: 2% auto 14px auto;
       // .image, .artwork_image, img {
       //   display: none;
       // }
@@ -218,7 +218,7 @@ Broken down into two subsections (Left and Right)
 /* Styles for Right Part of Section */
   .selected-kit-sounds {
 
-    height: 460px;
+    height: 421px;
     .sample-list {
         width: 100%;
         margin: 0;
