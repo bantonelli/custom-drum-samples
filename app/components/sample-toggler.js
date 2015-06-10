@@ -67,6 +67,11 @@ export default Ember.Component.extend({
     computedIndex: Ember.computed('index', function () {
         return this.get('index') + 1;
     }),
+    alreadyPurchased: Ember.computed('kitbuilderController.samplesPurchased.@each', function () {
+        var sample_id = parseInt(this.get('sample.id'));
+        var samplesPurchased = this.get('kitbuilderController.samplesPurchased');
+        return samplesPurchased.contains(sample_id);
+    }),
     isChosen: function () {
         var chosenSamples = this.get('chosenSamples');
         if (chosenSamples.indexOf(this.get('sample')) === -1){

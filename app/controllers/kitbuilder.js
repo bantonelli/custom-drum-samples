@@ -5,7 +5,12 @@ import Ember from 'ember';
 import config from '.././config/environment';
 
 export default Ember.ArrayController.extend({
+    needs: ['sound-selection'],
     appId: 'Kit Builder',
+    samplesPurchased: Ember.computed('controllers.sound-selection.model', function() {
+      var profile = this.get('controllers.sound-selection.model')
+      return profile.get('samples_purchased');
+    }),
     appRoutes: [
         {route: 'sound-selection', displayLink: 'Sound Selection'},
         {route: 'your-kit', displayLink: 'Your Custom Kit'},

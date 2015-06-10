@@ -220,7 +220,7 @@ Broken down into two subsections (Left and Right)
 
     height: 460px;
     .sample-list {
-        width: 50%;
+        width: 100%;
         margin: 0;
         /* sample-sound(fontcolor, playcolor, ft-size, ht, margin)*/
         @include sample-sound();
