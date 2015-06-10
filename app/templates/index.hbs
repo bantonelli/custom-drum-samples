@@ -31,7 +31,11 @@
 
                         </p>
                         <div class="col-xs-6 col-xs-offset-3">
-                            {{#link-to 'sign-up' class="cds-button cds-button-orange cds-button-aw-large"}}Get Started{{/link-to}}
+                            {{#if session.isAuthenticated}}
+                                {{#link-to 'kitbuilder' class="cds-button cds-button-orange cds-button-aw-large"}}Get Started{{/link-to}}
+                            {{else}}
+                                {{#link-to 'sign-up' class="cds-button cds-button-orange cds-button-aw-large"}}Get Started{{/link-to}}
+                            {{/if}}
                         </div>                
                     </div>                
                 </div>
