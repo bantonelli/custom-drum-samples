@@ -48,7 +48,7 @@ export default Ember.Controller.extend({
 
 				Ember.$.ajax({
 					type: "POST",
-					url: config.APP.API_HOST + '/api/accounts/password',
+					url: config.APP.API_HOST + "/" + config.APP.API_NAMESPACE + '/accounts/password',
 					crossDomain: true,
 					data: data,
 					xhrFields: {

@@ -33,7 +33,7 @@ export default Ember.Route.extend({
 		    //     xhr.setRequestHeader("X-CSRFToken", csrftoken);
 		    // },
 		    type: "POST",
-		    url: config.APP.API_HOST + "/api/accounts/update/confirm",
+		    url: config.APP.API_HOST + "/" + config.APP.API_NAMESPACE + "/accounts/update/confirm",
 		    crossDomain: true,
 		    data: data,
 		    success: function (data) {
