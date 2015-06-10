@@ -1,7 +1,7 @@
 import Ember from 'ember';
 import config from '.././config/environment';
 
-var soundSelectionController = Ember.Controller.extend({
+var soundSelectionController = Ember.Controller.extend({    
     needs: ['kitbuilder'],
     currentKit: function (){
         return this.get('vendorKits').content[0];

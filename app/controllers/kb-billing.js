@@ -136,7 +136,11 @@ export default Ember.Controller.extend({
                                     controllerSelf.set('controllers.kb-checkout.orderNumber', orderNumber);
                                     controllerSelf.set('controllers.kb-checkout.purchasedKitID', purchasedKitID);                                    
                                     // ********* REDIRECT TO PAYMENT RECIEVED/ THANK YOU PAGE ******** // 
-                                    controllerSelf.transitionToRoute('kb-thank-you');   
+                                    controllerSelf.transitionToRoute('kb-thank-you');
+                                    var user_id = controllerSelf.get('session.content.user_id');
+                                    controllerSelf.store.fetchById('user-profile', user_id).then(function(profile){
+                                      controllerSelf.set('controllers.kitbuilder.samplesPurchased', profile.get('samples_purchased'));
+                                    });   
                                 }
                             } else {
                                 // If payment failed report the payment error message. 

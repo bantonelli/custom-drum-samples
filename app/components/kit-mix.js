@@ -14,24 +14,26 @@ export default Ember.Component.extend({
     apiURL: config.APP.API_HOST,
     _initializeKitMix: function (){
         //Ember.run.sync();
-        var activeFilters = this.get('controllers.kitbuilder.activeFilters');
-        function selectActiveFilters (activeFilters) {
-        	for (var i = 0; i < activeFilters.length; i++){
-	        	if (i === 0){
-	        		continue;
-	        	}
-	        	else {
-	        		var selector = '#squaredThree-' + activeFilters[i];
-	        		var checkbox = Ember.$(selector);
-	        		//checkbox.prop('checked', true).change();
-	        		checkbox.prop('checked', true);
-	        	}
-        	}	
-        }
+        var componentSelf = this;
+        setTimeout(function () {
+        	var activeFilters = componentSelf.get('controllers.kitbuilder.activeFilters');
+	        function selectActiveFilters (activeFilters) {
+	        	for (var i = 0; i < activeFilters.length; i++){
+		        	if (i === 0){
+		        		continue;
+		        	}
+		        	else {
+		        		var selector = '#squaredThree-' + activeFilters[i];
+		        		var checkbox = Ember.$(selector);
+		        		//checkbox.prop('checked', true).change();
+		        		checkbox.prop('checked', true);
+		        	}
+	        	}	
+	        }
          
 
-        var componentSelf = this;  
-		//Ember.run.next(this, function(){
+  
+			//Ember.run.next(this, function(){
 	        
 			var checkboxFilter = {
 
@@ -203,7 +205,7 @@ export default Ember.Component.extend({
 	        });
 	        selectActiveFilters(activeFilters);        		 
 		//});
-
+        }, 1000);        
     }.on('didInsertElement'),
     _destroyKitMix: function () {
         Ember.$('#kitmix').mixItUp('destroy', true);
