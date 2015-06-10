@@ -64,12 +64,21 @@
                 <header role="banner" class="cds-navbar">
                     <div class="container cds-nav-container">
                         <div class="row">
-                            <div id="st-trigger-effects" class="col-xs-2">
+                            <div id="st-trigger-effects" class="col-xs-1">
                                 <div id="main-nav-image" data-effect="st-effect-7">
                                     
                                 </div>
                             </div>
-                            <nav class="main-nav col-xs-3 col-xs-offset-4">
+                            <div class="col-xs-2">
+                                <div class="row">
+                                    <div id="nav_logo">
+                                        {{#link-to 'index'}}
+                                            <img src="/images/nav_logo.png" title="BeatParadigm" alt="BeatParadigm">
+                                        {{/link-to}}
+                                    </div>
+                                </div>
+                            </div>
+                            <nav class="main-nav col-xs-3 col-xs-offset-3">
                                 <ul class="row">
                                     <!-- insert more links here -->
                                     <li>{{#link-to 'kitbuilder' class="col-xs-6 col-xs-offset-6"}}Kit Builder{{/link-to}}</li>

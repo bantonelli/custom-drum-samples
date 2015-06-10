@@ -211,3 +211,12 @@ img {
 
 @include gridsys();
 
+/* NAVBAR LOGO */
+
+#nav_logo {
+  margin-top:15px;
+  img {
+    tranform: translate(-18px,0);
+  }
+}
+
