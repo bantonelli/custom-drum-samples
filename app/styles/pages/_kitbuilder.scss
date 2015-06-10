@@ -206,9 +206,9 @@ Broken down into two subsections (Left and Right)
     .sound-kit-soundcloud {
       margin-top: 2%;
       height: 90px;
-      .image, .artwork_image, img {
-        display: none;
-      }
+      // .image, .artwork_image, img {
+      //   display: none;
+      // }
     }
     iframe {
       margin-top: 7px;
@@ -242,17 +242,17 @@ Broken down into two subsections (Left and Right)
   display: none;
 }
 
-
-/**
- * Fail message styles
- */
-
 #kitmix {
   height: 100%;
   position: relative;
   overflow-y: auto;
   overflow-x: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
 }
+
+/**
+ * Fail message styles
+ */
 
 #kitmix .fail-message{
   font-family: $paragraph;
