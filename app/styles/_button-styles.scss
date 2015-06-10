@@ -42,8 +42,10 @@
   //background-image: linear-gradient(0deg, rgba(23, 155, 215, 1), rgba(3, 55, 103, 1));
   background-image: linear-gradient(0deg, rgba(3, 55, 103, 1), rgba(3, 55, 103, 1));
   color: $offwhite;
+  opacity: .5;
   &:hover {
     color: rgba(23, 155, 215, 1);
+    opacity: .35;
   }
 }
 
