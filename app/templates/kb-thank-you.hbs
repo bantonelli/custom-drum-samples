@@ -8,11 +8,11 @@
         <div class="col-xs-12 kb-checkout-section-container">
             <h3 id="congrats-on-kit" class="">Congratz on Your Custom Kit</h3>
             <p><span style="font-family:quicksandbold;">Order No/Kit ID/Receipt#:</span> <span>{{controllers.kb-checkout.orderNumber}}</span></p>
-            <p>We've sent an email to <span style="font-family:quicksandbold;">{{session.currentUser.email}}</span> that includes a download link!</p>
+            <p>We've sent an email to <span style="font-family:quicksandbold;">{{session.currentUser.email}}</span> that contains information regarding your kit purchase for your records.</p>
             <p>All of your custom kits are ready for download from Your Account</p>
             <p>Questions? Suggestions? <a class="email-link">@BeatParadigm on Twitter</a></p>
-            {{#link-to 'sound-selection' class="cds-button cds-button-aw-medium payment-button" type="submit"}}Make Another{{/link-to}}
-            <a href="{{purchasedKit.zip_file}}" class="cds-button cds-button-orange cds-button-aw-medium payment-button">Download Your Kit</a>            
+            <a href="{{purchasedKit.zip_file}}" class="cds-button cds-button-orange cds-button-aw-medium payment-button">Download Your Kit</a>
+            {{#link-to 'sound-selection' class="cds-button cds-button-aw-medium payment-button" type="submit"}}Make Another{{/link-to}}           
         </div>
     </div>
 </div>      
