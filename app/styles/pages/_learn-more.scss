@@ -210,13 +210,14 @@
   float: left;
   clear: both;
   width: 100%;
-  height: 354px;
+  height: 454px;
   background: rgb(222, 222, 222);
-  background: -webkit-linear-gradient(90deg, #4f3277 8.333333333333332%, rgba(43, 169, 186, 0.43) 58.333333333333336%, #1aa5b7 100%), -webkit-linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.37) 33.095238095238095%, rgba(0, 0, 0, 0.37) 100%), url('../images/dj-mixing.jpg') rgb(222, 222, 222);
-  background:    -moz-linear-gradient(90deg, #4f3277 8.333333333333332%, rgba(43, 169, 186, 0.43) 58.333333333333336%, #1aa5b7 100%),    -moz-linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.37) 33.095238095238095%, rgba(0, 0, 0, 0.37) 100%), url('../images/dj-mixing.jpg') rgb(222, 222, 222);
-  background:      -o-linear-gradient(90deg, #4f3277 8.333333333333332%, rgba(43, 169, 186, 0.43) 58.333333333333336%, #1aa5b7 100%),      -o-linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.37) 33.095238095238095%, rgba(0, 0, 0, 0.37) 100%), url('../images/dj-mixing.jpg') rgb(222, 222, 222);
-  background:     -ms-linear-gradient(90deg, #4f3277 8.333333333333332%, rgba(43, 169, 186, 0.43) 58.333333333333336%, #1aa5b7 100%),     -ms-linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.37) 33.095238095238095%, rgba(0, 0, 0, 0.37) 100%), url('../images/dj-mixing.jpg') rgb(222, 222, 222);
-  background:         linear-gradient(360deg, #4f3277 8.333333333333332%, rgba(43, 169, 186, 0.43) 58.333333333333336%, #1aa5b7 100%),         linear-gradient(360deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.37) 33.095238095238095%, rgba(0, 0, 0, 0.37) 100%), url('../images/dj-mixing.jpg') rgb(222, 222, 222);
+  background: -webkit-linear-gradient(90deg, transparentize(nth($purple-list, 3), 0.2) 8.333333333333332%, rgba(43, 169, 186, 0.43) 58.333333333333336%, #1aa5b7 100%), -webkit-linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.37) 33.095238095238095%, rgba(0, 0, 0, 0.37) 100%), url('../images/dj-mixing.jpg') rgb(222, 222, 222);
+  background:    -moz-linear-gradient(90deg, transparentize(nth($purple-list, 3), 0.2) 8.333333333333332%, rgba(43, 169, 186, 0.43) 58.333333333333336%, #1aa5b7 100%),    -moz-linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.37) 33.095238095238095%, rgba(0, 0, 0, 0.37) 100%), url('../images/dj-mixing.jpg') rgb(222, 222, 222);
+  background:      -o-linear-gradient(90deg, transparentize(nth($purple-list, 3), 0.2) 8.333333333333332%, rgba(43, 169, 186, 0.43) 58.333333333333336%, #1aa5b7 100%),      -o-linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.37) 33.095238095238095%, rgba(0, 0, 0, 0.37) 100%), url('../images/dj-mixing.jpg') rgb(222, 222, 222);
+  background:     -ms-linear-gradient(90deg, transparentize(nth($purple-list, 3), 0.2) 8.333333333333332%, rgba(43, 169, 186, 0.43) 58.333333333333336%, #1aa5b7 100%),     -ms-linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.37) 33.095238095238095%, rgba(0, 0, 0, 0.37) 100%), url('../images/dj-mixing.jpg') rgb(222, 222, 222);
+  background:         linear-gradient(360deg, transparentize(nth($purple-list, 3), 0) 8.333333333333332%, rgba(43, 169, 186, 0.43) 58.333333333333336%, #1aa5b7 100%),         linear-gradient(360deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.37) 33.095238095238095%, rgba(0, 0, 0, 0.37) 100%), url('../images/dj-mixing.jpg') rgb(222, 222, 222);
+  background:         linear-gradient(360deg, #351F54 2.33333%, rgba(43, 169, 186, 0.43) 63.3333%, #1AA5B7 100%) repeat scroll 0px 0px / 100% 100%, linear-gradient(360deg, transparent 0px, rgba(0, 0, 0, 0.37) 20.0952%, rgba(0, 0, 0, 0.37) 100%) repeat scroll 0px 0px / 100% 100%, #DEDEDE url("../images/dj-mixing.jpg") repeat scroll center center / cover;
   background-repeat: repeat, repeat, repeat;
   background-size: 100% 100%, 100% 100%, cover;
   background-position: 0% 0%, 0% 0%, center center;
@@ -224,7 +225,7 @@
 }
 
 .lrn-point3 .kb-intro {
-  top: 0;
+  top: 200px;
   bottom: 0;
   left: 510px;
   z-index: 13;
@@ -264,13 +265,14 @@
   float: left;
   clear: both;
   width: 100%;
-  height: 354px;
+  height: 454px;
   background: rgb(222, 222, 222);
   background: -webkit-linear-gradient(90deg, #a8311c 9.523809523809524%, rgba(156, 23, 103, 0) 49.523809523809526%, #4f3277 80.47619047619048%), -webkit-linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.4) 19.28571428571429%, rgba(0, 0, 0, 0.4) 100%), url('../images/hand_me_downs_ii_by_beccatastrophe-d2y8pik.jpg') rgb(222, 222, 222);
   background:    -moz-linear-gradient(90deg, #a8311c 9.523809523809524%, rgba(156, 23, 103, 0) 49.523809523809526%, #4f3277 80.47619047619048%),    -moz-linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.4) 19.28571428571429%, rgba(0, 0, 0, 0.4) 100%), url('../images/hand_me_downs_ii_by_beccatastrophe-d2y8pik.jpg') rgb(222, 222, 222);
   background:      -o-linear-gradient(90deg, #a8311c 9.523809523809524%, rgba(156, 23, 103, 0) 49.523809523809526%, #4f3277 80.47619047619048%),      -o-linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.4) 19.28571428571429%, rgba(0, 0, 0, 0.4) 100%), url('../images/hand_me_downs_ii_by_beccatastrophe-d2y8pik.jpg') rgb(222, 222, 222);
   background:     -ms-linear-gradient(90deg, #a8311c 9.523809523809524%, rgba(156, 23, 103, 0) 49.523809523809526%, #4f3277 80.47619047619048%),     -ms-linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.4) 19.28571428571429%, rgba(0, 0, 0, 0.4) 100%), url('../images/hand_me_downs_ii_by_beccatastrophe-d2y8pik.jpg') rgb(222, 222, 222);
-  background:         linear-gradient(360deg, #a8311c 9.523809523809524%, rgba(156, 23, 103, 0) 49.523809523809526%, #4f3277 80.47619047619048%),         linear-gradient(360deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.4) 19.28571428571429%, rgba(0, 0, 0, 0.4) 100%), url('../images/hand_me_downs_ii_by_beccatastrophe-d2y8pik.jpg') rgb(222, 222, 222);
+  background:         linear-gradient(360deg, #a8311c 9.523809523809524%, rgba(156, 23, 103, 0) 49.523809523809526%, transparentize(nth($purple-list, 3), 0) 80.47619047619048%),         linear-gradient(360deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.4) 19.28571428571429%, rgba(0, 0, 0, 0.4) 100%), url('../images/hand_me_downs_ii_by_beccatastrophe-d2y8pik.jpg') rgb(222, 222, 222);
+  background:         linear-gradient(360deg, rgb(168, 49, 28) 1.52381%, rgba(156, 23, 103, 0) 38.5238%, rgb(53, 31, 84) 98.4762%) repeat scroll 0px 0px / 100% 100%, linear-gradient(360deg, transparent 0px, rgba(0, 0, 0, 0.4) 19.2857%, rgba(0, 0, 0, 0.4) 100%) repeat scroll 0px 0px / 100% 100%, rgb(222, 222, 222) url("../images/hand_me_downs_ii_by_beccatastrophe-d2y8pik.jpg") repeat scroll center center / cover;
   background-repeat: repeat, repeat, repeat;
   background-size: 100% 100%, 100% 100%, cover;
   background-position: 0% 0%, 0% 0%, center center;
@@ -278,7 +280,7 @@
 }
 
 .lrn-point4 .kb-intro {
-  top: 0;
+  top: 200px;
   bottom: 0;
   left: 510px;
   z-index: 9;
@@ -316,13 +318,14 @@
   float: left;
   clear: both;
   width: 100%;
-  height: 354px;
+  height: 424px;
   background: rgb(222, 222, 222);
   background: -webkit-linear-gradient(90deg, #dddddc 6.190476190476191%, rgba(209, 209, 208, 0.7) 28.095238095238095%, rgba(191, 62, 39, 0.75) 66.42857142857143%, #a8311c 82.14285714285714%), -webkit-linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.46) 41.66666666666667%, rgba(0, 0, 0, 0.07) 100%), url('../images/Hardware.jpg') rgb(222, 222, 222);
   background:    -moz-linear-gradient(90deg, #dddddc 6.190476190476191%, rgba(209, 209, 208, 0.7) 28.095238095238095%, rgba(191, 62, 39, 0.75) 66.42857142857143%, #a8311c 82.14285714285714%),    -moz-linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.46) 41.66666666666667%, rgba(0, 0, 0, 0.07) 100%), url('../images/Hardware.jpg') rgb(222, 222, 222);
   background:      -o-linear-gradient(90deg, #dddddc 6.190476190476191%, rgba(209, 209, 208, 0.7) 28.095238095238095%, rgba(191, 62, 39, 0.75) 66.42857142857143%, #a8311c 82.14285714285714%),      -o-linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.46) 41.66666666666667%, rgba(0, 0, 0, 0.07) 100%), url('../images/Hardware.jpg') rgb(222, 222, 222);
   background:     -ms-linear-gradient(90deg, #dddddc 6.190476190476191%, rgba(209, 209, 208, 0.7) 28.095238095238095%, rgba(191, 62, 39, 0.75) 66.42857142857143%, #a8311c 82.14285714285714%),     -ms-linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.46) 41.66666666666667%, rgba(0, 0, 0, 0.07) 100%), url('../images/Hardware.jpg') rgb(222, 222, 222);
   background:         linear-gradient(360deg, #dddddc 6.190476190476191%, rgba(209, 209, 208, 0.7) 28.095238095238095%, rgba(191, 62, 39, 0.75) 66.42857142857143%, #a8311c 82.14285714285714%),         linear-gradient(360deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.46) 41.66666666666667%, rgba(0, 0, 0, 0.07) 100%), url('../images/Hardware.jpg') rgb(222, 222, 222);
+  background:         linear-gradient(360deg, #DDDDDC 4.19048%, rgba(209, 209, 208, 0.7) 19.0952%, rgba(191, 62, 39, 0.75) 66.4286%, #A8311C 99.1429%) repeat scroll 0px 0px / 100% 100%, linear-gradient(360deg, rgba(255, 255, 255, 0) 0px, rgba(0, 0, 0, 0.46) 41.6667%, rgba(0, 0, 0, 0.07) 100%) repeat scroll 0px 0px / 100% 100%, #DEDEDE url("../images/Hardware.jpg") repeat scroll center center / cover;
   background-repeat: repeat, repeat, repeat;
   background-size: 100% 100%, 100% 100%, cover;
   background-position: 0% 0%, 0% 0%, center center;
@@ -330,7 +333,7 @@
 }
 
 .lrn-point5 .kb-intro {
-  top: 0;
+  top: 200px;
   bottom: 0;
   left: 510px;
   z-index: 5;
