@@ -1,5 +1,5 @@
 .register-slide {
-	background-color: nth($purple-list, 4);
+	background-image: -webkit-radial-gradient(50% 100%, #7D679B 0%, #4E3471 100%);background-image: radial-gradient(50% 100%, #7D679B 0%, #4E3471 100%);
 }
 
 @-moz-document url-prefix() { 
