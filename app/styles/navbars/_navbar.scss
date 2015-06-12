@@ -118,7 +118,7 @@ header[role=banner] {
   overflow: hidden;
   text-overflow: clip;
   &:hover {
-    color: nth($lightblue-list, 4);
+    color: #E3F05D;
     text-decoration: none;
   }
   &:focus {
@@ -150,6 +150,7 @@ header[role=banner] {
       &:hover {
         background-color: nth($purple-list, 4);
         color: $offwhite;
+        cursor: pointer;
       }
     }
   }

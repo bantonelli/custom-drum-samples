@@ -73,8 +73,11 @@ This is on both of Slide1's sections */
 }
 
 .filter-row-pocket-effect {
-  box-shadow: 0px 4px 4px -4px rgba(0, 0, 0, 0.1);
+  box-shadow: none;
   z-index: 3;
+  border-style: solid;
+  border-width: 0 0 1px;
+  border-color: rgba(79, 62, 120, 0.35);
 }
 
 
