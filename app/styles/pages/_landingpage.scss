@@ -262,13 +262,15 @@
     background-size: contain;
     background-repeat: no-repeat;
     position: absolute;
-    top: 0;
-    height: 212px;
+    top: -20px;
+    height: 242px;
     opacity: .6;
     width: 50px;
+    z-index: 2; 
+    left: -10px;   
   }
   .lp-choice-result {
-    overflow: visible;
+    overflow: hidden;
     .liquid-child {
       width: 212px;
       height: 212px;
@@ -296,11 +298,22 @@
     background-image: url("/images/Experimental-edm.jpg");
   }
   .lp-animated-choice {
-    transition: 1s all ease;
+    transition: 0.5s all ease;
     opacity: 0;
+    transform: translateX(-100%);
   }
   .lp-animated-choice.lp-animated-choice-visible {
     opacity: 1;
+    transform: translateX(5%);
+  }
+  #lp-choice-buffer {
+    width: 20px;
+    position: absolute;
+    left: -7px;
+    top: 0;
+    z-index: 3;
+    height: 100%;
+    background-color: $offwhite;
   } 
 }
 
