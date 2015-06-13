@@ -14,8 +14,6 @@ var soundSelectionController = Ember.Controller.extend({
     newKitsHidden: true,
     alphabetical: false,
     onSale: false,
-    testProp1: false,
-    testProp2: false,
     vendorKits: Ember.computed.alias('controllers.kitbuilder.model'),
     loadSoundCloud: false,
     tags: Ember.computed('vendorKits', function () {
@@ -24,8 +22,7 @@ var soundSelectionController = Ember.Controller.extend({
         for (var kit = 0; kit < kits.length; kit++){
             var currentTags = kits[kit].get('tags');
             for (var tagIndex = 0; tagIndex < currentTags.length; tagIndex++) {
-                if (totalTags.indexOf(currentTags[tagIndex].name) === -1) {
-                //if (Ember.$.inArray(tags[tagIndex], totalTags) === -1) {
+                if (totalTags.indexOf(currentTags[tagIndex].name) === -1) {                
                     totalTags.push(currentTags[tagIndex].name);
                 }
             }

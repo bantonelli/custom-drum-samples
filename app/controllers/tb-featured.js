@@ -2,12 +2,12 @@ import Ember from 'ember';
 import config from '.././config/environment';
 
 export default Ember.Controller.extend({
-	needs: ['browse-templates'],
+	needs: ['template-browser'],
 	// needs sets the property 'controller' on the current controller object.
 	// controllers: {
 	// 	browse-templates: 
 	// }
-	publicTemplates: Ember.computed.alias('controllers.browse-templates.model'),
+	publicTemplates: Ember.computed.alias('controllers.template-browser.model'),
 	featuredTemplates: Ember.computed('publicTemplates', 'templateList.@each', function() {
 		// Come up with algorithm to grab templates with 'featured: true' and store them in a array. return that array.
 		//Working Scripts 

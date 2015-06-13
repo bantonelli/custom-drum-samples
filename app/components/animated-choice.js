@@ -15,11 +15,11 @@ export default Ember.Component.extend({
 			// Ember.$(selector).fadeIn( "slow" );
 		}, 100);		
         // clickElement.classList.remove('icon-pause');
-  	}.on('didInsertElement'),
-  	makeInvisible: function() {	
-		this.get('domElement').classList.remove('lp-animated-choice-visible');
-			// var selector = "#" + element + ".lp-animated-choice";
-			// Ember.$(selector).fadeIn( "slow" );		
-        // clickElement.classList.remove('icon-pause');
-  	}.on('willDestroyElement')
+  	}.on('didInsertElement')
+  // 	makeInvisible: function() {	
+		// this.get('domElement').classList.remove('lp-animated-choice-visible');
+		// 	// var selector = "#" + element + ".lp-animated-choice";
+		// 	// Ember.$(selector).fadeIn( "slow" );		
+  //       // clickElement.classList.remove('icon-pause');
+  // 	}.on('willDestroyElement')
 });
