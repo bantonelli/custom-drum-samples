@@ -12,6 +12,21 @@ export default Ember.Route.extend({
 			// complete the account activation process
         controller.set("model", model);
     },
+    beforeModel: function(transition) {
+        var _this = this;
+        _this._super(transition);
+        if (_this.get('session.isAuthenticated')) {
+            _this.transitionTo('kitbuilder');
+        } else {
+            transition.abort();            
+            var loginController = _this.controllerFor('application');
+            //var currentRoute = loginController.get('currentRoute');
+            // cRoute is the actual url string of the current route.
+            var cRoute = _this.get('router.url');
+            loginController.set('previousTransition', transition);
+            loginController.transitionToRoute( cRoute + '?login=true');            
+        }
+    },    
 	actions: {
 		deleteTemplate: function(template) {
 			var self = this;			
