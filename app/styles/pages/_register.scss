@@ -1,8 +1,8 @@
 .register-slide {
 	background:
 		url(/images/register_bg.png) top center no-repeat,
-		-webkit-radial-gradient(50% 100%,rgba(105, 79, 140, 1) 4%,#20192A 50%),
-		radial-gradient(50% 100%,rgba(105, 79, 140, 1) 4%,#20192A 50%);	
+		radial-gradient(90% 100%,#694f8c -23%,#20192A 50%);
+	margin-top: 60px;
 }
 
 @-moz-document url-prefix() { 
@@ -21,7 +21,6 @@
 }
 
 .register-container {
-	margin-top: 50px;
 	width: 600px;
 	h2, h3 {
 		text-align: center;
