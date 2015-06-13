@@ -1,8 +1,8 @@
 .register-slide {
 	background:
-		url('/images/register_bg.png') top center no-repeat,
-		-webkit-radial-gradient(50% 100%, #694F8C 4%, #4E3471 50%),
-		radial-gradient(50% 100%, #694F8C 4%, #4E3471 50%);
+		url(/images/register_bg.png) top center no-repeat,
+		-webkit-radial-gradient(50% 100%,rgba(105, 79, 140, 1) 4%,#20192A 50%),
+		radial-gradient(50% 100%,rgba(105, 79, 140, 1) 4%,#20192A 50%);	
 }
 
 @-moz-document url-prefix() { 
