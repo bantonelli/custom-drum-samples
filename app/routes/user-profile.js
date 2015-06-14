@@ -16,15 +16,15 @@ export default Ember.Route.extend({
         var _this = this;
         _this._super(transition);
         if (_this.get('session.isAuthenticated')) {
-            _this.transitionTo('kitbuilder');
+            _this.transitionTo('user-profile');
         } else {
             transition.abort();            
             var loginController = _this.controllerFor('application');
             //var currentRoute = loginController.get('currentRoute');
             // cRoute is the actual url string of the current route.
-            var cRoute = _this.get('router.url');
+            // var cRoute = _this.get('router.url');
             loginController.set('previousTransition', transition);
-            loginController.transitionToRoute( cRoute + '?login=true');            
+            loginController.transitionToRoute( '/' + '?login=true');            
         }
     },    
 	actions: {
