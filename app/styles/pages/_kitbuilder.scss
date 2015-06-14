@@ -60,7 +60,7 @@ This is on both of Slide1's sections */
 
 .filter-row {
   h4 {
-    margin: 0 0 0 40px;
+    margin: 0 0 0 16px;
     height: 70px; 
     line-height: 80px;
   }
@@ -352,9 +352,8 @@ Slide 2 Styles
 .section-pocket-effect {
   box-sizing: padding-box;
   border-style: solid;
-  border-color: nth($purple-list, 6);
-  border-width: 2px 0 2px 0;
-  border-style: dotted;
+  border-width: 0 0 1px;
+  border-color: rgba(79,62,120,.35);
 //  box-shadow: inset 0px 4px 4px -4px rgba(0, 0, 0, 0.1);
   box-shadow: inset 0px 15px 30px -20px rgba(0, 0, 0, 0.1);
   z-index: 3;
@@ -520,7 +519,6 @@ Slide 3 Styles
     color: nth($lightblue-list, 3);
   }
   #kb-checkout-total h3 {
-    @include border-separation-top();
     padding-top: 5px;
     
   }

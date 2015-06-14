@@ -14,15 +14,15 @@
 }
 
 @mixin border-separation-bottom() {
-  border-style: dotted;
-  border-width: 0 0 2px 0;
-  border-color: nth($purple-list, 6);
+  border-style: solid;
+  border-width: 0 0 1px;
+  border-color: rgba(79,62,120,.35);
 }
 
 @mixin border-separation-top() {
-  border-style: dotted;
-  border-width: 2px 0 0px 0;
-  border-color: nth($purple-list, 6);
+  border-style: solid;
+  border-width: 0 0 1px;
+  border-color: rgba(79,62,120,.35);
 }
 
 $offwhite-trans: transparentize($offwhite, 1);
