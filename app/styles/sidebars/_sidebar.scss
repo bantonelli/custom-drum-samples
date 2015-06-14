@@ -15,12 +15,12 @@ body,
 .st-pusher,
 .st-content {
 	height: 100%;
-	background-color: nth($purple-list, 2);
+	background-color: transparent;
 }
 
 .st-content {
 	overflow-y: scroll;
-	background: $offwhite;
+	background: transparent;
     height: 100%;
 }
 

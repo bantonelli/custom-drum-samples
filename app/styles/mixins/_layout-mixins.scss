@@ -2,12 +2,12 @@
 ======================================*/
 
 @mixin slide-mixin($background-color, $height: 100%) {
-  background-color: $background-color;
+  background-color: transparent;
   height: $height;
 }
 
 @mixin slide-section-mixin($background-color, $height: auto, $padding: 50px 0) {
-  background-color: $background-color;
+  background-color: transparent;
   height: $height;
   padding: $padding;
   margin-bottom: 100px;
