@@ -8,7 +8,7 @@
 }
 
 #bt-slide {
-  @include slide-mixin($offwhite);
+  @include slide-mixin();
   .slide-width-container {
     padding-top: 100px;
   }
@@ -22,7 +22,7 @@
 }
 
 .bt-slide-section {
-  @include slide-section-mixin($offwhite, $height: 100%);
+  @include slide-section-mixin($height: 100%);
   .filter-row {
   }
 }

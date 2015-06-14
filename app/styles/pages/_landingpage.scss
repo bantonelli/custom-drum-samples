@@ -1,12 +1,12 @@
 // Landing Page has 1 slide
 
 #lp-slide-1 {
-  @include slide-mixin($offwhite);
+  @include slide-mixin();
   padding: 0;  
 }
 
 #lp-slide-section-1 {
-  @include slide-section-mixin($offwhite, $padding: 60px 0);
+  @include slide-section-mixin($padding: 60px 0);
   margin-bottom: 0;
 }
 

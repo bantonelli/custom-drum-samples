@@ -3,7 +3,7 @@ General Slide Styles
 */
 
 #kb-slide-1 {
-  @include slide-mixin($offwhite);
+  @include slide-mixin();
   .slide-width-container {
     padding-top: 100px;
   }
@@ -17,7 +17,7 @@ General Slide Styles
 }
 
 #kb-slide-2 {
-  @include slide-mixin($offwhite);
+  @include slide-mixin();
 
   .slide-width-container > .row {
     height: 100%;
@@ -26,7 +26,7 @@ General Slide Styles
 }
 
 #kb-slide-3 {
-  @include slide-mixin($offwhite);
+  @include slide-mixin();
 
   .slide-width-container > .row {
     height: 100%;
@@ -46,13 +46,13 @@ Slide 1 Styles
 */
 
 #kb-slide-1-section-1 {
-  @include slide-section-mixin($offwhite, $height: 100%);
+  @include slide-section-mixin($height: 100%);
   .filter-row {
   }
 }
 
 #kb-slide-1-section-2 {
-  @include slide-section-mixin($offwhite, $height: 100%);
+  @include slide-section-mixin($height: 100%);
 }
 
 /* Styling for the row with the filters
@@ -346,7 +346,7 @@ Slide 2 Styles
 
 .kb-slide-2-section {
   overflow-y: auto;
-  @include slide-section-mixin($offwhite);
+  @include slide-section-mixin();
 }
 
 .section-pocket-effect {
@@ -426,13 +426,13 @@ Slide 3 Styles
 */
 
 #kb-slide-3-section-1 {
-  @include slide-section-mixin($offwhite, $height: 100%);
+  @include slide-section-mixin($height: 100%);
   .filter-row {
   }
 }
 
 #kb-slide-3-section-2 {
-  @include slide-section-mixin($offwhite, $height: 100%);
+  @include slide-section-mixin($height: 100%);
 }
 
 .kb-checkout-section-container {

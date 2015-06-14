@@ -3,7 +3,7 @@
 }
 
 #team-members-slide-section-1 {
-  @include slide-section-mixin($offwhite);
+  @include slide-section-mixin();
 }
 
 .tm-title {

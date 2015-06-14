@@ -1,10 +1,10 @@
 
 #about-us-slide-1 {
-  @include slide-mixin($offwhite);
+  @include slide-mixin();
 }
 
 #about-us-slide-section-1 {
-  @include slide-section-mixin($offwhite);
+  @include slide-section-mixin();
 }
 
 .about-topic, .about-first-topic {

@@ -1,13 +1,13 @@
 /* Utility Mixins
 ======================================*/
 
-@mixin slide-mixin($background-color, $height: 100%) {
-  background-color: transparent;
+@mixin slide-mixin($background-color: transparent, $height: 100%) {
+  background-color: $background-color;
   height: $height;
 }
 
-@mixin slide-section-mixin($background-color, $height: auto, $padding: 50px 0) {
-  background-color: transparent;
+@mixin slide-section-mixin($background-color: transparent, $height: auto, $padding: 50px 0) {
+  background-color: $background-color;
   height: $height;
   padding: $padding;
   margin-bottom: 100px;
