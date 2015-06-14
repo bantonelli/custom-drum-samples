@@ -54,7 +54,8 @@ Router.map(function() {
     this.resource('tb-most-followed', {path: '/most-followed'});
     this.resource('tb-recent', {path: '/recent'});
   });
-  
+
+  this.route('not-found', { path: '*path' });
 });
 
 export default Router;
