@@ -4,10 +4,8 @@
 body {
   font-size: 24px;
   background:
-    url('/images/poly_bg.png');
-  background-attachment: fixed;
-  background-size: cover;
-  background-color: rgba(239, 239, 239, 1) !important;
+    url('/images/poly_bg_small.jpg') top center no-repeat;
+  background-color: #EFEFEF !important;
 }
 
 body, caption, th, td, input, textarea, select, option, legend, fieldset, h1, h2, h3, h4, h5, h6 {
