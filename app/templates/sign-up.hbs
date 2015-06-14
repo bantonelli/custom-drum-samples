@@ -5,9 +5,21 @@
     		<form class="cds-form" action="" method="POST" id="payment-form"> 
                 <div class="register-info">
                         {{input id="first-name-billing" placeholder="Username" class="cds-text-input" type="text" value=username}}
+                        {{#if username}}
+                            <span class="">{{errors.username}}</span>
+                        {{/if}}
                         {{input id="last-name-billing" placeholder="Email" class="cds-text-input" type="text" value=email}}
+                        {{#if email}}
+                            <span class="">{{errors.email}}</span>
+                        {{/if}}
                         {{input id="address-1-billing" placeholder="Password" class="cds-text-input" type="password" value=password}}
-                        {{input id="address-2-billing" placeholder="Confirm Password" class="cds-text-input" type="password" value=passwordConfirm}}                        
+                        {{#if password}}
+                            <span class="">{{errors.password}}</span>
+                        {{/if}}
+                        {{input id="address-2-billing" placeholder="Confirm Password" class="cds-text-input" type="password" value=passwordConfirmation}}
+                        {{#if passwordConfirmation}}
+                            <span class="">{{errors.passwordConfirmation}}</span>
+                        {{/if}}                        
                 </div>                               
                 <button class="cds-button cds-button-orange cds-button-aw-medium register-button" type="submit" {{action 'register'}}>Submit</button>
             </form>
