@@ -3,8 +3,28 @@
         <div class="row">
             <h4 class="col-xs-12 icon-address-book">Username & Email</h4>
             <form class="col-xs-12 cds-form">
-                {{input class="cds-text-input" type="text" placeholder=session.currentUser.username value=userName size="40"}}
-                {{input class="cds-text-input" type="text" placeholder=session.currentUser.email value=email size="40"}}
+                <div class="cds-fieldset">                                              
+                    {{input class="cds-text-input" type="text" placeholder=session.currentUser.username value=userName size="40"}}
+                    {{#if errors.userName}}
+                        {{#if userName}}
+                            <span class="cds-error-message-flag">{{errors.userName}}</span>
+                        {{else if submissionErrors}}
+                            <span class="cds-error-message-flag">{{submissionErrors.userName}}</span>
+                        {{/if}}
+                    {{/if}}
+                </div>
+                <div class="cds-fieldset">                                              
+                    {{input class="cds-text-input" type="text" placeholder=session.currentUser.email value=email size="40"}}
+                    {{#if errors.email}}
+                        {{#if email}}
+                            <span class="cds-error-message-flag">{{errors.email}}</span>
+                        {{else if submissionErrors}}
+                            <span class="cds-error-message-flag">{{submissionErrors.email}}</span>
+                        {{/if}}
+                    {{/if}}
+                </div>
+                {{!-- {{input class="cds-text-input" type="text" placeholder=session.currentUser.username value=userName size="40"}} --}}
+                {{!-- {{input class="cds-text-input" type="text" placeholder=session.currentUser.email value=email size="40"}} --}}
             </form>
             <div class="col-xs-9">
                 <p class="cds-button cds-button-aw-medium" {{action 'updateAccount'}}>Update Account</p>
@@ -15,8 +35,28 @@
         <div class="row">
             <h4 class="col-xs-12 icon-unlocked">Password Reset</h4>
             <form class="col-xs-12 cds-form">
-                {{input class="cds-text-input" type="password" placeholder="Current Password" value=currentPassword size="40"}}
-                {{input class="cds-text-input" type="password" placeholder="New Password" value=newPassword size="40"}}
+                <div class="cds-fieldset">                                              
+                    {{input class="cds-text-input" type="password" placeholder="Current Password" value=currentPassword size="40"}}
+                    {{#if errors.currentPassword}}
+                        {{#if currentPassword}}
+                            <span class="cds-error-message-flag">{{errors.currentPassword}}</span>
+                        {{else if submissionErrors}}
+                            <span class="cds-error-message-flag">{{submissionErrors.currentPassword}}</span>
+                        {{/if}}
+                    {{/if}}
+                </div>
+                <div class="cds-fieldset">                                              
+                    {{input class="cds-text-input" type="password" placeholder="New Password" value=newPassword size="40"}}
+                    {{#if errors.newPassword}}
+                        {{#if newPassword}}
+                            <span class="cds-error-message-flag">{{errors.newPassword}}</span>
+                        {{else if submissionErrors}}
+                            <span class="cds-error-message-flag">{{submissionErrors.newPassword}}</span>
+                        {{/if}}
+                    {{/if}}
+                </div>
+                {{!-- {{input class="cds-text-input" type="password" placeholder="Current Password" value=currentPassword size="40"}}
+                {{input class="cds-text-input" type="password" placeholder="New Password" value=newPassword size="40"}} --}}
             </form>
             <div class="col-xs-9">
                 <p class="cds-button cds-button-aw-medium" {{action 'resetPassword'}}>Reset Password</p>
