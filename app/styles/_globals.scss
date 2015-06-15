@@ -78,23 +78,23 @@ h3 {
 
 @media (min-width: 56.25em) {
   h3 {
-    font-size: 1.75em;
+    font-size: 1.45em;
     /* 1.75x body copy size = 28px */
     line-height: 1.25;
   }
 }
 
 h4 {
-  font-size: 1.125em;
+  font-size: 0.925em;
   /* 1.125x body copy size = 18px */
   line-height: 1.11111111;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 @media (min-width: 43.75em) {
   h4 {
     line-height: 1.22222222;
-    font-weight: 400;
+    font-weight: 500;
     /* (22px / 18px */
   }
 }

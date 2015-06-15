@@ -14,7 +14,6 @@
 #tm-description {
    @include p-ow-background();
    @include paragraph-style;
-   text-indent: 50px;
    margin-top: 50px;
    margin-bottom: 50px;
 }

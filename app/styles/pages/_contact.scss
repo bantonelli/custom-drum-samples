@@ -36,13 +36,11 @@
   }
 
   p {
-    text-indent: 50px;
     padding: 0;
   }
 
   p, dl {
-    font-size: 0.8em;
-    line-height: 1.5em;
+    @include paragraph-styles
     @include p-ow-background;
     //color: nth($purple-list, 1);
   }

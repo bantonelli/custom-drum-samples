@@ -2,7 +2,10 @@
 
 @mixin h1-ow-background {
   color: nth($purple-list, 3);
-  text-shadow: 1px 1px 1px transparentize(#DDDDDC, .1);
+  text-shadow: 0 1px 0 white;
+  font-size: 1.5em;
+  text-transform: uppercase;
+  font-weight: 600;
 }
 
 @mixin h3-ow-background {
@@ -29,7 +32,11 @@
 // Gray Backgrounds
 @mixin h1-g-background {
   color: nth($purple-list, 3);
-  text-shadow: 1px 1px 1px transparentize(#DDDDDC, .1);
+  text-shadow: 0 1px 0 white;
+  text-transform: uppercase;
+  font-size: 1.2em;
+  padding-bottom: 3px;
+  font-weight: 600;;
 }
 
 @mixin h3-g-background {
@@ -74,4 +81,5 @@
 @mixin paragraph-style {
   font-size: 0.72em;
   line-height: 2em;
+  font-weight: 300;
 }
