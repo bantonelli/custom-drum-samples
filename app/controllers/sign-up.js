@@ -6,7 +6,7 @@ var swal = window.sweetAlert;
 export default Ember.Controller.extend(EmberValidations.Mixin, {
     validations: {
         username: {
-            presence: true,
+            presence: {message: "A username is required for registration"},
             format: {
                 with: /^([a-zA-Z]|\d)+$/, 
                 allowBlank: true, 
@@ -14,7 +14,7 @@ export default Ember.Controller.extend(EmberValidations.Mixin, {
             }
         },
         email: {
-            presence: true,
+            presence: {message: "Email is required for registration"},
             format: {
                 with: /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i, 
                 allowBlank: true, 
@@ -22,14 +22,11 @@ export default Ember.Controller.extend(EmberValidations.Mixin, {
             }
         },
         password: {
-            presence: true,
+            presence: {message: "Please enter a password for your account"},
             confirmation: {
-                message: "passwords don't match",
-                allowBlank: true
+                allowBlank: true,                
+                message: "passwords don't match"               
             }
-        },
-        passwordConfirmation: {
-            presence: true
         }
     },
 	actions: {
