@@ -294,7 +294,12 @@ xsigin/signup popup
 }
 .cd-form-bottom-message a {
   color: #FFF;
-  text-decoration: underline;
+  text-decoration: none;
+  font-size: 21px;
+  font-weight: 300;
+  &:hover {
+    opacity: .75;
+  }
 }
 
 .cd-close-form {
@@ -351,7 +356,7 @@ xsigin/signup popup
   }
   .cds-button {
     font-family: $headline;
-    font-weight: 400;
+    font-weight: 600;
     //color: $offwhite;
 
   }
@@ -364,8 +369,14 @@ xsigin/signup popup
 }
 
 .login-heading {
-  font-size: 28px;
+  font-size: 40px;
   text-align: center;
+  margin-top: 40px;
+  color: #1d0e32;
+  text-shadow: 0 1px 0 white;
+  font-weight: 500;
+  font-family: dosis;
+  text-transform: uppercase;
   margin-top: 40px;
   @include p-ow-background();
 }

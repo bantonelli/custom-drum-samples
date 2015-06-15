@@ -126,7 +126,7 @@ header[role=banner] {
   text-shadow: 0px 1px 1px rgba(25, 25, 25, .8);
   color: $offwhite;
   text-decoration: none;
-  font-size: 0.66em;
+  font-size: 0.65em;
   font-family: Roboto;
   font-weight: 600;
   white-space: nowrap;
@@ -163,7 +163,7 @@ header[role=banner] {
       // }      
       font-size: 16px;
       &:hover {
-        background-color: nth($purple-list, 4);
+        background-color: #503F79;
         cursor: pointer;
       }
     }
@@ -178,6 +178,7 @@ header[role=banner] {
       position: absolute;
       width: 20px;
       font-size: 28px;
+      font-weight: 100;
       font-family: icomoon;
       // arrow down
       content: "\e62a";
