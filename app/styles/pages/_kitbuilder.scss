@@ -339,6 +339,7 @@ Slide 2 Styles
       @include h1-ow-background();
       span {
         color: nth($orange-list, 3);
+        font-weight: 400;
       }
     }
   }

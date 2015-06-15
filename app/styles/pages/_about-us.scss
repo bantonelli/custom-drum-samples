@@ -1,6 +1,22 @@
 
 #about-us-slide-1 {
   @include slide-mixin();
+  .social-media-margin {
+    h4 {
+      font-weight: 600;
+      font-size: 0.9em;
+    }
+    p {
+      font-size: 18px;
+      font-weight: 300;
+    }
+    .social-set {
+      margin-bottom:15px;
+      &:last-child {
+        margin-bottom: -24px;
+      }
+    }
+  }
 }
 
 #about-us-slide-section-1 {
@@ -36,7 +52,6 @@
   }
 
   p {
-    text-indent: 50px;
     padding: 0;
   }
 
