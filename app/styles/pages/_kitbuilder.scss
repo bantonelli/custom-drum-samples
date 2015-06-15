@@ -444,6 +444,10 @@ Slide 3 Styles
   @include h1-ow-background();
 }
 
+h4.billing-info {
+  transform: translate(-16px,0);
+}
+
 .payment-info {
   .cds-form {
     input {
