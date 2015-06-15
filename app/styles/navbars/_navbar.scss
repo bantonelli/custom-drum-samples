@@ -133,7 +133,6 @@ header[role=banner] {
   overflow: hidden;
   text-overflow: clip;
   &:hover {
-    color: #E3F05D;
     text-decoration: none;
   }
   &:focus {
@@ -158,14 +157,13 @@ header[role=banner] {
       text-align: left;
       height: 35px;
       line-height: 35px;
-      font-weight: 400;
+      font-weight: 700;
       // @-moz-document url-prefix() { 
       //   line-height: 30px;
       // }      
       font-size: 16px;
       &:hover {
         background-color: nth($purple-list, 4);
-        color: #E3F05D;
         cursor: pointer;
       }
     }
