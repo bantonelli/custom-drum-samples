@@ -1,3 +1,6 @@
 .nf-headline {
 	@include h1-ow-background();
+	span {
+		color: nth($orange-list, 2);
+	}
 }
