@@ -8,18 +8,25 @@ export default Ember.Controller.extend(EmberValidations.Mixin, {
         username: {
             presence: true,
             format: {
-                with: /^([a-zA-Z]|\d)+$/, message: 'must be letters and numbers only'
+                with: /^([a-zA-Z]|\d)+$/, 
+                allowBlank: true, 
+                message: 'must be letters and numbers only'
             }
         },
         email: {
             presence: true,
             format: {
-                with: /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i, message: 'must be a valid email address'
+                with: /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i, 
+                allowBlank: true, 
+                message: 'must be a valid email address'
             }
         },
         password: {
             presence: true,
-            confirmation: {message: "passwords don't match"}
+            confirmation: {
+                message: "passwords don't match",
+                allowBlank: true
+            }
         },
         passwordConfirmation: {
             presence: true
@@ -29,7 +36,7 @@ export default Ember.Controller.extend(EmberValidations.Mixin, {
 		register: function () {            
             var controllerSelf = this;
 
-            controllerSelf.validate().then(function (){
+            controllerSelf.validate().then(null, function (){
                 if (controllerSelf.get('isValid')) {
                     var username = controllerSelf.get('username');
                     var email = controllerSelf.get('email');
@@ -96,6 +103,8 @@ export default Ember.Controller.extend(EmberValidations.Mixin, {
                           confirmButtonText: "OK"
                         });  
                     });
+                } else {
+                    controllerSelf.set('submissionErrors', controllerSelf.get('errors'));
                 }                
             }); // End validation promise
    
