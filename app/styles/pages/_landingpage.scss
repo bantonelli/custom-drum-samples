@@ -193,13 +193,8 @@
       height: inherit;
     }
     @media screen and (min-width: 1280px){
-      background: -moz-linear-gradient(top,  rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
-      background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,1)), color-stop(100%,rgba(0,0,0,0)));
-      background: -webkit-linear-gradient(top,  rgba(0,0,0,1) 0%,rgba(0,0,0,0) 100%);
-      background: -o-linear-gradient(top,  rgba(0,0,0,1) 0%,rgba(0,0,0,0) 100%);
-      background: -ms-linear-gradient(top,  rgba(0,0,0,1) 0%,rgba(0,0,0,0) 100%);
-      background: linear-gradient(to bottom,  rgba(0,0,0,1) 0%,rgba(0,0,0,0) 100%);
-      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#00000000',GradientType=0 );
+      background: -webkit-linear-gradient(top,rgba(33, 19, 42, 0.32) 0, rgba(44, 159, 176, 0.16) 100%);
+      background: linear-gradient(to bottom,rgba(33, 19, 42, 0.32) 0,rgba(44, 159, 176, 0.16) 100%);
       h2 {
         margin-top: 42px;
         text-shadow: 0 0 10px rgba(0,0,0,0.3);
@@ -208,24 +203,24 @@
         background: none;
         padding-top: 0;
       }
-      .lp-video-overlay-inner {
-        width: 970px;
-        margin: 9px auto auto auto;
-        // background-color: rgba(0,0,0,0.7);
+      .lp-video-overlay-inner {        
+        @include slide-out (translateY(0%), translateY(-100%), 100%);
         border-radius: 13px;
-        height: 430px;
+        // border-radius: 10px;
+        width: 970px;
+        height: 90%;
+        top: 25px;
       }
       // height: inherit;
-      background: none;
-      @include slide-out (translateY(0%), translateY(-100%), 100%);  
-      // top: 0;
-      // width: 100%;
-      // border-radius: 0;
-      // height: 100%;
-      border-radius: 10px;
-      width: 970px;
-      height: 90%;
-      top: 25px;
+      // background: none;        
+      top: 0;
+      width: 100%;
+      border-radius: 0;
+      height: 100%;
+      // border-radius: 10px;
+      // width: 970px;
+      // height: 90%;
+      // top: 25px;
     }    
     h1, h2, h3, h4 {
       color: $offwhite;
