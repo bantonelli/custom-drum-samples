@@ -375,10 +375,9 @@ $offwhite-trans: transparentize($offwhite, 1);
   opacity: 1;
   height: auto;
   width: $width;
-  background:
-  -webkit-linear-gradient(top, #21132A 0, rgba(44, 159, 176, 0.19) 100%);
-  background:
-  linear-gradient(to bottom,#21132A 0,rgba(44, 159, 176, 0.19) 100%);
+  background-color: transparentize(nth($purple-list, 1), 0.2);
+  // background: -webkit-linear-gradient(top,rgba(33, 19, 42, 0.32) 0, rgba(44, 159, 176, 0.16) 100%);
+  // background: linear-gradient(to bottom,rgba(33, 19, 42, 0.32) 0,rgba(44, 159, 176, 0.16) 100%);
   z-index: 2;
   -webkit-transform: $translation-show;
   transform: $translation-show;
