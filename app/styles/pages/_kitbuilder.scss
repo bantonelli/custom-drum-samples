@@ -456,7 +456,8 @@ h4.billing-info {
     }
     span {
       @include p-ow-background();
-      font-family: $paragraph;      
+      font-family: $paragraph;   
+      margin-top: 18px;   
     }
     .credit-card-info {
     }
