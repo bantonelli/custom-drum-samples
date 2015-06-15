@@ -675,7 +675,7 @@
   color: rgb(255, 255, 255);
 }
 
-.pr-tagline {
+h3.pr-tagline {
   position: absolute;
   top: 52px;
   left: 36px;
@@ -684,6 +684,7 @@
   z-index: 11;
   width: 50.412371134%;
   height: 35px;
+  font-size: 1.5em !important;
   margin: 0 auto;
   letter-spacing: 1px;
       @include h1-ow-background;
