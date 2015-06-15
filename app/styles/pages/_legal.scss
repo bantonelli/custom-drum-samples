@@ -45,8 +45,7 @@
   }
 
   p, dl {
-    font-size: 0.8em;
-    line-height: 1.5em;
+    @include paragraph-style;
     @include p-ow-background;
     //color: nth($purple-list, 1);
   }

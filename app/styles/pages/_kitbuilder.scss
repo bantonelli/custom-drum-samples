@@ -371,7 +371,7 @@ Slide 2 Styles
   .instrument-choice {
     margin: 0;
     > span {
-      font-family: quicksandbold;
+      font-family: Roboto;
       font-size: 20px;
       display: inline-block;
       margin-top: 8px;
@@ -515,7 +515,7 @@ Slide 3 Styles
     margin-top: 20px;
   }
   #kb-checkout-total span {
-    // font-family: quicksandbold;
+    // font-family: Roboto;
     color: nth($lightblue-list, 3);
   }
   #kb-checkout-total h3 {
@@ -543,7 +543,7 @@ Slide 3 Styles
     padding: 0;
     margin: 0;
     color: nth($orange-list, 2);
-    font-family: quicksandbold;
+    font-family: Roboto;
     font-size: 18px;
     display: inline-block;
     line-height: 30px;
@@ -556,7 +556,7 @@ Slide 3 Styles
     padding: 0;
     margin: 0;
     color: nth($purple-list, 4);
-    font-family: quicksandbold;
+    font-family: Roboto;
     font-size: 12px;
     display: inline-block;
     line-height: 30px;
@@ -678,7 +678,7 @@ Slide 3 Styles
 //   height: 100px;
 //   margin: 10px 10px -10px 0px;
 //   font-size: 14px;
-//   font-family: quicksandbold;
+//   font-family: Roboto;
 //   text-align: center;
 //   line-height: 2.18em;
 //   border-radius: 3px;

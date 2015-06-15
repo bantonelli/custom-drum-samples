@@ -43,7 +43,7 @@ $gray-list: create-color-list($gray, $desaturate-val: 0, $lighten-increment: 10)
     font-style: normal;
 
 }
-
+/*
 @font-face {
     font-family: 'enigmaticitalic';
     src: url('../fonts/enigmatic_italic_macroman/Enigma_2i-webfont.eot');
@@ -130,16 +130,17 @@ $gray-list: create-color-list($gray, $desaturate-val: 0, $lighten-increment: 10)
     font-style: normal;
 
 }
+*/
 
 // Headline Variables
-$headline: 'enigmaticregular';
-$headline-bold: 'enigmaticbold';
-$headline-italic: 'enigmaticitalic';
+$headline: 'Roboto';
+$headline-bold: 'Roboto';
+$headline-italic: 'Roboto';
 
 // Paragraph Variables
-$paragraph: 'quicksandregular';
-$paragraph-bold: 'quicksandbold';
-$paragraph-italic: 'quicksanditalic';
+$paragraph: 'Roboto';
+$paragraph-bold: 'Roboto';
+$paragraph-italic: 'Roboto';
 
 /* Icon Fonts
 ==================*/

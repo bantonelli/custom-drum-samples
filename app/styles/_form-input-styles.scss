@@ -62,6 +62,7 @@ SELECT BOX STYLES
   border-radius: 0;
   height: 50px;
   -webkit-appearance: none;
+  font-weight: 900;
 }
 
 
@@ -88,7 +89,7 @@ TEXT INPUT STYLES
   input[type="text"], input[type="password"], input[type="email"] {
     transition: .04s all linear;
     color: nth($purple-list, 4);
-    font-family: quicksandbold;
+    font-family: Roboto;
     &::-webkit-input-placeholder {
       color: nth($purple-list, 6);
       //color: #ffffff;

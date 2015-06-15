@@ -127,9 +127,8 @@ header[role=banner] {
   color: $offwhite;
   text-decoration: none;
   font-size: 0.66em;
-  font-family: quicksandbold;
-  //text-transform: uppercase;
-  font-weight: 400;
+  font-family: Roboto;
+  font-weight: 600;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: clip;
@@ -159,13 +158,14 @@ header[role=banner] {
       text-align: left;
       height: 35px;
       line-height: 35px;
+      font-weight: 400;
       // @-moz-document url-prefix() { 
       //   line-height: 30px;
       // }      
       font-size: 16px;
       &:hover {
         background-color: nth($purple-list, 4);
-        color: $offwhite;
+        color: #E3F05D;
         cursor: pointer;
       }
     }

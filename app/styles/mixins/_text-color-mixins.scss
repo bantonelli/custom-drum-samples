@@ -15,7 +15,7 @@
 }
 
 @mixin link-ow-background {
-  font-family: quicksandbold;
+  font-family: Roboto;
   color: nth($orange-list, 2);
   text-shadow: none;
   &:hover {
@@ -42,7 +42,7 @@
 }
 
 @mixin link-g-background {
-  font-family: quicksandbold;
+  font-family: Roboto;
   color: nth($orange-list, 2);
   text-shadow: none;
   &:hover {
@@ -68,4 +68,10 @@
   &:hover {
     color: white;
   }
+}
+
+// Paragraph Style Mixin
+@mixin paragraph-style {
+  font-size: 0.72em;
+  line-height: 2em;
 }
