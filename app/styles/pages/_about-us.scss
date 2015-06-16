@@ -35,6 +35,12 @@
 .about-title {
   margin: 10px 0;
   @include h1-ow-background();
+  h4 {
+    text-shadow: 0 1px 0 #fff;
+    font-size: 1em;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
 }
 
 .about-para {
@@ -73,6 +79,21 @@
 
 .cv-z-spacing {
   line-height: 1.5em;
+  .cv-entity {
+    margin-bottom:10px;
+    &:first-child {
+      margin-bottom:15px;
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  h5 {
+    font-weight: 500;
+    span {
+      padding-right: 9px;
+    }
+  }
 }
 
 .cv-value-indent {

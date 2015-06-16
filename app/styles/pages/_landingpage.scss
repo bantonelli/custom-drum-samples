@@ -289,12 +289,12 @@
     background-size: contain;
     background-repeat: no-repeat;
     position: absolute;
-    top: -25px;
-    height: 247px;
-    opacity: .6;
+    top: 0;
+    height: 212px;
     width: 50px;
-    z-index: 2; 
-    left: -27px;   
+    z-index: 2;   
+    opacity: 0.5;
+    left: -21px;
   }
   .lp-choice-result {
     overflow: hidden;
