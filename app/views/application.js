@@ -9,7 +9,7 @@ export default Ember.View.extend({
     // Put jquery/DOM manipulation here
     didInsertElement: function (){
         this._super();
-
+        var applicationView = this;
         Ember.run.scheduleOnce('afterRender', this, function(){
             // perform your jQuery logic here
 
@@ -23,8 +23,7 @@ export default Ember.View.extend({
 
             config.APP.hide_loader();
 
-            Ember.$(document).bind("ajaxSend", config.APP.show_loader).bind("ajaxComplete", config.APP.hide_loader);
-
+            Ember.$(document).bind("ajaxSend", config.APP.show_loader).bind("ajaxComplete", config.APP.hide_loader);            
 
             var SidebarMenuEffects = (function() {
 
