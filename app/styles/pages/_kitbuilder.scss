@@ -452,12 +452,12 @@ h4.billing-info {
   .cds-form {
     input {
       box-sizing: border-box;
-      margin: 5px 0px 5px 0;
+      margin: 0px 0px 10px 0;
     }
     span {
       @include p-ow-background();
       font-family: $paragraph;   
-      margin-top: 18px;   
+      margin: 10px 0px;   
     }
     .credit-card-info {
     }
