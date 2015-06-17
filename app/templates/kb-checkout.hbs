@@ -16,9 +16,9 @@
                               {{#if controllers.kitbuilder.samplesChosen}}
                                 <table>
                                   <tr>
-                                    <th><h3>Samples</h3></th>
-                                    <th><h3>Price</h3></th>
-                                    <th><h3>Kit Subtotal</h3></th>
+                                    <th><h4>Samples</h4></th>
+                                    <th><h4>Price</h4></th>
+                                    <th><h4>Kit Subtotal</h4></th>
                                   </tr>
                                   <!-- Each Loop -->
                                   {{#each kit in kitsChosen}}
@@ -49,12 +49,12 @@
                                   {{/each}}                                
                                   <!-- END Each Loop -->
                                   <tr>                                
-                                    <th colspan="2"><h3>Sub Total</h3></th>
-                                    <th colspan="1"><h3>{{subTotalPrice}}</h3></th>
+                                    <th colspan="2"><h4>Sub Total</h4></th>
+                                    <th colspan="1"><h4>{{subTotalPrice}}</h4></th>
                                   </tr>
                                   <tr>
-                                    <th colspan="2"><h3>Discount</h3></th>
-                                    <th colspan="1"><h3>{{discountPercent}}%</h3></th>
+                                    <th colspan="2"><h4>Discount</h4></th>
+                                    <th colspan="1"><h4>{{discountPercent}}%</h4></th>
                                   </tr>                                      
                                 </table>
                               {{/if}}
