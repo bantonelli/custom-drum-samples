@@ -8,7 +8,7 @@ A short introduction of this app could easily go here.
 You will need the following things properly installed on your computer.
 
 * [Git](http://git-scm.com/)
-* [Node.js](http://nodejs.org/) (with NPM)
+* [Node.js](http://nodejs.org/) (with NPM) see: http://www.wenincode.com/installing-node-jsnpm-without-sudo/
 * [Bower](http://bower.io/)
 * [Ember CLI](http://www.ember-cli.com/)
 * [PhantomJS](http://phantomjs.org/)
