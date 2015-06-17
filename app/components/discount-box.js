@@ -5,33 +5,18 @@ export default Ember.Component.extend({
     discountBoxFunction: function( currentjQueryObject, percent ) {
         percent = Math.floor( Math.max( 0, Math.min( 100, parseInt( percent || ( percent = 0 ) ) ) ) );
 
-        var $box;
-        if( !( $box = currentjQueryObject.find( '> .progress-box' ) ).length ){
-            $box = Ember.$( '<div class="progress-box"><div class="progress-visual"></div><div class="progress-text"></div></div>' )
-              .appendTo( currentjQueryObject );
-
-            var $this = currentjQueryObject;
-            if( 'static' === $this.css( 'position' ) ){
-              $this.css({ position: 'relative' });
-            }
-
-            $box.find( '.progress-text' ).css({ 'line-height': currentjQueryObject.outerHeight() + 'px' });
-        }
+        var $box = currentjQueryObject.find('> .progress-box');
+        // $box.find( '.progress-text' ).css({ 'line-height': currentjQueryObject.outerHeight() + 'px' });
 
         $box.find( '.progress-visual' ).css({ width: percent + '%' });
         $box.find( '.progress-text' ).text( percent + '%' );
-
         if( 100 === percent ){
             $box.addClass( 'done' );
-            setTimeout( function(){
-              $box.remove();
-            }, 1000 );
+        } else {
+        	$box.removeClass('done');
         }
     },
 	loadDiscountBox: function () {
-		/* Usage is very simple:
-		 * $( node ).progressBox( percent );
-		 */
 
 		var element = this.get('elementId');
 		var self = this;
@@ -56,6 +41,6 @@ export default Ember.Component.extend({
 		} else if (goalNotStarted) {
 			percentReached = 0;
 		}		
-		self.discountBoxFunction(jqueryElement, percentReached)
+		self.discountBoxFunction(jqueryElement, percentReached);
 	}.on('didInsertElement').observes('numberOfSamples')
 });

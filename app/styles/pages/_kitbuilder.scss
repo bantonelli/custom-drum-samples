@@ -711,6 +711,7 @@ h4.billing-info {
 // Start Codepen Simple Progress Bars Styling
 
 .box {
+  position: relative;
   width: 100px;
   height: 100px;
   margin: 5px;
@@ -737,7 +738,8 @@ h4.billing-info {
   background-color: nth($orange-list, 2);
 }
 #div3 {
-  background-color: #717171;
+  // background-color: #717171;
+  background-color: nth($orange-list, 2);
 }
 #div4 {
   background-color: #e74c30;
@@ -745,7 +747,7 @@ h4.billing-info {
 
 .box#div4,
 .box#div5,
-.box#div6 {
+.box#div6 {  
   height: 20px;
   -webkit-border-radius: 3px;
   border-radius: 3px;
@@ -789,6 +791,7 @@ h4.billing-info {
   position: absolute;
   top: 0px;
   left: 0px;
+  line-height: 100px;
   width: 100%;
   height: 100%;
   // font-family: tahoma, sans-serif;
