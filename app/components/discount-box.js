@@ -20,8 +20,8 @@ export default Ember.Component.extend({
 
 		var element = this.get('elementId');
 		var self = this;
-		console.log(element);
 		var jqueryElement = Ember.$("#" + element);
+		self.set('jqueryElement', jqueryElement);
 		var numberOfSamples = this.get('numberOfSamples');
 		var minimumCount = this.get('minimumCount');
 		var maximumCount = this.get('maximumCount');
@@ -42,5 +42,31 @@ export default Ember.Component.extend({
 			percentReached = 0;
 		}		
 		self.discountBoxFunction(jqueryElement, percentReached);
-	}.on('didInsertElement').observes('numberOfSamples')
+	}.on('didInsertElement'),
+	updateDiscountBox: function(){
+		var jqueryElement = this.get('jqueryElement');
+		var numberOfSamples = this.get('numberOfSamples');
+		var minimumCount = this.get('minimumCount');
+		var maximumCount = this.get('maximumCount');
+		var countTowardsGoal = numberOfSamples - minimumCount;
+		var goalAmount = maximumCount - minimumCount;
+		var goalReached = false;
+		var goalNotStarted = false;
+		if (numberOfSamples > maximumCount) {
+			goalReached = true;
+		}
+		if (numberOfSamples < minimumCount) {
+			goalNotStarted = true;
+		}		
+		var percentReached = (countTowardsGoal / goalAmount) * 100;
+		if (goalReached){
+			percentReached = 100;
+		} else if (goalNotStarted) {
+			percentReached = 0;
+		}
+		this.discountBoxFunction(jqueryElement, percentReached);
+	}.observes('numberOfSamples'),
+	willDestroyElement: function (){
+		this.get('jqueryElement').remove();
+	}
 });
