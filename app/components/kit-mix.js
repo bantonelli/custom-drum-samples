@@ -205,7 +205,7 @@ export default Ember.Component.extend({
 	        });
 	        selectActiveFilters(activeFilters);        		 
 		//});
-        }, 1000);        
+        }, 1300);        
     }.on('didInsertElement'),
     _destroyKitMix: function () {
         Ember.$('#kitmix').mixItUp('destroy', true);
