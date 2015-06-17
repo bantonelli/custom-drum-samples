@@ -68,11 +68,11 @@ export default Ember.Component.extend({
         }
     }.on('didInsertElement'),
     _destroySampleToggler: function (){
-        var mediaElement = this.get('mediaElement');
-        mediaElement.removeEventListener('pause', function () {
-        });
-        mediaElement.removeEventListener('playing', function () {
-        });
+        // var mediaElement = this.get('mediaElement');
+        // mediaElement.removeEventListener('pause', function () {
+        // });
+        // mediaElement.removeEventListener('playing', function () {
+        // });
     }.on('willDestroyElement'),
     computedIndex: Ember.computed('index', function () {
         return this.get('index') + 1;
@@ -90,13 +90,13 @@ export default Ember.Component.extend({
             return true;
         }
     }.property('chosenSamples@each'),
-    typeMatches: function (){
+    typeMatches: Ember.computed('sampleType', function (){
         if (this.get('sampleType') === this.get('sample.type')) {
             return true;
         } else {
             return false;
         }
-    }.property('sampleType'),
+    }),
     audio: function () {
         return this.get('sample.preview');
     }.property('sample'),
