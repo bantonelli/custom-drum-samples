@@ -33,12 +33,15 @@
 {{!--   End Kit Class Indicator --}}
 
 {{!-- Start Codepen Simple Progress Bars --}}
-                        <div id="div1" class="box"><p>Level 1<br> 45 Samples 15% Off</p></div>
-                        <div id="div2" class="box"><p>Level 2<br> 90 Samples 40% Off</p></div>
-                        <div id="div3" class="box"><p>Level 3<br> 135 Samples 50% Off</p></div><br />
-                        <div id="div4" class="box"></div>
+                        {{discount-box elementId="div1" numberOfSamples=controllers.kitbuilder.samplesChosen.length maximumCount=40 minimumCount=0 percentOff=15}}
+                        {{discount-box elementId="div2" numberOfSamples=controllers.kitbuilder.samplesChosen.length maximumCount=80 minimumCount=40 percentOff=40}}
+                        {{discount-box elementId="div3" numberOfSamples=controllers.kitbuilder.samplesChosen.length maximumCount=120 minimumCount=80 percentOff=50}}
+                        {{!-- <div id="div1" class="box"><p>Level 1<br> 45 Samples 15% Off</p></div> --}}
+                        {{!-- <div id="div2" class="box"><p>Level 2<br> 90 Samples 40% Off</p></div>
+                        <div id="div3" class="box"><p>Level 3<br> 135 Samples 50% Off</p></div><br /> --}}
+                        {{!-- <div id="div4" class="box"></div>
                         <div id="div5" class="box"></div>
-                        <div id="div6" class="box"></div>
+                        <div id="div6" class="box"></div> --}}
 
 {{!-- Start JS for the animation --}}
 

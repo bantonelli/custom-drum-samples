@@ -519,6 +519,10 @@ h4.billing-info {
     @include h1-ow-background();
     text-indent: 20px;
     margin-top: 20px;
+
+  }
+  th > h4 {
+    font-size: 30px;
   }
   #kb-checkout-total span {
     // font-family: Roboto;
@@ -711,6 +715,7 @@ h4.billing-info {
 // Start Codepen Simple Progress Bars Styling
 
 .box {
+  position: relative;
   width: 100px;
   height: 100px;
   margin: 5px;
@@ -729,13 +734,16 @@ h4.billing-info {
 }
 
 #div1 {
-  background-color: #e74c30;
+  // background-color: #e74c30;
+  background-color: nth($orange-list, 2);
 }
 #div2 {
-  background-color: #717171;
+  // background-color: #717171;
+  background-color: nth($orange-list, 2);
 }
 #div3 {
-  background-color: #717171;
+  // background-color: #717171;
+  background-color: nth($orange-list, 2);
 }
 #div4 {
   background-color: #e74c30;
@@ -743,7 +751,7 @@ h4.billing-info {
 
 .box#div4,
 .box#div5,
-.box#div6 {
+.box#div6 {  
   height: 20px;
   -webkit-border-radius: 3px;
   border-radius: 3px;
@@ -760,7 +768,8 @@ h4.billing-info {
   background: #c00;
 }
 .progress-box {
-  background: #fff;
+  // background: #fff;
+  background-color: #717171;
   position: absolute;
   top: 0px;
   left: 0px;
@@ -777,19 +786,23 @@ h4.billing-info {
 }
 .progress-box .progress-visual {
   height: 100%;
-  background: #314e72;
+  // background: #314e72;
+  background-color: nth($orange-list, 2);
+  position: absolute;
 }
 .progress-box .progress-text {
   text-align: center;
   position: absolute;
   top: 0px;
   left: 0px;
+  line-height: 100px;
   width: 100%;
   height: 100%;
-  font-family: tahoma, sans-serif;
-  font-weight: bold;
-  color: #000;
-  -webkit-text-fill-color: #fff;
+  // font-family: tahoma, sans-serif;
+  font-family: $paragraph;
+  // font-weight: bold;
+  color: $offwhite;
+  -webkit-text-fill-color: $offwhite;
   -webkit-text-stroke: 1px #000;
 }
 .progress-box.done {
