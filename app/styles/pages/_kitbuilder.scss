@@ -442,6 +442,13 @@ Slide 3 Styles
 
 .kb-checkout-headline{
   @include h1-ow-background();
+  text-shadow: none;
+  overflow: hidden; 
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  height: 100%;
+  line-height: 70px;
+  // line-height has to match height of filter row.
 }
 
 h4.billing-info {
@@ -517,12 +524,11 @@ h4.billing-info {
   height: 600px;
   th > h4, th > h3, th > p, #kb-checkout-total h3 {
     @include h1-ow-background();
-    text-indent: 20px;
+    padding-left: 15px;
     margin-top: 20px;
-
   }
   th > h4 {
-    font-size: 30px;
+    font-size: 34px;
   }
   #kb-checkout-total span {
     // font-family: Roboto;
@@ -530,7 +536,7 @@ h4.billing-info {
   }
   #kb-checkout-total h3 {
     padding-top: 5px;
-    
+    text-indent: 20px;
   }
 }
 

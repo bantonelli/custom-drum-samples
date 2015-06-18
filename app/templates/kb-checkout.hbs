@@ -4,9 +4,9 @@
                  <div class="kb-slide-section-container">
                     <div class="row filter-row">
                         {{#if controllers.kitbuilder.kitName}}
-                            <h4 class="kb-checkout-headline">Invoice for {{controllers.kitbuilder.kitName}}</h4>            
+                            <h3 class="col-xs-12 kb-checkout-headline">Invoice for: <span style="color: #E37A67;">{{controllers.kitbuilder.kitName}}</span></h3>            
                         {{else}}
-                            <h4 class="kb-checkout-headline">Invoice for Your Kit</h4>
+                            <h3 class="col-xs-12 kb-checkout-headline">Invoice for: <span style="color: #E37A67;">Your Sound Kit</span></h3>
                         {{/if}}
                     </div>
 
@@ -18,7 +18,7 @@
                                   <tr>
                                     <th><h4>Samples</h4></th>
                                     <th><h4>Price</h4></th>
-                                    <th><h4>Kit Subtotal</h4></th>
+                                    <th><h4>Kit Sub-Total</h4></th>
                                   </tr>
                                   <!-- Each Loop -->
                                   {{#each kit in kitsChosen}}
@@ -49,12 +49,12 @@
                                   {{/each}}                                
                                   <!-- END Each Loop -->
                                   <tr>                                
-                                    <th colspan="2"><h4>Sub Total</h4></th>
-                                    <th colspan="1"><h4>{{subTotalPrice}}</h4></th>
+                                    <th colspan="2"><h4>Sub-Total</h4></th>
+                                    <th colspan="1"><h4><span style="color: #0EA3B4;">{{subTotalPrice}}</span></h4></th>
                                   </tr>
                                   <tr>
                                     <th colspan="2"><h4>Discount</h4></th>
-                                    <th colspan="1"><h4>{{discountPercent}}%</h4></th>
+                                    <th colspan="1"><h4><span style="color: #0EA3B4;">{{discountPercent}}%</span></h4></th>
                                   </tr>                                      
                                 </table>
                               {{/if}}

@@ -2,13 +2,13 @@
 	<div id="kb-slide-1" class="slide">
     	{{liquid-outlet}}
     	<div class="kb-save-container {{if startSave 'start-save' ''}}">
-            <p class="kb-info-text">Save your drum pack as a template{{!-- for later and share your template --}}</p>
+            <p class="kb-info-text">Save your kit as a template{{!-- for later and share your template --}}</p>
             <div class="kb-save {{if startSave 'icon-cancel-circle' 'icon-disk'}} {{if isDirty 'dirty' 'clean'}}" {{action "toggleSaveDialog"}}></div>
             {{input id="kb-template-save-input" type="text" placeholder="Name Your Kit" class="col-xs-12 cds-text-input name-your-kit" value=kitName}}                          
             {{#if nameChange}}
                 <button id="kb-template-save-button" class="col-xs-6 cds-button cds-button-aw-medium" {{action "saveTemplateAs"}}>Save Template As</button>
             {{else}}
-                <button id="kb-template-save-button" class="col-xs-6 cds-button cds-button-aw-medium" {{action "saveTemplate"}}>SaveTemplate</button>
+                <button id="kb-template-save-button" class="col-xs-6 cds-button cds-button-aw-medium" {{action "saveTemplate"}}>Save Template</button>
             {{/if}}                            	
     	</div>
 	</div>
