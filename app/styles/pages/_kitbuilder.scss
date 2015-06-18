@@ -457,17 +457,26 @@ h4.billing-info {
 
 .payment-info {
   .cds-form {
+    .cds-error-message-flag {
+      top: 3px;
+    }
+    .cds-fieldset {
+      padding-right: 0;
+      margin-bottom: 10px;
+    }
     input {
       box-sizing: border-box;
-      margin: 0px 0px 10px 0;
+      width: 100%;
+      // margin: 0px 0px 10px 0;
     }
-    span {
+    span.billing-span {
       @include p-ow-background();
       font-family: $paragraph;   
       margin: 10px 0px;   
     }
     .credit-card-info {
       input {
+        width: auto;
         padding-right: 0;
       }
     }
