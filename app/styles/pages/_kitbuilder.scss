@@ -477,7 +477,7 @@ h4.billing-info {
     .credit-card-info {
       input {
         width: auto;
-        padding-right: 0;
+        // padding-right: 0;
       }
     }
     #first-name-billing, #last-name-billing, #state-billing, #zip-code-billing {
@@ -487,7 +487,7 @@ h4.billing-info {
       margin-left: 4px;
     }
     #cvc-billing{
-      margin-left: 4px;
+      margin-left: 15px;
     }
     #address-1-billing, #address-2-billing, #city-billing, #country-billing {
       width: 99.7%;
