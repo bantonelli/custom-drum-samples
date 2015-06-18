@@ -467,6 +467,9 @@ h4.billing-info {
       margin: 10px 0px;   
     }
     .credit-card-info {
+      input {
+        padding-right: 0;
+      }
     }
     #first-name-billing, #last-name-billing, #state-billing, #zip-code-billing {
       width: 49%;

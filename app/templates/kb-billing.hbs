@@ -19,19 +19,19 @@
                                         {{input id="country-billing" placeholder="Country" class="cds-text-input" type="text" value=addressCountry}}
                                 </div>                               
                                 <div class="credit-card-info" style="float:left; width: 100%; margin-bottom: 10px;">
-                                        <div class="col-xs-6" style="padding: 0px;">
-                                            <span style="font-size: 16px; display: block;">Credit Card Information: </span>
-                                            {{input id="card-number-billing" placeholder="Card Number" class="cds-text-input" type="text" size="20" value=cardNumber}}
-                                            <!--<input type="text" size="20" data-stripe="number"/>-->
-                                            {{input id="cvc-billing" placeholder="CVC" class="cds-text-input" type="text" size="4" value=cvc}}
-                                        </div>
-                                        <div class="col-xs-6" style="padding-left: 4px;">
-                                            <span style="font-size: 16px; display: block;">Expiration Date: </span>
-                                            {{input placeholder="MM" class="cds-text-input" type="text" size="3" value=expirationMonth}}
-                                            <!--<input type="text" size="2" data-stripe="exp-month"/>-->
-                                            <span> / </span>
-                                            {{input placeholder="YYYY" class="cds-text-input" type="text" size="4" value=expirationYear}}
-                                        </div>
+                                    <div class="col-xs-6" style="padding: 0px;">
+                                        <span style="font-size: 16px; display: block;">Credit Card Information: </span>
+                                        {{input id="card-number-billing" placeholder="Card Number" class="cds-text-input" type="text" size="20" maxlength="19" value=cardNumber}}
+                                        <!--<input type="text" size="20" data-stripe="number"/>-->
+                                        {{input id="cvc-billing" placeholder="CVC" class="cds-text-input" type="text" size="4" maxlength="4" value=cvc}}
+                                    </div>
+                                    <div class="col-xs-6" style="padding-left: 4px;">
+                                        <span style="font-size: 16px; display: block;">Expiration Date: </span>
+                                        {{input placeholder="MM" class="cds-text-input" type="text" size="3" maxlength="2" value=expirationMonth}}
+                                        <!--<input type="text" size="2" data-stripe="exp-month"/>-->
+                                        <span> / </span>
+                                        {{input placeholder="YYYY" class="cds-text-input" type="text" size="4" maxlength="4" value=expirationYear}}
+                                    </div>
                                 </div>
 
                                 <button class="cds-button cds-button-aw-medium payment-button" type="submit" {{action 'processCard'}}>Submit Payment</button>
