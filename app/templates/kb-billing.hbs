@@ -45,31 +45,31 @@
                                     </div>                                    
                                 </div>                               
                                 <div class="credit-card-info" style="float:left; width: 100%; margin-bottom: 10px;">
-                                    <div class="col-xs-6" style="padding: 0px;">
+                                    <div class="col-xs-7" style="padding: 0px;">
                                         <span class="billing-span" style="font-size: 16px; display: block;">Credit Card Information: </span>
-                                        <div class="cds-fieldset">
+                                        <div class="cds-fieldset" style="float: left;">
                                             {{input id="card-number-billing" placeholder="Card Number" class="cds-text-input" type="text" size="20" maxlength="19" value=cardNumber}}
                                             {{#if errors.cardNumber}}
                                                 {{#if cardNumber}}
-                                                    <span class="cds-error-message-flag">{{errors.cardNumber}}</span>
+                                                    <span class="cds-error-message-flag" style="display: block;">{{errors.cardNumber}}</span>
                                                 {{else if submissionErrors.cardNumber}}
-                                                    <span class="cds-error-message-flag">{{submissionErrors.cardNumber}}</span>
+                                                    <span class="cds-error-message-flag" style="display: block;">{{submissionErrors.cardNumber}}</span>
                                                 {{/if}}
                                             {{/if}}
                                         </div>
-                                        <div class="cds-fieldset">
+                                        <div class="cds-fieldset" style="float: left;">
                                             {{input id="cvc-billing" placeholder="CVV" class="cds-text-input" type="text" size="4" maxlength="4" value=cvc}}
                                             {{#if errors.cvc}}
                                                 {{#if cvc}}
-                                                    <span class="cds-error-message-flag">{{errors.cvc}}</span>
+                                                    <span class="cds-error-message-flag" style="display: block;">{{errors.cvc}}</span>
                                                 {{else if submissionErrors.cvc}}
-                                                    <span class="cds-error-message-flag">{{submissionErrors.cvc}}</span>
+                                                    <span class="cds-error-message-flag" style="display: block;">{{submissionErrors.cvc}}</span>
                                                 {{/if}}
                                             {{/if}}
                                         </div>
                                         <!--<input type="text" size="20" data-stripe="number"/>-->                                    
                                     </div>
-                                    <div class="col-xs-6 cds-fieldset" style="padding-left: 4px;">
+                                    <div class="col-xs-5 cds-fieldset">
                                         <span class="billing-span" style="font-size: 16px; display: block;">Expiration Date: </span>
                                         {{input placeholder="MM" class="cds-text-input" type="text" size="3" maxlength="2" value=expirationMonth}}
                                         <!--<input type="text" size="2" data-stripe="exp-month"/>-->
