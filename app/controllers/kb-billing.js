@@ -1,13 +1,66 @@
 import Ember from 'ember';
 import config from '.././config/environment';
+import EmberValidations from 'ember-validations';
 var swal = window.sweetAlert;
 
 
-export default Ember.Controller.extend({
+export default Ember.Controller.extend(EmberValidations.Mixin, {
     needs: ['kitbuilder', 'kb-checkout'],
     errorMessage: null,
     paymentSuccess: null,
-    mailSent: null,    
+    mailSent: null,
+    expirationMonth: 12,
+    expirationYear: 2020,
+    expirationDate: Ember.computed('expirationMonth', 'expirationYear', function (){
+
+    }),
+    validations: {
+        firstName: {
+            presence: {                            
+                message: 'this field is required'
+            }
+        },
+        lastName: {
+            presence: {                            
+                message: 'this field is required'
+            }
+        },
+        addressLine1: {
+            presence: {                            
+                message: 'this field is required'
+            }
+        },
+        addressCity: {
+            presence: {                            
+                message: 'this field is required'
+            }
+        },
+        addressZip: {
+            presence: {                            
+                message: 'this field is required'
+            }
+        },
+        addressCountry: {
+            presence: {                            
+                message: 'this field is required'
+            }
+        },
+        cardNumber: {
+            presence: {                            
+                message: 'this field is required'
+            }
+        },
+        cvc: {
+            presence: {                            
+                message: 'this field is required'
+            }
+        },
+        expirationDate: {
+            presence: {                            
+                message: 'this field is required'
+            }
+        }
+    },    
     actions: {
         processCard: function() {
             var controllerSelf = this;
@@ -20,8 +73,24 @@ export default Ember.Controller.extend({
             //     samples.push(samplesChosen[i]._data.id);
             // }
             var samples = this.get('controllers.kitbuilder.samplesChosenIds');
+            // ********* ALERT IF NO SAMPLES CHOSEN ******** //
+            // swal({
+            //   title: "Error!",
+            //   text: data[0].data_error,
+            //   type: "error",
+            //   confirmButtonText: "OK"
+            // });
 
             var kitName = this.get('controllers.kitbuilder.kitName');
+            // ********* ALERT IF NO NAME CHOSEN ******** //
+            // swal({
+            //   title: "Error!",
+            //   text: data[0].data_error,
+            //   type: "error",
+            //   confirmButtonText: "OK"
+            // });
+
+
             // obtain access to the injected service
             var stripeService = this.get('stripeService');
 // Example Card object to pass into createToken.
