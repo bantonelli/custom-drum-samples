@@ -1,7 +1,11 @@
 <div class="row">
     <div class="col-xs-2 app-id">
             <h5>
-                {{appId}}
+                {{#if kitBuilder}}
+                    <span style="color:#19A5B7;">Kit</span>Builder
+                {{else}}
+                    {{appId}}
+                {{/if}}
             </h5>
     </div>
 
