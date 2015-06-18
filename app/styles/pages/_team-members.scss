@@ -9,12 +9,9 @@
 .tm-title {
   margin: 10px 0;
   @include h3-g-background ();
-  h3 {
-    text-shadow: 0 1px 0 #fff;
-    font-size: 1em;
+  h2 {
+    text-shadow: 0 1px 0 #fff;    
     text-transform: uppercase;
-    font-weight: 600;
-    font-size: 1.5em;
   }
 }
 

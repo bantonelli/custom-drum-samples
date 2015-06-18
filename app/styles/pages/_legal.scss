@@ -21,20 +21,21 @@
   .topic-container {
     @include border-separation-bottom();
     padding-bottom: 40px;
-  }
-
-  h2.row {
-    font-variant: small-caps;
-  }
-
-  h4.row {
-    text-transform: capitalize;
-  }
+  }  
 
   h2.row, h4.row {
     margin-top: 5px;
     margin-bottom: 15px;
     @include h1-ow-background();
+  }
+
+  h2.row {
+    // font-variant: small-caps;
+    text-transform: uppercase;
+  }
+
+  h4.row {
+    text-transform: capitalize;
   }
 
   p {
@@ -52,9 +53,10 @@
   dl {
     font-family: $paragraph;
     dt {
-      font-size: 1.25em;
+      // font-size: 1.25em;
       font-family: $headline-italic;
       @include h1-ow-background();
+      font-weight: 600;
       margin: 25px 0px 5px 0px;
       &:first-child {
         margin: 0px 0px 5px 0px;

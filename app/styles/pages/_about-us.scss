@@ -17,6 +17,11 @@
       }
     }
   }
+  h5 {
+    @include h1-ow-background();
+    text-transform: initial;
+    font-weight: 500;
+  }
 }
 
 #about-us-slide-section-1 {

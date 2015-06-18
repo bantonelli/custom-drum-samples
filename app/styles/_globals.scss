@@ -39,7 +39,7 @@ h1 {
 }
 
 h2 {
-  font-size: 1.625em;
+  font-size: 1.5em;
   /* 1.625x body copy size = 26px */
   line-height: 1.15384615;
   /* 30px / 26px */
@@ -47,7 +47,7 @@ h2 {
 
 @media (min-width: 43.75em) {
   h2 {
-    font-size: 2em;
+    font-size: 1.5em;
     /* 2x body copy size = 32px */
     line-height: 1.25;
   }
@@ -55,7 +55,7 @@ h2 {
 
 @media (min-width: 56.25em) {
   h2 {
-    font-size: 2.25em;
+    font-size: 1.5em;
     /* 2.25x body copy size = 36px */
     line-height: 1.25;
   }
