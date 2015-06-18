@@ -23,13 +23,8 @@ export default function () {
         }, {
             pick: '.lm-container',
             use: ['toDown', {duration: 520}]
-        }, {
-            pick: '.login-modal',
-            use: ['crossFade', {duration: 50}]
-        }, {
-            pick: '.modal-form-area',
-            use: ['crossFade', {duration: 50}]
-        })
+        } 
+        )
     );
     // KITBUILDER ROUTES
     this.transition(
