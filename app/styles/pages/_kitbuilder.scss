@@ -201,6 +201,7 @@ Broken down into two subsections (Left and Right)
     }
     h4 {
       @include h1-g-background;
+      font-size: 1.3em;
     }
   }
 /* Styles for Left Part of Section */
@@ -337,9 +338,10 @@ Slide 2 Styles
   .total-sounds {
     h3 {
       @include h1-ow-background();
+      font-size: 1.35em;
       span {
         color: nth($orange-list, 3);
-        font-weight: 400;
+        font-weight: 400;        
       }
     }
   }
