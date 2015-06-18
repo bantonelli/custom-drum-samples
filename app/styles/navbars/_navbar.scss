@@ -200,11 +200,22 @@ header[role=banner] {
 }
 
 #main-nav-image {
-  width:55px;
+  width:40px;
   height:38px;
   margin-top:12px;
   background-image:url('/images/main_nav.png');
   cursor:pointer;
+  @media
+    only screen and (-webkit-min-device-pixel-ratio: 2),
+    only screen and (   min--moz-device-pixel-ratio: 2),
+    only screen and (     -o-min-device-pixel-ratio: 2/1),
+    only screen and (        min-device-pixel-ratio: 2),
+    only screen and (                min-resolution: 192dpi),
+    only screen and (                min-resolution: 2dppx)
+    { 
+      background-image:url('/images/main_nav@2x.png');
+      background-size: 40px 38px;
+    }
 }
 
 #main-nav-image:hover {
