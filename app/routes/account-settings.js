@@ -16,8 +16,10 @@ export default Ember.Route.extend({
     beforeModel: function(transition) {
         var _this = this;
         _this._super(transition);
-        if (_this.get('session.isAuthenticated')) {
+        if (_this.get('session.isAuthenticated') && (_this.get('router.url') === '/account')) {
             _this.transitionTo('account-settings');
+        } else if (_this.get('session.isAuthenticated') && (_this.get('router.url') !== '/account')) {
+            return;
         } else {
             transition.abort();            
             var loginController = _this.controllerFor('application');
