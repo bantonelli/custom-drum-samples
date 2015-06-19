@@ -684,7 +684,6 @@ h3.pr-tagline {
   // top: 52px;
   top: 30px;
   line-height: 55px;
-  left: 36px;
   font-weight: 600;
   right: 0;
   z-index: 11;
@@ -692,6 +691,7 @@ h3.pr-tagline {
   height: 35px;
   font-size: 1.5em !important;
   margin: 0 auto;
+  width: 100%;
   // letter-spacing: 1px;
       @include h1-ow-background;
       text-shadow: none;
@@ -939,9 +939,11 @@ h3.pr-tagline {
 .pr-sub-tagline-2 {
   top: 145px;
   z-index: 12;
-  width: 75%;
-  // text-align: center;
-  font-size: .7em;
+  width: 55%;
+  font-size: 0.7em;
+  left: 0px;
+  right: 0px;
+  text-align: center;
 }
 
 .level-title-1 {
@@ -1106,7 +1108,7 @@ h3.pr-tagline {
   width: 447px;
   height: 189px;
   margin: auto 0;
-  font: 400 .7em/1.38 Quicksand;
+  font: 400 .7em/1.38 $paragraph;
   color: rgb(255, 255, 255);
 }
 
@@ -1118,7 +1120,7 @@ h3.pr-tagline {
   z-index: 20;
   height: 43px;
   margin: 0 auto;
-  font: 400 .7em/1.38 Quicksand;
+  font: 400 .7em/1.38 $paragraph;
   text-align: center;
   color: rgb(255, 255, 255);
 }
@@ -1132,6 +1134,7 @@ h3.pr-tagline {
   height: 157px;
   border-radius: 94px;
   background-color: rgb(33, 13, 61);
+  font-family: $paragraph;
 }
 
 .price-holder-container {
