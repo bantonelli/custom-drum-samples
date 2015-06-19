@@ -44,6 +44,7 @@ app.import('bower_components/select2/select2.min.js');
 app.import('bower_components/jquery-cookie/jquery.cookie.js');
 app.import('bower_components/sweetalert/lib/sweet-alert.js');
 app.import('bower_components/sweetalert/lib/sweet-alert.css');
+app.import('bower_components/retinajs/dist/retina.min.js');
 
 
 // JS FILES VENDOR

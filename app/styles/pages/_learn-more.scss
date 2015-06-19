@@ -681,7 +681,9 @@ p.mp-1 {
 
 h3.pr-tagline {
   position: absolute;
-  top: 52px;
+  // top: 52px;
+  top: 30px;
+  line-height: 55px;
   left: 36px;
   font-weight: 600;
   right: 0;
@@ -690,7 +692,7 @@ h3.pr-tagline {
   height: 35px;
   font-size: 1.5em !important;
   margin: 0 auto;
-  letter-spacing: 1px;
+  // letter-spacing: 1px;
       @include h1-ow-background;
       text-shadow: none;
   color: #ffffff;
@@ -1230,6 +1232,6 @@ h3.pr-tagline {
     font-size: 1em;
   }
   h3 {
-    font-size:1.8em;
+    font-size: 2em;
   }
 }

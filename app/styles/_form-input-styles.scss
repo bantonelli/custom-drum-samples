@@ -87,7 +87,7 @@ TEXT INPUT STYLES
 
 .cds-form {
   input[type="text"], input[type="password"], input[type="email"] {
-    transition: .04s all linear;
+    transition: .04s color linear, .04s background-color linear, .04s border linear;    
     color: nth($purple-list, 4);
     font-family: Roboto;
     &::-webkit-input-placeholder {
@@ -106,7 +106,7 @@ TEXT INPUT STYLES
       opacity: 1;
     }
   }
-  input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus {
+  input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus {    
     &::-webkit-input-placeholder {
       color: transparent;
     }
@@ -156,17 +156,15 @@ TEXT INPUT STYLES
 }
 .cds-error-message-flag {
   font-family: $paragraph;
-  height: 40px;
+  height: 36px;
   display: inline-block;
   position: relative;
   left: 0px;
   // bottom: -12px;
   top: -7px;
-  background: rgba(215, 102, 102, 0.9);
-  padding: 12px 10px 0px 10px;
+  padding: 10px 12px 0px 12px;
   z-index: 2;
   color: #FFF;
-  font-size: 13px;
   font-size: 16px;
   border-radius: 0.25em;
   /* prevent click and touch events */
@@ -176,6 +174,11 @@ TEXT INPUT STYLES
   -webkit-transition: opacity 0.2s 0, visibility 0 0.2s;
   -moz-transition: opacity 0.2s 0, visibility 0 0.2s;
   transition: opacity 0.2s 0, visibility 0 0.2s;
+  /* Path: */
+  background-image: linear-gradient(-180deg, #DA6955 0%, #C13B22 100%);
+    &.dark {
+      box-shadow: inset 0px -1px 0px 0px rgba(255,255,255,0.25);
+    }
 }
 .cds-error-message-flag::after {
   /* triangle */
@@ -187,5 +190,5 @@ TEXT INPUT STYLES
   width: 0;
   border-left: 8px solid transparent;
   border-right: 8px solid transparent;
-  border-bottom: 8px solid rgba(215, 102, 102, 0.9);
+  border-bottom: 8px solid #DA6955;
 }

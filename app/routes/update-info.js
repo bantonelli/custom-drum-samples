@@ -22,6 +22,7 @@ export default Ember.Route.extend({
 		// This function is called when the route loads
 		// The ajax call sends the uid and token in the URL to the server to
 			// complete the account activation process
+		var self = this;
         var data = {
         	uid: model.uid,
         	token: model.token
@@ -39,22 +40,27 @@ export default Ember.Route.extend({
 		    success: function (data) {
 	            // ********* ALERT ******** //              
 	            swal({
-	              title: "Success!",
-	              text: "Your Account Information has been updated!",
-	              type: "success",
-	              confirmButtonText: "OK"
-	            });		        
+						title: "Success!",
+						text: "Your Account Information has been updated!",
+						type: "success",
+						confirmButtonText: "OK"
+		            },
+					function(){
+				  		self.transitionTo('account-settings');		        
+					}
+				);	            
 		    }                
 		}).fail(function( jqXHR, textStatus ) {
 		    // Error that rises when there is a server error
 		    // Or if there is simply an HTTP error that is raised with the request
             // ********* ALERT ******** //              
             swal({
-              title: "Error(s)!",
-              text: textStatus,
-              type: "error",
-              confirmButtonText: "OK"
-            });
+	              title: "Error(s)!",
+	              text: textStatus,
+	              type: "error",
+	              confirmButtonText: "OK"
+	            }
+            );
 		});
         controller.set("model",data);
     }

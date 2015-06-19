@@ -44,41 +44,51 @@ export default Ember.Controller.extend(EmberValidations.Mixin, {
     }),
     validations: {
         firstName: {
-            format: {
-                with: /^([a-zA-Z]|\d)+$/, 
-                allowBlank: true, 
-                message: 'must be letters and numbers only'
-            },
             presence: {                            
                 message: 'this field is required'
             }
         },
-        lastName: {
-            format: {
-                with: /^([a-zA-Z]|\d)+$/, 
-                allowBlank: true, 
-                message: 'must be letters and numbers only'
-            },
+        lastName: {            
             presence: {                            
                 message: 'this field is required'
             }
         },
         cardNumber: {
+            format: {
+                with: /^[0-9]+$/, 
+                allowBlank: true, 
+                message: 'must be numbers only'
+            },
             presence: {                            
                 message: 'this field is required'
             }
         },
         cvc: {
+            format: {
+                with: /^[0-9]+$/, 
+                allowBlank: true, 
+                message: 'must be numbers only'
+            },
             presence: {                            
-                message: 'this field is required'
+                message: 'field is required'
             }
         },
         addressZip: {
+            format: {
+                with: /^([a-zA-Z]|\d)+$/, 
+                allowBlank: true, 
+                message: 'must be letters and numbers only'
+            },
             presence: {
                 message: 'this field is required'
             }
         },
         expirationYear: {
+            format: {
+                with: /^[0-9]+$/, 
+                allowBlank: true, 
+                message: 'must be numbers only'
+            },
             presence: {                            
                 message: 'this field is required',
                 // 'if': 'noDates'

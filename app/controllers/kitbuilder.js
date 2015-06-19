@@ -7,6 +7,7 @@ import config from '.././config/environment';
 export default Ember.ArrayController.extend({
     needs: ['sound-selection'],
     appId: 'Kit Builder',
+    kitBuilder: true,
     samplesPurchased: function(key, value){
       var self = this;
       if (arguments.length > 1) {

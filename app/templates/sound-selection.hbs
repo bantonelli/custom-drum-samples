@@ -119,7 +119,7 @@
                                 <div class="row" style="padding-left: 2px;">
                                     <div class="col-xs-12 sound-kit-selection">
                                         <div class="row">
-                                            <h4>{{selectedSampleType}}</h4>
+                                            <h5 style="text-transform: capitalize;">{{selectedSampleType}}</h5>
                                             <ul class="sample-list">
                                                 {{#each sample in filteredSamples}}
                                                     {{sample-toggler kitbuilderController=controllers.kitbuilder index=_view.contentIndex sampleType=false choosing=true sample=sample chosenSamples=controllers.kitbuilder.samplesChosen}}

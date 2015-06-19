@@ -203,6 +203,9 @@ Broken down into two subsections (Left and Right)
       @include h1-g-background;
       font-size: 1.3em;
     }
+    h5 {
+      @include h1-g-background;
+    }
   }
 /* Styles for Left Part of Section */
   .selected-kit-media {
@@ -489,7 +492,7 @@ h4.billing-info {
       margin-left: 4px;
     }
     #cvc-billing{
-      margin-left: 15px;
+      // margin-left: 15px;
     }
     #address-1-billing, #address-2-billing, #city-billing, #country-billing {
       width: 99.7%;
